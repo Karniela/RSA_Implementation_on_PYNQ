@@ -1,1 +1,1 @@
-# RSA_Implementation_on_PYNQ
+# RSA Implementation on PYNQ-Z2
