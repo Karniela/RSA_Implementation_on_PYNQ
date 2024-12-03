@@ -32,16 +32,16 @@ output   ap_done;
 input   ap_continue;
 output   ap_idle;
 output   ap_ready;
-input  [15:0] y;
-input  [15:0] d;
-input  [15:0] N;
-output  [15:0] x;
+input  [255:0] y;
+input  [255:0] d;
+input  [255:0] N;
+output  [255:0] x;
 output   x_ap_vld;
 
 reg ap_done;
 reg ap_idle;
 reg ap_ready;
-reg[15:0] x;
+reg[255:0] x;
 reg x_ap_vld;
 
 reg    ap_done_reg;
@@ -51,12 +51,12 @@ wire    grp_mod_exp_fu_39_ap_start;
 wire    grp_mod_exp_fu_39_ap_done;
 wire    grp_mod_exp_fu_39_ap_idle;
 wire    grp_mod_exp_fu_39_ap_ready;
-wire   [15:0] grp_mod_exp_fu_39_ap_return;
+wire   [255:0] grp_mod_exp_fu_39_ap_return;
 reg    grp_mod_exp_fu_39_ap_start_reg;
 reg    ap_block_state1_ignore_call3;
 wire    ap_CS_fsm_state2;
 reg    ap_block_state1;
-reg   [15:0] x_preg;
+reg   [255:0] x_preg;
 reg   [1:0] ap_NS_fsm;
 reg    ap_ST_fsm_state1_blk;
 reg    ap_ST_fsm_state2_blk;
@@ -67,7 +67,7 @@ initial begin
 #0 ap_done_reg = 1'b0;
 #0 ap_CS_fsm = 2'd1;
 #0 grp_mod_exp_fu_39_ap_start_reg = 1'b0;
-#0 x_preg = 16'd0;
+#0 x_preg = 256'd0;
 end
 
 rsa_mod_exp grp_mod_exp_fu_39(
@@ -117,7 +117,7 @@ end
 
 always @ (posedge ap_clk) begin
     if (ap_rst == 1'b1) begin
-        x_preg <= 16'd0;
+        x_preg <= 256'd0;
     end else begin
         if (((grp_mod_exp_fu_39_ap_done == 1'b1) & (1'b1 == ap_CS_fsm_state2))) begin
             x_preg <= grp_mod_exp_fu_39_ap_return;

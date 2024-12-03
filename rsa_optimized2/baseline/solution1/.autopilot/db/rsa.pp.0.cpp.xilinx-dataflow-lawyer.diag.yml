@@ -1,8 +1,0 @@
----
-MainSourceFile:  /home/cse237c_fa24_s_chen/RSA_Implementation_on_PYNQ/rsa_optimized2/baseline/solution1/.autopilot/db/rsa.pp.0.cpp
-Diagnostics:     
-  - DiagnosticName:  clang-diagnostic-warning
-    Message:         '[xlx-df-check-11] Since the only kind of statements allowed in a canonical dataflow region are variable declarations and function calls, the compiler may not be able to correctly handle the region'
-    FileOffset:      '88:9'
-    FilePath:        rsa.cpp
-...

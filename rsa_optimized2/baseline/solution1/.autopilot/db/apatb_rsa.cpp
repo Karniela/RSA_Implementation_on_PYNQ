@@ -954,14 +954,14 @@ namespace hls::sim
 
 
 extern "C"
-void rsa_hw_stub_wrapper(hls::sim::Byte<2>*, hls::sim::Byte<2>*, hls::sim::Byte<2>*, void*);
+void rsa_hw_stub_wrapper(hls::sim::Byte<32>*, hls::sim::Byte<32>*, hls::sim::Byte<32>*, void*);
 
 extern "C"
-void apatb_rsa_hw(hls::sim::Byte<2>* __xlx_apatb_param_d, hls::sim::Byte<2>* __xlx_apatb_param_N, hls::sim::Byte<2>* __xlx_apatb_param_y, void* __xlx_apatb_param_x)
+void apatb_rsa_hw(hls::sim::Byte<32>* __xlx_apatb_param_d, hls::sim::Byte<32>* __xlx_apatb_param_N, hls::sim::Byte<32>* __xlx_apatb_param_y, void* __xlx_apatb_param_x)
 {
   static hls::sim::Register port0 {
     .name = "d",
-    .width = 16,
+    .width = 256,
 #ifdef POST_CHECK
 #else
     .owriter = nullptr,
@@ -972,7 +972,7 @@ void apatb_rsa_hw(hls::sim::Byte<2>* __xlx_apatb_param_d, hls::sim::Byte<2>* __x
 
   static hls::sim::Register port1 {
     .name = "N",
-    .width = 16,
+    .width = 256,
 #ifdef POST_CHECK
 #else
     .owriter = nullptr,
@@ -983,7 +983,7 @@ void apatb_rsa_hw(hls::sim::Byte<2>* __xlx_apatb_param_d, hls::sim::Byte<2>* __x
 
   static hls::sim::Register port2 {
     .name = "y",
-    .width = 16,
+    .width = 256,
 #ifdef POST_CHECK
 #else
     .owriter = nullptr,
@@ -994,7 +994,7 @@ void apatb_rsa_hw(hls::sim::Byte<2>* __xlx_apatb_param_d, hls::sim::Byte<2>* __x
 
   static hls::sim::Register port3 {
     .name = "x",
-    .width = 16,
+    .width = 256,
 #ifdef POST_CHECK
     .reader = new hls::sim::Reader(AUTOTB_TVOUT_PC_x),
 #else

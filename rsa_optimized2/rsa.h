@@ -4,7 +4,7 @@
 #define RSA_H_
 
 #define NUM_SAMPLES 100
-#define BITWIDTH 16
+#define BITWIDTH 256
 
 
 typedef ap_uint<BITWIDTH> data_t;

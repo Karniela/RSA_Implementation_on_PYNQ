@@ -11,35 +11,35 @@ set axilite_register_dict [dict create]
 set port_control {
 d { 
 	dir I
-	width 16
+	width 256
 	depth 1
 	mode ap_none
 	offset 16
-	offset_end 23
+	offset_end 51
 }
 N { 
 	dir I
-	width 16
+	width 256
 	depth 1
 	mode ap_none
-	offset 24
-	offset_end 31
+	offset 52
+	offset_end 87
 }
 y { 
 	dir I
-	width 16
+	width 256
 	depth 1
 	mode ap_none
-	offset 32
-	offset_end 39
+	offset 88
+	offset_end 123
 }
 x { 
 	dir O
-	width 16
+	width 256
 	depth 1
 	mode ap_vld
-	offset 40
-	offset_end 47
+	offset 124
+	offset_end 159
 }
 ap_start { }
 ap_done { }
@@ -55,7 +55,7 @@ dict set axilite_register_dict control $port_control
 if {${::AESL::PGuard_simmodel_gen}} {
 	if {[info proc ::AESL_LIB_XILADAPTER::s_axilite_gen] == "::AESL_LIB_XILADAPTER::s_axilite_gen"} {
 		eval "::AESL_LIB_XILADAPTER::s_axilite_gen { \
-			id 8 \
+			id 19 \
 			corename rsa_control_axilite \
 			name rsa_control_s_axi \
 			ports {$port_control} \

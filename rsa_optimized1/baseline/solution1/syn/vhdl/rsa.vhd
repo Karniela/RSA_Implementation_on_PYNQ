@@ -11,7 +11,7 @@ use IEEE.numeric_std.all;
 
 entity rsa is
 generic (
-    C_S_AXI_CONTROL_ADDR_WIDTH : INTEGER := 6;
+    C_S_AXI_CONTROL_ADDR_WIDTH : INTEGER := 8;
     C_S_AXI_CONTROL_DATA_WIDTH : INTEGER := 32 );
 port (
     s_axi_control_AWVALID : IN STD_LOGIC;
@@ -40,15 +40,15 @@ end;
 architecture behav of rsa is 
     attribute CORE_GENERATION_INFO : STRING;
     attribute CORE_GENERATION_INFO of behav : architecture is
-    "rsa_rsa,hls_ip_2022_2,{HLS_INPUT_TYPE=cxx,HLS_INPUT_FLOAT=0,HLS_INPUT_FIXED=0,HLS_INPUT_PART=xc7z020-clg400-1,HLS_INPUT_CLOCK=10.000000,HLS_INPUT_ARCH=dataflow,HLS_SYN_CLOCK=5.486750,HLS_SYN_LAT=141,HLS_SYN_TPT=142,HLS_SYN_MEM=0,HLS_SYN_DSP=0,HLS_SYN_FF=412,HLS_SYN_LUT=858,HLS_VERSION=2022_2}";
+    "rsa_rsa,hls_ip_2022_2,{HLS_INPUT_TYPE=cxx,HLS_INPUT_FLOAT=0,HLS_INPUT_FIXED=0,HLS_INPUT_PART=xc7z020-clg400-1,HLS_INPUT_CLOCK=10.000000,HLS_INPUT_ARCH=dataflow,HLS_SYN_CLOCK=6.882000,HLS_SYN_LAT=295682,HLS_SYN_TPT=295683,HLS_SYN_MEM=0,HLS_SYN_DSP=0,HLS_SYN_FF=11693,HLS_SYN_LUT=5327,HLS_VERSION=2022_2}";
     constant C_S_AXI_DATA_WIDTH : INTEGER range 63 downto 0 := 20;
     constant ap_const_logic_1 : STD_LOGIC := '1';
     constant ap_const_logic_0 : STD_LOGIC := '0';
 
     signal ap_rst_n_inv : STD_LOGIC;
-    signal d : STD_LOGIC_VECTOR (15 downto 0);
-    signal N : STD_LOGIC_VECTOR (15 downto 0);
-    signal y : STD_LOGIC_VECTOR (15 downto 0);
+    signal d : STD_LOGIC_VECTOR (255 downto 0);
+    signal N : STD_LOGIC_VECTOR (255 downto 0);
+    signal y : STD_LOGIC_VECTOR (255 downto 0);
     signal ap_start : STD_LOGIC;
     signal ap_ready : STD_LOGIC;
     signal ap_done : STD_LOGIC;
@@ -58,7 +58,7 @@ architecture behav of rsa is
     signal Block_entry45_proc2_U0_ap_continue : STD_LOGIC;
     signal Block_entry45_proc2_U0_ap_idle : STD_LOGIC;
     signal Block_entry45_proc2_U0_ap_ready : STD_LOGIC;
-    signal Block_entry45_proc2_U0_x : STD_LOGIC_VECTOR (15 downto 0);
+    signal Block_entry45_proc2_U0_x : STD_LOGIC_VECTOR (255 downto 0);
     signal Block_entry45_proc2_U0_x_ap_vld : STD_LOGIC;
 
     component rsa_Block_entry45_proc2 IS
@@ -70,10 +70,10 @@ architecture behav of rsa is
         ap_continue : IN STD_LOGIC;
         ap_idle : OUT STD_LOGIC;
         ap_ready : OUT STD_LOGIC;
-        y : IN STD_LOGIC_VECTOR (15 downto 0);
-        d : IN STD_LOGIC_VECTOR (15 downto 0);
-        N : IN STD_LOGIC_VECTOR (15 downto 0);
-        x : OUT STD_LOGIC_VECTOR (15 downto 0);
+        y : IN STD_LOGIC_VECTOR (255 downto 0);
+        d : IN STD_LOGIC_VECTOR (255 downto 0);
+        N : IN STD_LOGIC_VECTOR (255 downto 0);
+        x : OUT STD_LOGIC_VECTOR (255 downto 0);
         x_ap_vld : OUT STD_LOGIC );
     end component;
 
@@ -103,10 +103,10 @@ architecture behav of rsa is
         ACLK : IN STD_LOGIC;
         ARESET : IN STD_LOGIC;
         ACLK_EN : IN STD_LOGIC;
-        d : OUT STD_LOGIC_VECTOR (15 downto 0);
-        N : OUT STD_LOGIC_VECTOR (15 downto 0);
-        y : OUT STD_LOGIC_VECTOR (15 downto 0);
-        x : IN STD_LOGIC_VECTOR (15 downto 0);
+        d : OUT STD_LOGIC_VECTOR (255 downto 0);
+        N : OUT STD_LOGIC_VECTOR (255 downto 0);
+        y : OUT STD_LOGIC_VECTOR (255 downto 0);
+        x : IN STD_LOGIC_VECTOR (255 downto 0);
         x_ap_vld : IN STD_LOGIC;
         ap_start : OUT STD_LOGIC;
         interrupt : OUT STD_LOGIC;

@@ -1,3 +1,6 @@
+rsa_add_258ns_258ns_258_2_1
+rsa_add_257ns_257ns_257_2_1
+rsa_sub_257ns_257ns_257_2_1
 rsa_control_s_axi
 mod_exp
 Block_entry45_proc2

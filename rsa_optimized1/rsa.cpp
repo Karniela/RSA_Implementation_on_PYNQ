@@ -7,8 +7,8 @@
 
 data_t mod_product(data_t a, data_t b, data_t N) {
 
-    data_t m = 0;
-    data_t t = b;
+    ap_uint<BITWIDTH+1> m = 0;
+    ap_uint<BITWIDTH+1> t = b;
 
     for(int i = 0; i < BITWIDTH; i++) {
 		#pragma HLS PIPELINE off
@@ -20,6 +20,7 @@ data_t mod_product(data_t a, data_t b, data_t N) {
 			else{
 				m = m + t;
 			}
+			// printf("m = %d\n", m);
     	}
 
         if(t + t > N){
@@ -28,9 +29,7 @@ data_t mod_product(data_t a, data_t b, data_t N) {
         else{
         	t = t + t;
         }
-        a = a >> 1; // Divide exp by 2
-        if(a == 0)
-        	break;
+		a = a >> 1;
     }
 
     return m;
@@ -40,15 +39,13 @@ data_t mod_exp(data_t y, data_t d, data_t N){
 	data_t t = y;
 	data_t m = 1;
 	for(int i = 0; i < BITWIDTH; i++){
+		#pragma HLS PIPELINE off
 		if(d & 1){
 			m = mod_product(m, t, N);
 		}
 		t = mod_product(t, t, N);
 
 		d = d >> 1;
-		if(d == 0){
-			break;
-		}
 	}
 	return m;
 }

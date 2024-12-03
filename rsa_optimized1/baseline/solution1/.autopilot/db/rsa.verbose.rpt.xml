@@ -1,7 +1,7 @@
 <profile>
 
 <section name = "Vitis HLS Report for 'rsa'" level="0">
-<item name = "Date">Mon Dec  2 13:39:03 2024
+<item name = "Date">Mon Dec  2 17:59:59 2024
 </item>
 <item name = "Version">2022.2 (Build 3670227 on Oct 13 2022)</item>
 <item name = "Project">baseline</item>
@@ -15,7 +15,7 @@
 <section name = "" level="1">
 <item name = "Summary"><table name="" hasTotal="0">
 <keys size="4">Clock, Target, Estimated, Uncertainty</keys>
-<column name="ap_clk">10.00 ns, 5.487 ns, 2.70 ns</column>
+<column name="ap_clk">10.00 ns, 6.882 ns, 2.70 ns</column>
 </table>
 </item>
 </section>
@@ -24,14 +24,14 @@
 <section name = "" level="1">
 <item name = "Summary"><table name="" hasTotal="0">
 <keys size="8">, min, max, min, max, min, max, Type</keys>
-<column name="">7, 599, 70.000 ns, 5.990 us, 8, 600, dataflow</column>
+<column name="">197378, 393986, 1.974 ms, 3.940 ms, 197379, 393987, dataflow</column>
 </table>
 </item>
 <item name = "Detail">
 <section name = "" level="1">
 <item name = "Instance"><table name="" hasTotal="0">
 <keys size="9">Instance, Module, min, max, min, max, min, max, Type</keys>
-<column name="Block_entry45_proc2_U0">Block_entry45_proc2, 7, 599, 70.000 ns, 5.990 us, 7, 599, no</column>
+<column name="Block_entry45_proc2_U0">Block_entry45_proc2, 197378, 393986, 1.974 ms, 3.940 ms, 197378, 393986, no</column>
 </table>
 </item>
 <item name = "Loop"><table name="" hasTotal="0">
@@ -50,20 +50,20 @@
 <column name="DSP">-, -, -, -, -</column>
 <column name="Expression">-, -, -, -, -</column>
 <column name="FIFO">-, -, -, -, -</column>
-<column name="Instance">0, -, 412, 858, -</column>
+<column name="Instance">0, -, 11693, 5327, -</column>
 <column name="Memory">-, -, -, -, -</column>
 <column name="Multiplexer">-, -, -, -, -</column>
 <column name="Register">-, -, -, -, -</column>
 <specialColumn name="Available">280, 220, 106400, 53200, 0</specialColumn>
-<specialColumn name="Utilization (%)">0, 0, ~0, 1, 0</specialColumn>
+<specialColumn name="Utilization (%)">0, 0, 10, 10, 0</specialColumn>
 </table>
 </item>
 <item name = "Detail">
 <section name = "" level="1">
 <item name = "Instance"><table name="" hasTotal="1">
 <keys size="7">Instance, Module, BRAM_18K, DSP, FF, LUT, URAM</keys>
-<column name="Block_entry45_proc2_U0">Block_entry45_proc2, 0, 0, 288, 690, 0</column>
-<column name="control_s_axi_U">control_s_axi, 0, 0, 124, 168, 0</column>
+<column name="Block_entry45_proc2_U0">Block_entry45_proc2, 0, 0, 10609, 3239, 0</column>
+<column name="control_s_axi_U">control_s_axi, 0, 0, 1084, 2088, 0</column>
 </table>
 </item>
 <item name = "DSP"><table name="" hasTotal="0">
@@ -99,14 +99,14 @@
 <keys size="6">RTL Ports, Dir, Bits, Protocol, Source Object, C Type</keys>
 <column name="s_axi_control_AWVALID">in, 1, s_axi, control, pointer</column>
 <column name="s_axi_control_AWREADY">out, 1, s_axi, control, pointer</column>
-<column name="s_axi_control_AWADDR">in, 6, s_axi, control, pointer</column>
+<column name="s_axi_control_AWADDR">in, 8, s_axi, control, pointer</column>
 <column name="s_axi_control_WVALID">in, 1, s_axi, control, pointer</column>
 <column name="s_axi_control_WREADY">out, 1, s_axi, control, pointer</column>
 <column name="s_axi_control_WDATA">in, 32, s_axi, control, pointer</column>
 <column name="s_axi_control_WSTRB">in, 4, s_axi, control, pointer</column>
 <column name="s_axi_control_ARVALID">in, 1, s_axi, control, pointer</column>
 <column name="s_axi_control_ARREADY">out, 1, s_axi, control, pointer</column>
-<column name="s_axi_control_ARADDR">in, 6, s_axi, control, pointer</column>
+<column name="s_axi_control_ARADDR">in, 8, s_axi, control, pointer</column>
 <column name="s_axi_control_RVALID">out, 1, s_axi, control, pointer</column>
 <column name="s_axi_control_RREADY">in, 1, s_axi, control, pointer</column>
 <column name="s_axi_control_RDATA">out, 32, s_axi, control, pointer</column>

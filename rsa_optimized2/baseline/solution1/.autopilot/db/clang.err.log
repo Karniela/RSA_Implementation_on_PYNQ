@@ -1,4 +1,0 @@
-rsa.cpp:91:39: warning: format specifies type 'int' but the argument has type 'data_t' (aka 'ap_uint<16>') [-Wformat]
- printf("t after mod_product = %d\n", t);
-                               ~~     ^
-1 warning generated.

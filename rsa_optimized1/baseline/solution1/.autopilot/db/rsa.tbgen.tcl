@@ -13,29 +13,29 @@ set hasInterrupt 0
 set C_modelName {rsa}
 set C_modelType { void 0 }
 set C_modelArgList {
-	{ d int 16 regular {axi_slave 0}  }
-	{ N int 16 regular {axi_slave 0}  }
-	{ y int 16 regular {axi_slave 0}  }
-	{ x int 16 regular {axi_slave 1}  }
+	{ d int 256 regular {axi_slave 0}  }
+	{ N int 256 regular {axi_slave 0}  }
+	{ y int 256 regular {axi_slave 0}  }
+	{ x int 256 regular {axi_slave 1}  }
 }
 set C_modelArgMapList {[ 
-	{ "Name" : "d", "interface" : "axi_slave", "bundle":"control","type":"ap_none","bitwidth" : 16, "direction" : "READONLY", "offset" : {"in":16}, "offset_end" : {"in":23}} , 
- 	{ "Name" : "N", "interface" : "axi_slave", "bundle":"control","type":"ap_none","bitwidth" : 16, "direction" : "READONLY", "offset" : {"in":24}, "offset_end" : {"in":31}} , 
- 	{ "Name" : "y", "interface" : "axi_slave", "bundle":"control","type":"ap_none","bitwidth" : 16, "direction" : "READONLY", "offset" : {"in":32}, "offset_end" : {"in":39}} , 
- 	{ "Name" : "x", "interface" : "axi_slave", "bundle":"control","type":"ap_vld","bitwidth" : 16, "direction" : "WRITEONLY", "offset" : {"out":40}, "offset_end" : {"out":47}} ]}
+	{ "Name" : "d", "interface" : "axi_slave", "bundle":"control","type":"ap_none","bitwidth" : 256, "direction" : "READONLY", "offset" : {"in":16}, "offset_end" : {"in":51}} , 
+ 	{ "Name" : "N", "interface" : "axi_slave", "bundle":"control","type":"ap_none","bitwidth" : 256, "direction" : "READONLY", "offset" : {"in":52}, "offset_end" : {"in":87}} , 
+ 	{ "Name" : "y", "interface" : "axi_slave", "bundle":"control","type":"ap_none","bitwidth" : 256, "direction" : "READONLY", "offset" : {"in":88}, "offset_end" : {"in":123}} , 
+ 	{ "Name" : "x", "interface" : "axi_slave", "bundle":"control","type":"ap_vld","bitwidth" : 256, "direction" : "WRITEONLY", "offset" : {"out":124}, "offset_end" : {"out":159}} ]}
 # RTL Port declarations: 
 set portNum 20
 set portList { 
 	{ s_axi_control_AWVALID sc_in sc_logic 1 signal -1 } 
 	{ s_axi_control_AWREADY sc_out sc_logic 1 signal -1 } 
-	{ s_axi_control_AWADDR sc_in sc_lv 6 signal -1 } 
+	{ s_axi_control_AWADDR sc_in sc_lv 8 signal -1 } 
 	{ s_axi_control_WVALID sc_in sc_logic 1 signal -1 } 
 	{ s_axi_control_WREADY sc_out sc_logic 1 signal -1 } 
 	{ s_axi_control_WDATA sc_in sc_lv 32 signal -1 } 
 	{ s_axi_control_WSTRB sc_in sc_lv 4 signal -1 } 
 	{ s_axi_control_ARVALID sc_in sc_logic 1 signal -1 } 
 	{ s_axi_control_ARREADY sc_out sc_logic 1 signal -1 } 
-	{ s_axi_control_ARADDR sc_in sc_lv 6 signal -1 } 
+	{ s_axi_control_ARADDR sc_in sc_lv 8 signal -1 } 
 	{ s_axi_control_RVALID sc_out sc_logic 1 signal -1 } 
 	{ s_axi_control_RREADY sc_in sc_logic 1 signal -1 } 
 	{ s_axi_control_RDATA sc_out sc_lv 32 signal -1 } 
@@ -48,14 +48,14 @@ set portList {
 	{ interrupt sc_out sc_logic 1 signal -1 } 
 }
 set NewPortList {[ 
-	{ "name": "s_axi_control_AWADDR", "direction": "in", "datatype": "sc_lv", "bitwidth":6, "type": "signal", "bundle":{"name": "control", "role": "AWADDR" },"address":[{"name":"rsa","role":"start","value":"0","valid_bit":"0"},{"name":"rsa","role":"continue","value":"0","valid_bit":"4"},{"name":"rsa","role":"auto_start","value":"0","valid_bit":"7"},{"name":"d","role":"data","value":"16"},{"name":"N","role":"data","value":"24"},{"name":"y","role":"data","value":"32"}] },
+	{ "name": "s_axi_control_AWADDR", "direction": "in", "datatype": "sc_lv", "bitwidth":8, "type": "signal", "bundle":{"name": "control", "role": "AWADDR" },"address":[{"name":"rsa","role":"start","value":"0","valid_bit":"0"},{"name":"rsa","role":"continue","value":"0","valid_bit":"4"},{"name":"rsa","role":"auto_start","value":"0","valid_bit":"7"},{"name":"d","role":"data","value":"16"},{"name":"N","role":"data","value":"52"},{"name":"y","role":"data","value":"88"}] },
 	{ "name": "s_axi_control_AWVALID", "direction": "in", "datatype": "sc_logic", "bitwidth":1, "type": "signal", "bundle":{"name": "control", "role": "AWVALID" } },
 	{ "name": "s_axi_control_AWREADY", "direction": "out", "datatype": "sc_logic", "bitwidth":1, "type": "signal", "bundle":{"name": "control", "role": "AWREADY" } },
 	{ "name": "s_axi_control_WVALID", "direction": "in", "datatype": "sc_logic", "bitwidth":1, "type": "signal", "bundle":{"name": "control", "role": "WVALID" } },
 	{ "name": "s_axi_control_WREADY", "direction": "out", "datatype": "sc_logic", "bitwidth":1, "type": "signal", "bundle":{"name": "control", "role": "WREADY" } },
 	{ "name": "s_axi_control_WDATA", "direction": "in", "datatype": "sc_lv", "bitwidth":32, "type": "signal", "bundle":{"name": "control", "role": "WDATA" } },
 	{ "name": "s_axi_control_WSTRB", "direction": "in", "datatype": "sc_lv", "bitwidth":4, "type": "signal", "bundle":{"name": "control", "role": "WSTRB" } },
-	{ "name": "s_axi_control_ARADDR", "direction": "in", "datatype": "sc_lv", "bitwidth":6, "type": "signal", "bundle":{"name": "control", "role": "ARADDR" },"address":[{"name":"rsa","role":"start","value":"0","valid_bit":"0"},{"name":"rsa","role":"done","value":"0","valid_bit":"1"},{"name":"rsa","role":"idle","value":"0","valid_bit":"2"},{"name":"rsa","role":"ready","value":"0","valid_bit":"3"},{"name":"rsa","role":"auto_start","value":"0","valid_bit":"7"},{"name":"x","role":"data","value":"40"}, {"name":"x","role":"valid","value":"44","valid_bit":"0"}] },
+	{ "name": "s_axi_control_ARADDR", "direction": "in", "datatype": "sc_lv", "bitwidth":8, "type": "signal", "bundle":{"name": "control", "role": "ARADDR" },"address":[{"name":"rsa","role":"start","value":"0","valid_bit":"0"},{"name":"rsa","role":"done","value":"0","valid_bit":"1"},{"name":"rsa","role":"idle","value":"0","valid_bit":"2"},{"name":"rsa","role":"ready","value":"0","valid_bit":"3"},{"name":"rsa","role":"auto_start","value":"0","valid_bit":"7"},{"name":"x","role":"data","value":"124"}, {"name":"x","role":"valid","value":"156","valid_bit":"0"}] },
 	{ "name": "s_axi_control_ARVALID", "direction": "in", "datatype": "sc_logic", "bitwidth":1, "type": "signal", "bundle":{"name": "control", "role": "ARVALID" } },
 	{ "name": "s_axi_control_ARREADY", "direction": "out", "datatype": "sc_logic", "bitwidth":1, "type": "signal", "bundle":{"name": "control", "role": "ARREADY" } },
 	{ "name": "s_axi_control_RVALID", "direction": "out", "datatype": "sc_logic", "bitwidth":1, "type": "signal", "bundle":{"name": "control", "role": "RVALID" } },
@@ -76,7 +76,7 @@ set RtlHierarchyInfo {[
 		"ControlExist" : "1", "ap_start" : "1", "ap_ready" : "1", "ap_done" : "1", "ap_continue" : "0", "ap_idle" : "1", "real_start" : "0",
 		"Pipeline" : "Dataflow", "UnalignedPipeline" : "0", "RewindPipeline" : "0", "ProcessNetwork" : "1",
 		"II" : "0",
-		"VariableLatency" : "1", "ExactLatency" : "-1", "EstimateLatencyMin" : "7", "EstimateLatencyMax" : "599",
+		"VariableLatency" : "1", "ExactLatency" : "-1", "EstimateLatencyMin" : "197378", "EstimateLatencyMax" : "393986",
 		"Combinational" : "0",
 		"Datapath" : "0",
 		"ClockEnable" : "0",
@@ -102,7 +102,7 @@ set RtlHierarchyInfo {[
 		"ControlExist" : "1", "ap_start" : "1", "ap_ready" : "1", "ap_done" : "1", "ap_continue" : "1", "ap_idle" : "1", "real_start" : "0",
 		"Pipeline" : "None", "UnalignedPipeline" : "0", "RewindPipeline" : "0", "ProcessNetwork" : "0",
 		"II" : "0",
-		"VariableLatency" : "1", "ExactLatency" : "-1", "EstimateLatencyMin" : "7", "EstimateLatencyMax" : "599",
+		"VariableLatency" : "1", "ExactLatency" : "-1", "EstimateLatencyMin" : "197378", "EstimateLatencyMax" : "393986",
 		"Combinational" : "0",
 		"Datapath" : "0",
 		"ClockEnable" : "0",
@@ -115,13 +115,13 @@ set RtlHierarchyInfo {[
 			{"Name" : "d", "Type" : "None", "Direction" : "I"},
 			{"Name" : "N", "Type" : "None", "Direction" : "I"},
 			{"Name" : "x", "Type" : "Vld", "Direction" : "O"}]},
-	{"ID" : "3", "Level" : "2", "Path" : "`AUTOTB_DUT_INST.Block_entry45_proc2_U0.grp_mod_exp_fu_39", "Parent" : "2",
+	{"ID" : "3", "Level" : "2", "Path" : "`AUTOTB_DUT_INST.Block_entry45_proc2_U0.grp_mod_exp_fu_39", "Parent" : "2", "Child" : ["4", "5", "6", "7", "8", "9", "10", "11"],
 		"CDFG" : "mod_exp",
 		"Protocol" : "ap_ctrl_hs",
 		"ControlExist" : "1", "ap_start" : "1", "ap_ready" : "1", "ap_done" : "1", "ap_continue" : "0", "ap_idle" : "1", "real_start" : "0",
 		"Pipeline" : "None", "UnalignedPipeline" : "0", "RewindPipeline" : "0", "ProcessNetwork" : "0",
 		"II" : "0",
-		"VariableLatency" : "1", "ExactLatency" : "-1", "EstimateLatencyMin" : "6", "EstimateLatencyMax" : "598",
+		"VariableLatency" : "1", "ExactLatency" : "-1", "EstimateLatencyMin" : "197377", "EstimateLatencyMax" : "393985",
 		"Combinational" : "0",
 		"Datapath" : "0",
 		"ClockEnable" : "0",
@@ -135,11 +135,19 @@ set RtlHierarchyInfo {[
 			{"Name" : "N", "Type" : "None", "Direction" : "I"}],
 		"Loop" : [
 			{"Name" : "VITIS_LOOP_13_1", "PipelineType" : "no",
-				"LoopDec" : {"FSMBitwidth" : "6", "FirstState" : "ap_ST_fsm_state3", "LastState" : ["ap_ST_fsm_state3"], "QuitState" : ["ap_ST_fsm_state3"], "PreState" : ["ap_ST_fsm_state2"], "PostState" : ["ap_ST_fsm_state4"], "OneDepthLoop" : "1", "OneStateBlock": "ap_ST_fsm_state3_blk"}},
+				"LoopDec" : {"FSMBitwidth" : "8", "FirstState" : "ap_ST_fsm_state3", "LastState" : ["ap_ST_fsm_state5"], "QuitState" : ["ap_ST_fsm_state3"], "PreState" : ["ap_ST_fsm_state2"], "PostState" : ["ap_ST_fsm_state6"], "OneDepthLoop" : "0", "OneStateBlock": ""}},
 			{"Name" : "VITIS_LOOP_13_1", "PipelineType" : "no",
-				"LoopDec" : {"FSMBitwidth" : "6", "FirstState" : "ap_ST_fsm_state5", "LastState" : ["ap_ST_fsm_state5"], "QuitState" : ["ap_ST_fsm_state5"], "PreState" : ["ap_ST_fsm_state4"], "PostState" : ["ap_ST_fsm_state6"], "OneDepthLoop" : "1", "OneStateBlock": "ap_ST_fsm_state5_blk"}},
-			{"Name" : "VITIS_LOOP_42_1", "PipelineType" : "no",
-				"LoopDec" : {"FSMBitwidth" : "6", "FirstState" : "ap_ST_fsm_state2", "LastState" : ["ap_ST_fsm_state6"], "QuitState" : ["ap_ST_fsm_state2"], "PreState" : ["ap_ST_fsm_state1"], "PostState" : ["ap_ST_fsm_state1"], "OneDepthLoop" : "0", "OneStateBlock": ""}}]}]}
+				"LoopDec" : {"FSMBitwidth" : "8", "FirstState" : "ap_ST_fsm_state6", "LastState" : ["ap_ST_fsm_state8"], "QuitState" : ["ap_ST_fsm_state6"], "PreState" : ["ap_ST_fsm_state3"], "PostState" : ["ap_ST_fsm_state2"], "OneDepthLoop" : "0", "OneStateBlock": ""}},
+			{"Name" : "VITIS_LOOP_41_1", "PipelineType" : "no",
+				"LoopDec" : {"FSMBitwidth" : "8", "FirstState" : "ap_ST_fsm_state2", "LastState" : ["ap_ST_fsm_state6"], "QuitState" : ["ap_ST_fsm_state2"], "PreState" : ["ap_ST_fsm_state1"], "PostState" : ["ap_ST_fsm_state1"], "OneDepthLoop" : "0", "OneStateBlock": ""}}]},
+	{"ID" : "4", "Level" : "3", "Path" : "`AUTOTB_DUT_INST.Block_entry45_proc2_U0.grp_mod_exp_fu_39.add_258ns_258ns_258_2_1_U1", "Parent" : "3"},
+	{"ID" : "5", "Level" : "3", "Path" : "`AUTOTB_DUT_INST.Block_entry45_proc2_U0.grp_mod_exp_fu_39.add_257ns_257ns_257_2_1_U2", "Parent" : "3"},
+	{"ID" : "6", "Level" : "3", "Path" : "`AUTOTB_DUT_INST.Block_entry45_proc2_U0.grp_mod_exp_fu_39.sub_257ns_257ns_257_2_1_U3", "Parent" : "3"},
+	{"ID" : "7", "Level" : "3", "Path" : "`AUTOTB_DUT_INST.Block_entry45_proc2_U0.grp_mod_exp_fu_39.sub_257ns_257ns_257_2_1_U4", "Parent" : "3"},
+	{"ID" : "8", "Level" : "3", "Path" : "`AUTOTB_DUT_INST.Block_entry45_proc2_U0.grp_mod_exp_fu_39.add_258ns_258ns_258_2_1_U5", "Parent" : "3"},
+	{"ID" : "9", "Level" : "3", "Path" : "`AUTOTB_DUT_INST.Block_entry45_proc2_U0.grp_mod_exp_fu_39.add_257ns_257ns_257_2_1_U6", "Parent" : "3"},
+	{"ID" : "10", "Level" : "3", "Path" : "`AUTOTB_DUT_INST.Block_entry45_proc2_U0.grp_mod_exp_fu_39.sub_257ns_257ns_257_2_1_U7", "Parent" : "3"},
+	{"ID" : "11", "Level" : "3", "Path" : "`AUTOTB_DUT_INST.Block_entry45_proc2_U0.grp_mod_exp_fu_39.sub_257ns_257ns_257_2_1_U8", "Parent" : "3"}]}
 
 
 set ArgLastReadFirstWriteLatency {
@@ -161,8 +169,8 @@ set ArgLastReadFirstWriteLatency {
 set hasDtUnsupportedChannel 0
 
 set PerformanceInfo {[
-	{"Name" : "Latency", "Min" : "7", "Max" : "599"}
-	, {"Name" : "Interval", "Min" : "8", "Max" : "600"}
+	{"Name" : "Latency", "Min" : "197378", "Max" : "393986"}
+	, {"Name" : "Interval", "Min" : "197379", "Max" : "393987"}
 ]}
 
 set PipelineEnableSignalInfo {[

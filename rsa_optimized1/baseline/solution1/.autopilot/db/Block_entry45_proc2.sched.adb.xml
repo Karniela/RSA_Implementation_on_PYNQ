@@ -23,9 +23,9 @@
 <or_exp><and_exp></and_exp></or_exp>
 </condition>
 
-<Node id="5" bw="16" op_0_bw="16" op_1_bw="16">
+<Node id="5" bw="256" op_0_bw="256" op_1_bw="256">
 <![CDATA[
-newFuncRoot:0 %N_read = read i16 @_ssdm_op_Read.ap_auto.i16, i16 %N
+newFuncRoot:0 %N_read = read i256 @_ssdm_op_Read.ap_auto.i256, i256 %N
 
 ]]></Node>
 <StgValue><ssdm name="N_read"/></StgValue>
@@ -38,9 +38,9 @@ newFuncRoot:0 %N_read = read i16 @_ssdm_op_Read.ap_auto.i16, i16 %N
 <or_exp><and_exp></and_exp></or_exp>
 </condition>
 
-<Node id="6" bw="16" op_0_bw="16" op_1_bw="16">
+<Node id="6" bw="256" op_0_bw="256" op_1_bw="256">
 <![CDATA[
-newFuncRoot:1 %d_read = read i16 @_ssdm_op_Read.ap_auto.i16, i16 %d
+newFuncRoot:1 %d_read = read i256 @_ssdm_op_Read.ap_auto.i256, i256 %d
 
 ]]></Node>
 <StgValue><ssdm name="d_read"/></StgValue>
@@ -53,9 +53,9 @@ newFuncRoot:1 %d_read = read i16 @_ssdm_op_Read.ap_auto.i16, i16 %d
 <or_exp><and_exp></and_exp></or_exp>
 </condition>
 
-<Node id="7" bw="16" op_0_bw="16" op_1_bw="16">
+<Node id="7" bw="256" op_0_bw="256" op_1_bw="256">
 <![CDATA[
-newFuncRoot:2 %y_read = read i16 @_ssdm_op_Read.ap_auto.i16, i16 %y
+newFuncRoot:2 %y_read = read i256 @_ssdm_op_Read.ap_auto.i256, i256 %y
 
 ]]></Node>
 <StgValue><ssdm name="y_read"/></StgValue>
@@ -68,9 +68,9 @@ newFuncRoot:2 %y_read = read i16 @_ssdm_op_Read.ap_auto.i16, i16 %y
 <or_exp><and_exp></and_exp></or_exp>
 </condition>
 
-<Node id="8" bw="16" op_0_bw="16" op_1_bw="16" op_2_bw="16" op_3_bw="16">
+<Node id="8" bw="256" op_0_bw="256" op_1_bw="256" op_2_bw="256" op_3_bw="256">
 <![CDATA[
-newFuncRoot:3 %ref_tmp1 = call i16 @mod_exp, i16 %y_read, i16 %d_read, i16 %N_read
+newFuncRoot:3 %ref_tmp1 = call i256 @mod_exp, i256 %y_read, i256 %d_read, i256 %N_read
 
 ]]></Node>
 <StgValue><ssdm name="ref_tmp1"/></StgValue>
@@ -86,9 +86,9 @@ newFuncRoot:3 %ref_tmp1 = call i16 @mod_exp, i16 %y_read, i16 %d_read, i16 %N_re
 <or_exp><and_exp></and_exp></or_exp>
 </condition>
 
-<Node id="8" bw="16" op_0_bw="16" op_1_bw="16" op_2_bw="16" op_3_bw="16">
+<Node id="8" bw="256" op_0_bw="256" op_1_bw="256" op_2_bw="256" op_3_bw="256">
 <![CDATA[
-newFuncRoot:3 %ref_tmp1 = call i16 @mod_exp, i16 %y_read, i16 %d_read, i16 %N_read
+newFuncRoot:3 %ref_tmp1 = call i256 @mod_exp, i256 %y_read, i256 %d_read, i256 %N_read
 
 ]]></Node>
 <StgValue><ssdm name="ref_tmp1"/></StgValue>
@@ -101,12 +101,12 @@ newFuncRoot:3 %ref_tmp1 = call i16 @mod_exp, i16 %y_read, i16 %d_read, i16 %N_re
 <or_exp><and_exp></and_exp></or_exp>
 </condition>
 
-<Node id="9" bw="0" op_0_bw="0" op_1_bw="16" op_2_bw="16">
+<Node id="9" bw="0" op_0_bw="0" op_1_bw="256" op_2_bw="256">
 <![CDATA[
-newFuncRoot:4 %write_ln65 = write void @_ssdm_op_Write.ap_auto.i16P0A, i16 %x, i16 %ref_tmp1
+newFuncRoot:4 %write_ln62 = write void @_ssdm_op_Write.ap_auto.i256P0A, i256 %x, i256 %ref_tmp1
 
 ]]></Node>
-<StgValue><ssdm name="write_ln65"/></StgValue>
+<StgValue><ssdm name="write_ln62"/></StgValue>
 </operation>
 
 <operation id="9" st_id="2" stage="1" lat="1">

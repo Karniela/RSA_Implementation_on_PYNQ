@@ -50,6 +50,50 @@ typedef struct {
 
 typedef u32 word_type;
 
+typedef struct {
+    u32 word_0;
+    u32 word_1;
+    u32 word_2;
+    u32 word_3;
+    u32 word_4;
+    u32 word_5;
+    u32 word_6;
+    u32 word_7;
+} XRsa_D;
+
+typedef struct {
+    u32 word_0;
+    u32 word_1;
+    u32 word_2;
+    u32 word_3;
+    u32 word_4;
+    u32 word_5;
+    u32 word_6;
+    u32 word_7;
+} XRsa_N;
+
+typedef struct {
+    u32 word_0;
+    u32 word_1;
+    u32 word_2;
+    u32 word_3;
+    u32 word_4;
+    u32 word_5;
+    u32 word_6;
+    u32 word_7;
+} XRsa_Y;
+
+typedef struct {
+    u32 word_0;
+    u32 word_1;
+    u32 word_2;
+    u32 word_3;
+    u32 word_4;
+    u32 word_5;
+    u32 word_6;
+    u32 word_7;
+} XRsa_X;
+
 /***************** Macros (Inline Functions) Definitions *********************/
 #ifndef __linux__
 #define XRsa_WriteReg(BaseAddress, RegOffset, Data) \
@@ -88,13 +132,13 @@ u32 XRsa_IsReady(XRsa *InstancePtr);
 void XRsa_EnableAutoRestart(XRsa *InstancePtr);
 void XRsa_DisableAutoRestart(XRsa *InstancePtr);
 
-void XRsa_Set_d(XRsa *InstancePtr, u32 Data);
-u32 XRsa_Get_d(XRsa *InstancePtr);
-void XRsa_Set_N(XRsa *InstancePtr, u32 Data);
-u32 XRsa_Get_N(XRsa *InstancePtr);
-void XRsa_Set_y(XRsa *InstancePtr, u32 Data);
-u32 XRsa_Get_y(XRsa *InstancePtr);
-u32 XRsa_Get_x(XRsa *InstancePtr);
+void XRsa_Set_d(XRsa *InstancePtr, XRsa_D Data);
+XRsa_D XRsa_Get_d(XRsa *InstancePtr);
+void XRsa_Set_N(XRsa *InstancePtr, XRsa_N Data);
+XRsa_N XRsa_Get_N(XRsa *InstancePtr);
+void XRsa_Set_y(XRsa *InstancePtr, XRsa_Y Data);
+XRsa_Y XRsa_Get_y(XRsa *InstancePtr);
+XRsa_X XRsa_Get_x(XRsa *InstancePtr);
 u32 XRsa_Get_x_vld(XRsa *InstancePtr);
 
 void XRsa_InterruptGlobalEnable(XRsa *InstancePtr);

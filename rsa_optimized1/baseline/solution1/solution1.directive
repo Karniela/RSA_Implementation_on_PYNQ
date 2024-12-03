@@ -5,11 +5,6 @@
                 <option name="name" value="rsa"/>
             </pragma>
         </directive>
-        <directive functionName="rsa" label="" functionLabel="">
-            <pragma name="TOP">
-                <option name="name" value="rsa"/>
-            </pragma>
-        </directive>
     </sourceFile>
 </AutoPilot:ProjectResources>
 

@@ -3287,6 +3287,22 @@
       <key>level</key>
       <string>warning</string>
       <key>filename</key>
+      <string>rsa.cpp</string>
+      <key>line</key>
+      <integer>42</integer>
+      <key>column</key>
+      <integer>9</integer>
+      <key>message</key>
+      <string>HLS pragma dump _XLX_SEP_ PragmaIsValid=1_XLX_SEP_ PragmaType=pipeline_XLX_SEP_ PragmaContext=_XLX_SEP_ PragmaFunction=mod_exp_XLX_SEP_ PragmaOptions=off_XLX_SEP_</string>
+      <key>ID</key>
+      <integer>5471</integer>
+      <key>WarningOption</key>
+      <string>dump-hls-pragmas</string>
+    </dict>
+    <dict>
+      <key>level</key>
+      <string>warning</string>
+      <key>filename</key>
       <string>/home/cse237c_fa24_s_chen/RSA_Implementation_on_PYNQ/rsa_optimized1/baseline/solution1/csynth.tcl</string>
       <key>line</key>
       <integer>18</integer>
@@ -3321,7 +3337,7 @@
       <key>filename</key>
       <string>rsa.cpp</string>
       <key>line</key>
-      <integer>58</integer>
+      <integer>55</integer>
       <key>column</key>
       <integer>9</integer>
       <key>message</key>
@@ -3337,7 +3353,7 @@
       <key>filename</key>
       <string>rsa.cpp</string>
       <key>line</key>
-      <integer>59</integer>
+      <integer>56</integer>
       <key>column</key>
       <integer>9</integer>
       <key>message</key>
@@ -3353,7 +3369,7 @@
       <key>filename</key>
       <string>rsa.cpp</string>
       <key>line</key>
-      <integer>60</integer>
+      <integer>57</integer>
       <key>column</key>
       <integer>9</integer>
       <key>message</key>
@@ -3369,7 +3385,7 @@
       <key>filename</key>
       <string>rsa.cpp</string>
       <key>line</key>
-      <integer>61</integer>
+      <integer>58</integer>
       <key>column</key>
       <integer>9</integer>
       <key>message</key>
@@ -3385,7 +3401,7 @@
       <key>filename</key>
       <string>rsa.cpp</string>
       <key>line</key>
-      <integer>62</integer>
+      <integer>59</integer>
       <key>column</key>
       <integer>9</integer>
       <key>message</key>
@@ -3401,7 +3417,7 @@
       <key>filename</key>
       <string>rsa.cpp</string>
       <key>line</key>
-      <integer>64</integer>
+      <integer>61</integer>
       <key>column</key>
       <integer>9</integer>
       <key>message</key>

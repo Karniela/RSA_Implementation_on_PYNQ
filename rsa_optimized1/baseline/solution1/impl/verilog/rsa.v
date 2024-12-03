@@ -7,7 +7,7 @@
 
 `timescale 1 ns / 1 ps 
 
-(* CORE_GENERATION_INFO="rsa_rsa,hls_ip_2022_2,{HLS_INPUT_TYPE=cxx,HLS_INPUT_FLOAT=0,HLS_INPUT_FIXED=0,HLS_INPUT_PART=xc7z020-clg400-1,HLS_INPUT_CLOCK=10.000000,HLS_INPUT_ARCH=dataflow,HLS_SYN_CLOCK=5.486750,HLS_SYN_LAT=141,HLS_SYN_TPT=142,HLS_SYN_MEM=0,HLS_SYN_DSP=0,HLS_SYN_FF=412,HLS_SYN_LUT=858,HLS_VERSION=2022_2}" *)
+(* CORE_GENERATION_INFO="rsa_rsa,hls_ip_2022_2,{HLS_INPUT_TYPE=cxx,HLS_INPUT_FLOAT=0,HLS_INPUT_FIXED=0,HLS_INPUT_PART=xc7z020-clg400-1,HLS_INPUT_CLOCK=10.000000,HLS_INPUT_ARCH=dataflow,HLS_SYN_CLOCK=6.882000,HLS_SYN_LAT=295682,HLS_SYN_TPT=295683,HLS_SYN_MEM=0,HLS_SYN_DSP=0,HLS_SYN_FF=11693,HLS_SYN_LUT=5327,HLS_VERSION=2022_2}" *)
 
 module rsa (
         s_axi_control_AWVALID,
@@ -33,7 +33,7 @@ module rsa (
 );
 
 parameter    C_S_AXI_CONTROL_DATA_WIDTH = 32;
-parameter    C_S_AXI_CONTROL_ADDR_WIDTH = 6;
+parameter    C_S_AXI_CONTROL_ADDR_WIDTH = 8;
 parameter    C_S_AXI_DATA_WIDTH = 32;
 
 parameter C_S_AXI_CONTROL_WSTRB_WIDTH = (32 / 8);
@@ -61,9 +61,9 @@ input   ap_rst_n;
 output   interrupt;
 
  reg    ap_rst_n_inv;
-wire   [15:0] d;
-wire   [15:0] N;
-wire   [15:0] y;
+wire   [255:0] d;
+wire   [255:0] N;
+wire   [255:0] y;
 wire    ap_start;
 wire    ap_ready;
 wire    ap_done;
@@ -73,7 +73,7 @@ wire    Block_entry45_proc2_U0_ap_done;
 wire    Block_entry45_proc2_U0_ap_continue;
 wire    Block_entry45_proc2_U0_ap_idle;
 wire    Block_entry45_proc2_U0_ap_ready;
-wire   [15:0] Block_entry45_proc2_U0_x;
+wire   [255:0] Block_entry45_proc2_U0_x;
 wire    Block_entry45_proc2_U0_x_ap_vld;
 
 rsa_control_s_axi #(

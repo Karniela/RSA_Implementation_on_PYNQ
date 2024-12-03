@@ -37,7 +37,7 @@
 						<coreId>0</coreId>
 						<rtlModuleName></rtlModuleName>
 					</Obj>
-					<bitwidth>16</bitwidth>
+					<bitwidth>256</bitwidth>
 				</Value>
 				<direction>0</direction>
 				<if_type>0</if_type>
@@ -70,10 +70,10 @@
 						<coreName></coreName>
 						<isStorage>0</isStorage>
 						<storageDepth>0</storageDepth>
-						<coreId>1782750531</coreId>
+						<coreId>857891267</coreId>
 						<rtlModuleName></rtlModuleName>
 					</Obj>
-					<bitwidth>16</bitwidth>
+					<bitwidth>256</bitwidth>
 				</Value>
 				<direction>0</direction>
 				<if_type>0</if_type>
@@ -106,10 +106,10 @@
 						<coreName></coreName>
 						<isStorage>0</isStorage>
 						<storageDepth>0</storageDepth>
-						<coreId>192</coreId>
+						<coreId>543517801</coreId>
 						<rtlModuleName></rtlModuleName>
 					</Obj>
-					<bitwidth>16</bitwidth>
+					<bitwidth>256</bitwidth>
 				</Value>
 				<direction>0</direction>
 				<if_type>0</if_type>
@@ -142,10 +142,10 @@
 						<coreName></coreName>
 						<isStorage>0</isStorage>
 						<storageDepth>0</storageDepth>
-						<coreId>94</coreId>
+						<coreId>3431363620</coreId>
 						<rtlModuleName></rtlModuleName>
 					</Obj>
-					<bitwidth>16</bitwidth>
+					<bitwidth>256</bitwidth>
 				</Value>
 				<direction>1</direction>
 				<if_type>0</if_type>
@@ -167,7 +167,7 @@
 						<name>N_read</name>
 						<fileName>rsa.cpp</fileName>
 						<fileDirectory>/home/cse237c_fa24_s_chen/RSA_Implementation_on_PYNQ/rsa_optimized1</fileDirectory>
-						<lineNumber>65</lineNumber>
+						<lineNumber>62</lineNumber>
 						<contextFuncName>rsa</contextFuncName>
 						<contextNormFuncName>rsa</contextNormFuncName>
 						<inlineStackInfo>
@@ -183,7 +183,7 @@
 											<first>rsa.cpp</first>
 											<second>rsa</second>
 										</first>
-										<second>65</second>
+										<second>62</second>
 									</item>
 								</second>
 							</item>
@@ -196,10 +196,10 @@
 						<coreName></coreName>
 						<isStorage>0</isStorage>
 						<storageDepth>0</storageDepth>
-						<coreId>1212371803</coreId>
+						<coreId>0</coreId>
 						<rtlModuleName></rtlModuleName>
 					</Obj>
-					<bitwidth>16</bitwidth>
+					<bitwidth>256</bitwidth>
 				</Value>
 				<oprand_edges>
 					<count>2</count>
@@ -224,7 +224,7 @@
 						<name>d_read</name>
 						<fileName>rsa.cpp</fileName>
 						<fileDirectory>/home/cse237c_fa24_s_chen/RSA_Implementation_on_PYNQ/rsa_optimized1</fileDirectory>
-						<lineNumber>65</lineNumber>
+						<lineNumber>62</lineNumber>
 						<contextFuncName>rsa</contextFuncName>
 						<contextNormFuncName>rsa</contextNormFuncName>
 						<inlineStackInfo>
@@ -240,7 +240,7 @@
 											<first>rsa.cpp</first>
 											<second>rsa</second>
 										</first>
-										<second>65</second>
+										<second>62</second>
 									</item>
 								</second>
 							</item>
@@ -253,10 +253,10 @@
 						<coreName></coreName>
 						<isStorage>0</isStorage>
 						<storageDepth>0</storageDepth>
-						<coreId>2613978648</coreId>
+						<coreId>858084560</coreId>
 						<rtlModuleName></rtlModuleName>
 					</Obj>
-					<bitwidth>16</bitwidth>
+					<bitwidth>256</bitwidth>
 				</Value>
 				<oprand_edges>
 					<count>2</count>
@@ -281,7 +281,7 @@
 						<name>y_read</name>
 						<fileName>rsa.cpp</fileName>
 						<fileDirectory>/home/cse237c_fa24_s_chen/RSA_Implementation_on_PYNQ/rsa_optimized1</fileDirectory>
-						<lineNumber>65</lineNumber>
+						<lineNumber>62</lineNumber>
 						<contextFuncName>rsa</contextFuncName>
 						<contextNormFuncName>rsa</contextNormFuncName>
 						<inlineStackInfo>
@@ -297,7 +297,7 @@
 											<first>rsa.cpp</first>
 											<second>rsa</second>
 										</first>
-										<second>65</second>
+										<second>62</second>
 									</item>
 								</second>
 							</item>
@@ -310,10 +310,10 @@
 						<coreName></coreName>
 						<isStorage>0</isStorage>
 						<storageDepth>0</storageDepth>
-						<coreId>1783137896</coreId>
+						<coreId>1718511872</coreId>
 						<rtlModuleName></rtlModuleName>
 					</Obj>
-					<bitwidth>16</bitwidth>
+					<bitwidth>256</bitwidth>
 				</Value>
 				<oprand_edges>
 					<count>2</count>
@@ -338,7 +338,7 @@
 						<name>ref_tmp1</name>
 						<fileName>rsa.cpp</fileName>
 						<fileDirectory>/home/cse237c_fa24_s_chen/RSA_Implementation_on_PYNQ/rsa_optimized1</fileDirectory>
-						<lineNumber>65</lineNumber>
+						<lineNumber>62</lineNumber>
 						<contextFuncName>rsa</contextFuncName>
 						<contextNormFuncName>rsa</contextNormFuncName>
 						<inlineStackInfo>
@@ -354,7 +354,7 @@
 											<first>rsa.cpp</first>
 											<second>rsa</second>
 										</first>
-										<second>65</second>
+										<second>62</second>
 									</item>
 								</second>
 							</item>
@@ -367,10 +367,10 @@
 						<coreName></coreName>
 						<isStorage>0</isStorage>
 						<storageDepth>0</storageDepth>
-						<coreId>0</coreId>
+						<coreId>858085696</coreId>
 						<rtlModuleName></rtlModuleName>
 					</Obj>
-					<bitwidth>16</bitwidth>
+					<bitwidth>256</bitwidth>
 				</Value>
 				<oprand_edges>
 					<count>4</count>
@@ -394,10 +394,10 @@
 					<Obj>
 						<type>0</type>
 						<id>9</id>
-						<name>x_write_ln65</name>
+						<name>x_write_ln62</name>
 						<fileName>rsa.cpp</fileName>
 						<fileDirectory>/home/cse237c_fa24_s_chen/RSA_Implementation_on_PYNQ/rsa_optimized1</fileDirectory>
-						<lineNumber>65</lineNumber>
+						<lineNumber>62</lineNumber>
 						<contextFuncName>rsa</contextFuncName>
 						<contextNormFuncName>rsa</contextNormFuncName>
 						<inlineStackInfo>
@@ -413,7 +413,7 @@
 											<first>rsa.cpp</first>
 											<second>rsa</second>
 										</first>
-										<second>65</second>
+										<second>62</second>
 									</item>
 								</second>
 							</item>
@@ -426,7 +426,7 @@
 						<coreName></coreName>
 						<isStorage>0</isStorage>
 						<storageDepth>0</storageDepth>
-						<coreId>0</coreId>
+						<coreId>858067968</coreId>
 						<rtlModuleName></rtlModuleName>
 					</Obj>
 					<bitwidth>0</bitwidth>
@@ -470,7 +470,7 @@
 						<coreName></coreName>
 						<isStorage>0</isStorage>
 						<storageDepth>0</storageDepth>
-						<coreId>0</coreId>
+						<coreId>1684632935</coreId>
 						<rtlModuleName></rtlModuleName>
 					</Obj>
 					<bitwidth>0</bitwidth>
@@ -515,10 +515,10 @@
 						<coreName></coreName>
 						<isStorage>0</isStorage>
 						<storageDepth>0</storageDepth>
-						<coreId>1783634624</coreId>
+						<coreId>858417536</coreId>
 						<rtlModuleName></rtlModuleName>
 					</Obj>
-					<bitwidth>16</bitwidth>
+					<bitwidth>256</bitwidth>
 				</Value>
 				<const_type>6</const_type>
 				<content>&lt;constant:mod_exp&gt;</content>
@@ -653,8 +653,8 @@
 			<mDepth>-1</mDepth>
 			<mMinTripCount>-1</mMinTripCount>
 			<mMaxTripCount>-1</mMaxTripCount>
-			<mMinLatency>7</mMinLatency>
-			<mMaxLatency>599</mMaxLatency>
+			<mMinLatency>197378</mMinLatency>
+			<mMaxLatency>393986</mMaxLatency>
 			<mIsDfPipe>0</mIsDfPipe>
 			<mDfPipe class_id="-1"></mDfPipe>
 		</item>

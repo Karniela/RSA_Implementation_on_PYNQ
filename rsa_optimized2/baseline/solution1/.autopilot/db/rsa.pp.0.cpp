@@ -5714,7 +5714,7 @@ inline __attribute__((nodebug)) bool operator!=(
 
 
 
-typedef ap_uint<16> data_t;
+typedef ap_uint<256> data_t;
 
 __attribute__((sdx_kernel("rsa", 0))) void rsa(data_t d, data_t N, data_t y, data_t &x);
 # 2 "rsa.cpp" 2
@@ -30140,23 +30140,23 @@ namespace hls {
 # 4 "rsa.cpp" 2
 # 1 "/tools/Xilinx/Vitis_HLS/2022.2/common/technology/autopilot/ap_int.h" 1
 # 5 "rsa.cpp" 2
+using namespace std;
 
 
 
 data_t Montgomery(data_t N, data_t a, data_t b){
- ap_uint<16*2> m = 0;
- VITIS_LOOP_10_1: for(int i = 0; i < 16; i++){
+ ap_uint<256 +2> m = 0;
+
+ Montgomery:
+ for(int i = 0; i < 256; i++){
 #pragma HLS PIPELINE off
  if(a & 1){
    m = m + b;
-
   }
   if(m & 1){
    m = m + N;
-
   }
   m = m >> 1;
-
   a = a >> 1;
  }
  if(m >= N){
@@ -30166,12 +30166,12 @@ data_t Montgomery(data_t N, data_t a, data_t b){
 
 }
 
-data_t mod_product(ap_uint<16 +1> a, data_t b, data_t N) {
+data_t mod_product(ap_uint<256 +1> a, data_t b, data_t N) {
 
-    ap_uint<16 +1> m = 0;
-    ap_uint<16 +1> t = b;
-
-    VITIS_LOOP_36_1: for(int i = 0; i < 16 +1; i++) {
+    ap_uint<256 +1> m = 0;
+    ap_uint<256 +1> t = b;
+ Mod_Product:
+    for(int i = 0; i < 256 +1; i++) {
 #pragma HLS PIPELINE off
 
  if(a & 1){
@@ -30191,39 +30191,21 @@ data_t mod_product(ap_uint<16 +1> a, data_t b, data_t N) {
          t = t + t;
         }
         a = a >> 1;
-        if(a == 0)
-         break;
+
+
     }
 
     return m;
 }
 
-data_t mod_exp(data_t y, data_t d, data_t N){
- data_t t = y;
- data_t m = 1;
- VITIS_LOOP_66_1: for(int i = 0; i < 16; i++){
-  if(d & 1){
-   m = mod_product(m, t, N);
-  }
-  t = mod_product(t, t, N);
-
-  d = d >> 1;
-  if(d == 0){
-   break;
-  }
- }
- return m;
-}
-
-
 __attribute__((sdx_kernel("rsa", 0))) void rsa(data_t d, data_t N, data_t y, data_t &x){
 #line 18 "/home/cse237c_fa24_s_chen/RSA_Implementation_on_PYNQ/rsa_optimized2/baseline/solution1/csynth.tcl"
 #pragma HLSDIRECTIVE TOP name=rsa
-# 81 "rsa.cpp"
+# 63 "rsa.cpp"
 
 #line 6 "/home/cse237c_fa24_s_chen/RSA_Implementation_on_PYNQ/rsa_optimized2/baseline/solution1/directives.tcl"
 #pragma HLSDIRECTIVE TOP name=rsa
-# 81 "rsa.cpp"
+# 63 "rsa.cpp"
 
 #pragma HLS INTERFACE mode=s_axilite port=return
 #pragma HLS INTERFACE mode=s_axilite port=d
@@ -30231,23 +30213,20 @@ __attribute__((sdx_kernel("rsa", 0))) void rsa(data_t d, data_t N, data_t y, dat
 #pragma HLS INTERFACE mode=s_axilite port=y
 #pragma HLS INTERFACE mode=s_axilite port=x
 
-#pragma HLS DATAFLOW
- ap_uint<16 +1> a = 1 << 16;
+
+#pragma HLS PIPELINE OFF
+ ap_uint<256 +1> a = ap_uint<256 +1>(1) << 256;
  data_t t = mod_product(a, y, N);
- printf("t after mod_product = %d\n", t);
  data_t m = 1;
- VITIS_LOOP_93_1: for(int i = 0; i < 16; i++){
+ RSA_TOP:
+ for(int i = 0; i < 256; i++){
   if(d & 1){
-
    m = Montgomery(N, m, t);
-
   }
-
   t = Montgomery(N, t, t);
-
   d = d >> 1;
-  if(d == 0)
-   break;
+
+
  }
  x = m;
 

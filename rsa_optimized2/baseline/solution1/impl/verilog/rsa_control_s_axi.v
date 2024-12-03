@@ -6,7 +6,7 @@
 `timescale 1ns/1ps
 module rsa_control_s_axi
 #(parameter
-    C_S_AXI_ADDR_WIDTH = 6,
+    C_S_AXI_ADDR_WIDTH = 8,
     C_S_AXI_DATA_WIDTH = 32
 )(
     input  wire                          ACLK,
@@ -30,10 +30,10 @@ module rsa_control_s_axi
     output wire                          RVALID,
     input  wire                          RREADY,
     output wire                          interrupt,
-    output wire [15:0]                   d,
-    output wire [15:0]                   N,
-    output wire [15:0]                   y,
-    input  wire [15:0]                   x,
+    output wire [255:0]                  d,
+    output wire [255:0]                  N,
+    output wire [255:0]                  y,
+    input  wire [255:0]                  x,
     input  wire                          x_ap_vld,
     output wire                          ap_start,
     input  wire                          ap_done,
@@ -61,39 +61,119 @@ module rsa_control_s_axi
 //        bit 1 - ap_ready (Read/TOW)
 //        others - reserved
 // 0x10 : Data signal of d
-//        bit 15~0 - d[15:0] (Read/Write)
-//        others   - reserved
-// 0x14 : reserved
-// 0x18 : Data signal of N
-//        bit 15~0 - N[15:0] (Read/Write)
-//        others   - reserved
-// 0x1c : reserved
-// 0x20 : Data signal of y
-//        bit 15~0 - y[15:0] (Read/Write)
-//        others   - reserved
-// 0x24 : reserved
-// 0x28 : Data signal of x
-//        bit 15~0 - x[15:0] (Read)
-//        others   - reserved
-// 0x2c : Control signal of x
+//        bit 31~0 - d[31:0] (Read/Write)
+// 0x14 : Data signal of d
+//        bit 31~0 - d[63:32] (Read/Write)
+// 0x18 : Data signal of d
+//        bit 31~0 - d[95:64] (Read/Write)
+// 0x1c : Data signal of d
+//        bit 31~0 - d[127:96] (Read/Write)
+// 0x20 : Data signal of d
+//        bit 31~0 - d[159:128] (Read/Write)
+// 0x24 : Data signal of d
+//        bit 31~0 - d[191:160] (Read/Write)
+// 0x28 : Data signal of d
+//        bit 31~0 - d[223:192] (Read/Write)
+// 0x2c : Data signal of d
+//        bit 31~0 - d[255:224] (Read/Write)
+// 0x30 : reserved
+// 0x34 : Data signal of N
+//        bit 31~0 - N[31:0] (Read/Write)
+// 0x38 : Data signal of N
+//        bit 31~0 - N[63:32] (Read/Write)
+// 0x3c : Data signal of N
+//        bit 31~0 - N[95:64] (Read/Write)
+// 0x40 : Data signal of N
+//        bit 31~0 - N[127:96] (Read/Write)
+// 0x44 : Data signal of N
+//        bit 31~0 - N[159:128] (Read/Write)
+// 0x48 : Data signal of N
+//        bit 31~0 - N[191:160] (Read/Write)
+// 0x4c : Data signal of N
+//        bit 31~0 - N[223:192] (Read/Write)
+// 0x50 : Data signal of N
+//        bit 31~0 - N[255:224] (Read/Write)
+// 0x54 : reserved
+// 0x58 : Data signal of y
+//        bit 31~0 - y[31:0] (Read/Write)
+// 0x5c : Data signal of y
+//        bit 31~0 - y[63:32] (Read/Write)
+// 0x60 : Data signal of y
+//        bit 31~0 - y[95:64] (Read/Write)
+// 0x64 : Data signal of y
+//        bit 31~0 - y[127:96] (Read/Write)
+// 0x68 : Data signal of y
+//        bit 31~0 - y[159:128] (Read/Write)
+// 0x6c : Data signal of y
+//        bit 31~0 - y[191:160] (Read/Write)
+// 0x70 : Data signal of y
+//        bit 31~0 - y[223:192] (Read/Write)
+// 0x74 : Data signal of y
+//        bit 31~0 - y[255:224] (Read/Write)
+// 0x78 : reserved
+// 0x7c : Data signal of x
+//        bit 31~0 - x[31:0] (Read)
+// 0x80 : Data signal of x
+//        bit 31~0 - x[63:32] (Read)
+// 0x84 : Data signal of x
+//        bit 31~0 - x[95:64] (Read)
+// 0x88 : Data signal of x
+//        bit 31~0 - x[127:96] (Read)
+// 0x8c : Data signal of x
+//        bit 31~0 - x[159:128] (Read)
+// 0x90 : Data signal of x
+//        bit 31~0 - x[191:160] (Read)
+// 0x94 : Data signal of x
+//        bit 31~0 - x[223:192] (Read)
+// 0x98 : Data signal of x
+//        bit 31~0 - x[255:224] (Read)
+// 0x9c : Control signal of x
 //        bit 0  - x_ap_vld (Read/COR)
 //        others - reserved
 // (SC = Self Clear, COR = Clear on Read, TOW = Toggle on Write, COH = Clear on Handshake)
 
 //------------------------Parameter----------------------
 localparam
-    ADDR_AP_CTRL  = 6'h00,
-    ADDR_GIE      = 6'h04,
-    ADDR_IER      = 6'h08,
-    ADDR_ISR      = 6'h0c,
-    ADDR_D_DATA_0 = 6'h10,
-    ADDR_D_CTRL   = 6'h14,
-    ADDR_N_DATA_0 = 6'h18,
-    ADDR_N_CTRL   = 6'h1c,
-    ADDR_Y_DATA_0 = 6'h20,
-    ADDR_Y_CTRL   = 6'h24,
-    ADDR_X_DATA_0 = 6'h28,
-    ADDR_X_CTRL   = 6'h2c,
+    ADDR_AP_CTRL  = 8'h00,
+    ADDR_GIE      = 8'h04,
+    ADDR_IER      = 8'h08,
+    ADDR_ISR      = 8'h0c,
+    ADDR_D_DATA_0 = 8'h10,
+    ADDR_D_DATA_1 = 8'h14,
+    ADDR_D_DATA_2 = 8'h18,
+    ADDR_D_DATA_3 = 8'h1c,
+    ADDR_D_DATA_4 = 8'h20,
+    ADDR_D_DATA_5 = 8'h24,
+    ADDR_D_DATA_6 = 8'h28,
+    ADDR_D_DATA_7 = 8'h2c,
+    ADDR_D_CTRL   = 8'h30,
+    ADDR_N_DATA_0 = 8'h34,
+    ADDR_N_DATA_1 = 8'h38,
+    ADDR_N_DATA_2 = 8'h3c,
+    ADDR_N_DATA_3 = 8'h40,
+    ADDR_N_DATA_4 = 8'h44,
+    ADDR_N_DATA_5 = 8'h48,
+    ADDR_N_DATA_6 = 8'h4c,
+    ADDR_N_DATA_7 = 8'h50,
+    ADDR_N_CTRL   = 8'h54,
+    ADDR_Y_DATA_0 = 8'h58,
+    ADDR_Y_DATA_1 = 8'h5c,
+    ADDR_Y_DATA_2 = 8'h60,
+    ADDR_Y_DATA_3 = 8'h64,
+    ADDR_Y_DATA_4 = 8'h68,
+    ADDR_Y_DATA_5 = 8'h6c,
+    ADDR_Y_DATA_6 = 8'h70,
+    ADDR_Y_DATA_7 = 8'h74,
+    ADDR_Y_CTRL   = 8'h78,
+    ADDR_X_DATA_0 = 8'h7c,
+    ADDR_X_DATA_1 = 8'h80,
+    ADDR_X_DATA_2 = 8'h84,
+    ADDR_X_DATA_3 = 8'h88,
+    ADDR_X_DATA_4 = 8'h8c,
+    ADDR_X_DATA_5 = 8'h90,
+    ADDR_X_DATA_6 = 8'h94,
+    ADDR_X_DATA_7 = 8'h98,
+    ADDR_X_CTRL   = 8'h9c,
     WRIDLE        = 2'd0,
     WRDATA        = 2'd1,
     WRRESP        = 2'd2,
@@ -101,7 +181,7 @@ localparam
     RDIDLE        = 2'd0,
     RDDATA        = 2'd1,
     RDRESET       = 2'd2,
-    ADDR_BITS                = 6;
+    ADDR_BITS                = 8;
 
 //------------------------Local signal-------------------
     reg  [1:0]                    wstate = WRRESET;
@@ -130,11 +210,11 @@ localparam
     reg                           int_gie = 1'b0;
     reg  [1:0]                    int_ier = 2'b0;
     reg  [1:0]                    int_isr = 2'b0;
-    reg  [15:0]                   int_d = 'b0;
-    reg  [15:0]                   int_N = 'b0;
-    reg  [15:0]                   int_y = 'b0;
+    reg  [255:0]                  int_d = 'b0;
+    reg  [255:0]                  int_N = 'b0;
+    reg  [255:0]                  int_y = 'b0;
     reg                           int_x_ap_vld;
-    reg  [15:0]                   int_x = 'b0;
+    reg  [255:0]                  int_x = 'b0;
 
 //------------------------Instantiation------------------
 
@@ -245,16 +325,100 @@ always @(posedge ACLK) begin
                     rdata <= int_isr;
                 end
                 ADDR_D_DATA_0: begin
-                    rdata <= int_d[15:0];
+                    rdata <= int_d[31:0];
+                end
+                ADDR_D_DATA_1: begin
+                    rdata <= int_d[63:32];
+                end
+                ADDR_D_DATA_2: begin
+                    rdata <= int_d[95:64];
+                end
+                ADDR_D_DATA_3: begin
+                    rdata <= int_d[127:96];
+                end
+                ADDR_D_DATA_4: begin
+                    rdata <= int_d[159:128];
+                end
+                ADDR_D_DATA_5: begin
+                    rdata <= int_d[191:160];
+                end
+                ADDR_D_DATA_6: begin
+                    rdata <= int_d[223:192];
+                end
+                ADDR_D_DATA_7: begin
+                    rdata <= int_d[255:224];
                 end
                 ADDR_N_DATA_0: begin
-                    rdata <= int_N[15:0];
+                    rdata <= int_N[31:0];
+                end
+                ADDR_N_DATA_1: begin
+                    rdata <= int_N[63:32];
+                end
+                ADDR_N_DATA_2: begin
+                    rdata <= int_N[95:64];
+                end
+                ADDR_N_DATA_3: begin
+                    rdata <= int_N[127:96];
+                end
+                ADDR_N_DATA_4: begin
+                    rdata <= int_N[159:128];
+                end
+                ADDR_N_DATA_5: begin
+                    rdata <= int_N[191:160];
+                end
+                ADDR_N_DATA_6: begin
+                    rdata <= int_N[223:192];
+                end
+                ADDR_N_DATA_7: begin
+                    rdata <= int_N[255:224];
                 end
                 ADDR_Y_DATA_0: begin
-                    rdata <= int_y[15:0];
+                    rdata <= int_y[31:0];
+                end
+                ADDR_Y_DATA_1: begin
+                    rdata <= int_y[63:32];
+                end
+                ADDR_Y_DATA_2: begin
+                    rdata <= int_y[95:64];
+                end
+                ADDR_Y_DATA_3: begin
+                    rdata <= int_y[127:96];
+                end
+                ADDR_Y_DATA_4: begin
+                    rdata <= int_y[159:128];
+                end
+                ADDR_Y_DATA_5: begin
+                    rdata <= int_y[191:160];
+                end
+                ADDR_Y_DATA_6: begin
+                    rdata <= int_y[223:192];
+                end
+                ADDR_Y_DATA_7: begin
+                    rdata <= int_y[255:224];
                 end
                 ADDR_X_DATA_0: begin
-                    rdata <= int_x[15:0];
+                    rdata <= int_x[31:0];
+                end
+                ADDR_X_DATA_1: begin
+                    rdata <= int_x[63:32];
+                end
+                ADDR_X_DATA_2: begin
+                    rdata <= int_x[95:64];
+                end
+                ADDR_X_DATA_3: begin
+                    rdata <= int_x[127:96];
+                end
+                ADDR_X_DATA_4: begin
+                    rdata <= int_x[159:128];
+                end
+                ADDR_X_DATA_5: begin
+                    rdata <= int_x[191:160];
+                end
+                ADDR_X_DATA_6: begin
+                    rdata <= int_x[223:192];
+                end
+                ADDR_X_DATA_7: begin
+                    rdata <= int_x[255:224];
                 end
                 ADDR_X_CTRL: begin
                     rdata[0] <= int_x_ap_vld;
@@ -406,33 +570,243 @@ always @(posedge ACLK) begin
     end
 end
 
-// int_d[15:0]
+// int_d[31:0]
 always @(posedge ACLK) begin
     if (ARESET)
-        int_d[15:0] <= 0;
+        int_d[31:0] <= 0;
     else if (ACLK_EN) begin
         if (w_hs && waddr == ADDR_D_DATA_0)
-            int_d[15:0] <= (WDATA[31:0] & wmask) | (int_d[15:0] & ~wmask);
+            int_d[31:0] <= (WDATA[31:0] & wmask) | (int_d[31:0] & ~wmask);
     end
 end
 
-// int_N[15:0]
+// int_d[63:32]
 always @(posedge ACLK) begin
     if (ARESET)
-        int_N[15:0] <= 0;
+        int_d[63:32] <= 0;
+    else if (ACLK_EN) begin
+        if (w_hs && waddr == ADDR_D_DATA_1)
+            int_d[63:32] <= (WDATA[31:0] & wmask) | (int_d[63:32] & ~wmask);
+    end
+end
+
+// int_d[95:64]
+always @(posedge ACLK) begin
+    if (ARESET)
+        int_d[95:64] <= 0;
+    else if (ACLK_EN) begin
+        if (w_hs && waddr == ADDR_D_DATA_2)
+            int_d[95:64] <= (WDATA[31:0] & wmask) | (int_d[95:64] & ~wmask);
+    end
+end
+
+// int_d[127:96]
+always @(posedge ACLK) begin
+    if (ARESET)
+        int_d[127:96] <= 0;
+    else if (ACLK_EN) begin
+        if (w_hs && waddr == ADDR_D_DATA_3)
+            int_d[127:96] <= (WDATA[31:0] & wmask) | (int_d[127:96] & ~wmask);
+    end
+end
+
+// int_d[159:128]
+always @(posedge ACLK) begin
+    if (ARESET)
+        int_d[159:128] <= 0;
+    else if (ACLK_EN) begin
+        if (w_hs && waddr == ADDR_D_DATA_4)
+            int_d[159:128] <= (WDATA[31:0] & wmask) | (int_d[159:128] & ~wmask);
+    end
+end
+
+// int_d[191:160]
+always @(posedge ACLK) begin
+    if (ARESET)
+        int_d[191:160] <= 0;
+    else if (ACLK_EN) begin
+        if (w_hs && waddr == ADDR_D_DATA_5)
+            int_d[191:160] <= (WDATA[31:0] & wmask) | (int_d[191:160] & ~wmask);
+    end
+end
+
+// int_d[223:192]
+always @(posedge ACLK) begin
+    if (ARESET)
+        int_d[223:192] <= 0;
+    else if (ACLK_EN) begin
+        if (w_hs && waddr == ADDR_D_DATA_6)
+            int_d[223:192] <= (WDATA[31:0] & wmask) | (int_d[223:192] & ~wmask);
+    end
+end
+
+// int_d[255:224]
+always @(posedge ACLK) begin
+    if (ARESET)
+        int_d[255:224] <= 0;
+    else if (ACLK_EN) begin
+        if (w_hs && waddr == ADDR_D_DATA_7)
+            int_d[255:224] <= (WDATA[31:0] & wmask) | (int_d[255:224] & ~wmask);
+    end
+end
+
+// int_N[31:0]
+always @(posedge ACLK) begin
+    if (ARESET)
+        int_N[31:0] <= 0;
     else if (ACLK_EN) begin
         if (w_hs && waddr == ADDR_N_DATA_0)
-            int_N[15:0] <= (WDATA[31:0] & wmask) | (int_N[15:0] & ~wmask);
+            int_N[31:0] <= (WDATA[31:0] & wmask) | (int_N[31:0] & ~wmask);
     end
 end
 
-// int_y[15:0]
+// int_N[63:32]
 always @(posedge ACLK) begin
     if (ARESET)
-        int_y[15:0] <= 0;
+        int_N[63:32] <= 0;
+    else if (ACLK_EN) begin
+        if (w_hs && waddr == ADDR_N_DATA_1)
+            int_N[63:32] <= (WDATA[31:0] & wmask) | (int_N[63:32] & ~wmask);
+    end
+end
+
+// int_N[95:64]
+always @(posedge ACLK) begin
+    if (ARESET)
+        int_N[95:64] <= 0;
+    else if (ACLK_EN) begin
+        if (w_hs && waddr == ADDR_N_DATA_2)
+            int_N[95:64] <= (WDATA[31:0] & wmask) | (int_N[95:64] & ~wmask);
+    end
+end
+
+// int_N[127:96]
+always @(posedge ACLK) begin
+    if (ARESET)
+        int_N[127:96] <= 0;
+    else if (ACLK_EN) begin
+        if (w_hs && waddr == ADDR_N_DATA_3)
+            int_N[127:96] <= (WDATA[31:0] & wmask) | (int_N[127:96] & ~wmask);
+    end
+end
+
+// int_N[159:128]
+always @(posedge ACLK) begin
+    if (ARESET)
+        int_N[159:128] <= 0;
+    else if (ACLK_EN) begin
+        if (w_hs && waddr == ADDR_N_DATA_4)
+            int_N[159:128] <= (WDATA[31:0] & wmask) | (int_N[159:128] & ~wmask);
+    end
+end
+
+// int_N[191:160]
+always @(posedge ACLK) begin
+    if (ARESET)
+        int_N[191:160] <= 0;
+    else if (ACLK_EN) begin
+        if (w_hs && waddr == ADDR_N_DATA_5)
+            int_N[191:160] <= (WDATA[31:0] & wmask) | (int_N[191:160] & ~wmask);
+    end
+end
+
+// int_N[223:192]
+always @(posedge ACLK) begin
+    if (ARESET)
+        int_N[223:192] <= 0;
+    else if (ACLK_EN) begin
+        if (w_hs && waddr == ADDR_N_DATA_6)
+            int_N[223:192] <= (WDATA[31:0] & wmask) | (int_N[223:192] & ~wmask);
+    end
+end
+
+// int_N[255:224]
+always @(posedge ACLK) begin
+    if (ARESET)
+        int_N[255:224] <= 0;
+    else if (ACLK_EN) begin
+        if (w_hs && waddr == ADDR_N_DATA_7)
+            int_N[255:224] <= (WDATA[31:0] & wmask) | (int_N[255:224] & ~wmask);
+    end
+end
+
+// int_y[31:0]
+always @(posedge ACLK) begin
+    if (ARESET)
+        int_y[31:0] <= 0;
     else if (ACLK_EN) begin
         if (w_hs && waddr == ADDR_Y_DATA_0)
-            int_y[15:0] <= (WDATA[31:0] & wmask) | (int_y[15:0] & ~wmask);
+            int_y[31:0] <= (WDATA[31:0] & wmask) | (int_y[31:0] & ~wmask);
+    end
+end
+
+// int_y[63:32]
+always @(posedge ACLK) begin
+    if (ARESET)
+        int_y[63:32] <= 0;
+    else if (ACLK_EN) begin
+        if (w_hs && waddr == ADDR_Y_DATA_1)
+            int_y[63:32] <= (WDATA[31:0] & wmask) | (int_y[63:32] & ~wmask);
+    end
+end
+
+// int_y[95:64]
+always @(posedge ACLK) begin
+    if (ARESET)
+        int_y[95:64] <= 0;
+    else if (ACLK_EN) begin
+        if (w_hs && waddr == ADDR_Y_DATA_2)
+            int_y[95:64] <= (WDATA[31:0] & wmask) | (int_y[95:64] & ~wmask);
+    end
+end
+
+// int_y[127:96]
+always @(posedge ACLK) begin
+    if (ARESET)
+        int_y[127:96] <= 0;
+    else if (ACLK_EN) begin
+        if (w_hs && waddr == ADDR_Y_DATA_3)
+            int_y[127:96] <= (WDATA[31:0] & wmask) | (int_y[127:96] & ~wmask);
+    end
+end
+
+// int_y[159:128]
+always @(posedge ACLK) begin
+    if (ARESET)
+        int_y[159:128] <= 0;
+    else if (ACLK_EN) begin
+        if (w_hs && waddr == ADDR_Y_DATA_4)
+            int_y[159:128] <= (WDATA[31:0] & wmask) | (int_y[159:128] & ~wmask);
+    end
+end
+
+// int_y[191:160]
+always @(posedge ACLK) begin
+    if (ARESET)
+        int_y[191:160] <= 0;
+    else if (ACLK_EN) begin
+        if (w_hs && waddr == ADDR_Y_DATA_5)
+            int_y[191:160] <= (WDATA[31:0] & wmask) | (int_y[191:160] & ~wmask);
+    end
+end
+
+// int_y[223:192]
+always @(posedge ACLK) begin
+    if (ARESET)
+        int_y[223:192] <= 0;
+    else if (ACLK_EN) begin
+        if (w_hs && waddr == ADDR_Y_DATA_6)
+            int_y[223:192] <= (WDATA[31:0] & wmask) | (int_y[223:192] & ~wmask);
+    end
+end
+
+// int_y[255:224]
+always @(posedge ACLK) begin
+    if (ARESET)
+        int_y[255:224] <= 0;
+    else if (ACLK_EN) begin
+        if (w_hs && waddr == ADDR_Y_DATA_7)
+            int_y[255:224] <= (WDATA[31:0] & wmask) | (int_y[255:224] & ~wmask);
     end
 end
 

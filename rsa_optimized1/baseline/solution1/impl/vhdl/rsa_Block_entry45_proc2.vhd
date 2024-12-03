@@ -18,10 +18,10 @@ port (
     ap_continue : IN STD_LOGIC;
     ap_idle : OUT STD_LOGIC;
     ap_ready : OUT STD_LOGIC;
-    y : IN STD_LOGIC_VECTOR (15 downto 0);
-    d : IN STD_LOGIC_VECTOR (15 downto 0);
-    N : IN STD_LOGIC_VECTOR (15 downto 0);
-    x : OUT STD_LOGIC_VECTOR (15 downto 0);
+    y : IN STD_LOGIC_VECTOR (255 downto 0);
+    d : IN STD_LOGIC_VECTOR (255 downto 0);
+    N : IN STD_LOGIC_VECTOR (255 downto 0);
+    x : OUT STD_LOGIC_VECTOR (255 downto 0);
     x_ap_vld : OUT STD_LOGIC );
 end;
 
@@ -33,7 +33,7 @@ architecture behav of rsa_Block_entry45_proc2 is
     constant ap_ST_fsm_state2 : STD_LOGIC_VECTOR (1 downto 0) := "10";
     constant ap_const_lv32_0 : STD_LOGIC_VECTOR (31 downto 0) := "00000000000000000000000000000000";
     constant ap_const_lv32_1 : STD_LOGIC_VECTOR (31 downto 0) := "00000000000000000000000000000001";
-    constant ap_const_lv16_0 : STD_LOGIC_VECTOR (15 downto 0) := "0000000000000000";
+    constant ap_const_lv256_lc_1 : STD_LOGIC_VECTOR (255 downto 0) := "0000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000";
     constant ap_const_boolean_1 : BOOLEAN := true;
 
 attribute shreg_extract : string;
@@ -47,13 +47,13 @@ attribute shreg_extract : string;
     signal grp_mod_exp_fu_39_ap_done : STD_LOGIC;
     signal grp_mod_exp_fu_39_ap_idle : STD_LOGIC;
     signal grp_mod_exp_fu_39_ap_ready : STD_LOGIC;
-    signal grp_mod_exp_fu_39_ap_return : STD_LOGIC_VECTOR (15 downto 0);
+    signal grp_mod_exp_fu_39_ap_return : STD_LOGIC_VECTOR (255 downto 0);
     signal grp_mod_exp_fu_39_ap_start_reg : STD_LOGIC := '0';
     signal ap_block_state1_ignore_call3 : BOOLEAN;
     signal ap_CS_fsm_state2 : STD_LOGIC;
     attribute fsm_encoding of ap_CS_fsm_state2 : signal is "none";
     signal ap_block_state1 : BOOLEAN;
-    signal x_preg : STD_LOGIC_VECTOR (15 downto 0) := "0000000000000000";
+    signal x_preg : STD_LOGIC_VECTOR (255 downto 0) := "0000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000";
     signal ap_NS_fsm : STD_LOGIC_VECTOR (1 downto 0);
     signal ap_ST_fsm_state1_blk : STD_LOGIC;
     signal ap_ST_fsm_state2_blk : STD_LOGIC;
@@ -67,10 +67,10 @@ attribute shreg_extract : string;
         ap_done : OUT STD_LOGIC;
         ap_idle : OUT STD_LOGIC;
         ap_ready : OUT STD_LOGIC;
-        y : IN STD_LOGIC_VECTOR (15 downto 0);
-        d : IN STD_LOGIC_VECTOR (15 downto 0);
-        N : IN STD_LOGIC_VECTOR (15 downto 0);
-        ap_return : OUT STD_LOGIC_VECTOR (15 downto 0) );
+        y : IN STD_LOGIC_VECTOR (255 downto 0);
+        d : IN STD_LOGIC_VECTOR (255 downto 0);
+        N : IN STD_LOGIC_VECTOR (255 downto 0);
+        ap_return : OUT STD_LOGIC_VECTOR (255 downto 0) );
     end component;
 
 
@@ -141,7 +141,7 @@ begin
     begin
         if (ap_clk'event and ap_clk =  '1') then
             if (ap_rst = '1') then
-                x_preg <= ap_const_lv16_0;
+                x_preg <= ap_const_lv256_lc_1;
             else
                 if (((grp_mod_exp_fu_39_ap_done = ap_const_logic_1) and (ap_const_logic_1 = ap_CS_fsm_state2))) then 
                     x_preg <= grp_mod_exp_fu_39_ap_return;

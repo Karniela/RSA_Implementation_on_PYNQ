@@ -5714,7 +5714,7 @@ inline __attribute__((nodebug)) bool operator!=(
 
 
 
-typedef ap_uint<16> data_t;
+typedef ap_uint<256> data_t;
 
 __attribute__((sdx_kernel("rsa", 0))) void rsa(data_t d, data_t N, data_t y, data_t &x);
 # 2 "rsa.cpp" 2
@@ -30145,10 +30145,10 @@ namespace hls {
 
 data_t mod_product(data_t a, data_t b, data_t N) {
 
-    data_t m = 0;
-    data_t t = b;
+    ap_uint<256 +1> m = 0;
+    ap_uint<256 +1> t = b;
 
-    VITIS_LOOP_13_1: for(int i = 0; i < 16; i++) {
+    VITIS_LOOP_13_1: for(int i = 0; i < 256; i++) {
 #pragma HLS PIPELINE off
 
  if(a & 1){
@@ -30158,6 +30158,7 @@ data_t mod_product(data_t a, data_t b, data_t N) {
    else{
     m = m + t;
    }
+
      }
 
         if(t + t > N){
@@ -30166,9 +30167,7 @@ data_t mod_product(data_t a, data_t b, data_t N) {
         else{
          t = t + t;
         }
-        a = a >> 1;
-        if(a == 0)
-         break;
+  a = a >> 1;
     }
 
     return m;
@@ -30177,16 +30176,14 @@ data_t mod_product(data_t a, data_t b, data_t N) {
 data_t mod_exp(data_t y, data_t d, data_t N){
  data_t t = y;
  data_t m = 1;
- VITIS_LOOP_42_1: for(int i = 0; i < 16; i++){
-  if(d & 1){
+ VITIS_LOOP_41_1: for(int i = 0; i < 256; i++){
+#pragma HLS PIPELINE off
+ if(d & 1){
    m = mod_product(m, t, N);
   }
   t = mod_product(t, t, N);
 
   d = d >> 1;
-  if(d == 0){
-   break;
-  }
  }
  return m;
 }
@@ -30195,11 +30192,11 @@ data_t mod_exp(data_t y, data_t d, data_t N){
 __attribute__((sdx_kernel("rsa", 0))) void rsa(data_t d, data_t N, data_t y, data_t &x){
 #line 18 "/home/cse237c_fa24_s_chen/RSA_Implementation_on_PYNQ/rsa_optimized1/baseline/solution1/csynth.tcl"
 #pragma HLSDIRECTIVE TOP name=rsa
-# 57 "rsa.cpp"
+# 54 "rsa.cpp"
 
 #line 6 "/home/cse237c_fa24_s_chen/RSA_Implementation_on_PYNQ/rsa_optimized1/baseline/solution1/directives.tcl"
 #pragma HLSDIRECTIVE TOP name=rsa
-# 57 "rsa.cpp"
+# 54 "rsa.cpp"
 
 #pragma HLS INTERFACE mode=s_axilite port=return
 #pragma HLS INTERFACE mode=s_axilite port=d

@@ -15,35 +15,82 @@
 </UserAssignments>
 
 <PerformanceEstimates>
-<PipelineType>dataflow</PipelineType>
+<PipelineType>no</PipelineType>
 <SummaryOfTimingAnalysis>
 <unit>ns</unit>
-<EstimatedClockPeriod>7.107</EstimatedClockPeriod>
+<EstimatedClockPeriod>6.882</EstimatedClockPeriod>
 </SummaryOfTimingAnalysis>
 <SummaryOfOverallLatency>
 <unit>clock cycles</unit>
-<Best-caseLatency>21</Best-caseLatency>
-<Average-caseLatency>220</Average-caseLatency>
-<Worst-caseLatency>565</Worst-caseLatency>
-<Best-caseRealTimeLatency>0.210 us</Best-caseRealTimeLatency>
-<Average-caseRealTimeLatency>2.200 us</Average-caseRealTimeLatency>
-<Worst-caseRealTimeLatency>5.650 us</Worst-caseRealTimeLatency>
-<DataflowPipelineThroughput>
-<range>
-<min>21</min>
-<max>565</max>
-</range>
-</DataflowPipelineThroughput>
-<Interval-min>21</Interval-min>
-<Interval-max>565</Interval-max>
+<Best-caseLatency>264198</Best-caseLatency>
+<Average-caseLatency>395526</Average-caseLatency>
+<Worst-caseLatency>526598</Worst-caseLatency>
+<Best-caseRealTimeLatency>2.642 ms</Best-caseRealTimeLatency>
+<Average-caseRealTimeLatency>3.955 ms</Average-caseRealTimeLatency>
+<Worst-caseRealTimeLatency>5.266 ms</Worst-caseRealTimeLatency>
+<Interval-min>264199</Interval-min>
+<Interval-max>526599</Interval-max>
 </SummaryOfOverallLatency>
+<SummaryOfLoopLatency>
+<Mod_Product>
+<Slack>7.30</Slack>
+<TripCount>257</TripCount>
+<Latency>1028</Latency>
+<AbsoluteTimeLatency>10280</AbsoluteTimeLatency>
+<IterationLatency>4</IterationLatency>
+<InstanceList>
+</InstanceList>
+</Mod_Product>
+<RSA_TOP>
+<Slack>7.30</Slack>
+<TripCount>256</TripCount>
+<Latency>
+<range>
+<min>263168</min>
+<max>525568</max>
+</range>
+</Latency>
+<AbsoluteTimeLatency>
+<range>
+<min>2631680</min>
+<max>5255680</max>
+</range>
+</AbsoluteTimeLatency>
+<IterationLatency>
+<range>
+<min>1028</min>
+<max>2053</max>
+</range>
+</IterationLatency>
+<InstanceList>
+</InstanceList>
+<Montgomery>
+<Slack>7.30</Slack>
+<TripCount>256</TripCount>
+<Latency>1024</Latency>
+<AbsoluteTimeLatency>10240</AbsoluteTimeLatency>
+<IterationLatency>4</IterationLatency>
+<InstanceList>
+</InstanceList>
+</Montgomery>
+<Montgomery>
+<Slack>7.30</Slack>
+<TripCount>256</TripCount>
+<Latency>1024</Latency>
+<AbsoluteTimeLatency>10240</AbsoluteTimeLatency>
+<IterationLatency>4</IterationLatency>
+<InstanceList>
+</InstanceList>
+</Montgomery>
+</RSA_TOP>
+</SummaryOfLoopLatency>
 </PerformanceEstimates>
 
 <AreaEstimates>
 <Resources>
 <BRAM_18K>0</BRAM_18K>
-<FF>898</FF>
-<LUT>1428</LUT>
+<FF>14923</FF>
+<LUT>6406</LUT>
 <DSP>0</DSP>
 <URAM>0</URAM>
 </Resources>
@@ -85,7 +132,7 @@
 <Type>pointer</Type>
 <IOProtocol>s_axi</IOProtocol>
 <Dir>in</Dir>
-<Bits>6</Bits>
+<Bits>8</Bits>
 <Attribute>unknown</Attribute>
 <CType>int</CType>
 <HasCtrl>1</HasCtrl>
@@ -162,7 +209,7 @@
 <Type>pointer</Type>
 <IOProtocol>s_axi</IOProtocol>
 <Dir>in</Dir>
-<Bits>6</Bits>
+<Bits>8</Bits>
 <Attribute>unknown</Attribute>
 <CType>int</CType>
 <HasCtrl>1</HasCtrl>
