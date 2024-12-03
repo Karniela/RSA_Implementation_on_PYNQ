@@ -1,0 +1,170 @@
+
+
+================================================================
+== Vitis HLS Report for 'rsa'
+================================================================
+* Date:           Mon Dec  2 17:12:59 2024
+
+* Version:        2022.2 (Build 3670227 on Oct 13 2022)
+* Project:        baseline
+* Solution:       solution1 (Vivado IP Flow Target)
+* Product family: zynq
+* Target device:  xc7z020-clg400-1
+
+
+================================================================
+== Performance Estimates
+================================================================
++ Timing: 
+    * Summary: 
+    +--------+----------+----------+------------+
+    |  Clock |  Target  | Estimated| Uncertainty|
+    +--------+----------+----------+------------+
+    |ap_clk  |  10.00 ns|  7.107 ns|     2.70 ns|
+    +--------+----------+----------+------------+
+
++ Latency: 
+    * Summary: 
+    +---------+---------+----------+----------+-----+-----+----------+
+    |  Latency (cycles) |  Latency (absolute) |  Interval | Pipeline |
+    |   min   |   max   |    min   |    max   | min | max |   Type   |
+    +---------+---------+----------+----------+-----+-----+----------+
+    |       21|      565|  0.210 us|  5.650 us|   21|  565|  dataflow|
+    +---------+---------+----------+----------+-----+-----+----------+
+
+    + Detail: 
+        * Instance: 
+        +------------------------------+---------------------------+---------+---------+-----------+----------+-----+-----+---------+
+        |                              |                           |  Latency (cycles) |  Latency (absolute)  |  Interval | Pipeline|
+        |           Instance           |           Module          |   min   |   max   |    min    |    max   | min | max |   Type  |
+        +------------------------------+---------------------------+---------+---------+-----------+----------+-----+-----+---------+
+        |entry_proc_U0                 |entry_proc                 |        0|        0|       0 ns|      0 ns|    0|    0|       no|
+        |mod_product_U0                |mod_product                |        2|       18|  20.000 ns|  0.180 us|    2|   18|       no|
+        |Loop_VITIS_LOOP_93_1_proc_U0  |Loop_VITIS_LOOP_93_1_proc  |       20|      564|   0.200 us|  5.640 us|   20|  564|       no|
+        |Block_for_end_proc_U0         |Block_for_end_proc         |        0|        0|       0 ns|      0 ns|    0|    0|       no|
+        +------------------------------+---------------------------+---------+---------+-----------+----------+-----+-----+---------+
+
+        * Loop: 
+        N/A
+
+
+
+================================================================
+== Utilization Estimates
+================================================================
+* Summary: 
++-----------------+---------+-----+--------+-------+-----+
+|       Name      | BRAM_18K| DSP |   FF   |  LUT  | URAM|
++-----------------+---------+-----+--------+-------+-----+
+|DSP              |        -|    -|       -|      -|    -|
+|Expression       |        -|    -|       0|     12|    -|
+|FIFO             |        -|    -|     396|    272|    -|
+|Instance         |        0|    -|     500|   1126|    -|
+|Memory           |        -|    -|       -|      -|    -|
+|Multiplexer      |        -|    -|       -|     18|    -|
+|Register         |        -|    -|       2|      -|    -|
++-----------------+---------+-----+--------+-------+-----+
+|Total            |        0|    0|     898|   1428|    0|
++-----------------+---------+-----+--------+-------+-----+
+|Available        |      280|  220|  106400|  53200|    0|
++-----------------+---------+-----+--------+-------+-----+
+|Utilization (%)  |        0|    0|      ~0|      2|    0|
++-----------------+---------+-----+--------+-------+-----+
+
++ Detail: 
+    * Instance: 
+    +------------------------------+---------------------------+---------+----+-----+-----+-----+
+    |           Instance           |           Module          | BRAM_18K| DSP|  FF | LUT | URAM|
+    +------------------------------+---------------------------+---------+----+-----+-----+-----+
+    |Block_for_end_proc_U0         |Block_for_end_proc         |        0|   0|   18|   20|    0|
+    |Loop_VITIS_LOOP_93_1_proc_U0  |Loop_VITIS_LOOP_93_1_proc  |        0|   0|  265|  623|    0|
+    |control_s_axi_U               |control_s_axi              |        0|   0|  124|  168|    0|
+    |entry_proc_U0                 |entry_proc                 |        0|   0|    2|   20|    0|
+    |mod_product_U0                |mod_product                |        0|   0|   91|  295|    0|
+    +------------------------------+---------------------------+---------+----+-----+-----+-----+
+    |Total                         |                           |        0|   0|  500| 1126|    0|
+    +------------------------------+---------------------------+---------+----+-----+-----+-----+
+
+    * DSP: 
+    N/A
+
+    * Memory: 
+    N/A
+
+    * FIFO: 
+    +---------------------+---------+----+----+-----+------+-----+---------+
+    |         Name        | BRAM_18K| FF | LUT| URAM| Depth| Bits| Size:D*B|
+    +---------------------+---------+----+----+-----+------+-----+---------+
+    |N_c_U                |        0|  99|   0|    -|     2|   16|       32|
+    |a_V_1_loc_channel_U  |        0|  99|   0|    -|     2|   16|       32|
+    |d_c_U                |        0|  99|   0|    -|     3|   16|       48|
+    |t_V_U                |        0|  99|   0|    -|     2|   16|       32|
+    +---------------------+---------+----+----+-----+------+-----+---------+
+    |Total                |        0| 396|   0|    0|     9|   64|      144|
+    +---------------------+---------+----+----+-----+------+-----+---------+
+
+    * Expression: 
+    +---------------------------------+----------+----+---+----+------------+------------+
+    |          Variable Name          | Operation| DSP| FF| LUT| Bitwidth P0| Bitwidth P1|
+    +---------------------------------+----------+----+---+----+------------+------------+
+    |ap_idle                          |       and|   0|  0|   2|           1|           1|
+    |ap_sync_ready                    |       and|   0|  0|   2|           1|           1|
+    |entry_proc_U0_ap_start           |       and|   0|  0|   2|           1|           1|
+    |mod_product_U0_ap_start          |       and|   0|  0|   2|           1|           1|
+    |ap_sync_entry_proc_U0_ap_ready   |        or|   0|  0|   2|           1|           1|
+    |ap_sync_mod_product_U0_ap_ready  |        or|   0|  0|   2|           1|           1|
+    +---------------------------------+----------+----+---+----+------------+------------+
+    |Total                            |          |   0|  0|  12|           6|           6|
+    +---------------------------------+----------+----+---+----+------------+------------+
+
+    * Multiplexer: 
+    +-------------------------------------+----+-----------+-----+-----------+
+    |                 Name                | LUT| Input Size| Bits| Total Bits|
+    +-------------------------------------+----+-----------+-----+-----------+
+    |ap_sync_reg_entry_proc_U0_ap_ready   |   9|          2|    1|          2|
+    |ap_sync_reg_mod_product_U0_ap_ready  |   9|          2|    1|          2|
+    +-------------------------------------+----+-----------+-----+-----------+
+    |Total                                |  18|          4|    2|          4|
+    +-------------------------------------+----+-----------+-----+-----------+
+
+    * Register: 
+    +-------------------------------------+---+----+-----+-----------+
+    |                 Name                | FF| LUT| Bits| Const Bits|
+    +-------------------------------------+---+----+-----+-----------+
+    |ap_sync_reg_entry_proc_U0_ap_ready   |  1|   0|    1|          0|
+    |ap_sync_reg_mod_product_U0_ap_ready  |  1|   0|    1|          0|
+    +-------------------------------------+---+----+-----+-----------+
+    |Total                                |  2|   0|    2|          0|
+    +-------------------------------------+---+----+-----+-----------+
+
+
+
+================================================================
+== Interface
+================================================================
+* Summary: 
++-----------------------+-----+-----+------------+--------------+--------------+
+|       RTL Ports       | Dir | Bits|  Protocol  | Source Object|    C Type    |
++-----------------------+-----+-----+------------+--------------+--------------+
+|s_axi_control_AWVALID  |   in|    1|       s_axi|       control|       pointer|
+|s_axi_control_AWREADY  |  out|    1|       s_axi|       control|       pointer|
+|s_axi_control_AWADDR   |   in|    6|       s_axi|       control|       pointer|
+|s_axi_control_WVALID   |   in|    1|       s_axi|       control|       pointer|
+|s_axi_control_WREADY   |  out|    1|       s_axi|       control|       pointer|
+|s_axi_control_WDATA    |   in|   32|       s_axi|       control|       pointer|
+|s_axi_control_WSTRB    |   in|    4|       s_axi|       control|       pointer|
+|s_axi_control_ARVALID  |   in|    1|       s_axi|       control|       pointer|
+|s_axi_control_ARREADY  |  out|    1|       s_axi|       control|       pointer|
+|s_axi_control_ARADDR   |   in|    6|       s_axi|       control|       pointer|
+|s_axi_control_RVALID   |  out|    1|       s_axi|       control|       pointer|
+|s_axi_control_RREADY   |   in|    1|       s_axi|       control|       pointer|
+|s_axi_control_RDATA    |  out|   32|       s_axi|       control|       pointer|
+|s_axi_control_RRESP    |  out|    2|       s_axi|       control|       pointer|
+|s_axi_control_BVALID   |  out|    1|       s_axi|       control|       pointer|
+|s_axi_control_BREADY   |   in|    1|       s_axi|       control|       pointer|
+|s_axi_control_BRESP    |  out|    2|       s_axi|       control|       pointer|
+|ap_clk                 |   in|    1|  ap_ctrl_hs|           rsa|  return value|
+|ap_rst_n               |   in|    1|  ap_ctrl_hs|           rsa|  return value|
+|interrupt              |  out|    1|  ap_ctrl_hs|           rsa|  return value|
++-----------------------+-----+-----+------------+--------------+--------------+
+

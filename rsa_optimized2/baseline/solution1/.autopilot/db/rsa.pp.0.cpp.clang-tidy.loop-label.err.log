@@ -1,0 +1,4 @@
+1 warning and 26 errors generated.
+Error while processing /home/cse237c_fa24_s_chen/RSA_Implementation_on_PYNQ/rsa_optimized2/baseline/solution1/.autopilot/db/rsa.pp.0.cpp.
+clang-tidy applied 134 of 134 suggested fixes.
+Suppressed 1 warnings (1 with check filters).

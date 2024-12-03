@@ -1,0 +1,27 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<vivadoHLSLog:LogRoot xmlns:vivadoHLSLog="www.xilinx.com/vivadoHLSLog">
+  <errorLogs>
+    <logs>
+      <synLog/>
+      <simLog/>
+      <mgLog/>
+      <packageLog/>
+      <csimLog/>
+    </logs>
+  </errorLogs>
+  <warningLogs>
+    <logs>
+      <synLog>
+        <logs message="WARNING: [RTGEN 206-101] Design contains AXI ports. Reset is fixed to synchronous and active low." projectName="baseline" solutionName="solution1" date="2024-12-02T17:12:59.927-0800" type="Warning"/>
+        <logs message="WARNING: [SYN 201-103] Legalizing function name 'Block_for.end_proc' to 'Block_for_end_proc'." projectName="baseline" solutionName="solution1" date="2024-12-02T17:12:59.403-0800" type="Warning"/>
+        <logs message="WARNING: [HLS 200-471] Dataflow form checks found 1 issue(s) in file rsa.cpp&#xA;Resolution: For help on HLS 200-471 see www.xilinx.com/cgi-bin/docs/rdoc?v=2022.2;t=hls+guidance;d=200-471.html" projectName="baseline" solutionName="solution1" date="2024-12-02T17:12:57.057-0800" type="Warning"/>
+        <logs message="WARNING: [HLS 214-114] Since the only kind of statements allowed in a canonical dataflow region are variable declarations and function calls, the compiler may not be able to correctly handle the region (rsa.cpp:88:9)&#xA;Resolution: For help on HLS 214-114 see www.xilinx.com/cgi-bin/docs/rdoc?v=2022.2;t=hls+guidance;d=214-114.html" projectName="baseline" solutionName="solution1" date="2024-12-02T17:12:55.493-0800" type="Warning"/>
+        <logs message="WARNING: [HLS 207-4855] format specifies type 'int' but the argument has type 'data_t' (aka 'ap_uint&lt;16>') (rsa.cpp:91:39)" projectName="baseline" solutionName="solution1" date="2024-12-02T17:12:55.490-0800" type="Warning"/>
+      </synLog>
+      <simLog/>
+      <mgLog/>
+      <packageLog/>
+      <csimLog/>
+    </logs>
+  </warningLogs>
+</vivadoHLSLog:LogRoot>

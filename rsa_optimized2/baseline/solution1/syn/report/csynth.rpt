@@ -1,0 +1,165 @@
+
+
+================================================================
+== Synthesis Summary Report of 'rsa'
+================================================================
++ General Information: 
+    * Date:           Mon Dec  2 17:13:00 2024
+    * Version:        2022.2 (Build 3670227 on Oct 13 2022)
+    * Project:        baseline
+    * Solution:       solution1 (Vivado IP Flow Target)
+    * Product family: zynq
+    * Target device:  xc7z020-clg400-1
+    
+
++ Performance & Resource Estimates: 
+    
+    PS: '+' for module; 'o' for loop; '*' for dataflow
+    +------------------------------+------+------+---------+-----------+----------+---------+------+----------+------+----+-----------+-----------+-----+
+    |            Modules           | Issue|      | Latency |  Latency  | Iteration|         | Trip |          |      |    |           |           |     |
+    |            & Loops           | Type | Slack| (cycles)|    (ns)   |  Latency | Interval| Count| Pipelined| BRAM | DSP|     FF    |    LUT    | URAM|
+    +------------------------------+------+------+---------+-----------+----------+---------+------+----------+------+----+-----------+-----------+-----+
+    |+ rsa*                        |     -|  0.19|      565|  5.650e+03|         -|      565|     -|  dataflow|     -|   -|  898 (~0%)|  1428 (2%)|    -|
+    | + entry_proc                 |     -|  3.67|        0|      0.000|         -|        0|     -|        no|     -|   -|    2 (~0%)|   20 (~0%)|    -|
+    | + mod_product                |     -|  0.19|       18|    180.000|         -|       18|     -|        no|     -|   -|   91 (~0%)|  295 (~0%)|    -|
+    |  o VITIS_LOOP_36_1           |     -|  7.30|       17|    170.000|         1|        -|    17|        no|     -|   -|          -|          -|    -|
+    | + Loop_VITIS_LOOP_93_1_proc  |     -|  0.79|      564|  5.640e+03|         -|      564|     -|        no|     -|   -|  265 (~0%)|   623 (1%)|    -|
+    |  o VITIS_LOOP_93_1           |     -|  7.30|      562|  5.620e+03|        35|        -|    16|        no|     -|   -|          -|          -|    -|
+    |   o VITIS_LOOP_10_1          |     -|  7.30|       16|    160.000|         1|        -|    16|        no|     -|   -|          -|          -|    -|
+    |   o VITIS_LOOP_10_1          |     -|  7.30|       16|    160.000|         1|        -|    16|        no|     -|   -|          -|          -|    -|
+    | + Block_for_end_proc         |     -|  3.67|        0|      0.000|         -|        0|     -|        no|     -|   -|   18 (~0%)|   20 (~0%)|    -|
+    +------------------------------+------+------+---------+-----------+----------+---------+------+----------+------+----+-----------+-----------+-----+
+
+
+================================================================
+== HW Interfaces
+================================================================
+* S_AXILITE Interfaces
++---------------+------------+---------------+--------+----------+
+| Interface     | Data Width | Address Width | Offset | Register |
++---------------+------------+---------------+--------+----------+
+| s_axi_control | 32         | 6             | 16     | 0        |
++---------------+------------+---------------+--------+----------+
+
+* S_AXILITE Registers
++---------------+----------+--------+-------+--------+----------------------------------+----------------------------------------------------------------------+
+| Interface     | Register | Offset | Width | Access | Description                      | Bit Fields                                                           |
++---------------+----------+--------+-------+--------+----------------------------------+----------------------------------------------------------------------+
+| s_axi_control | CTRL     | 0x00   | 32    | RW     | Control signals                  | 0=AP_START 1=AP_DONE 2=AP_IDLE 3=AP_READY 7=AUTO_RESTART 9=INTERRUPT |
+| s_axi_control | GIER     | 0x04   | 32    | RW     | Global Interrupt Enable Register | 0=Enable                                                             |
+| s_axi_control | IP_IER   | 0x08   | 32    | RW     | IP Interrupt Enable Register     | 0=CHAN0_INT_EN 1=CHAN1_INT_EN                                        |
+| s_axi_control | IP_ISR   | 0x0c   | 32    | RW     | IP Interrupt Status Register     | 0=CHAN0_INT_ST 1=CHAN1_INT_ST                                        |
+| s_axi_control | d        | 0x10   | 32    | W      | Data signal of d                 |                                                                      |
+| s_axi_control | N        | 0x18   | 32    | W      | Data signal of N                 |                                                                      |
+| s_axi_control | y        | 0x20   | 32    | W      | Data signal of y                 |                                                                      |
+| s_axi_control | x        | 0x28   | 32    | R      | Data signal of x                 |                                                                      |
+| s_axi_control | x_ctrl   | 0x2c   | 32    | R      | Control signal of x              | 0=x_ap_vld                                                           |
++---------------+----------+--------+-------+--------+----------------------------------+----------------------------------------------------------------------+
+
+* TOP LEVEL CONTROL
++-----------+------------+-----------+
+| Interface | Type       | Ports     |
++-----------+------------+-----------+
+| ap_clk    | clock      | ap_clk    |
+| ap_rst_n  | reset      | ap_rst_n  |
+| interrupt | interrupt  | interrupt |
+| ap_ctrl   | ap_ctrl_hs |           |
++-----------+------------+-----------+
+
+
+================================================================
+== SW I/O Information
+================================================================
+* Top Function Arguments
++----------+-----------+--------------+
+| Argument | Direction | Datatype     |
++----------+-----------+--------------+
+| d        | in        | ap_uint<16>  |
+| N        | in        | ap_uint<16>  |
+| y        | in        | ap_uint<16>  |
+| x        | out       | ap_uint<16>& |
++----------+-----------+--------------+
+
+* SW-to-HW Mapping
++----------+---------------+----------+----------------------------------+
+| Argument | HW Interface  | HW Type  | HW Info                          |
++----------+---------------+----------+----------------------------------+
+| d        | s_axi_control | register | name=d offset=0x10 range=32      |
+| N        | s_axi_control | register | name=N offset=0x18 range=32      |
+| y        | s_axi_control | register | name=y offset=0x20 range=32      |
+| x        | s_axi_control | register | name=x offset=0x28 range=32      |
+| x        | s_axi_control | register | name=x_ctrl offset=0x2c range=32 |
++----------+---------------+----------+----------------------------------+
+
+
+================================================================
+== M_AXI Burst Information
+================================================================
+ Note: All burst requests might be further partitioned into multiple requests during RTL generation based on max_read_burst_length or max_write_burst_length settings.
+
+  No burst in design
+
+================================================================
+== Bind Op Report
+================================================================
++------------------------------+-----+--------+-------------------+------+--------+---------+
+| Name                         | DSP | Pragma | Variable          | Op   | Impl   | Latency |
++------------------------------+-----+--------+-------------------+------+--------+---------+
+| + rsa                        | 0   |        |                   |      |        |         |
+|   t_V_U                      | -   |        | t_V               | fifo | srl    | 0       |
+|   a_V_1_loc_channel_U        | -   |        | a_V_1_loc_channel | fifo | srl    | 0       |
+|  + mod_product               | 0   |        |                   |      |        |         |
+|    i_2_fu_150_p2             | -   |        | i_2               | add  | fabric | 0       |
+|    ret_V_fu_170_p2           | -   |        | ret_V             | add  | fabric | 0       |
+|    m_V_6_fu_181_p2           | -   |        | m_V_6             | add  | fabric | 0       |
+|    m_V_7_fu_187_p2           | -   |        | m_V_7             | sub  | fabric | 0       |
+|    t_V_2_fu_238_p2           | -   |        | t_V_2             | sub  | fabric | 0       |
+|  + Loop_VITIS_LOOP_93_1_proc | 0   |        |                   |      |        |         |
+|    i_9_fu_206_p2             | -   |        | i_9               | add  | fabric | 0       |
+|    i_7_fu_226_p2             | -   |        | i_7               | add  | fabric | 0       |
+|    m_V_16_fu_236_p2          | -   |        | m_V_16            | add  | fabric | 0       |
+|    m_V_18_fu_257_p2          | -   |        | m_V_18            | add  | fabric | 0       |
+|    sub_ln24_fu_319_p2        | -   |        | sub_ln24          | sub  | fabric | 0       |
+|    i_8_fu_346_p2             | -   |        | i_8               | add  | fabric | 0       |
+|    m_V_19_fu_356_p2          | -   |        | m_V_19            | add  | fabric | 0       |
+|    m_V_21_fu_377_p2          | -   |        | m_V_21            | add  | fabric | 0       |
+|    sub_ln24_1_fu_439_p2      | -   |        | sub_ln24_1        | sub  | fabric | 0       |
++------------------------------+-----+--------+-------------------+------+--------+---------+
+
+
+================================================================
+== Bind Storage Report
+================================================================
++---------+------+------+--------+----------+---------+------+---------+
+| Name    | BRAM | URAM | Pragma | Variable | Storage | Impl | Latency |
++---------+------+------+--------+----------+---------+------+---------+
+| + rsa   | 0    | 0    |        |          |         |      |         |
+|   N_c_U | -    | -    |        | N_c      | fifo    | srl  | 0       |
+|   d_c_U | -    | -    |        | d_c      | fifo    | srl  | 0       |
++---------+------+------+--------+----------+---------+------+---------+
+
+
+================================================================
+== Pragma Report
+================================================================
+* Pragmas with Warnings
++----------+---------+-------------------+------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+| Type     | Options | Location          | Messages                                                                                                                                                                           |
++----------+---------+-------------------+------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+| dataflow |         | rsa.cpp:88 in rsa | Since the only kind of statements allowed in a canonical dataflow region are variable declarations and function calls, the compiler may not be able to correctly handle the region |
++----------+---------+-------------------+------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+
+* Valid Pragma Syntax
++-----------+----------------------------+---------------------------+
+| Type      | Options                    | Location                  |
++-----------+----------------------------+---------------------------+
+| pipeline  | off                        | rsa.cpp:11 in montgomery  |
+| pipeline  | off                        | rsa.cpp:37 in mod_product |
+| interface | mode=s_axilite port=return | rsa.cpp:82 in rsa, return |
+| interface | mode=s_axilite port=d      | rsa.cpp:83 in rsa, d      |
+| interface | mode=s_axilite port=N      | rsa.cpp:84 in rsa, N      |
+| interface | mode=s_axilite port=y      | rsa.cpp:85 in rsa, y      |
+| interface | mode=s_axilite port=x      | rsa.cpp:86 in rsa, x      |
++-----------+----------------------------+---------------------------+
+
+

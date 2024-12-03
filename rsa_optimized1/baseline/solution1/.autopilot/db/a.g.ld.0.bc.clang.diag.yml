@@ -1,0 +1,62 @@
+--- !Passed
+Pass:            reflow-inliner
+Name:            AutoInline
+DebugLoc:        { File: rsa.cpp, Line: 39, Column: 0 }
+Function:        _Z7mod_exp7ap_uintILi16EES0_S0_
+Args:            
+  - String:          'Inlining function '''
+  - Callee:          'mod_product(ap_uint<16>, ap_uint<16>, ap_uint<16>)'
+    DebugLoc:        { File: rsa.cpp, Line: 8, Column: 0 }
+  - String:          ''' into '''
+  - Caller:          'mod_exp(ap_uint<16>, ap_uint<16>, ap_uint<16>)'
+    DebugLoc:        { File: rsa.cpp, Line: 39, Column: 0 }
+  - String:          ''''
+...
+--- !Missed
+Pass:            reflow-burst-inference
+Name:            CouldNotAnalyzeBoundsPattern
+DebugLoc:        { File: rsa.cpp, Line: 13, Column: 22 }
+Function:        _Z7mod_exp7ap_uintILi16EES0_S0_
+Args:            
+  - String:          Could not analyze the loop bounds
+  - String:          ' _XLX_SEP_ '
+  - LoopName:        VITIS_LOOP_13_1
+  - String:          ' '
+  - LoopLoc:         'rsa.cpp:13:22'
+  - String:          ' '
+  - Function:        'mod_exp(ap_uint<16>, ap_uint<16>, ap_uint<16>)'
+    DebugLoc:        { File: rsa.cpp, Line: 39, Column: 0 }
+  - String:          ' '
+...
+--- !Missed
+Pass:            reflow-burst-inference
+Name:            CouldNotAnalyzeBoundsPattern
+DebugLoc:        { File: rsa.cpp, Line: 13, Column: 22 }
+Function:        _Z7mod_exp7ap_uintILi16EES0_S0_
+Args:            
+  - String:          Could not analyze the loop bounds
+  - String:          ' _XLX_SEP_ '
+  - LoopName:        VITIS_LOOP_13_1
+  - String:          ' '
+  - LoopLoc:         'rsa.cpp:13:22'
+  - String:          ' '
+  - Function:        'mod_exp(ap_uint<16>, ap_uint<16>, ap_uint<16>)'
+    DebugLoc:        { File: rsa.cpp, Line: 39, Column: 0 }
+  - String:          ' '
+...
+--- !Missed
+Pass:            reflow-burst-inference
+Name:            CouldNotAnalyzeBoundsPattern
+DebugLoc:        { File: rsa.cpp, Line: 42, Column: 19 }
+Function:        _Z7mod_exp7ap_uintILi16EES0_S0_
+Args:            
+  - String:          Could not analyze the loop bounds
+  - String:          ' _XLX_SEP_ '
+  - LoopName:        VITIS_LOOP_42_1
+  - String:          ' '
+  - LoopLoc:         'rsa.cpp:42:19'
+  - String:          ' '
+  - Function:        'mod_exp(ap_uint<16>, ap_uint<16>, ap_uint<16>)'
+    DebugLoc:        { File: rsa.cpp, Line: 39, Column: 0 }
+  - String:          ' '
+...
