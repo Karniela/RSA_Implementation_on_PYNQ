@@ -1,7 +1,7 @@
 <profile>
 
 <section name = "Vitis HLS Report for 'rsa'" level="0">
-<item name = "Date">Mon Dec  2 17:59:59 2024
+<item name = "Date">Tue Dec  3 22:41:16 2024
 </item>
 <item name = "Version">2022.2 (Build 3670227 on Oct 13 2022)</item>
 <item name = "Project">baseline</item>
@@ -24,14 +24,14 @@
 <section name = "" level="1">
 <item name = "Summary"><table name="" hasTotal="0">
 <keys size="8">, min, max, min, max, min, max, Type</keys>
-<column name="">197378, 393986, 1.974 ms, 3.940 ms, 197379, 393987, dataflow</column>
+<column name="">263426, 526082, 2.634 ms, 5.261 ms, 263427, 526083, no</column>
 </table>
 </item>
 <item name = "Detail">
 <section name = "" level="1">
 <item name = "Instance"><table name="" hasTotal="0">
 <keys size="9">Instance, Module, min, max, min, max, min, max, Type</keys>
-<column name="grp_Block_entry45_proc2_fu_60">Block_entry45_proc2, 197378, 393986, 1.974 ms, 3.940 ms, 197378, 393986, no</column>
+<column name="grp_mod_exp_fu_67">mod_exp, 263425, 526081, 2.634 ms, 5.261 ms, 263425, 526081, no</column>
 </table>
 </item>
 <item name = "Loop"><table name="" hasTotal="0">

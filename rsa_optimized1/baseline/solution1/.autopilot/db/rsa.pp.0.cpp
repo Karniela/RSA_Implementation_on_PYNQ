@@ -30142,61 +30142,63 @@ namespace hls {
 # 5 "rsa.cpp" 2
 
 
-
 data_t mod_product(data_t a, data_t b, data_t N) {
+#pragma HLS INLINE OFF
+ ap_uint<256 + 1> m = 0;
+    ap_uint<256 + 1> t = b;
 
-    ap_uint<256 +1> m = 0;
-    ap_uint<256 +1> t = b;
+    MOD_PRODUCT:
+    for (int i = 0; i < 256; i++) {
+#pragma HLS PIPELINE OFF
 
-    VITIS_LOOP_13_1: for(int i = 0; i < 256; i++) {
-#pragma HLS PIPELINE off
 
- if(a & 1){
-      if (m + t >= N) {
-    m = m + t - N;
-   }
-   else{
-    m = m + t;
-   }
-
-     }
-
-        if(t + t > N){
-         t = t + t - N;
+ if (a & 1) {
+            if (m + t >= N) {
+                m = m + t - N;
+            } else {
+                m = m + t;
+            }
         }
-        else{
-         t = t + t;
+
+        if (t + t > N) {
+            t = t + t - N;
+        } else {
+            t = t + t;
         }
-  a = a >> 1;
+        a = a >> 1;
     }
-
     return m;
 }
 
-data_t mod_exp(data_t y, data_t d, data_t N){
- data_t t = y;
- data_t m = 1;
- VITIS_LOOP_41_1: for(int i = 0; i < 256; i++){
-#pragma HLS PIPELINE off
- if(d & 1){
-   m = mod_product(m, t, N);
-  }
-  t = mod_product(t, t, N);
 
-  d = d >> 1;
- }
- return m;
+void mod_exp(data_t y, data_t d, data_t N, data_t &result) {
+#pragma HLS INLINE OFF
+ data_t t = y;
+    data_t m = 1;
+
+    MOD_EXP:
+    for (int i = 0; i < 256; i++) {
+
+#pragma HLS PIPELINE OFF
+
+ if (d & 1) {
+            m = mod_product(m, t, N);
+        }
+        t = mod_product(t, t, N);
+        d = d >> 1;
+    }
+    result = m;
 }
 
 
-__attribute__((sdx_kernel("rsa", 0))) void rsa(data_t d, data_t N, data_t y, data_t &x){
+__attribute__((sdx_kernel("rsa", 0))) void rsa(data_t d, data_t N, data_t y, data_t &x) {
 #line 18 "/home/cse237c_fa24_s_chen/RSA_Implementation_on_PYNQ/rsa_optimized1/baseline/solution1/csynth.tcl"
 #pragma HLSDIRECTIVE TOP name=rsa
-# 54 "rsa.cpp"
+# 56 "rsa.cpp"
 
 #line 6 "/home/cse237c_fa24_s_chen/RSA_Implementation_on_PYNQ/rsa_optimized1/baseline/solution1/directives.tcl"
 #pragma HLSDIRECTIVE TOP name=rsa
-# 54 "rsa.cpp"
+# 56 "rsa.cpp"
 
 #pragma HLS INTERFACE mode=s_axilite port=return
 #pragma HLS INTERFACE mode=s_axilite port=d
@@ -30204,6 +30206,10 @@ __attribute__((sdx_kernel("rsa", 0))) void rsa(data_t d, data_t N, data_t y, dat
 #pragma HLS INTERFACE mode=s_axilite port=y
 #pragma HLS INTERFACE mode=s_axilite port=x
 
-#pragma HLS DATAFLOW
- x = mod_exp(y, d, N);
+
+
+
+ data_t result;
+    mod_exp(y, d, N, result);
+    x = result;
 }

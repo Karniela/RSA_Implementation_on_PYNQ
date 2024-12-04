@@ -14,6 +14,8 @@ generic (
     C_S_AXI_CONTROL_ADDR_WIDTH : INTEGER := 8;
     C_S_AXI_CONTROL_DATA_WIDTH : INTEGER := 32 );
 port (
+    ap_clk : IN STD_LOGIC;
+    ap_rst_n : IN STD_LOGIC;
     s_axi_control_AWVALID : IN STD_LOGIC;
     s_axi_control_AWREADY : OUT STD_LOGIC;
     s_axi_control_AWADDR : IN STD_LOGIC_VECTOR (C_S_AXI_CONTROL_ADDR_WIDTH-1 downto 0);
@@ -31,8 +33,6 @@ port (
     s_axi_control_BVALID : OUT STD_LOGIC;
     s_axi_control_BREADY : IN STD_LOGIC;
     s_axi_control_BRESP : OUT STD_LOGIC_VECTOR (1 downto 0);
-    ap_clk : IN STD_LOGIC;
-    ap_rst_n : IN STD_LOGIC;
     interrupt : OUT STD_LOGIC );
 end;
 
@@ -40,41 +40,58 @@ end;
 architecture behav of rsa is 
     attribute CORE_GENERATION_INFO : STRING;
     attribute CORE_GENERATION_INFO of behav : architecture is
-    "rsa_rsa,hls_ip_2022_2,{HLS_INPUT_TYPE=cxx,HLS_INPUT_FLOAT=0,HLS_INPUT_FIXED=0,HLS_INPUT_PART=xc7z020-clg400-1,HLS_INPUT_CLOCK=10.000000,HLS_INPUT_ARCH=dataflow,HLS_SYN_CLOCK=6.882000,HLS_SYN_LAT=295682,HLS_SYN_TPT=295683,HLS_SYN_MEM=0,HLS_SYN_DSP=0,HLS_SYN_FF=11693,HLS_SYN_LUT=5327,HLS_VERSION=2022_2}";
-    constant C_S_AXI_DATA_WIDTH : INTEGER range 63 downto 0 := 20;
+    "rsa_rsa,hls_ip_2022_2,{HLS_INPUT_TYPE=cxx,HLS_INPUT_FLOAT=0,HLS_INPUT_FIXED=0,HLS_INPUT_PART=xc7z020-clg400-1,HLS_INPUT_CLOCK=10.000000,HLS_INPUT_ARCH=others,HLS_SYN_CLOCK=6.882000,HLS_SYN_LAT=394754,HLS_SYN_TPT=none,HLS_SYN_MEM=0,HLS_SYN_DSP=0,HLS_SYN_FF=8061,HLS_SYN_LUT=3783,HLS_VERSION=2022_2}";
     constant ap_const_logic_1 : STD_LOGIC := '1';
     constant ap_const_logic_0 : STD_LOGIC := '0';
+    constant ap_ST_fsm_state1 : STD_LOGIC_VECTOR (1 downto 0) := "01";
+    constant ap_ST_fsm_state2 : STD_LOGIC_VECTOR (1 downto 0) := "10";
+    constant ap_const_lv32_0 : STD_LOGIC_VECTOR (31 downto 0) := "00000000000000000000000000000000";
+    constant C_S_AXI_DATA_WIDTH : INTEGER range 63 downto 0 := 20;
+    constant ap_const_lv32_1 : STD_LOGIC_VECTOR (31 downto 0) := "00000000000000000000000000000001";
+    constant ap_const_boolean_1 : BOOLEAN := true;
 
     signal ap_rst_n_inv : STD_LOGIC;
+    signal ap_start : STD_LOGIC;
+    signal ap_done : STD_LOGIC;
+    signal ap_idle : STD_LOGIC;
+    signal ap_CS_fsm : STD_LOGIC_VECTOR (1 downto 0) := "01";
+    attribute fsm_encoding : string;
+    attribute fsm_encoding of ap_CS_fsm : signal is "none";
+    signal ap_CS_fsm_state1 : STD_LOGIC;
+    attribute fsm_encoding of ap_CS_fsm_state1 : signal is "none";
+    signal ap_ready : STD_LOGIC;
     signal d : STD_LOGIC_VECTOR (255 downto 0);
     signal N : STD_LOGIC_VECTOR (255 downto 0);
     signal y : STD_LOGIC_VECTOR (255 downto 0);
-    signal ap_start : STD_LOGIC;
-    signal ap_ready : STD_LOGIC;
-    signal ap_done : STD_LOGIC;
-    signal ap_idle : STD_LOGIC;
-    signal Block_entry45_proc2_U0_ap_start : STD_LOGIC;
-    signal Block_entry45_proc2_U0_ap_done : STD_LOGIC;
-    signal Block_entry45_proc2_U0_ap_continue : STD_LOGIC;
-    signal Block_entry45_proc2_U0_ap_idle : STD_LOGIC;
-    signal Block_entry45_proc2_U0_ap_ready : STD_LOGIC;
-    signal Block_entry45_proc2_U0_x : STD_LOGIC_VECTOR (255 downto 0);
-    signal Block_entry45_proc2_U0_x_ap_vld : STD_LOGIC;
+    signal x_ap_vld : STD_LOGIC;
+    signal y_read_reg_78 : STD_LOGIC_VECTOR (255 downto 0);
+    signal N_read_reg_83 : STD_LOGIC_VECTOR (255 downto 0);
+    signal d_read_reg_88 : STD_LOGIC_VECTOR (255 downto 0);
+    signal grp_mod_exp_fu_67_ap_start : STD_LOGIC;
+    signal grp_mod_exp_fu_67_ap_done : STD_LOGIC;
+    signal grp_mod_exp_fu_67_ap_idle : STD_LOGIC;
+    signal grp_mod_exp_fu_67_ap_ready : STD_LOGIC;
+    signal grp_mod_exp_fu_67_ap_return : STD_LOGIC_VECTOR (255 downto 0);
+    signal grp_mod_exp_fu_67_ap_start_reg : STD_LOGIC := '0';
+    signal ap_CS_fsm_state2 : STD_LOGIC;
+    attribute fsm_encoding of ap_CS_fsm_state2 : signal is "none";
+    signal ap_NS_fsm : STD_LOGIC_VECTOR (1 downto 0);
+    signal ap_ST_fsm_state1_blk : STD_LOGIC;
+    signal ap_ST_fsm_state2_blk : STD_LOGIC;
+    signal ap_ce_reg : STD_LOGIC;
 
-    component rsa_Block_entry45_proc2 IS
+    component rsa_mod_exp IS
     port (
         ap_clk : IN STD_LOGIC;
         ap_rst : IN STD_LOGIC;
         ap_start : IN STD_LOGIC;
         ap_done : OUT STD_LOGIC;
-        ap_continue : IN STD_LOGIC;
         ap_idle : OUT STD_LOGIC;
         ap_ready : OUT STD_LOGIC;
         y : IN STD_LOGIC_VECTOR (255 downto 0);
         d : IN STD_LOGIC_VECTOR (255 downto 0);
         N : IN STD_LOGIC_VECTOR (255 downto 0);
-        x : OUT STD_LOGIC_VECTOR (255 downto 0);
-        x_ap_vld : OUT STD_LOGIC );
+        ap_return : OUT STD_LOGIC_VECTOR (255 downto 0) );
     end component;
 
 
@@ -118,6 +135,19 @@ architecture behav of rsa is
 
 
 begin
+    grp_mod_exp_fu_67 : component rsa_mod_exp
+    port map (
+        ap_clk => ap_clk,
+        ap_rst => ap_rst_n_inv,
+        ap_start => grp_mod_exp_fu_67_ap_start,
+        ap_done => grp_mod_exp_fu_67_ap_done,
+        ap_idle => grp_mod_exp_fu_67_ap_idle,
+        ap_ready => grp_mod_exp_fu_67_ap_ready,
+        y => y_read_reg_78,
+        d => d_read_reg_88,
+        N => N_read_reg_83,
+        ap_return => grp_mod_exp_fu_67_ap_return);
+
     control_s_axi_U : component rsa_control_s_axi
     generic map (
         C_S_AXI_ADDR_WIDTH => C_S_AXI_CONTROL_ADDR_WIDTH,
@@ -146,41 +176,142 @@ begin
         d => d,
         N => N,
         y => y,
-        x => Block_entry45_proc2_U0_x,
-        x_ap_vld => Block_entry45_proc2_U0_x_ap_vld,
+        x => grp_mod_exp_fu_67_ap_return,
+        x_ap_vld => x_ap_vld,
         ap_start => ap_start,
         interrupt => interrupt,
         ap_ready => ap_ready,
         ap_done => ap_done,
         ap_idle => ap_idle);
 
-    Block_entry45_proc2_U0 : component rsa_Block_entry45_proc2
-    port map (
-        ap_clk => ap_clk,
-        ap_rst => ap_rst_n_inv,
-        ap_start => Block_entry45_proc2_U0_ap_start,
-        ap_done => Block_entry45_proc2_U0_ap_done,
-        ap_continue => Block_entry45_proc2_U0_ap_continue,
-        ap_idle => Block_entry45_proc2_U0_ap_idle,
-        ap_ready => Block_entry45_proc2_U0_ap_ready,
-        y => y,
-        d => d,
-        N => N,
-        x => Block_entry45_proc2_U0_x,
-        x_ap_vld => Block_entry45_proc2_U0_x_ap_vld);
 
 
 
 
-    Block_entry45_proc2_U0_ap_continue <= ap_const_logic_1;
-    Block_entry45_proc2_U0_ap_start <= ap_start;
-    ap_done <= Block_entry45_proc2_U0_ap_done;
-    ap_idle <= Block_entry45_proc2_U0_ap_idle;
-    ap_ready <= Block_entry45_proc2_U0_ap_ready;
+    ap_CS_fsm_assign_proc : process(ap_clk)
+    begin
+        if (ap_clk'event and ap_clk =  '1') then
+            if (ap_rst_n_inv = '1') then
+                ap_CS_fsm <= ap_ST_fsm_state1;
+            else
+                ap_CS_fsm <= ap_NS_fsm;
+            end if;
+        end if;
+    end process;
+
+
+    grp_mod_exp_fu_67_ap_start_reg_assign_proc : process(ap_clk)
+    begin
+        if (ap_clk'event and ap_clk =  '1') then
+            if (ap_rst_n_inv = '1') then
+                grp_mod_exp_fu_67_ap_start_reg <= ap_const_logic_0;
+            else
+                if (((ap_start = ap_const_logic_1) and (ap_const_logic_1 = ap_CS_fsm_state1))) then 
+                    grp_mod_exp_fu_67_ap_start_reg <= ap_const_logic_1;
+                elsif ((grp_mod_exp_fu_67_ap_ready = ap_const_logic_1)) then 
+                    grp_mod_exp_fu_67_ap_start_reg <= ap_const_logic_0;
+                end if; 
+            end if;
+        end if;
+    end process;
+
+    process (ap_clk)
+    begin
+        if (ap_clk'event and ap_clk = '1') then
+            if ((ap_const_logic_1 = ap_CS_fsm_state1)) then
+                N_read_reg_83 <= N;
+                d_read_reg_88 <= d;
+                y_read_reg_78 <= y;
+            end if;
+        end if;
+    end process;
+
+    ap_NS_fsm_assign_proc : process (ap_start, ap_CS_fsm, ap_CS_fsm_state1, grp_mod_exp_fu_67_ap_done, ap_CS_fsm_state2)
+    begin
+        case ap_CS_fsm is
+            when ap_ST_fsm_state1 => 
+                if (((ap_start = ap_const_logic_1) and (ap_const_logic_1 = ap_CS_fsm_state1))) then
+                    ap_NS_fsm <= ap_ST_fsm_state2;
+                else
+                    ap_NS_fsm <= ap_ST_fsm_state1;
+                end if;
+            when ap_ST_fsm_state2 => 
+                if (((grp_mod_exp_fu_67_ap_done = ap_const_logic_1) and (ap_const_logic_1 = ap_CS_fsm_state2))) then
+                    ap_NS_fsm <= ap_ST_fsm_state1;
+                else
+                    ap_NS_fsm <= ap_ST_fsm_state2;
+                end if;
+            when others =>  
+                ap_NS_fsm <= "XX";
+        end case;
+    end process;
+    ap_CS_fsm_state1 <= ap_CS_fsm(0);
+    ap_CS_fsm_state2 <= ap_CS_fsm(1);
+
+    ap_ST_fsm_state1_blk_assign_proc : process(ap_start)
+    begin
+        if ((ap_start = ap_const_logic_0)) then 
+            ap_ST_fsm_state1_blk <= ap_const_logic_1;
+        else 
+            ap_ST_fsm_state1_blk <= ap_const_logic_0;
+        end if; 
+    end process;
+
+
+    ap_ST_fsm_state2_blk_assign_proc : process(grp_mod_exp_fu_67_ap_done)
+    begin
+        if ((grp_mod_exp_fu_67_ap_done = ap_const_logic_0)) then 
+            ap_ST_fsm_state2_blk <= ap_const_logic_1;
+        else 
+            ap_ST_fsm_state2_blk <= ap_const_logic_0;
+        end if; 
+    end process;
+
+
+    ap_done_assign_proc : process(grp_mod_exp_fu_67_ap_done, ap_CS_fsm_state2)
+    begin
+        if (((grp_mod_exp_fu_67_ap_done = ap_const_logic_1) and (ap_const_logic_1 = ap_CS_fsm_state2))) then 
+            ap_done <= ap_const_logic_1;
+        else 
+            ap_done <= ap_const_logic_0;
+        end if; 
+    end process;
+
+
+    ap_idle_assign_proc : process(ap_start, ap_CS_fsm_state1)
+    begin
+        if (((ap_start = ap_const_logic_0) and (ap_const_logic_1 = ap_CS_fsm_state1))) then 
+            ap_idle <= ap_const_logic_1;
+        else 
+            ap_idle <= ap_const_logic_0;
+        end if; 
+    end process;
+
+
+    ap_ready_assign_proc : process(grp_mod_exp_fu_67_ap_done, ap_CS_fsm_state2)
+    begin
+        if (((grp_mod_exp_fu_67_ap_done = ap_const_logic_1) and (ap_const_logic_1 = ap_CS_fsm_state2))) then 
+            ap_ready <= ap_const_logic_1;
+        else 
+            ap_ready <= ap_const_logic_0;
+        end if; 
+    end process;
+
 
     ap_rst_n_inv_assign_proc : process(ap_rst_n)
     begin
                 ap_rst_n_inv <= not(ap_rst_n);
+    end process;
+
+    grp_mod_exp_fu_67_ap_start <= grp_mod_exp_fu_67_ap_start_reg;
+
+    x_ap_vld_assign_proc : process(grp_mod_exp_fu_67_ap_done, ap_CS_fsm_state2)
+    begin
+        if (((grp_mod_exp_fu_67_ap_done = ap_const_logic_1) and (ap_const_logic_1 = ap_CS_fsm_state2))) then 
+            x_ap_vld <= ap_const_logic_1;
+        else 
+            x_ap_vld <= ap_const_logic_0;
+        end if; 
     end process;
 
 end behav;

@@ -70,13 +70,13 @@ set NewPortList {[
  	{ "name": "ap_rst_n", "direction": "in", "datatype": "sc_logic", "bitwidth":1, "type": "reset", "bundle":{"name": "ap_rst_n", "role": "default" }}  ]}
 
 set RtlHierarchyInfo {[
-	{"ID" : "0", "Level" : "0", "Path" : "`AUTOTB_DUT_INST", "Parent" : "", "Child" : ["1", "2", "3", "4", "5", "6", "7", "8", "9", "10", "11"],
+	{"ID" : "0", "Level" : "0", "Path" : "`AUTOTB_DUT_INST", "Parent" : "", "Child" : ["1", "4", "11"],
 		"CDFG" : "rsa",
 		"Protocol" : "ap_ctrl_hs",
 		"ControlExist" : "1", "ap_start" : "1", "ap_ready" : "1", "ap_done" : "1", "ap_continue" : "0", "ap_idle" : "1", "real_start" : "0",
 		"Pipeline" : "None", "UnalignedPipeline" : "0", "RewindPipeline" : "0", "ProcessNetwork" : "0",
 		"II" : "0",
-		"VariableLatency" : "1", "ExactLatency" : "-1", "EstimateLatencyMin" : "264198", "EstimateLatencyMax" : "526598",
+		"VariableLatency" : "1", "ExactLatency" : "-1", "EstimateLatencyMin" : "68356", "EstimateLatencyMax" : "135684",
 		"Combinational" : "0",
 		"Datapath" : "0",
 		"ClockEnable" : "0",
@@ -90,25 +90,78 @@ set RtlHierarchyInfo {[
 			{"Name" : "y", "Type" : "None", "Direction" : "I"},
 			{"Name" : "x", "Type" : "Vld", "Direction" : "O"}],
 		"Loop" : [
-			{"Name" : "Mod_Product", "PipelineType" : "no",
-				"LoopDec" : {"FSMBitwidth" : "16", "FirstState" : "ap_ST_fsm_state2", "LastState" : ["ap_ST_fsm_state5"], "QuitState" : ["ap_ST_fsm_state2"], "PreState" : ["ap_ST_fsm_state1"], "PostState" : ["ap_ST_fsm_state6"], "OneDepthLoop" : "0", "OneStateBlock": ""}},
-			{"Name" : "Montgomery", "PipelineType" : "no",
-				"LoopDec" : {"FSMBitwidth" : "16", "FirstState" : "ap_ST_fsm_state7", "LastState" : ["ap_ST_fsm_state10"], "QuitState" : ["ap_ST_fsm_state7"], "PreState" : ["ap_ST_fsm_state6"], "PostState" : ["ap_ST_fsm_state11"], "OneDepthLoop" : "0", "OneStateBlock": ""}},
-			{"Name" : "Montgomery", "PipelineType" : "no",
-				"LoopDec" : {"FSMBitwidth" : "16", "FirstState" : "ap_ST_fsm_state12", "LastState" : ["ap_ST_fsm_state15"], "QuitState" : ["ap_ST_fsm_state12"], "PreState" : ["ap_ST_fsm_state11"], "PostState" : ["ap_ST_fsm_state16"], "OneDepthLoop" : "0", "OneStateBlock": ""}},
 			{"Name" : "RSA_TOP", "PipelineType" : "no",
-				"LoopDec" : {"FSMBitwidth" : "16", "FirstState" : "ap_ST_fsm_state6", "LastState" : ["ap_ST_fsm_state16"], "QuitState" : ["ap_ST_fsm_state6"], "PreState" : ["ap_ST_fsm_state2"], "PostState" : ["ap_ST_fsm_state1"], "OneDepthLoop" : "0", "OneStateBlock": ""}}]},
-	{"ID" : "1", "Level" : "1", "Path" : "`AUTOTB_DUT_INST.control_s_axi_U", "Parent" : "0"},
-	{"ID" : "2", "Level" : "1", "Path" : "`AUTOTB_DUT_INST.add_258ns_258ns_258_2_1_U1", "Parent" : "0"},
-	{"ID" : "3", "Level" : "1", "Path" : "`AUTOTB_DUT_INST.add_257ns_257ns_257_2_1_U2", "Parent" : "0"},
-	{"ID" : "4", "Level" : "1", "Path" : "`AUTOTB_DUT_INST.sub_257ns_257ns_257_2_1_U3", "Parent" : "0"},
-	{"ID" : "5", "Level" : "1", "Path" : "`AUTOTB_DUT_INST.sub_257ns_257ns_257_2_1_U4", "Parent" : "0"},
-	{"ID" : "6", "Level" : "1", "Path" : "`AUTOTB_DUT_INST.add_258ns_258ns_258_2_1_U5", "Parent" : "0"},
-	{"ID" : "7", "Level" : "1", "Path" : "`AUTOTB_DUT_INST.sub_256ns_256ns_256_2_1_U6", "Parent" : "0"},
-	{"ID" : "8", "Level" : "1", "Path" : "`AUTOTB_DUT_INST.add_258ns_258ns_258_2_1_U7", "Parent" : "0"},
-	{"ID" : "9", "Level" : "1", "Path" : "`AUTOTB_DUT_INST.add_258ns_258ns_258_2_1_U8", "Parent" : "0"},
-	{"ID" : "10", "Level" : "1", "Path" : "`AUTOTB_DUT_INST.sub_256ns_256ns_256_2_1_U9", "Parent" : "0"},
-	{"ID" : "11", "Level" : "1", "Path" : "`AUTOTB_DUT_INST.add_258ns_258ns_258_2_1_U10", "Parent" : "0"}]}
+				"LoopDec" : {"FSMBitwidth" : "5", "FirstState" : "ap_ST_fsm_state3", "LastState" : ["ap_ST_fsm_state5"], "QuitState" : ["ap_ST_fsm_state3"], "PreState" : ["ap_ST_fsm_state2"], "PostState" : ["ap_ST_fsm_state1"], "OneDepthLoop" : "0", "OneStateBlock": ""}}]},
+	{"ID" : "1", "Level" : "1", "Path" : "`AUTOTB_DUT_INST.grp_mod_product_fu_107", "Parent" : "0", "Child" : ["2", "3"],
+		"CDFG" : "mod_product",
+		"Protocol" : "ap_ctrl_hs",
+		"ControlExist" : "1", "ap_start" : "1", "ap_ready" : "1", "ap_done" : "1", "ap_continue" : "0", "ap_idle" : "1", "real_start" : "0",
+		"Pipeline" : "None", "UnalignedPipeline" : "0", "RewindPipeline" : "0", "ProcessNetwork" : "0",
+		"II" : "0",
+		"VariableLatency" : "1", "ExactLatency" : "-1", "EstimateLatencyMin" : "258", "EstimateLatencyMax" : "258",
+		"Combinational" : "0",
+		"Datapath" : "0",
+		"ClockEnable" : "0",
+		"HasSubDataflow" : "0",
+		"InDataflowNetwork" : "0",
+		"HasNonBlockingOperation" : "0",
+		"IsBlackBox" : "0",
+		"Port" : [
+			{"Name" : "b", "Type" : "None", "Direction" : "I"},
+			{"Name" : "N", "Type" : "None", "Direction" : "I"}],
+		"Loop" : [
+			{"Name" : "Mod_Product", "PipelineType" : "UPC",
+				"LoopDec" : {"FSMBitwidth" : "1", "FirstState" : "ap_ST_fsm_pp0_stage0", "FirstStateIter" : "ap_enable_reg_pp0_iter1", "FirstStateBlock" : "ap_block_pp0_stage0_subdone", "LastState" : "ap_ST_fsm_pp0_stage0", "LastStateIter" : "ap_enable_reg_pp0_iter2", "LastStateBlock" : "ap_block_pp0_stage0_subdone", "QuitState" : "ap_ST_fsm_pp0_stage0", "QuitStateIter" : "ap_enable_reg_pp0_iter1", "QuitStateBlock" : "ap_block_pp0_stage0_subdone", "OneDepthLoop" : "0", "has_ap_ctrl" : "1", "has_continue" : "0"}}]},
+	{"ID" : "2", "Level" : "2", "Path" : "`AUTOTB_DUT_INST.grp_mod_product_fu_107.sub_257ns_257ns_257_2_1_U1", "Parent" : "1"},
+	{"ID" : "3", "Level" : "2", "Path" : "`AUTOTB_DUT_INST.grp_mod_product_fu_107.flow_control_loop_pipe_sequential_init_U", "Parent" : "1"},
+	{"ID" : "4", "Level" : "1", "Path" : "`AUTOTB_DUT_INST.grp_Montgomery_fu_115", "Parent" : "0", "Child" : ["5", "9", "10"],
+		"CDFG" : "Montgomery",
+		"Protocol" : "ap_ctrl_hs",
+		"ControlExist" : "1", "ap_start" : "1", "ap_ready" : "1", "ap_done" : "1", "ap_continue" : "0", "ap_idle" : "1", "real_start" : "0",
+		"Pipeline" : "None", "UnalignedPipeline" : "0", "RewindPipeline" : "0", "ProcessNetwork" : "0",
+		"II" : "0",
+		"VariableLatency" : "1", "ExactLatency" : "-1", "EstimateLatencyMin" : "263", "EstimateLatencyMax" : "263",
+		"Combinational" : "0",
+		"Datapath" : "0",
+		"ClockEnable" : "0",
+		"HasSubDataflow" : "0",
+		"InDataflowNetwork" : "0",
+		"HasNonBlockingOperation" : "0",
+		"IsBlackBox" : "0",
+		"Port" : [
+			{"Name" : "N", "Type" : "None", "Direction" : "I"},
+			{"Name" : "a", "Type" : "None", "Direction" : "I"},
+			{"Name" : "b", "Type" : "None", "Direction" : "I"}]},
+	{"ID" : "5", "Level" : "2", "Path" : "`AUTOTB_DUT_INST.grp_Montgomery_fu_115.grp_Montgomery_Pipeline_Montgomery_fu_36", "Parent" : "4", "Child" : ["6", "7", "8"],
+		"CDFG" : "Montgomery_Pipeline_Montgomery",
+		"Protocol" : "ap_ctrl_hs",
+		"ControlExist" : "1", "ap_start" : "1", "ap_ready" : "1", "ap_done" : "1", "ap_continue" : "0", "ap_idle" : "1", "real_start" : "0",
+		"Pipeline" : "None", "UnalignedPipeline" : "0", "RewindPipeline" : "0", "ProcessNetwork" : "0",
+		"II" : "0",
+		"VariableLatency" : "1", "ExactLatency" : "-1", "EstimateLatencyMin" : "258", "EstimateLatencyMax" : "258",
+		"Combinational" : "0",
+		"Datapath" : "0",
+		"ClockEnable" : "0",
+		"HasSubDataflow" : "0",
+		"InDataflowNetwork" : "0",
+		"HasNonBlockingOperation" : "0",
+		"IsBlackBox" : "0",
+		"Port" : [
+			{"Name" : "a", "Type" : "None", "Direction" : "I"},
+			{"Name" : "b_cast", "Type" : "None", "Direction" : "I"},
+			{"Name" : "zext_ln1495", "Type" : "None", "Direction" : "I"},
+			{"Name" : "zext_ln1495_1", "Type" : "None", "Direction" : "I"},
+			{"Name" : "add_ln186", "Type" : "None", "Direction" : "I"},
+			{"Name" : "m_V_out", "Type" : "Vld", "Direction" : "O"}],
+		"Loop" : [
+			{"Name" : "Montgomery", "PipelineType" : "UPC",
+				"LoopDec" : {"FSMBitwidth" : "1", "FirstState" : "ap_ST_fsm_pp0_stage0", "FirstStateIter" : "ap_enable_reg_pp0_iter1", "FirstStateBlock" : "ap_block_pp0_stage0_subdone", "LastState" : "ap_ST_fsm_pp0_stage0", "LastStateIter" : "ap_enable_reg_pp0_iter2", "LastStateBlock" : "ap_block_pp0_stage0_subdone", "QuitState" : "ap_ST_fsm_pp0_stage0", "QuitStateIter" : "ap_enable_reg_pp0_iter1", "QuitStateBlock" : "ap_block_pp0_stage0_subdone", "OneDepthLoop" : "0", "has_ap_ctrl" : "1", "has_continue" : "0"}}]},
+	{"ID" : "6", "Level" : "3", "Path" : "`AUTOTB_DUT_INST.grp_Montgomery_fu_115.grp_Montgomery_Pipeline_Montgomery_fu_36.add_258ns_258ns_258_2_1_U5", "Parent" : "5"},
+	{"ID" : "7", "Level" : "3", "Path" : "`AUTOTB_DUT_INST.grp_Montgomery_fu_115.grp_Montgomery_Pipeline_Montgomery_fu_36.add_258ns_258ns_258_2_1_U6", "Parent" : "5"},
+	{"ID" : "8", "Level" : "3", "Path" : "`AUTOTB_DUT_INST.grp_Montgomery_fu_115.grp_Montgomery_Pipeline_Montgomery_fu_36.flow_control_loop_pipe_sequential_init_U", "Parent" : "5"},
+	{"ID" : "9", "Level" : "2", "Path" : "`AUTOTB_DUT_INST.grp_Montgomery_fu_115.add_257ns_257ns_257_2_1_U14", "Parent" : "4"},
+	{"ID" : "10", "Level" : "2", "Path" : "`AUTOTB_DUT_INST.grp_Montgomery_fu_115.sub_256ns_256ns_256_2_1_U15", "Parent" : "4"},
+	{"ID" : "11", "Level" : "1", "Path" : "`AUTOTB_DUT_INST.control_s_axi_U", "Parent" : "0"}]}
 
 
 set ArgLastReadFirstWriteLatency {
@@ -116,13 +169,27 @@ set ArgLastReadFirstWriteLatency {
 		d {Type I LastRead 0 FirstWrite -1}
 		N {Type I LastRead 0 FirstWrite -1}
 		y {Type I LastRead 0 FirstWrite -1}
-		x {Type O LastRead -1 FirstWrite 2}}}
+		x {Type O LastRead -1 FirstWrite 2}}
+	mod_product {
+		b {Type I LastRead 0 FirstWrite -1}
+		N {Type I LastRead 0 FirstWrite -1}}
+	Montgomery {
+		N {Type I LastRead 0 FirstWrite -1}
+		a {Type I LastRead 1 FirstWrite -1}
+		b {Type I LastRead 0 FirstWrite -1}}
+	Montgomery_Pipeline_Montgomery {
+		a {Type I LastRead 0 FirstWrite -1}
+		b_cast {Type I LastRead 0 FirstWrite -1}
+		zext_ln1495 {Type I LastRead 0 FirstWrite -1}
+		zext_ln1495_1 {Type I LastRead 0 FirstWrite -1}
+		add_ln186 {Type I LastRead 0 FirstWrite -1}
+		m_V_out {Type O LastRead -1 FirstWrite 1}}}
 
 set hasDtUnsupportedChannel 0
 
 set PerformanceInfo {[
-	{"Name" : "Latency", "Min" : "264198", "Max" : "526598"}
-	, {"Name" : "Interval", "Min" : "264199", "Max" : "526599"}
+	{"Name" : "Latency", "Min" : "68356", "Max" : "135684"}
+	, {"Name" : "Interval", "Min" : "68357", "Max" : "135685"}
 ]}
 
 set PipelineEnableSignalInfo {[

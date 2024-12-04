@@ -1,0 +1,29 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<vivadoHLSLog:LogRoot xmlns:vivadoHLSLog="www.xilinx.com/vivadoHLSLog">
+  <errorLogs>
+    <logs>
+      <synLog/>
+      <simLog/>
+      <mgLog/>
+      <packageLog/>
+      <csimLog>
+        <logs message="ERROR: [SIM 211-100] 'csim_design' failed: compilation error(s)." projectName="baseline" solutionName="solution1" date="2024-12-03T15:59:10.019-0800"/>
+      </csimLog>
+    </logs>
+  </errorLogs>
+  <warningLogs>
+    <logs>
+      <synLog>
+        <logs message="WARNING: [RTGEN 206-101] Port 'rsa/mu_q' has no fanin or fanout and is left dangling.&#xA;               Please use C simulation to confirm this function argument can be read from or written to." projectName="baseline" solutionName="solution1" date="2024-12-03T15:56:41.608-0800" type="Warning"/>
+        <logs message="WARNING: [RTGEN 206-101] Port 'rsa/mu_p' has no fanin or fanout and is left dangling.&#xA;               Please use C simulation to confirm this function argument can be read from or written to." projectName="baseline" solutionName="solution1" date="2024-12-03T15:56:41.595-0800" type="Warning"/>
+        <logs message="WARNING: [RTGEN 206-101] Design contains AXI ports. Reset is fixed to synchronous and active low." projectName="baseline" solutionName="solution1" date="2024-12-03T15:56:41.556-0800" type="Warning"/>
+        <logs message="WARNING: [HLS 207-5292] unused parameter 'mu_q' (rsa.cpp:110:88)" projectName="baseline" solutionName="solution1" date="2024-12-03T15:56:34.224-0800" type="Warning"/>
+        <logs message="WARNING: [HLS 207-5292] unused parameter 'mu_p' (rsa.cpp:110:65)" projectName="baseline" solutionName="solution1" date="2024-12-03T15:56:34.219-0800" type="Warning"/>
+      </synLog>
+      <simLog/>
+      <mgLog/>
+      <packageLog/>
+      <csimLog/>
+    </logs>
+  </warningLogs>
+</vivadoHLSLog:LogRoot>

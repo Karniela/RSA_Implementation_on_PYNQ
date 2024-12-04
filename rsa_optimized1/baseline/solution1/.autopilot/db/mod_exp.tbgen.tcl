@@ -49,13 +49,13 @@ set NewPortList {[
  	{ "name": "ap_return", "direction": "out", "datatype": "sc_lv", "bitwidth":256, "type": "signal", "bundle":{"name": "ap_return", "role": "default" }}  ]}
 
 set RtlHierarchyInfo {[
-	{"ID" : "0", "Level" : "0", "Path" : "`AUTOTB_DUT_INST", "Parent" : "", "Child" : ["1", "2", "3", "4", "5", "6", "7", "8"],
+	{"ID" : "0", "Level" : "0", "Path" : "`AUTOTB_DUT_INST", "Parent" : "", "Child" : ["1"],
 		"CDFG" : "mod_exp",
 		"Protocol" : "ap_ctrl_hs",
 		"ControlExist" : "1", "ap_start" : "1", "ap_ready" : "1", "ap_done" : "1", "ap_continue" : "0", "ap_idle" : "1", "real_start" : "0",
 		"Pipeline" : "None", "UnalignedPipeline" : "0", "RewindPipeline" : "0", "ProcessNetwork" : "0",
 		"II" : "0",
-		"VariableLatency" : "1", "ExactLatency" : "-1", "EstimateLatencyMin" : "197377", "EstimateLatencyMax" : "393985",
+		"VariableLatency" : "1", "ExactLatency" : "-1", "EstimateLatencyMin" : "263425", "EstimateLatencyMax" : "526081",
 		"Combinational" : "0",
 		"Datapath" : "0",
 		"ClockEnable" : "0",
@@ -68,33 +68,50 @@ set RtlHierarchyInfo {[
 			{"Name" : "d", "Type" : "None", "Direction" : "I"},
 			{"Name" : "N", "Type" : "None", "Direction" : "I"}],
 		"Loop" : [
-			{"Name" : "VITIS_LOOP_13_1", "PipelineType" : "no",
-				"LoopDec" : {"FSMBitwidth" : "8", "FirstState" : "ap_ST_fsm_state3", "LastState" : ["ap_ST_fsm_state5"], "QuitState" : ["ap_ST_fsm_state3"], "PreState" : ["ap_ST_fsm_state2"], "PostState" : ["ap_ST_fsm_state6"], "OneDepthLoop" : "0", "OneStateBlock": ""}},
-			{"Name" : "VITIS_LOOP_13_1", "PipelineType" : "no",
-				"LoopDec" : {"FSMBitwidth" : "8", "FirstState" : "ap_ST_fsm_state6", "LastState" : ["ap_ST_fsm_state8"], "QuitState" : ["ap_ST_fsm_state6"], "PreState" : ["ap_ST_fsm_state3"], "PostState" : ["ap_ST_fsm_state2"], "OneDepthLoop" : "0", "OneStateBlock": ""}},
-			{"Name" : "VITIS_LOOP_41_1", "PipelineType" : "no",
-				"LoopDec" : {"FSMBitwidth" : "8", "FirstState" : "ap_ST_fsm_state2", "LastState" : ["ap_ST_fsm_state6"], "QuitState" : ["ap_ST_fsm_state2"], "PreState" : ["ap_ST_fsm_state1"], "PostState" : ["ap_ST_fsm_state1"], "OneDepthLoop" : "0", "OneStateBlock": ""}}]},
-	{"ID" : "1", "Level" : "1", "Path" : "`AUTOTB_DUT_INST.add_258ns_258ns_258_2_1_U1", "Parent" : "0"},
-	{"ID" : "2", "Level" : "1", "Path" : "`AUTOTB_DUT_INST.add_257ns_257ns_257_2_1_U2", "Parent" : "0"},
-	{"ID" : "3", "Level" : "1", "Path" : "`AUTOTB_DUT_INST.sub_257ns_257ns_257_2_1_U3", "Parent" : "0"},
-	{"ID" : "4", "Level" : "1", "Path" : "`AUTOTB_DUT_INST.sub_257ns_257ns_257_2_1_U4", "Parent" : "0"},
-	{"ID" : "5", "Level" : "1", "Path" : "`AUTOTB_DUT_INST.add_258ns_258ns_258_2_1_U5", "Parent" : "0"},
-	{"ID" : "6", "Level" : "1", "Path" : "`AUTOTB_DUT_INST.add_257ns_257ns_257_2_1_U6", "Parent" : "0"},
-	{"ID" : "7", "Level" : "1", "Path" : "`AUTOTB_DUT_INST.sub_257ns_257ns_257_2_1_U7", "Parent" : "0"},
-	{"ID" : "8", "Level" : "1", "Path" : "`AUTOTB_DUT_INST.sub_257ns_257ns_257_2_1_U8", "Parent" : "0"}]}
+			{"Name" : "MOD_EXP", "PipelineType" : "no",
+				"LoopDec" : {"FSMBitwidth" : "4", "FirstState" : "ap_ST_fsm_state2", "LastState" : ["ap_ST_fsm_state4"], "QuitState" : ["ap_ST_fsm_state2"], "PreState" : ["ap_ST_fsm_state1"], "PostState" : ["ap_ST_fsm_state1"], "OneDepthLoop" : "0", "OneStateBlock": ""}}]},
+	{"ID" : "1", "Level" : "1", "Path" : "`AUTOTB_DUT_INST.grp_mod_product_fu_66", "Parent" : "0", "Child" : ["2", "3", "4", "5"],
+		"CDFG" : "mod_product",
+		"Protocol" : "ap_ctrl_hs",
+		"ControlExist" : "1", "ap_start" : "1", "ap_ready" : "1", "ap_done" : "1", "ap_continue" : "0", "ap_idle" : "1", "real_start" : "0",
+		"Pipeline" : "None", "UnalignedPipeline" : "0", "RewindPipeline" : "0", "ProcessNetwork" : "0",
+		"II" : "0",
+		"VariableLatency" : "1", "ExactLatency" : "-1", "EstimateLatencyMin" : "1026", "EstimateLatencyMax" : "1026",
+		"Combinational" : "0",
+		"Datapath" : "0",
+		"ClockEnable" : "0",
+		"HasSubDataflow" : "0",
+		"InDataflowNetwork" : "0",
+		"HasNonBlockingOperation" : "0",
+		"IsBlackBox" : "0",
+		"Port" : [
+			{"Name" : "a", "Type" : "None", "Direction" : "I"},
+			{"Name" : "b", "Type" : "None", "Direction" : "I"},
+			{"Name" : "N", "Type" : "None", "Direction" : "I"}],
+		"Loop" : [
+			{"Name" : "MOD_PRODUCT", "PipelineType" : "no",
+				"LoopDec" : {"FSMBitwidth" : "5", "FirstState" : "ap_ST_fsm_state2", "LastState" : ["ap_ST_fsm_state5"], "QuitState" : ["ap_ST_fsm_state2"], "PreState" : ["ap_ST_fsm_state1"], "PostState" : ["ap_ST_fsm_state1"], "OneDepthLoop" : "0", "OneStateBlock": ""}}]},
+	{"ID" : "2", "Level" : "2", "Path" : "`AUTOTB_DUT_INST.grp_mod_product_fu_66.add_258ns_258ns_258_2_1_U1", "Parent" : "1"},
+	{"ID" : "3", "Level" : "2", "Path" : "`AUTOTB_DUT_INST.grp_mod_product_fu_66.add_257ns_257ns_257_2_1_U2", "Parent" : "1"},
+	{"ID" : "4", "Level" : "2", "Path" : "`AUTOTB_DUT_INST.grp_mod_product_fu_66.sub_257ns_257ns_257_2_1_U3", "Parent" : "1"},
+	{"ID" : "5", "Level" : "2", "Path" : "`AUTOTB_DUT_INST.grp_mod_product_fu_66.sub_257ns_257ns_257_2_1_U4", "Parent" : "1"}]}
 
 
 set ArgLastReadFirstWriteLatency {
 	mod_exp {
 		y {Type I LastRead 0 FirstWrite -1}
 		d {Type I LastRead 0 FirstWrite -1}
+		N {Type I LastRead 0 FirstWrite -1}}
+	mod_product {
+		a {Type I LastRead 0 FirstWrite -1}
+		b {Type I LastRead 0 FirstWrite -1}
 		N {Type I LastRead 0 FirstWrite -1}}}
 
 set hasDtUnsupportedChannel 0
 
 set PerformanceInfo {[
-	{"Name" : "Latency", "Min" : "197377", "Max" : "393985"}
-	, {"Name" : "Interval", "Min" : "197377", "Max" : "393985"}
+	{"Name" : "Latency", "Min" : "263425", "Max" : "526081"}
+	, {"Name" : "Interval", "Min" : "263425", "Max" : "526081"}
 ]}
 
 set PipelineEnableSignalInfo {[

@@ -7,9 +7,11 @@
 
 `timescale 1 ns / 1 ps 
 
-(* CORE_GENERATION_INFO="rsa_rsa,hls_ip_2022_2,{HLS_INPUT_TYPE=cxx,HLS_INPUT_FLOAT=0,HLS_INPUT_FIXED=0,HLS_INPUT_PART=xc7z020-clg400-1,HLS_INPUT_CLOCK=10.000000,HLS_INPUT_ARCH=dataflow,HLS_SYN_CLOCK=6.882000,HLS_SYN_LAT=295682,HLS_SYN_TPT=295683,HLS_SYN_MEM=0,HLS_SYN_DSP=0,HLS_SYN_FF=11693,HLS_SYN_LUT=5327,HLS_VERSION=2022_2}" *)
+(* CORE_GENERATION_INFO="rsa_rsa,hls_ip_2022_2,{HLS_INPUT_TYPE=cxx,HLS_INPUT_FLOAT=0,HLS_INPUT_FIXED=0,HLS_INPUT_PART=xc7z020-clg400-1,HLS_INPUT_CLOCK=10.000000,HLS_INPUT_ARCH=others,HLS_SYN_CLOCK=6.882000,HLS_SYN_LAT=394754,HLS_SYN_TPT=none,HLS_SYN_MEM=0,HLS_SYN_DSP=0,HLS_SYN_FF=8061,HLS_SYN_LUT=3783,HLS_VERSION=2022_2}" *)
 
 module rsa (
+        ap_clk,
+        ap_rst_n,
         s_axi_control_AWVALID,
         s_axi_control_AWREADY,
         s_axi_control_AWADDR,
@@ -27,11 +29,11 @@ module rsa (
         s_axi_control_BVALID,
         s_axi_control_BREADY,
         s_axi_control_BRESP,
-        ap_clk,
-        ap_rst_n,
         interrupt
 );
 
+parameter    ap_ST_fsm_state1 = 2'd1;
+parameter    ap_ST_fsm_state2 = 2'd2;
 parameter    C_S_AXI_CONTROL_DATA_WIDTH = 32;
 parameter    C_S_AXI_CONTROL_ADDR_WIDTH = 8;
 parameter    C_S_AXI_DATA_WIDTH = 32;
@@ -39,6 +41,8 @@ parameter    C_S_AXI_DATA_WIDTH = 32;
 parameter C_S_AXI_CONTROL_WSTRB_WIDTH = (32 / 8);
 parameter C_S_AXI_WSTRB_WIDTH = (32 / 8);
 
+input   ap_clk;
+input   ap_rst_n;
 input   s_axi_control_AWVALID;
 output   s_axi_control_AWREADY;
 input  [C_S_AXI_CONTROL_ADDR_WIDTH - 1:0] s_axi_control_AWADDR;
@@ -56,25 +60,52 @@ output  [1:0] s_axi_control_RRESP;
 output   s_axi_control_BVALID;
 input   s_axi_control_BREADY;
 output  [1:0] s_axi_control_BRESP;
-input   ap_clk;
-input   ap_rst_n;
 output   interrupt;
 
  reg    ap_rst_n_inv;
+wire    ap_start;
+reg    ap_done;
+reg    ap_idle;
+(* fsm_encoding = "none" *) reg   [1:0] ap_CS_fsm;
+wire    ap_CS_fsm_state1;
+reg    ap_ready;
 wire   [255:0] d;
 wire   [255:0] N;
 wire   [255:0] y;
-wire    ap_start;
-wire    ap_ready;
-wire    ap_done;
-wire    ap_idle;
-wire    Block_entry45_proc2_U0_ap_start;
-wire    Block_entry45_proc2_U0_ap_done;
-wire    Block_entry45_proc2_U0_ap_continue;
-wire    Block_entry45_proc2_U0_ap_idle;
-wire    Block_entry45_proc2_U0_ap_ready;
-wire   [255:0] Block_entry45_proc2_U0_x;
-wire    Block_entry45_proc2_U0_x_ap_vld;
+reg    x_ap_vld;
+reg   [255:0] y_read_reg_78;
+reg   [255:0] N_read_reg_83;
+reg   [255:0] d_read_reg_88;
+wire    grp_mod_exp_fu_67_ap_start;
+wire    grp_mod_exp_fu_67_ap_done;
+wire    grp_mod_exp_fu_67_ap_idle;
+wire    grp_mod_exp_fu_67_ap_ready;
+wire   [255:0] grp_mod_exp_fu_67_ap_return;
+reg    grp_mod_exp_fu_67_ap_start_reg;
+wire    ap_CS_fsm_state2;
+reg   [1:0] ap_NS_fsm;
+reg    ap_ST_fsm_state1_blk;
+reg    ap_ST_fsm_state2_blk;
+wire    ap_ce_reg;
+
+// power-on initialization
+initial begin
+#0 ap_CS_fsm = 2'd1;
+#0 grp_mod_exp_fu_67_ap_start_reg = 1'b0;
+end
+
+rsa_mod_exp grp_mod_exp_fu_67(
+    .ap_clk(ap_clk),
+    .ap_rst(ap_rst_n_inv),
+    .ap_start(grp_mod_exp_fu_67_ap_start),
+    .ap_done(grp_mod_exp_fu_67_ap_done),
+    .ap_idle(grp_mod_exp_fu_67_ap_idle),
+    .ap_ready(grp_mod_exp_fu_67_ap_ready),
+    .y(y_read_reg_78),
+    .d(d_read_reg_88),
+    .N(N_read_reg_83),
+    .ap_return(grp_mod_exp_fu_67_ap_return)
+);
 
 rsa_control_s_axi #(
     .C_S_AXI_ADDR_WIDTH( C_S_AXI_CONTROL_ADDR_WIDTH ),
@@ -103,8 +134,8 @@ control_s_axi_U(
     .d(d),
     .N(N),
     .y(y),
-    .x(Block_entry45_proc2_U0_x),
-    .x_ap_vld(Block_entry45_proc2_U0_x_ap_vld),
+    .x(grp_mod_exp_fu_67_ap_return),
+    .x_ap_vld(x_ap_vld),
     .ap_start(ap_start),
     .interrupt(interrupt),
     .ap_ready(ap_ready),
@@ -112,33 +143,112 @@ control_s_axi_U(
     .ap_idle(ap_idle)
 );
 
-rsa_Block_entry45_proc2 Block_entry45_proc2_U0(
-    .ap_clk(ap_clk),
-    .ap_rst(ap_rst_n_inv),
-    .ap_start(Block_entry45_proc2_U0_ap_start),
-    .ap_done(Block_entry45_proc2_U0_ap_done),
-    .ap_continue(Block_entry45_proc2_U0_ap_continue),
-    .ap_idle(Block_entry45_proc2_U0_ap_idle),
-    .ap_ready(Block_entry45_proc2_U0_ap_ready),
-    .y(y),
-    .d(d),
-    .N(N),
-    .x(Block_entry45_proc2_U0_x),
-    .x_ap_vld(Block_entry45_proc2_U0_x_ap_vld)
-);
+always @ (posedge ap_clk) begin
+    if (ap_rst_n_inv == 1'b1) begin
+        ap_CS_fsm <= ap_ST_fsm_state1;
+    end else begin
+        ap_CS_fsm <= ap_NS_fsm;
+    end
+end
 
-assign Block_entry45_proc2_U0_ap_continue = 1'b1;
+always @ (posedge ap_clk) begin
+    if (ap_rst_n_inv == 1'b1) begin
+        grp_mod_exp_fu_67_ap_start_reg <= 1'b0;
+    end else begin
+        if (((ap_start == 1'b1) & (1'b1 == ap_CS_fsm_state1))) begin
+            grp_mod_exp_fu_67_ap_start_reg <= 1'b1;
+        end else if ((grp_mod_exp_fu_67_ap_ready == 1'b1)) begin
+            grp_mod_exp_fu_67_ap_start_reg <= 1'b0;
+        end
+    end
+end
 
-assign Block_entry45_proc2_U0_ap_start = ap_start;
+always @ (posedge ap_clk) begin
+    if ((1'b1 == ap_CS_fsm_state1)) begin
+        N_read_reg_83 <= N;
+        d_read_reg_88 <= d;
+        y_read_reg_78 <= y;
+    end
+end
 
-assign ap_done = Block_entry45_proc2_U0_ap_done;
+always @ (*) begin
+    if ((ap_start == 1'b0)) begin
+        ap_ST_fsm_state1_blk = 1'b1;
+    end else begin
+        ap_ST_fsm_state1_blk = 1'b0;
+    end
+end
 
-assign ap_idle = Block_entry45_proc2_U0_ap_idle;
+always @ (*) begin
+    if ((grp_mod_exp_fu_67_ap_done == 1'b0)) begin
+        ap_ST_fsm_state2_blk = 1'b1;
+    end else begin
+        ap_ST_fsm_state2_blk = 1'b0;
+    end
+end
 
-assign ap_ready = Block_entry45_proc2_U0_ap_ready;
+always @ (*) begin
+    if (((grp_mod_exp_fu_67_ap_done == 1'b1) & (1'b1 == ap_CS_fsm_state2))) begin
+        ap_done = 1'b1;
+    end else begin
+        ap_done = 1'b0;
+    end
+end
+
+always @ (*) begin
+    if (((ap_start == 1'b0) & (1'b1 == ap_CS_fsm_state1))) begin
+        ap_idle = 1'b1;
+    end else begin
+        ap_idle = 1'b0;
+    end
+end
+
+always @ (*) begin
+    if (((grp_mod_exp_fu_67_ap_done == 1'b1) & (1'b1 == ap_CS_fsm_state2))) begin
+        ap_ready = 1'b1;
+    end else begin
+        ap_ready = 1'b0;
+    end
+end
+
+always @ (*) begin
+    if (((grp_mod_exp_fu_67_ap_done == 1'b1) & (1'b1 == ap_CS_fsm_state2))) begin
+        x_ap_vld = 1'b1;
+    end else begin
+        x_ap_vld = 1'b0;
+    end
+end
+
+always @ (*) begin
+    case (ap_CS_fsm)
+        ap_ST_fsm_state1 : begin
+            if (((ap_start == 1'b1) & (1'b1 == ap_CS_fsm_state1))) begin
+                ap_NS_fsm = ap_ST_fsm_state2;
+            end else begin
+                ap_NS_fsm = ap_ST_fsm_state1;
+            end
+        end
+        ap_ST_fsm_state2 : begin
+            if (((grp_mod_exp_fu_67_ap_done == 1'b1) & (1'b1 == ap_CS_fsm_state2))) begin
+                ap_NS_fsm = ap_ST_fsm_state1;
+            end else begin
+                ap_NS_fsm = ap_ST_fsm_state2;
+            end
+        end
+        default : begin
+            ap_NS_fsm = 'bx;
+        end
+    endcase
+end
+
+assign ap_CS_fsm_state1 = ap_CS_fsm[32'd0];
+
+assign ap_CS_fsm_state2 = ap_CS_fsm[32'd1];
 
 always @ (*) begin
     ap_rst_n_inv = ~ap_rst_n;
 end
+
+assign grp_mod_exp_fu_67_ap_start = grp_mod_exp_fu_67_ap_start_reg;
 
 endmodule //rsa

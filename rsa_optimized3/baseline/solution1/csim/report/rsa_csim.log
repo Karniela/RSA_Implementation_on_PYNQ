@@ -1,0 +1,13 @@
+INFO: [SIM 2] *************** CSIM start ***************
+INFO: [SIM 4] CSIM will launch GCC as the compiler.
+   Compiling ../../../../rsa_test.cpp in debug mode
+../../../../rsa_test.cpp: In function ‘int main()’:
+../../../../rsa_test.cpp:45:7: error: ‘mu_p’ was not declared in this scope
+   rsa(mu_p, mu_q, p, q, d, N, y, x);
+       ^~~~
+../../../../rsa_test.cpp:45:13: error: ‘mu_q’ was not declared in this scope
+   rsa(mu_p, mu_q, p, q, d, N, y, x);
+             ^~~~
+make: *** [csim.mk:78: obj/rsa_test.o] Error 1
+ERR: [SIM 100] 'csim_design' failed: compilation error(s).
+INFO: [SIM 3] *************** CSIM finish ***************

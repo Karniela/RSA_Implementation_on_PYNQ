@@ -3273,11 +3273,11 @@
       <key>filename</key>
       <string>rsa.cpp</string>
       <key>line</key>
-      <integer>14</integer>
+      <integer>18</integer>
       <key>column</key>
       <integer>9</integer>
       <key>message</key>
-      <string>HLS pragma dump _XLX_SEP_ PragmaIsValid=1_XLX_SEP_ PragmaType=pipeline_XLX_SEP_ PragmaContext=_XLX_SEP_ PragmaFunction=Montgomery_XLX_SEP_ PragmaOptions=off_XLX_SEP_</string>
+      <string>HLS pragma dump _XLX_SEP_ PragmaIsValid=1_XLX_SEP_ PragmaType=inline_XLX_SEP_ PragmaContext=_XLX_SEP_ PragmaFunction=Montgomery_XLX_SEP_ PragmaOptions=OFF_XLX_SEP_</string>
       <key>ID</key>
       <integer>5471</integer>
       <key>WarningOption</key>
@@ -3289,11 +3289,43 @@
       <key>filename</key>
       <string>rsa.cpp</string>
       <key>line</key>
-      <integer>37</integer>
+      <integer>23</integer>
       <key>column</key>
       <integer>9</integer>
       <key>message</key>
-      <string>HLS pragma dump _XLX_SEP_ PragmaIsValid=1_XLX_SEP_ PragmaType=pipeline_XLX_SEP_ PragmaContext=_XLX_SEP_ PragmaFunction=mod_product_XLX_SEP_ PragmaOptions=off_XLX_SEP_</string>
+      <string>HLS pragma dump _XLX_SEP_ PragmaIsValid=1_XLX_SEP_ PragmaType=pipeline_XLX_SEP_ PragmaContext=_XLX_SEP_ PragmaFunction=Montgomery_XLX_SEP_ PragmaOptions=II=1_XLX_SEP_</string>
+      <key>ID</key>
+      <integer>5471</integer>
+      <key>WarningOption</key>
+      <string>dump-hls-pragmas</string>
+    </dict>
+    <dict>
+      <key>level</key>
+      <string>warning</string>
+      <key>filename</key>
+      <string>rsa.cpp</string>
+      <key>line</key>
+      <integer>55</integer>
+      <key>column</key>
+      <integer>9</integer>
+      <key>message</key>
+      <string>HLS pragma dump _XLX_SEP_ PragmaIsValid=1_XLX_SEP_ PragmaType=inline_XLX_SEP_ PragmaContext=_XLX_SEP_ PragmaFunction=mod_product_XLX_SEP_ PragmaOptions=OFF_XLX_SEP_</string>
+      <key>ID</key>
+      <integer>5471</integer>
+      <key>WarningOption</key>
+      <string>dump-hls-pragmas</string>
+    </dict>
+    <dict>
+      <key>level</key>
+      <string>warning</string>
+      <key>filename</key>
+      <string>rsa.cpp</string>
+      <key>line</key>
+      <integer>60</integer>
+      <key>column</key>
+      <integer>9</integer>
+      <key>message</key>
+      <string>HLS pragma dump _XLX_SEP_ PragmaIsValid=1_XLX_SEP_ PragmaType=pipeline_XLX_SEP_ PragmaContext=_XLX_SEP_ PragmaFunction=mod_product_XLX_SEP_ PragmaOptions=II=1_XLX_SEP_</string>
       <key>ID</key>
       <integer>5471</integer>
       <key>WarningOption</key>
@@ -3337,7 +3369,7 @@
       <key>filename</key>
       <string>rsa.cpp</string>
       <key>line</key>
-      <integer>64</integer>
+      <integer>76</integer>
       <key>column</key>
       <integer>9</integer>
       <key>message</key>
@@ -3353,7 +3385,7 @@
       <key>filename</key>
       <string>rsa.cpp</string>
       <key>line</key>
-      <integer>65</integer>
+      <integer>77</integer>
       <key>column</key>
       <integer>9</integer>
       <key>message</key>
@@ -3369,7 +3401,7 @@
       <key>filename</key>
       <string>rsa.cpp</string>
       <key>line</key>
-      <integer>66</integer>
+      <integer>78</integer>
       <key>column</key>
       <integer>9</integer>
       <key>message</key>
@@ -3385,7 +3417,7 @@
       <key>filename</key>
       <string>rsa.cpp</string>
       <key>line</key>
-      <integer>67</integer>
+      <integer>79</integer>
       <key>column</key>
       <integer>9</integer>
       <key>message</key>
@@ -3401,7 +3433,7 @@
       <key>filename</key>
       <string>rsa.cpp</string>
       <key>line</key>
-      <integer>68</integer>
+      <integer>80</integer>
       <key>column</key>
       <integer>9</integer>
       <key>message</key>
@@ -3417,7 +3449,7 @@
       <key>filename</key>
       <string>rsa.cpp</string>
       <key>line</key>
-      <integer>71</integer>
+      <integer>89</integer>
       <key>column</key>
       <integer>9</integer>
       <key>message</key>

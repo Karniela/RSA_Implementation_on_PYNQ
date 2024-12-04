@@ -1,2 +1,0 @@
-remark: rsa.cpp:63:0: Inlining function 'mod_product(ap_uint<257>, ap_uint<256>, ap_uint<256>)' into 'rsa(ap_uint<256>, ap_uint<256>, ap_uint<256>, ap_uint<256>&)'
-remark: rsa.cpp:63:0: Inlining function 'Montgomery(ap_uint<256>, ap_uint<256>, ap_uint<256>)' into 'rsa(ap_uint<256>, ap_uint<256>, ap_uint<256>, ap_uint<256>&)'

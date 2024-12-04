@@ -1,7 +1,7 @@
 <profile>
 
 <section name = "Vitis HLS Report for 'rsa'" level="0">
-<item name = "Date">Mon Dec  2 17:59:59 2024
+<item name = "Date">Tue Dec  3 22:41:16 2024
 </item>
 <item name = "Version">2022.2 (Build 3670227 on Oct 13 2022)</item>
 <item name = "Project">baseline</item>
@@ -24,14 +24,14 @@
 <section name = "" level="1">
 <item name = "Summary"><table name="" hasTotal="0">
 <keys size="8">, min, max, min, max, min, max, Type</keys>
-<column name="">197378, 393986, 1.974 ms, 3.940 ms, 197379, 393987, dataflow</column>
+<column name="">263426, 526082, 2.634 ms, 5.261 ms, 263427, 526083, no</column>
 </table>
 </item>
 <item name = "Detail">
 <section name = "" level="1">
 <item name = "Instance"><table name="" hasTotal="0">
 <keys size="9">Instance, Module, min, max, min, max, min, max, Type</keys>
-<column name="Block_entry45_proc2_U0">Block_entry45_proc2, 197378, 393986, 1.974 ms, 3.940 ms, 197378, 393986, no</column>
+<column name="grp_mod_exp_fu_67">mod_exp, 263425, 526081, 2.634 ms, 5.261 ms, 263425, 526081, no</column>
 </table>
 </item>
 <item name = "Loop"><table name="" hasTotal="0">
@@ -50,20 +50,20 @@
 <column name="DSP">-, -, -, -, -</column>
 <column name="Expression">-, -, -, -, -</column>
 <column name="FIFO">-, -, -, -, -</column>
-<column name="Instance">0, -, 11693, 5327, -</column>
+<column name="Instance">0, -, 7290, 3769, -</column>
 <column name="Memory">-, -, -, -, -</column>
-<column name="Multiplexer">-, -, -, -, -</column>
-<column name="Register">-, -, -, -, -</column>
+<column name="Multiplexer">-, -, -, 14, -</column>
+<column name="Register">-, -, 771, -, -</column>
 <specialColumn name="Available">280, 220, 106400, 53200, 0</specialColumn>
-<specialColumn name="Utilization (%)">0, 0, 10, 10, 0</specialColumn>
+<specialColumn name="Utilization (%)">0, 0, 7, 7, 0</specialColumn>
 </table>
 </item>
 <item name = "Detail">
 <section name = "" level="1">
 <item name = "Instance"><table name="" hasTotal="1">
 <keys size="7">Instance, Module, BRAM_18K, DSP, FF, LUT, URAM</keys>
-<column name="Block_entry45_proc2_U0">Block_entry45_proc2, 0, 0, 10609, 3239, 0</column>
 <column name="control_s_axi_U">control_s_axi, 0, 0, 1084, 2088, 0</column>
+<column name="grp_mod_exp_fu_67">mod_exp, 0, 0, 6206, 1681, 0</column>
 </table>
 </item>
 <item name = "DSP"><table name="" hasTotal="0">
@@ -84,10 +84,16 @@
 </item>
 <item name = "Multiplexer"><table name="" hasTotal="1">
 <keys size="5">Name, LUT, Input Size, Bits, Total Bits</keys>
+<column name="ap_NS_fsm">14, 3, 1, 3</column>
 </table>
 </item>
 <item name = "Register"><table name="" hasTotal="1">
 <keys size="5">Name, FF, LUT, Bits, Const Bits</keys>
+<column name="N_read_reg_83">256, 0, 256, 0</column>
+<column name="ap_CS_fsm">2, 0, 2, 0</column>
+<column name="d_read_reg_88">256, 0, 256, 0</column>
+<column name="grp_mod_exp_fu_67_ap_start_reg">1, 0, 1, 0</column>
+<column name="y_read_reg_78">256, 0, 256, 0</column>
 </table>
 </item>
 </section>

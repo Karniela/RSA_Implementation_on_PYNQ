@@ -1,6 +1,5 @@
 INFO: [SIM 2] *************** CSIM start ***************
 INFO: [SIM 4] CSIM will launch GCC as the compiler.
-   Compiling ../../../../rsa_test.cpp in debug mode
    Compiling ../../../../rsa.cpp in debug mode
    Generating csim.exe
 The 256-bit N in decimal is: 28948022309329048855892746252171981402981537383894273816512899164258300594241

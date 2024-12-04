@@ -27,12 +27,12 @@ entry:
 ; Function Attrs: argmemonly noinline norecurse
 define internal fastcc void @copy_out(%"struct.ap_uint<256>"* noalias "unpacked"="0", i256* noalias nocapture readonly align 512 "unpacked"="1.0.0.0") unnamed_addr #2 {
 entry:
-  call fastcc void @"onebyonecpy_hls.p0struct.ap_uint<256>.64"(%"struct.ap_uint<256>"* %0, i256* align 512 %1)
+  call fastcc void @"onebyonecpy_hls.p0struct.ap_uint<256>.61"(%"struct.ap_uint<256>"* %0, i256* align 512 %1)
   ret void
 }
 
 ; Function Attrs: argmemonly noinline norecurse
-define internal fastcc void @"onebyonecpy_hls.p0struct.ap_uint<256>.64"(%"struct.ap_uint<256>"* noalias "unpacked"="0", i256* noalias nocapture readonly align 512 "unpacked"="1.0.0.0") unnamed_addr #3 {
+define internal fastcc void @"onebyonecpy_hls.p0struct.ap_uint<256>.61"(%"struct.ap_uint<256>"* noalias "unpacked"="0", i256* noalias nocapture readonly align 512 "unpacked"="1.0.0.0") unnamed_addr #3 {
 entry:
   %2 = icmp eq %"struct.ap_uint<256>"* %0, null
   br i1 %2, label %ret, label %copy
@@ -68,7 +68,7 @@ declare void @apatb_rsa_hw(%"struct.ap_uint<256>"*, %"struct.ap_uint<256>"*, %"s
 ; Function Attrs: argmemonly noinline norecurse
 define internal fastcc void @copy_back(%"struct.ap_uint<256>"* noalias "unpacked"="0", i256* noalias nocapture readonly align 512 "unpacked"="1.0.0.0") unnamed_addr #2 {
 entry:
-  call fastcc void @"onebyonecpy_hls.p0struct.ap_uint<256>.64"(%"struct.ap_uint<256>"* %0, i256* align 512 %1)
+  call fastcc void @"onebyonecpy_hls.p0struct.ap_uint<256>.61"(%"struct.ap_uint<256>"* %0, i256* align 512 %1)
   ret void
 }
 

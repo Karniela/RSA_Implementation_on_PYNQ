@@ -12,9 +12,7 @@
   <warningLogs>
     <logs>
       <synLog>
-        <logs message="WARNING: [RTGEN 206-101] Design contains AXI ports. Reset is fixed to synchronous and active low." projectName="baseline" solutionName="solution1" date="2024-12-02T17:59:59.541-0800" type="Warning"/>
-        <logs message="WARNING: [HLS 200-471] Dataflow form checks found 1 issue(s) in file rsa.cpp&#xA;Resolution: For help on HLS 200-471 see www.xilinx.com/cgi-bin/docs/rdoc?v=2022.2;t=hls+guidance;d=200-471.html" projectName="baseline" solutionName="solution1" date="2024-12-02T17:59:56.683-0800" type="Warning"/>
-        <logs message="WARNING: [HLS 214-113] Either use an argument of the function or declare the variable inside the dataflow loop body (rsa.cpp:62:6)&#xA;Resolution: For help on HLS 214-113 see www.xilinx.com/cgi-bin/docs/rdoc?v=2022.2;t=hls+guidance;d=214-113.html" projectName="baseline" solutionName="solution1" date="2024-12-02T17:59:55.103-0800" type="Warning"/>
+        <logs message="WARNING: [RTGEN 206-101] Design contains AXI ports. Reset is fixed to synchronous and active low." projectName="baseline" solutionName="solution1" date="2024-12-03T22:41:16.604-0800" type="Warning"/>
       </synLog>
       <simLog/>
       <mgLog/>

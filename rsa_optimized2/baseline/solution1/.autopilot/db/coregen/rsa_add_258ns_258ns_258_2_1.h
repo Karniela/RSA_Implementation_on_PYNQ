@@ -5,7 +5,7 @@
 // ==============================================================
 #ifndef __rsa_add_258ns_258ns_258_2_1__HH__
 #define __rsa_add_258ns_258ns_258_2_1__HH__
-#include "rsa_add_258ns_258ns_258_2_1_Adder_0.h"
+#include "rsa_add_258ns_258ns_258_2_1_Adder_1.h"
 
 template<
     int ID,
@@ -23,15 +23,15 @@ SC_MODULE(rsa_add_258ns_258ns_258_2_1) {
 
 
 
-    rsa_add_258ns_258ns_258_2_1_Adder_0 rsa_add_258ns_258ns_258_2_1_Adder_0_U;
+    rsa_add_258ns_258ns_258_2_1_Adder_1 rsa_add_258ns_258ns_258_2_1_Adder_1_U;
 
-    SC_CTOR(rsa_add_258ns_258ns_258_2_1):  rsa_add_258ns_258ns_258_2_1_Adder_0_U ("rsa_add_258ns_258ns_258_2_1_Adder_0_U") {
-        rsa_add_258ns_258ns_258_2_1_Adder_0_U.clk(clk);
-        rsa_add_258ns_258ns_258_2_1_Adder_0_U.reset(reset);
-        rsa_add_258ns_258ns_258_2_1_Adder_0_U.ce(ce);
-        rsa_add_258ns_258ns_258_2_1_Adder_0_U.a(din0);
-        rsa_add_258ns_258ns_258_2_1_Adder_0_U.b(din1);
-        rsa_add_258ns_258ns_258_2_1_Adder_0_U.s(dout);
+    SC_CTOR(rsa_add_258ns_258ns_258_2_1):  rsa_add_258ns_258ns_258_2_1_Adder_1_U ("rsa_add_258ns_258ns_258_2_1_Adder_1_U") {
+        rsa_add_258ns_258ns_258_2_1_Adder_1_U.clk(clk);
+        rsa_add_258ns_258ns_258_2_1_Adder_1_U.reset(reset);
+        rsa_add_258ns_258ns_258_2_1_Adder_1_U.ce(ce);
+        rsa_add_258ns_258ns_258_2_1_Adder_1_U.a(din0);
+        rsa_add_258ns_258ns_258_2_1_Adder_1_U.b(din1);
+        rsa_add_258ns_258ns_258_2_1_Adder_1_U.s(dout);
 
     }
 

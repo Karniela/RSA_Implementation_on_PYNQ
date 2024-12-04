@@ -1301,22 +1301,4 @@ Diagnostics:
         Offset:          1637138
         Length:          0
         ReplacementText: 'VITIS_LOOP_195_3: '
-  - DiagnosticName:  xilinx-label-all-loops
-    Message:         'Added loop label VITIS_LOOP_13_1:  '
-    FileOffset:      13
-    FilePath:        rsa.cpp
-    Replacements:    
-      - FilePath:        /home/cse237c_fa24_s_chen/RSA_Implementation_on_PYNQ/rsa_optimized1/baseline/solution1/.autopilot/db/rsa.pp.0.cpp
-        Offset:          1689804
-        Length:          0
-        ReplacementText: 'VITIS_LOOP_13_1: '
-  - DiagnosticName:  xilinx-label-all-loops
-    Message:         'Added loop label VITIS_LOOP_41_1:  '
-    FileOffset:      41
-    FilePath:        rsa.cpp
-    Replacements:    
-      - FilePath:        /home/cse237c_fa24_s_chen/RSA_Implementation_on_PYNQ/rsa_optimized1/baseline/solution1/.autopilot/db/rsa.pp.0.cpp
-        Offset:          1690175
-        Length:          0
-        ReplacementText: 'VITIS_LOOP_41_1: '
 ...

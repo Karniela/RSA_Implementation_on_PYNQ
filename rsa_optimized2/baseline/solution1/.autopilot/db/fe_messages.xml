@@ -611,11 +611,17 @@
     <msg msg_groups="PRAGMA_VERBOSE_DUMP" msg_id="207-5471" msg_severity="WARNING" msg_loc="/tools/Xilinx/Vitis_HLS/2022.2/common/technology/autopilot/hls_hypot_apfixed.h:196:9" msg_body="HLS pragma dump">
         <args ARG_PragmaFunction="hypot_fixed" ARG_PragmaIsValid="1" ARG_PragmaType="unroll" ClangWarningOption="dump-hls-pragmas"/>
     </msg>
-    <msg msg_groups="PRAGMA_VERBOSE_DUMP" msg_id="207-5471" msg_severity="WARNING" msg_loc="rsa.cpp:14:9" msg_body="HLS pragma dump">
-        <args ARG_PragmaFunction="Montgomery" ARG_PragmaIsValid="1" ARG_PragmaOptions="off" ARG_PragmaType="pipeline" ClangWarningOption="dump-hls-pragmas"/>
+    <msg msg_groups="PRAGMA_VERBOSE_DUMP" msg_id="207-5471" msg_severity="WARNING" msg_loc="rsa.cpp:18:9" msg_body="HLS pragma dump">
+        <args ARG_PragmaFunction="Montgomery" ARG_PragmaIsValid="1" ARG_PragmaOptions="OFF" ARG_PragmaType="inline" ClangWarningOption="dump-hls-pragmas"/>
     </msg>
-    <msg msg_groups="PRAGMA_VERBOSE_DUMP" msg_id="207-5471" msg_severity="WARNING" msg_loc="rsa.cpp:37:9" msg_body="HLS pragma dump">
-        <args ARG_PragmaFunction="mod_product" ARG_PragmaIsValid="1" ARG_PragmaOptions="off" ARG_PragmaType="pipeline" ClangWarningOption="dump-hls-pragmas"/>
+    <msg msg_groups="PRAGMA_VERBOSE_DUMP" msg_id="207-5471" msg_severity="WARNING" msg_loc="rsa.cpp:23:9" msg_body="HLS pragma dump">
+        <args ARG_PragmaFunction="Montgomery" ARG_PragmaIsValid="1" ARG_PragmaOptions="II=1" ARG_PragmaType="pipeline" ClangWarningOption="dump-hls-pragmas"/>
+    </msg>
+    <msg msg_groups="PRAGMA_VERBOSE_DUMP" msg_id="207-5471" msg_severity="WARNING" msg_loc="rsa.cpp:55:9" msg_body="HLS pragma dump">
+        <args ARG_PragmaFunction="mod_product" ARG_PragmaIsValid="1" ARG_PragmaOptions="OFF" ARG_PragmaType="inline" ClangWarningOption="dump-hls-pragmas"/>
+    </msg>
+    <msg msg_groups="PRAGMA_VERBOSE_DUMP" msg_id="207-5471" msg_severity="WARNING" msg_loc="rsa.cpp:60:9" msg_body="HLS pragma dump">
+        <args ARG_PragmaFunction="mod_product" ARG_PragmaIsValid="1" ARG_PragmaOptions="II=1" ARG_PragmaType="pipeline" ClangWarningOption="dump-hls-pragmas"/>
     </msg>
     <msg msg_groups="PRAGMA_VERBOSE_DUMP" msg_id="207-5471" msg_severity="WARNING" msg_loc="/home/cse237c_fa24_s_chen/RSA_Implementation_on_PYNQ/rsa_optimized2/baseline/solution1/csynth.tcl:18:9" msg_body="HLS pragma dump">
         <args ARG_PragmaContext="directive" ARG_PragmaFunction="rsa" ARG_PragmaIsValid="1" ARG_PragmaOptions="name=rsa" ARG_PragmaType="top" ClangWarningOption="dump-hls-pragmas"/>
@@ -623,29 +629,23 @@
     <msg msg_groups="PRAGMA_VERBOSE_DUMP" msg_id="207-5471" msg_severity="WARNING" msg_loc="/home/cse237c_fa24_s_chen/RSA_Implementation_on_PYNQ/rsa_optimized2/baseline/solution1/directives.tcl:6:9" msg_body="HLS pragma dump">
         <args ARG_PragmaContext="directive" ARG_PragmaFunction="rsa" ARG_PragmaIsValid="1" ARG_PragmaOptions="name=rsa" ARG_PragmaType="top" ClangWarningOption="dump-hls-pragmas"/>
     </msg>
-    <msg msg_groups="PRAGMA_VERBOSE_DUMP" msg_id="207-5471" msg_severity="WARNING" msg_loc="rsa.cpp:64:9" msg_body="HLS pragma dump">
+    <msg msg_groups="PRAGMA_VERBOSE_DUMP" msg_id="207-5471" msg_severity="WARNING" msg_loc="rsa.cpp:76:9" msg_body="HLS pragma dump">
         <args ARG_PragmaFunction="rsa" ARG_PragmaIsValid="1" ARG_PragmaOptions="mode=s_axilite port=return" ARG_PragmaType="interface" ClangWarningOption="dump-hls-pragmas"/>
     </msg>
-    <msg msg_groups="PRAGMA_VERBOSE_DUMP" msg_id="207-5471" msg_severity="WARNING" msg_loc="rsa.cpp:65:9" msg_body="HLS pragma dump">
+    <msg msg_groups="PRAGMA_VERBOSE_DUMP" msg_id="207-5471" msg_severity="WARNING" msg_loc="rsa.cpp:77:9" msg_body="HLS pragma dump">
         <args ARG_PragmaFunction="rsa" ARG_PragmaIsValid="1" ARG_PragmaOptions="mode=s_axilite port=d" ARG_PragmaType="interface" ClangWarningOption="dump-hls-pragmas"/>
     </msg>
-    <msg msg_groups="PRAGMA_VERBOSE_DUMP" msg_id="207-5471" msg_severity="WARNING" msg_loc="rsa.cpp:66:9" msg_body="HLS pragma dump">
+    <msg msg_groups="PRAGMA_VERBOSE_DUMP" msg_id="207-5471" msg_severity="WARNING" msg_loc="rsa.cpp:78:9" msg_body="HLS pragma dump">
         <args ARG_PragmaFunction="rsa" ARG_PragmaIsValid="1" ARG_PragmaOptions="mode=s_axilite port=N" ARG_PragmaType="interface" ClangWarningOption="dump-hls-pragmas"/>
     </msg>
-    <msg msg_groups="PRAGMA_VERBOSE_DUMP" msg_id="207-5471" msg_severity="WARNING" msg_loc="rsa.cpp:67:9" msg_body="HLS pragma dump">
+    <msg msg_groups="PRAGMA_VERBOSE_DUMP" msg_id="207-5471" msg_severity="WARNING" msg_loc="rsa.cpp:79:9" msg_body="HLS pragma dump">
         <args ARG_PragmaFunction="rsa" ARG_PragmaIsValid="1" ARG_PragmaOptions="mode=s_axilite port=y" ARG_PragmaType="interface" ClangWarningOption="dump-hls-pragmas"/>
     </msg>
-    <msg msg_groups="PRAGMA_VERBOSE_DUMP" msg_id="207-5471" msg_severity="WARNING" msg_loc="rsa.cpp:68:9" msg_body="HLS pragma dump">
+    <msg msg_groups="PRAGMA_VERBOSE_DUMP" msg_id="207-5471" msg_severity="WARNING" msg_loc="rsa.cpp:80:9" msg_body="HLS pragma dump">
         <args ARG_PragmaFunction="rsa" ARG_PragmaIsValid="1" ARG_PragmaOptions="mode=s_axilite port=x" ARG_PragmaType="interface" ClangWarningOption="dump-hls-pragmas"/>
     </msg>
-    <msg msg_groups="PRAGMA_VERBOSE_DUMP" msg_id="207-5471" msg_severity="WARNING" msg_loc="rsa.cpp:71:9" msg_body="HLS pragma dump">
+    <msg msg_groups="PRAGMA_VERBOSE_DUMP" msg_id="207-5471" msg_severity="WARNING" msg_loc="rsa.cpp:89:9" msg_body="HLS pragma dump">
         <args ARG_PragmaFunction="rsa" ARG_PragmaIsValid="1" ARG_PragmaOptions="OFF" ARG_PragmaType="pipeline" ClangWarningOption="dump-hls-pragmas"/>
-    </msg>
-    <msg msg_groups="PRAGMA_INLINE" msg_id="214-178" msg_severity="INFO" msg_loc="rsa.cpp:63:0" msg_body="Inlining function 'mod_product(ap_uint&lt;257&gt;, ap_uint&lt;256&gt;, ap_uint&lt;256&gt;)' into 'rsa(ap_uint&lt;256&gt;, ap_uint&lt;256&gt;, ap_uint&lt;256&gt;, ap_uint&lt;256&gt;&amp;)'">
-        <args Callee="mod_product(ap_uint&lt;257&gt;, ap_uint&lt;256&gt;, ap_uint&lt;256&gt;)" Caller="rsa(ap_uint&lt;256&gt;, ap_uint&lt;256&gt;, ap_uint&lt;256&gt;, ap_uint&lt;256&gt;&amp;)"/>
-    </msg>
-    <msg msg_groups="PRAGMA_INLINE" msg_id="214-178" msg_severity="INFO" msg_loc="rsa.cpp:63:0" msg_body="Inlining function 'Montgomery(ap_uint&lt;256&gt;, ap_uint&lt;256&gt;, ap_uint&lt;256&gt;)' into 'rsa(ap_uint&lt;256&gt;, ap_uint&lt;256&gt;, ap_uint&lt;256&gt;, ap_uint&lt;256&gt;&amp;)'">
-        <args Callee="Montgomery(ap_uint&lt;256&gt;, ap_uint&lt;256&gt;, ap_uint&lt;256&gt;)" Caller="rsa(ap_uint&lt;256&gt;, ap_uint&lt;256&gt;, ap_uint&lt;256&gt;, ap_uint&lt;256&gt;&amp;)"/>
     </msg>
 </xilinx:hls_fe_msgs>
 

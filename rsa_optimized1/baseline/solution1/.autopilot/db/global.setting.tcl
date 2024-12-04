@@ -4,7 +4,7 @@ set ClockPeriod 10
 set ClockList ap_clk
 set HasVivadoClockPeriod 0
 set CombLogicFlag 0
-set PipelineFlag 1
+set PipelineFlag 0
 set DataflowTaskPipelineFlag 1
 set TrivialPipelineFlag 0
 set noPortSwitchingFlag 0
@@ -45,7 +45,7 @@ set TargetInfo xc7z020:-clg400:-1
 set SourceFiles {sc {} c ../../rsa.cpp}
 set SourceFlags {sc {} c {{}}}
 set DirectiveFile /home/cse237c_fa24_s_chen/RSA_Implementation_on_PYNQ/rsa_optimized1/baseline/solution1/solution1.directive
-set TBFiles {verilog {../../rsa_test.cpp ../../data/golden.txt ../../data/input.txt} bc {../../rsa_test.cpp ../../data/golden.txt ../../data/input.txt} vhdl {../../rsa_test.cpp ../../data/golden.txt ../../data/input.txt} sc {../../rsa_test.cpp ../../data/golden.txt ../../data/input.txt} cas {../../rsa_test.cpp ../../data/golden.txt ../../data/input.txt} c {}}
+set TBFiles {verilog {../../data/input.txt ../../data/golden.txt ../../rsa_test.cpp} bc {../../data/input.txt ../../data/golden.txt ../../rsa_test.cpp} vhdl {../../data/input.txt ../../data/golden.txt ../../rsa_test.cpp} sc {../../data/input.txt ../../data/golden.txt ../../rsa_test.cpp} cas {../../data/input.txt ../../data/golden.txt ../../rsa_test.cpp} c {}}
 set SpecLanguage C
 set TVInFiles {bc {} c {} sc {} cas {} vhdl {} verilog {}}
 set TVOutFiles {bc {} c {} sc {} cas {} vhdl {} verilog {}}
