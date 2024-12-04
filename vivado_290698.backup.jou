@@ -2,30 +2,30 @@
 # Vivado v2022.2 (64-bit)
 # SW Build 3671981 on Fri Oct 14 04:59:54 MDT 2022
 # IP Build 3669848 on Fri Oct 14 08:30:02 MDT 2022
-# Start of session at: Tue Dec  3 15:58:32 2024
-# Process ID: 2081628
+# Start of session at: Thu Nov 28 15:01:20 2024
+# Process ID: 290698
 # Current directory: /home/cse237c_fa24_y_liao/Desktop/RSA_Implementation_on_PYNQ
 # Command line: vivado
 # Log file: /home/cse237c_fa24_y_liao/Desktop/RSA_Implementation_on_PYNQ/vivado.log
 # Journal file: /home/cse237c_fa24_y_liao/Desktop/RSA_Implementation_on_PYNQ/vivado.jou
-# Running On: waiter, OS: Linux, CPU Frequency: 1371.557 MHz, CPU Physical cores: 32, Host memory: 404950 MB
+# Running On: waiter, OS: Linux, CPU Frequency: 1953.308 MHz, CPU Physical cores: 32, Host memory: 404950 MB
 #-----------------------------------------------------------
 start_gui
-create_project rsa_optimize2_demo /home/cse237c_fa24_y_liao/Desktop/rsa_optimize2_demo -part xc7z020clg400-1
-create_bd_design "rsa_opt2"
+create_project rsa_baseline_demo /home/cse237c_fa24_y_liao/Desktop/rsa_baseline_demo -part xc7z020clg400-1
+create_bd_design "design_1"
 update_compile_order -fileset sources_1
-set_property  ip_repo_paths  /home/cse237c_fa24_y_liao/Desktop/rsa_optimized2_hls/rsa_opt2_hls/solution1/impl/ip [current_project]
+set_property  ip_repo_paths  /home/cse237c_fa24_y_liao/Desktop/rsa_baseline_hls/solution1/impl/ip [current_project]
 update_ip_catalog
-open_bd_design {/home/cse237c_fa24_y_liao/Desktop/rsa_optimize2_demo/rsa_optimize2_demo.srcs/sources_1/bd/rsa_opt2/rsa_opt2.bd}
-startgroup
-create_bd_cell -type ip -vlnv xilinx.com:hls:rsa:1.0 rsa_0
-endgroup
+open_bd_design {/home/cse237c_fa24_y_liao/Desktop/rsa_baseline_demo/rsa_baseline_demo.srcs/sources_1/bd/design_1/design_1.bd}
 startgroup
 create_bd_cell -type ip -vlnv xilinx.com:ip:processing_system7:5.5 processing_system7_0
 endgroup
+startgroup
+create_bd_cell -type ip -vlnv xilinx.com:hls:rsa:1.0 rsa_0
+endgroup
 apply_bd_automation -rule xilinx.com:bd_rule:processing_system7 -config {make_external "FIXED_IO, DDR" Master "Disable" Slave "Disable" }  [get_bd_cells processing_system7_0]
 apply_bd_automation -rule xilinx.com:bd_rule:axi4 -config { Clk_master {Auto} Clk_slave {Auto} Clk_xbar {Auto} Master {/processing_system7_0/M_AXI_GP0} Slave {/rsa_0/s_axi_control} ddr_seg {Auto} intc_ip {New AXI Interconnect} master_apm {0}}  [get_bd_intf_pins rsa_0/s_axi_control]
-make_wrapper -files [get_files /home/cse237c_fa24_y_liao/Desktop/rsa_optimize2_demo/rsa_optimize2_demo.srcs/sources_1/bd/rsa_opt2/rsa_opt2.bd] -top
-add_files -norecurse /home/cse237c_fa24_y_liao/Desktop/rsa_optimize2_demo/rsa_optimize2_demo.gen/sources_1/bd/rsa_opt2/hdl/rsa_opt2_wrapper.v
+make_wrapper -files [get_files /home/cse237c_fa24_y_liao/Desktop/rsa_baseline_demo/rsa_baseline_demo.srcs/sources_1/bd/design_1/design_1.bd] -top
+add_files -norecurse /home/cse237c_fa24_y_liao/Desktop/rsa_baseline_demo/rsa_baseline_demo.gen/sources_1/bd/design_1/hdl/design_1_wrapper.v
 launch_runs impl_1 -to_step write_bitstream -jobs 64
 wait_on_run impl_1
