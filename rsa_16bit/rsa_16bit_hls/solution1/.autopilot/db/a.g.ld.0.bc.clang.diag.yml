@@ -1,0 +1,70 @@
+--- !Passed
+Pass:            reflow-pragma-conflict-handle
+Name:            FunctionPragmaConflictWarn
+DebugLoc:        { File: RSA_Implementation_on_PYNQ/rsa_baseline_synthesis/rsa.cpp, 
+                   Line: 7, Column: 0 }
+Function:        _Z7mod_exp7ap_uintILi16EES0_S0_
+Args:            
+  - String:          'In function '''
+  - Function:        'mod_exp(ap_uint<16>, ap_uint<16>, ap_uint<16>)'
+    DebugLoc:        { File: RSA_Implementation_on_PYNQ/rsa_baseline_synthesis/rsa.cpp, 
+                       Line: 7, Column: 0 }
+  - String:          ''', '
+  - String:          'Pragma conflict happens on '''
+  - String:          INLINE
+  - String:          ''' and '
+  - String:          DATAFLOW
+  - String:          ' pragmas: '
+  - String:          Inline into dataflow region may break the canonical form
+...
+--- !Passed
+Pass:            inline
+Name:            AlwaysInline
+DebugLoc:        { File: RSA_Implementation_on_PYNQ/rsa_baseline_synthesis/rsa.cpp, 
+                   Line: 50, Column: 6 }
+Function:        _Z3rsa7ap_uintILi16EES0_S0_RS0_
+Args:            
+  - String:          'Inlining function '''
+  - Callee:          'mod_exp(ap_uint<16>, ap_uint<16>, ap_uint<16>)'
+    DebugLoc:        { File: RSA_Implementation_on_PYNQ/rsa_baseline_synthesis/rsa.cpp, 
+                       Line: 7, Column: 0 }
+  - String:          ''' into '''
+  - Caller:          'rsa(ap_uint<16>, ap_uint<16>, ap_uint<16>, ap_uint<16>&)'
+    DebugLoc:        { File: RSA_Implementation_on_PYNQ/rsa_baseline_synthesis/rsa.cpp, 
+                       Line: 38, Column: 0 }
+  - String:          ''''
+...
+--- !Passed
+Pass:            reflow-pragma-loop-unroll
+Name:            PragmaFullyUnroll
+DebugLoc:        { File: RSA_Implementation_on_PYNQ/rsa_baseline_synthesis/rsa.cpp, 
+                   Line: 38, Column: 0 }
+Function:        _Z3rsa7ap_uintILi16EES0_S0_RS0_
+Args:            
+  - String:          'Unrolling loop '''
+  - LoopName:        VITIS_LOOP_29_2
+  - String:          ''' ('
+  - LoopLoc:         'RSA_Implementation_on_PYNQ/rsa_baseline_synthesis/rsa.cpp:29:22'
+  - String:          ') '
+  - String:          'in function '''
+  - String:          rsa
+  - String:          ''' completely with a factor of '
+  - Factor:          '16'
+...
+--- !Passed
+Pass:            reflow-pragma-loop-unroll
+Name:            PragmaFullyUnroll
+DebugLoc:        { File: RSA_Implementation_on_PYNQ/rsa_baseline_synthesis/rsa.cpp, 
+                   Line: 38, Column: 0 }
+Function:        _Z3rsa7ap_uintILi16EES0_S0_RS0_
+Args:            
+  - String:          'Unrolling loop '''
+  - LoopName:        VITIS_LOOP_18_1
+  - String:          ''' ('
+  - LoopLoc:         'RSA_Implementation_on_PYNQ/rsa_baseline_synthesis/rsa.cpp:18:19'
+  - String:          ') '
+  - String:          'in function '''
+  - String:          rsa
+  - String:          ''' completely with a factor of '
+  - Factor:          '16'
+...

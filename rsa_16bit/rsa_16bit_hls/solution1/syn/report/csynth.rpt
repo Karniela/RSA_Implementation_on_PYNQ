@@ -1,0 +1,153 @@
+
+
+================================================================
+== Synthesis Summary Report of 'rsa'
+================================================================
++ General Information: 
+    * Date:           Thu Nov 28 14:40:04 2024
+    * Version:        2022.2 (Build 3670227 on Oct 13 2022)
+    * Project:        rsa_baseline_hls
+    * Solution:       solution1 (Vivado IP Flow Target)
+    * Product family: zynq
+    * Target device:  xc7z020-clg400-1
+    
+
++ Performance & Resource Estimates: 
+    
+    PS: '+' for module; 'o' for loop; '*' for dataflow
+    +-----------------------+------+------+---------+-----------+----------+---------+------+----------+------+----------+-------------+-------------+-----+
+    |        Modules        | Issue|      | Latency |  Latency  | Iteration|         | Trip |          |      |          |             |             |     |
+    |        & Loops        | Type | Slack| (cycles)|    (ns)   |  Latency | Interval| Count| Pipelined| BRAM |    DSP   |      FF     |     LUT     | URAM|
+    +-----------------------+------+------+---------+-----------+----------+---------+------+----------+------+----------+-------------+-------------+-----+
+    |+ rsa*                 |     -|  0.21|      627|  6.270e+03|         -|      628|     -|  dataflow|     -|  30 (13%)|  13056 (12%)|  10523 (19%)|    -|
+    | + Block_entry30_proc  |     -|  0.21|      627|  6.270e+03|         -|      627|     -|        no|     -|  30 (13%)|  12932 (12%)|  10355 (19%)|    -|
+    +-----------------------+------+------+---------+-----------+----------+---------+------+----------+------+----------+-------------+-------------+-----+
+
+
+================================================================
+== HW Interfaces
+================================================================
+* S_AXILITE Interfaces
++---------------+------------+---------------+--------+----------+
+| Interface     | Data Width | Address Width | Offset | Register |
++---------------+------------+---------------+--------+----------+
+| s_axi_control | 32         | 6             | 16     | 0        |
++---------------+------------+---------------+--------+----------+
+
+* S_AXILITE Registers
++---------------+----------+--------+-------+--------+----------------------------------+----------------------------------------------------------------------+
+| Interface     | Register | Offset | Width | Access | Description                      | Bit Fields                                                           |
++---------------+----------+--------+-------+--------+----------------------------------+----------------------------------------------------------------------+
+| s_axi_control | CTRL     | 0x00   | 32    | RW     | Control signals                  | 0=AP_START 1=AP_DONE 2=AP_IDLE 3=AP_READY 7=AUTO_RESTART 9=INTERRUPT |
+| s_axi_control | GIER     | 0x04   | 32    | RW     | Global Interrupt Enable Register | 0=Enable                                                             |
+| s_axi_control | IP_IER   | 0x08   | 32    | RW     | IP Interrupt Enable Register     | 0=CHAN0_INT_EN 1=CHAN1_INT_EN                                        |
+| s_axi_control | IP_ISR   | 0x0c   | 32    | RW     | IP Interrupt Status Register     | 0=CHAN0_INT_ST 1=CHAN1_INT_ST                                        |
+| s_axi_control | d        | 0x10   | 32    | W      | Data signal of d                 |                                                                      |
+| s_axi_control | N        | 0x18   | 32    | W      | Data signal of N                 |                                                                      |
+| s_axi_control | y        | 0x20   | 32    | W      | Data signal of y                 |                                                                      |
+| s_axi_control | x        | 0x28   | 32    | R      | Data signal of x                 |                                                                      |
+| s_axi_control | x_ctrl   | 0x2c   | 32    | R      | Control signal of x              | 0=x_ap_vld                                                           |
++---------------+----------+--------+-------+--------+----------------------------------+----------------------------------------------------------------------+
+
+* TOP LEVEL CONTROL
++-----------+------------+-----------+
+| Interface | Type       | Ports     |
++-----------+------------+-----------+
+| ap_clk    | clock      | ap_clk    |
+| ap_rst_n  | reset      | ap_rst_n  |
+| interrupt | interrupt  | interrupt |
+| ap_ctrl   | ap_ctrl_hs |           |
++-----------+------------+-----------+
+
+
+================================================================
+== SW I/O Information
+================================================================
+* Top Function Arguments
++----------+-----------+--------------+
+| Argument | Direction | Datatype     |
++----------+-----------+--------------+
+| d        | in        | ap_uint<16>  |
+| N        | in        | ap_uint<16>  |
+| y        | in        | ap_uint<16>  |
+| x        | out       | ap_uint<16>& |
++----------+-----------+--------------+
+
+* SW-to-HW Mapping
++----------+---------------+----------+----------------------------------+
+| Argument | HW Interface  | HW Type  | HW Info                          |
++----------+---------------+----------+----------------------------------+
+| d        | s_axi_control | register | name=d offset=0x10 range=32      |
+| N        | s_axi_control | register | name=N offset=0x18 range=32      |
+| y        | s_axi_control | register | name=y offset=0x20 range=32      |
+| x        | s_axi_control | register | name=x offset=0x28 range=32      |
+| x        | s_axi_control | register | name=x_ctrl offset=0x2c range=32 |
++----------+---------------+----------+----------------------------------+
+
+
+================================================================
+== Bind Op Report
+================================================================
++---------------------------------+-----+--------+----------+-----+-------+---------+
+| Name                            | DSP | Pragma | Variable | Op  | Impl  | Latency |
++---------------------------------+-----+--------+----------+-----+-------+---------+
+| + rsa                           | 30  |        |          |     |       |         |
+|  + Block_entry30_proc           | 30  |        |          |     |       |         |
+|    mul_mul_16ns_16ns_32_4_1_U33 | 1   |        | ret_V    | mul | dsp48 | 3       |
+|    mul_mul_16ns_16ns_32_4_1_U34 | 1   |        | ret_V_2  | mul | dsp48 | 3       |
+|    mul_mul_16ns_16ns_32_4_1_U36 | 1   |        | ret_V_4  | mul | dsp48 | 3       |
+|    mul_mul_16ns_16ns_32_4_1_U38 | 1   |        | ret_V_6  | mul | dsp48 | 3       |
+|    mul_mul_16ns_16ns_32_4_1_U40 | 1   |        | ret_V_8  | mul | dsp48 | 3       |
+|    mul_mul_16ns_16ns_32_4_1_U42 | 1   |        | ret_V_10 | mul | dsp48 | 3       |
+|    mul_mul_16ns_16ns_32_4_1_U44 | 1   |        | ret_V_12 | mul | dsp48 | 3       |
+|    mul_mul_16ns_16ns_32_4_1_U46 | 1   |        | ret_V_14 | mul | dsp48 | 3       |
+|    mul_mul_16ns_16ns_32_4_1_U48 | 1   |        | ret_V_16 | mul | dsp48 | 3       |
+|    mul_mul_16ns_16ns_32_4_1_U50 | 1   |        | ret_V_18 | mul | dsp48 | 3       |
+|    mul_mul_16ns_16ns_32_4_1_U52 | 1   |        | ret_V_20 | mul | dsp48 | 3       |
+|    mul_mul_16ns_16ns_32_4_1_U54 | 1   |        | ret_V_22 | mul | dsp48 | 3       |
+|    mul_mul_16ns_16ns_32_4_1_U56 | 1   |        | ret_V_24 | mul | dsp48 | 3       |
+|    mul_mul_16ns_16ns_32_4_1_U58 | 1   |        | ret_V_26 | mul | dsp48 | 3       |
+|    mul_mul_16ns_16ns_32_4_1_U60 | 1   |        | ret_V_28 | mul | dsp48 | 3       |
+|    mul_mul_16ns_16ns_32_4_1_U35 | 1   |        | ret_V_31 | mul | dsp48 | 3       |
+|    mul_mul_16s_16ns_32_4_1_U37  | 1   |        | ret_V_33 | mul | dsp48 | 3       |
+|    mul_mul_16s_16ns_32_4_1_U39  | 1   |        | ret_V_35 | mul | dsp48 | 3       |
+|    mul_mul_16s_16ns_32_4_1_U41  | 1   |        | ret_V_37 | mul | dsp48 | 3       |
+|    mul_mul_16s_16ns_32_4_1_U43  | 1   |        | ret_V_39 | mul | dsp48 | 3       |
+|    mul_mul_16s_16ns_32_4_1_U45  | 1   |        | ret_V_41 | mul | dsp48 | 3       |
+|    mul_mul_16s_16ns_32_4_1_U47  | 1   |        | ret_V_43 | mul | dsp48 | 3       |
+|    mul_mul_16s_16ns_32_4_1_U49  | 1   |        | ret_V_45 | mul | dsp48 | 3       |
+|    mul_mul_16s_16ns_32_4_1_U51  | 1   |        | ret_V_47 | mul | dsp48 | 3       |
+|    mul_mul_16s_16ns_32_4_1_U53  | 1   |        | ret_V_49 | mul | dsp48 | 3       |
+|    mul_mul_16s_16ns_32_4_1_U55  | 1   |        | ret_V_51 | mul | dsp48 | 3       |
+|    mul_mul_16s_16ns_32_4_1_U57  | 1   |        | ret_V_53 | mul | dsp48 | 3       |
+|    mul_mul_16s_16ns_32_4_1_U59  | 1   |        | ret_V_55 | mul | dsp48 | 3       |
+|    mul_mul_16s_16ns_32_4_1_U61  | 1   |        | ret_V_57 | mul | dsp48 | 3       |
+|    mul_mul_16s_16ns_32_4_1_U62  | 1   |        | ret_V_59 | mul | dsp48 | 3       |
++---------------------------------+-----+--------+----------+-----+-------+---------+
+
+
+================================================================
+== Bind Storage Report
+================================================================
+  No bind storage info in design
+
+================================================================
+== Pragma Report
+================================================================
+* Valid Pragma Syntax
++-----------------+----------------------------------------+-----------------------------------------------------------------------------------------------+
+| Type            | Options                                | Location                                                                                      |
++-----------------+----------------------------------------+-----------------------------------------------------------------------------------------------+
+| inline          |                                        | RSA_Implementation_on_PYNQ/rsa_baseline_synthesis/rsa.cpp:8 in mod_exp                        |
+| array_partition | variable=intermediate_results complete | RSA_Implementation_on_PYNQ/rsa_baseline_synthesis/rsa.cpp:15 in mod_exp, intermediate_results |
+| unroll          |                                        | RSA_Implementation_on_PYNQ/rsa_baseline_synthesis/rsa.cpp:19 in mod_exp                       |
+| unroll          |                                        | RSA_Implementation_on_PYNQ/rsa_baseline_synthesis/rsa.cpp:30 in mod_exp                       |
+| interface       | mode=s_axilite port=return             | RSA_Implementation_on_PYNQ/rsa_baseline_synthesis/rsa.cpp:39 in rsa, return                   |
+| interface       | mode=s_axilite port=d                  | RSA_Implementation_on_PYNQ/rsa_baseline_synthesis/rsa.cpp:40 in rsa, d                        |
+| interface       | mode=s_axilite port=N                  | RSA_Implementation_on_PYNQ/rsa_baseline_synthesis/rsa.cpp:41 in rsa, N                        |
+| interface       | mode=s_axilite port=y                  | RSA_Implementation_on_PYNQ/rsa_baseline_synthesis/rsa.cpp:42 in rsa, y                        |
+| interface       | mode=s_axilite port=x                  | RSA_Implementation_on_PYNQ/rsa_baseline_synthesis/rsa.cpp:43 in rsa, x                        |
+| dataflow        |                                        | RSA_Implementation_on_PYNQ/rsa_baseline_synthesis/rsa.cpp:45 in rsa                           |
++-----------------+----------------------------------------+-----------------------------------------------------------------------------------------------+
+
+

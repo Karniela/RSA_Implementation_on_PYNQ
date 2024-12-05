@@ -1,0 +1,4 @@
+remark: RSA_Implementation_on_PYNQ/rsa_baseline_synthesis/rsa.cpp:7:0: In function 'mod_exp(ap_uint<16>, ap_uint<16>, ap_uint<16>)', Pragma conflict happens on 'INLINE' and DATAFLOW pragmas: Inline into dataflow region may break the canonical form
+remark: RSA_Implementation_on_PYNQ/rsa_baseline_synthesis/rsa.cpp:50:6: Inlining function 'mod_exp(ap_uint<16>, ap_uint<16>, ap_uint<16>)' into 'rsa(ap_uint<16>, ap_uint<16>, ap_uint<16>, ap_uint<16>&)'
+remark: RSA_Implementation_on_PYNQ/rsa_baseline_synthesis/rsa.cpp:38:0: Unrolling loop 'VITIS_LOOP_29_2' (RSA_Implementation_on_PYNQ/rsa_baseline_synthesis/rsa.cpp:29:22) in function 'rsa' completely with a factor of 16
+remark: RSA_Implementation_on_PYNQ/rsa_baseline_synthesis/rsa.cpp:38:0: Unrolling loop 'VITIS_LOOP_18_1' (RSA_Implementation_on_PYNQ/rsa_baseline_synthesis/rsa.cpp:18:19) in function 'rsa' completely with a factor of 16
