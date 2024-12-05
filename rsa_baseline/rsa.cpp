@@ -13,16 +13,16 @@ data_t mod_exp(data_t base, data_t exp, data_t mod) {
         #pragma HLS PIPELINE
 
         if (exp & 1) { // If exp is odd
-            #pragma HLS bind_op variable=result op=mul impl=fabric
-            result = (result * b);
-            //result = result % mod;
+            //#pragma HLS bind_op variable=result op=mul impl=fabric
+            result = (result * b) % mod;
+
         }
         exp = exp >> 1; // Divide exp by 2
         if (exp == 0)
             break;
-        #pragma HLS bind_op variable=b op=mul impl=fabric
-        b = (b * b);
-        //b = b % mod;
+        //#pragma HLS bind_op variable=b op=mul impl=fabric
+        b = (b * b)%mod;
+
     }
 
     return result;

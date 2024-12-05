@@ -1,0 +1,13 @@
+#-----------------------------------------------------------
+# Vivado v2022.2 (64-bit)
+# SW Build 3671981 on Fri Oct 14 04:59:54 MDT 2022
+# IP Build 3669848 on Fri Oct 14 08:30:02 MDT 2022
+# Start of session at: Thu Dec  5 10:40:24 2024
+# Process ID: 3878460
+# Current directory: /home/cse237c_fa24_y_liao/Desktop/RSA_Implementation_on_PYNQ/rsa_baseline/rsa_baseline_hls/solution1/impl/ip
+# Command line: vivado -notrace -mode batch -source run_ippack.tcl
+# Log file: /home/cse237c_fa24_y_liao/Desktop/RSA_Implementation_on_PYNQ/rsa_baseline/rsa_baseline_hls/solution1/impl/ip/vivado.log
+# Journal file: /home/cse237c_fa24_y_liao/Desktop/RSA_Implementation_on_PYNQ/rsa_baseline/rsa_baseline_hls/solution1/impl/ip/vivado.jou
+# Running On: waiter, OS: Linux, CPU Frequency: 3200.000 MHz, CPU Physical cores: 32, Host memory: 404950 MB
+#-----------------------------------------------------------
+source run_ippack.tcl -notrace
