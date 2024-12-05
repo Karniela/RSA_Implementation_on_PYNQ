@@ -10,19 +10,19 @@ data_t mod_exp(data_t base, data_t exp, data_t mod) {
     data_t b = base % mod; // Handle initial modular reduction
 
     for (int i = 0; i < BITWIDTH; i++) {
-        #pragma HLS PIPELINE 
+        #pragma HLS PIPELINE
 
         if (exp & 1) { // If exp is odd
             #pragma HLS bind_op variable=result op=mul impl=fabric
             result = (result * b);
-            // result = result % mod;
+            //result = result % mod;
         }
         exp = exp >> 1; // Divide exp by 2
         if (exp == 0)
             break;
         #pragma HLS bind_op variable=b op=mul impl=fabric
         b = (b * b);
-        // b = b % mod;
+        //b = b % mod;
     }
 
     return result;
