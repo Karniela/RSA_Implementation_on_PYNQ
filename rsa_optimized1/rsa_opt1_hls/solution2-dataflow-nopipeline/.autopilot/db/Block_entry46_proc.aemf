@@ -1,0 +1,58 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<cdfg:DBCdfg xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:cdfg="http://www.autoesl.com/DBCdfg" timeStamp="1733445952029">
+  <ports id="1" name="p_read" type="PortType" originalName="result.V" coreId="0" bitwidth="256">
+    <dataOutputObjs>read</dataOutputObjs>
+  </ports>
+  <ports id="2" name="x" type="PortType" coreId="3928187800" bitwidth="256" direction="DirOut">
+    <dataInputObjs>write</dataInputObjs>
+  </ports>
+  <edges id="9" source_obj="//@ports.0" sink_obj="//@blocks.0/@node_objs.0"/>
+  <edges id="12" source_obj="//@blocks.0/@node_objs.1" sink_obj="//@ports.1"/>
+  <edges id="13" source_obj="//@blocks.0/@node_objs.0" sink_obj="//@blocks.0/@node_objs.1"/>
+  <blocks id="6" name="Block_entry46_proc" type="BlockType">
+    <node_objs xsi:type="cdfg:CdfgNode" id="3" name="p_read_1" lineNumber="68" originalName="result.V" fileName="rsa.cpp" fileDirectory=".." coreName="FIFO_SRL" implIndex="srl" control="no" opType="fifo" coreId="81" contextFuncName="rsa" bitwidth="256" opcode="read" m_display="0" m_delay="3.63" m_topoIndex="1" m_clusterGroupNumber="-1">
+      <inlineStackInfo fileName="rsa.cpp" linenumber="68" fileDirectory="/home/cse237c_fa24_y_liao/Desktop/RSA_Implementation_on_PYNQ/rsa_optimized1" functionName="rsa"/>
+      <dataInputObjs>p_read</dataInputObjs>
+      <dataOutputObjs>write</dataOutputObjs>
+    </node_objs>
+    <node_objs xsi:type="cdfg:CdfgNode" id="4" name="x_write_ln68" lineNumber="68" fileName="rsa.cpp" fileDirectory=".." coreId="516687802" contextFuncName="rsa" opcode="write" m_display="0" m_topoIndex="2" m_clusterGroupNumber="-1">
+      <inlineStackInfo fileName="rsa.cpp" linenumber="68" fileDirectory="/home/cse237c_fa24_y_liao/Desktop/RSA_Implementation_on_PYNQ/rsa_optimized1" functionName="rsa"/>
+      <dataInputObjs>read</dataInputObjs>
+      <dataOutputObjs>x</dataOutputObjs>
+    </node_objs>
+    <node_objs xsi:type="cdfg:CdfgNode" id="5" name="_ln0" coreId="3928485824" opcode="ret" m_display="0" m_topoIndex="3" m_clusterGroupNumber="-1"/>
+    <fileValidLineNumbers fileName="rsa.cpp">
+      <validLinenumbers>68</validLinenumbers>
+    </fileValidLineNumbers>
+  </blocks>
+  <ScheduleInfo time="0"/>
+  <ioNodes realName="p_read_1_read_fu_8">
+    <nodeIds>3</nodeIds>
+  </ioNodes>
+  <ioNodes realName="write_ln68_write_fu_14">
+    <nodeIds>4</nodeIds>
+  </ioNodes>
+  <ioPorts name="p_read">
+    <contents name="read">
+      <nodeIds>3</nodeIds>
+    </contents>
+  </ioPorts>
+  <ioPorts name="x">
+    <contents name="write">
+      <nodeIds>4</nodeIds>
+    </contents>
+  </ioPorts>
+  <fsm>
+    <states id="1">
+      <operations id="3" stage="1" latency="1"/>
+      <operations id="4" stage="1" latency="1"/>
+      <operations id="5" stage="1" latency="1"/>
+    </states>
+  </fsm>
+  <CFGRegionsRoot>
+    <cfgRegions mId="1" mTag="Block_entry46_proc" mII="-1" mDepth="-1" mMinTripCount="-1" mMaxTripCount="-1">
+      <basicBlocks>6</basicBlocks>
+      <mDfPipe/>
+    </cfgRegions>
+  </CFGRegionsRoot>
+</cdfg:DBCdfg>

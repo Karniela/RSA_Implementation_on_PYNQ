@@ -60,7 +60,7 @@ void rsa(data_t d, data_t N, data_t y, data_t &x) {
     #pragma HLS INTERFACE mode=s_axilite port=y
     #pragma HLS INTERFACE mode=s_axilite port=x
 
-    // #pragma HLS DATAFLOW
+    #pragma HLS DATAFLOW
 
     // Result variable for mod_exp
     data_t result;

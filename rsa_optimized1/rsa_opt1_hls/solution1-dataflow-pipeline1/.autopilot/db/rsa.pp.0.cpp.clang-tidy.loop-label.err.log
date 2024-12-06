@@ -1,0 +1,3 @@
+26 errors generated.
+Error while processing /home/cse237c_fa24_y_liao/Desktop/RSA_Implementation_on_PYNQ/rsa_optimized1/rsa_opt1_hls/solution1/.autopilot/db/rsa.pp.0.cpp.
+clang-tidy applied 130 of 130 suggested fixes.

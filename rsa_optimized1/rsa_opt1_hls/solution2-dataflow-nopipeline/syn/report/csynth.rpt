@@ -1,0 +1,191 @@
+
+
+================================================================
+== Synthesis Summary Report of 'rsa'
+================================================================
++ General Information: 
+    * Date:           Thu Dec  5 16:45:52 2024
+    * Version:        2022.2 (Build 3670227 on Oct 13 2022)
+    * Project:        rsa_opt1_hls
+    * Solution:       solution2-dataflow-nopipeline (Vivado IP Flow Target)
+    * Product family: zynq
+    * Target device:  xc7z020-clg400-1
+    
+
++ Performance & Resource Estimates: 
+    
+    PS: '+' for module; 'o' for loop; '*' for dataflow
+    +-----------------------+------+------+---------+-----------+----------+---------+------+----------+------+----+-----------+-----------+-----+
+    |        Modules        | Issue|      | Latency |  Latency  | Iteration|         | Trip |          |      |    |           |           |     |
+    |        & Loops        | Type | Slack| (cycles)|    (ns)   |  Latency | Interval| Count| Pipelined| BRAM | DSP|     FF    |    LUT    | URAM|
+    +-----------------------+------+------+---------+-----------+----------+---------+------+----------+------+----+-----------+-----------+-----+
+    |+ rsa*                 |     -|  0.42|   526081|  5.261e+06|         -|   526082|     -|  dataflow|     -|   -|  7648 (7%)|  3870 (7%)|    -|
+    | + mod_exp             |     -|  0.42|   526081|  5.261e+06|         -|   526081|     -|        no|     -|   -|  6207 (5%)|  1692 (3%)|    -|
+    |  o MOD_EXP            |     -|  7.30|   526080|  5.261e+06|      2055|        -|   256|        no|     -|   -|          -|          -|    -|
+    |   + mod_product       |     -|  0.42|     1026|  1.026e+04|         -|     1026|     -|        no|     -|   -|  4902 (4%)|  1579 (2%)|    -|
+    |    o MOD_PRODUCT      |     -|  7.30|     1024|  1.024e+04|         4|        -|   256|        no|     -|   -|          -|          -|    -|
+    | + Block_entry46_proc  |     -|  3.67|        0|      0.000|         -|        0|     -|        no|     -|   -|  258 (~0%)|   20 (~0%)|    -|
+    +-----------------------+------+------+---------+-----------+----------+---------+------+----------+------+----+-----------+-----------+-----+
+
+
+================================================================
+== HW Interfaces
+================================================================
+* S_AXILITE Interfaces
++---------------+------------+---------------+--------+----------+
+| Interface     | Data Width | Address Width | Offset | Register |
++---------------+------------+---------------+--------+----------+
+| s_axi_control | 32         | 8             | 16     | 0        |
++---------------+------------+---------------+--------+----------+
+
+* S_AXILITE Registers
++---------------+----------+--------+-------+--------+----------------------------------+----------------------------------------------------------------------+
+| Interface     | Register | Offset | Width | Access | Description                      | Bit Fields                                                           |
++---------------+----------+--------+-------+--------+----------------------------------+----------------------------------------------------------------------+
+| s_axi_control | CTRL     | 0x00   | 32    | RW     | Control signals                  | 0=AP_START 1=AP_DONE 2=AP_IDLE 3=AP_READY 7=AUTO_RESTART 9=INTERRUPT |
+| s_axi_control | GIER     | 0x04   | 32    | RW     | Global Interrupt Enable Register | 0=Enable                                                             |
+| s_axi_control | IP_IER   | 0x08   | 32    | RW     | IP Interrupt Enable Register     | 0=CHAN0_INT_EN 1=CHAN1_INT_EN                                        |
+| s_axi_control | IP_ISR   | 0x0c   | 32    | RW     | IP Interrupt Status Register     | 0=CHAN0_INT_ST 1=CHAN1_INT_ST                                        |
+| s_axi_control | d_1      | 0x10   | 32    | W      | Data signal of d                 |                                                                      |
+| s_axi_control | d_2      | 0x14   | 32    | W      | Data signal of d                 |                                                                      |
+| s_axi_control | d_3      | 0x18   | 32    | W      | Data signal of d                 |                                                                      |
+| s_axi_control | d_4      | 0x1c   | 32    | W      | Data signal of d                 |                                                                      |
+| s_axi_control | d_5      | 0x20   | 32    | W      | Data signal of d                 |                                                                      |
+| s_axi_control | d_6      | 0x24   | 32    | W      | Data signal of d                 |                                                                      |
+| s_axi_control | d_7      | 0x28   | 32    | W      | Data signal of d                 |                                                                      |
+| s_axi_control | d_8      | 0x2c   | 32    | W      | Data signal of d                 |                                                                      |
+| s_axi_control | N_1      | 0x34   | 32    | W      | Data signal of N                 |                                                                      |
+| s_axi_control | N_2      | 0x38   | 32    | W      | Data signal of N                 |                                                                      |
+| s_axi_control | N_3      | 0x3c   | 32    | W      | Data signal of N                 |                                                                      |
+| s_axi_control | N_4      | 0x40   | 32    | W      | Data signal of N                 |                                                                      |
+| s_axi_control | N_5      | 0x44   | 32    | W      | Data signal of N                 |                                                                      |
+| s_axi_control | N_6      | 0x48   | 32    | W      | Data signal of N                 |                                                                      |
+| s_axi_control | N_7      | 0x4c   | 32    | W      | Data signal of N                 |                                                                      |
+| s_axi_control | N_8      | 0x50   | 32    | W      | Data signal of N                 |                                                                      |
+| s_axi_control | y_1      | 0x58   | 32    | W      | Data signal of y                 |                                                                      |
+| s_axi_control | y_2      | 0x5c   | 32    | W      | Data signal of y                 |                                                                      |
+| s_axi_control | y_3      | 0x60   | 32    | W      | Data signal of y                 |                                                                      |
+| s_axi_control | y_4      | 0x64   | 32    | W      | Data signal of y                 |                                                                      |
+| s_axi_control | y_5      | 0x68   | 32    | W      | Data signal of y                 |                                                                      |
+| s_axi_control | y_6      | 0x6c   | 32    | W      | Data signal of y                 |                                                                      |
+| s_axi_control | y_7      | 0x70   | 32    | W      | Data signal of y                 |                                                                      |
+| s_axi_control | y_8      | 0x74   | 32    | W      | Data signal of y                 |                                                                      |
+| s_axi_control | x_1      | 0x7c   | 32    | R      | Data signal of x                 |                                                                      |
+| s_axi_control | x_2      | 0x80   | 32    | R      | Data signal of x                 |                                                                      |
+| s_axi_control | x_3      | 0x84   | 32    | R      | Data signal of x                 |                                                                      |
+| s_axi_control | x_4      | 0x88   | 32    | R      | Data signal of x                 |                                                                      |
+| s_axi_control | x_5      | 0x8c   | 32    | R      | Data signal of x                 |                                                                      |
+| s_axi_control | x_6      | 0x90   | 32    | R      | Data signal of x                 |                                                                      |
+| s_axi_control | x_7      | 0x94   | 32    | R      | Data signal of x                 |                                                                      |
+| s_axi_control | x_8      | 0x98   | 32    | R      | Data signal of x                 |                                                                      |
+| s_axi_control | x_ctrl   | 0x9c   | 32    | R      | Control signal of x              | 0=x_ap_vld                                                           |
++---------------+----------+--------+-------+--------+----------------------------------+----------------------------------------------------------------------+
+
+* TOP LEVEL CONTROL
++-----------+------------+-----------+
+| Interface | Type       | Ports     |
++-----------+------------+-----------+
+| ap_clk    | clock      | ap_clk    |
+| ap_rst_n  | reset      | ap_rst_n  |
+| interrupt | interrupt  | interrupt |
+| ap_ctrl   | ap_ctrl_hs |           |
++-----------+------------+-----------+
+
+
+================================================================
+== SW I/O Information
+================================================================
+* Top Function Arguments
++----------+-----------+---------------+
+| Argument | Direction | Datatype      |
++----------+-----------+---------------+
+| d        | in        | ap_uint<256>  |
+| N        | in        | ap_uint<256>  |
+| y        | in        | ap_uint<256>  |
+| x        | out       | ap_uint<256>& |
++----------+-----------+---------------+
+
+* SW-to-HW Mapping
++----------+---------------+----------+----------------------------------+
+| Argument | HW Interface  | HW Type  | HW Info                          |
++----------+---------------+----------+----------------------------------+
+| d        | s_axi_control | register | name=d_1 offset=0x10 range=32    |
+| d        | s_axi_control | register | name=d_2 offset=0x14 range=32    |
+| d        | s_axi_control | register | name=d_3 offset=0x18 range=32    |
+| d        | s_axi_control | register | name=d_4 offset=0x1c range=32    |
+| d        | s_axi_control | register | name=d_5 offset=0x20 range=32    |
+| d        | s_axi_control | register | name=d_6 offset=0x24 range=32    |
+| d        | s_axi_control | register | name=d_7 offset=0x28 range=32    |
+| d        | s_axi_control | register | name=d_8 offset=0x2c range=32    |
+| N        | s_axi_control | register | name=N_1 offset=0x34 range=32    |
+| N        | s_axi_control | register | name=N_2 offset=0x38 range=32    |
+| N        | s_axi_control | register | name=N_3 offset=0x3c range=32    |
+| N        | s_axi_control | register | name=N_4 offset=0x40 range=32    |
+| N        | s_axi_control | register | name=N_5 offset=0x44 range=32    |
+| N        | s_axi_control | register | name=N_6 offset=0x48 range=32    |
+| N        | s_axi_control | register | name=N_7 offset=0x4c range=32    |
+| N        | s_axi_control | register | name=N_8 offset=0x50 range=32    |
+| y        | s_axi_control | register | name=y_1 offset=0x58 range=32    |
+| y        | s_axi_control | register | name=y_2 offset=0x5c range=32    |
+| y        | s_axi_control | register | name=y_3 offset=0x60 range=32    |
+| y        | s_axi_control | register | name=y_4 offset=0x64 range=32    |
+| y        | s_axi_control | register | name=y_5 offset=0x68 range=32    |
+| y        | s_axi_control | register | name=y_6 offset=0x6c range=32    |
+| y        | s_axi_control | register | name=y_7 offset=0x70 range=32    |
+| y        | s_axi_control | register | name=y_8 offset=0x74 range=32    |
+| x        | s_axi_control | register | name=x_1 offset=0x7c range=32    |
+| x        | s_axi_control | register | name=x_2 offset=0x80 range=32    |
+| x        | s_axi_control | register | name=x_3 offset=0x84 range=32    |
+| x        | s_axi_control | register | name=x_4 offset=0x88 range=32    |
+| x        | s_axi_control | register | name=x_5 offset=0x8c range=32    |
+| x        | s_axi_control | register | name=x_6 offset=0x90 range=32    |
+| x        | s_axi_control | register | name=x_7 offset=0x94 range=32    |
+| x        | s_axi_control | register | name=x_8 offset=0x98 range=32    |
+| x        | s_axi_control | register | name=x_ctrl offset=0x9c range=32 |
++----------+---------------+----------+----------------------------------+
+
+
+================================================================
+== Bind Op Report
+================================================================
++--------------------------------+-----+--------+----------+------+--------+---------+
+| Name                           | DSP | Pragma | Variable | Op   | Impl   | Latency |
++--------------------------------+-----+--------+----------+------+--------+---------+
+| + rsa                          | 0   |        |          |      |        |         |
+|   result_V_U                   | -   |        | result_V | fifo | srl    | 0       |
+|  + mod_exp                     | 0   |        |          |      |        |         |
+|    i_4_fu_120_p2               | -   |        | i_4      | add  | fabric | 0       |
+|   + mod_product                | 0   |        |          |      |        |         |
+|     i_2_fu_114_p2              | -   |        | i_2      | add  | fabric | 0       |
+|     add_258ns_258ns_258_2_1_U1 | -   |        | ret_V    | add  | fabric | 1       |
+|     add_257ns_257ns_257_2_1_U2 | -   |        | m_V      | add  | fabric | 1       |
+|     sub_257ns_257ns_257_2_1_U4 | -   |        | m_V_1    | sub  | fabric | 1       |
+|     sub_257ns_257ns_257_2_1_U3 | -   |        | t_V      | sub  | fabric | 1       |
++--------------------------------+-----+--------+----------+------+--------+---------+
+
+
+================================================================
+== Bind Storage Report
+================================================================
+  No bind storage info in design
+
+================================================================
+== Pragma Report
+================================================================
+* Valid Pragma Syntax
++-----------+----------------------------+---------------------------+
+| Type      | Options                    | Location                  |
++-----------+----------------------------+---------------------------+
+| inline    | OFF                        | rsa.cpp:8 in mod_product  |
+| pipeline  | OFF                        | rsa.cpp:14 in mod_product |
+| inline    | OFF                        | rsa.cpp:37 in mod_exp     |
+| pipeline  | OFF                        | rsa.cpp:44 in mod_exp     |
+| interface | mode=s_axilite port=return | rsa.cpp:57 in rsa, return |
+| interface | mode=s_axilite port=d      | rsa.cpp:58 in rsa, d      |
+| interface | mode=s_axilite port=N      | rsa.cpp:59 in rsa, N      |
+| interface | mode=s_axilite port=y      | rsa.cpp:60 in rsa, y      |
+| interface | mode=s_axilite port=x      | rsa.cpp:61 in rsa, x      |
+| dataflow  |                            | rsa.cpp:63 in rsa         |
++-----------+----------------------------+---------------------------+
+
+

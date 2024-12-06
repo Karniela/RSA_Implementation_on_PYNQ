@@ -1,0 +1,26 @@
+--- !Passed
+Pass:            reflow-infer-unroll
+Name:            ImplicitUnroll
+DebugLoc:        { File: rsa.cpp, Line: 13, Column: 5 }
+Function:        _Z11mod_product7ap_uintILi256EES0_S0_
+Args:            
+  - String:          'Loop '''
+  - LoopName:        MOD_PRODUCT
+  - String:          ''' is marked as complete unroll implied by the pipeline pragma'
+...
+--- !Passed
+Pass:            reflow-pragma-loop-unroll
+Name:            PragmaFullyUnroll
+DebugLoc:        { File: rsa.cpp, Line: 7, Column: 0 }
+Function:        _Z11mod_product7ap_uintILi256EES0_S0_
+Args:            
+  - String:          'Unrolling loop '''
+  - LoopName:        MOD_PRODUCT
+  - String:          ''' ('
+  - LoopLoc:         'rsa.cpp:13:5'
+  - String:          ') '
+  - String:          'in function '''
+  - String:          mod_product
+  - String:          ''' completely with a factor of '
+  - Factor:          '256'
+...

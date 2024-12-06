@@ -1,0 +1,28 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<vivadoHLSLog:LogRoot xmlns:vivadoHLSLog="www.xilinx.com/vivadoHLSLog">
+  <errorLogs>
+    <logs>
+      <synLog/>
+      <simLog/>
+      <mgLog/>
+      <packageLog/>
+      <csimLog/>
+    </logs>
+  </errorLogs>
+  <warningLogs>
+    <logs>
+      <synLog>
+        <logs message="WARNING: [RTGEN 206-101] Design contains AXI ports. Reset is fixed to synchronous and active low." projectName="rsa_opt1_hls" solutionName="solution2-dataflow-nopipeline" date="2024-12-05T16:45:52.040-0800" type="Warning"/>
+        <logs message="WARNING: [RTGEN 206-101] Design contains AXI ports. Reset is fixed to synchronous and active low." projectName="rsa_opt1_hls" solutionName="solution1" date="2024-12-05T16:42:37.700-0800" type="Warning"/>
+        <logs message="WARNING: [HLS 200-880] The II Violation in module 'mod_exp' (loop 'MOD_EXP'): Unable to enforce a carried dependence constraint (II = 256, distance = 1, offset = 0) between 'store' operation ('m_V_write_ln48', rsa.cpp:48) of variable 'm.V', rsa.cpp:47 on local variable 'result.V' and 'load' operation ('m_V_load_1', rsa.cpp:47) on local variable 'result.V'.&#xA;Resolution: For help on HLS 200-880 see www.xilinx.com/cgi-bin/docs/rdoc?v=2022.2;t=hls+guidance;d=200-880.html" projectName="rsa_opt1_hls" solutionName="solution1" date="2024-12-05T16:42:01.512-0800" type="Warning"/>
+        <logs message="WARNING: [HLS 200-880] The II Violation in module 'mod_exp' (loop 'MOD_EXP'): Unable to enforce a carried dependence constraint (II = 255, distance = 1, offset = 0) between 'store' operation ('m_V_write_ln48', rsa.cpp:48) of variable 'm.V', rsa.cpp:47 on local variable 'result.V' and 'load' operation ('m_V_load_1', rsa.cpp:47) on local variable 'result.V'.&#xA;Resolution: For help on HLS 200-880 see www.xilinx.com/cgi-bin/docs/rdoc?v=2022.2;t=hls+guidance;d=200-880.html" projectName="rsa_opt1_hls" solutionName="solution1" date="2024-12-05T16:42:01.510-0800" type="Warning"/>
+        <logs message="WARNING: [HLS 200-880] The II Violation in module 'mod_exp' (loop 'MOD_EXP'): Unable to enforce a carried dependence constraint (II = 253, distance = 1, offset = 0) between 'store' operation ('m_V_write_ln48', rsa.cpp:48) of variable 'm.V', rsa.cpp:47 on local variable 'result.V' and 'load' operation ('m_V_load_1', rsa.cpp:47) on local variable 'result.V'.&#xA;Resolution: For help on HLS 200-880 see www.xilinx.com/cgi-bin/docs/rdoc?v=2022.2;t=hls+guidance;d=200-880.html" projectName="rsa_opt1_hls" solutionName="solution1" date="2024-12-05T16:42:01.507-0800" type="Warning"/>
+        <logs message="WARNING: [HLS 200-880] The II Violation in module 'mod_exp' (loop 'MOD_EXP'): Unable to enforce a carried dependence constraint (II = 249, distance = 1, offset = 0) between 'store' operation ('m_V_write_ln48', rsa.cpp:48) of variable 'm.V', rsa.cpp:47 on local variable 'result.V' and 'load' operation ('m_V_load_1', rsa.cpp:47) on local variable 'result.V'.&#xA;Resolution: For help on HLS 200-880 see www.xilinx.com/cgi-bin/docs/rdoc?v=2022.2;t=hls+guidance;d=200-880.html" projectName="rsa_opt1_hls" solutionName="solution1" date="2024-12-05T16:42:01.505-0800" type="Warning"/>
+      </synLog>
+      <simLog/>
+      <mgLog/>
+      <packageLog/>
+      <csimLog/>
+    </logs>
+  </warningLogs>
+</vivadoHLSLog:LogRoot>
