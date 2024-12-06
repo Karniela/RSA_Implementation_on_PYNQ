@@ -10,7 +10,7 @@ data_t mod_exp(data_t base, data_t exp, data_t mod) {
     data_t b = base % mod; // Handle initial modular reduction
 
     for (int i = 0; i < BITWIDTH; i++) {
-        #pragma HLS PIPELINE
+        //#pragma HLS PIPELINE OFF
 
         if (exp & 1) { // If exp is odd
             //#pragma HLS bind_op variable=result op=mul impl=fabric
@@ -37,7 +37,7 @@ void rsa(data_t d, data_t N, data_t y, data_t &x) {
     #pragma HLS INTERFACE mode=s_axilite port=x
 
     // Disable DSP usage globally
-    // #pragma HLS ALLOCATION instances=div limit=0
+    #pragma HLS ALLOCATION instances=dsp limit=0
 
     x = mod_exp(y, d, N);
 }

@@ -29,6 +29,5 @@
 <pragma file="rsa.cpp" line="36" pragmaType="interface" parentfunction="rsa" mode="s_axilite" port="y" bundle="" offset="-1" name="" clock="" impl="" register="0"/>
 <pragma file="rsa.cpp" line="37" pragmaType="interface" parentfunction="rsa" mode="s_axilite" port="x" bundle="" offset="-1" name="" clock="" impl="" register="0"/>
 <pragma file="rsa.cpp" line="8" pragmaType="inline" parentfunction="mod_exp" off="1" region="0" recursive="0"/>
-<pragma file="rsa.cpp" line="13" pragmaType="pipeline" parentfunction="mod_exp" off="0" ii="-1" rewind="0" style=""/>
 <pragma file="/tools/Xilinx/Vitis_HLS/2022.2/common/technology/autopilot/ap_int_base.h" line="0" pragmaType="inline" parentfunction="checkOverflowBaseC" off="0" region="0" recursive="0"/>
 </pragmas>

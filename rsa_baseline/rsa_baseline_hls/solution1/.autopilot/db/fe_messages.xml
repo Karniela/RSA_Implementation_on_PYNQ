@@ -1,4 +1,7 @@
 <xilinx:hls_fe_msgs>
+    <msg msg_groups="PRAGMA_INVALID" msg_id="207-5555" msg_severity="WARNING" msg_loc="rsa.cpp:40:34" msg_body="unexpected pragma argument 'div', expects function/operation">
+        <args ClangWarningOption="invalid-hls-pragmas"/>
+    </msg>
     <msg msg_groups="PRAGMA_VERBOSE_DUMP" msg_id="207-5471" msg_severity="WARNING" msg_loc="/tools/Xilinx/Vitis_HLS/2022.2/common/technology/autopilot/ap_int_ref.h:678:9" msg_body="HLS pragma dump">
         <args ARG_PragmaFunction="and_reduce" ARG_PragmaIsValid="1" ARG_PragmaType="unroll" ClangWarningOption="dump-hls-pragmas"/>
     </msg>
@@ -614,10 +617,10 @@
     <msg msg_groups="PRAGMA_VERBOSE_DUMP" msg_id="207-5471" msg_severity="WARNING" msg_loc="rsa.cpp:8:9" msg_body="HLS pragma dump">
         <args ARG_PragmaFunction="mod_exp" ARG_PragmaIsValid="1" ARG_PragmaOptions="OFF" ARG_PragmaType="inline" ClangWarningOption="dump-hls-pragmas"/>
     </msg>
-    <msg msg_groups="PRAGMA_VERBOSE_DUMP" msg_id="207-5471" msg_severity="WARNING" msg_loc="rsa.cpp:13:9" msg_body="HLS pragma dump">
-        <args ARG_PragmaFunction="mod_exp" ARG_PragmaIsValid="1" ARG_PragmaType="pipeline" ClangWarningOption="dump-hls-pragmas"/>
+    <msg msg_groups="PRAGMA_VERBOSE_DUMP" msg_id="207-5471" msg_severity="WARNING" msg_loc="/home/cse237c_fa24_y_liao/Desktop/RSA_Implementation_on_PYNQ/rsa_baseline/rsa_baseline_hls/solution1/csynth.tcl:18:9" msg_body="HLS pragma dump">
+        <args ARG_PragmaContext="directive" ARG_PragmaFunction="rsa" ARG_PragmaIsValid="1" ARG_PragmaOptions="name=rsa" ARG_PragmaType="top" ClangWarningOption="dump-hls-pragmas"/>
     </msg>
-    <msg msg_groups="PRAGMA_VERBOSE_DUMP" msg_id="207-5471" msg_severity="WARNING" msg_loc="/home/cse237c_fa24_y_liao/Desktop/RSA_Implementation_on_PYNQ/rsa_baseline/rsa_baseline_hls/solution1/csynth.tcl:17:9" msg_body="HLS pragma dump">
+    <msg msg_groups="PRAGMA_VERBOSE_DUMP" msg_id="207-5471" msg_severity="WARNING" msg_loc="/home/cse237c_fa24_y_liao/Desktop/RSA_Implementation_on_PYNQ/rsa_baseline/rsa_baseline_hls/solution1/directives.tcl:6:9" msg_body="HLS pragma dump">
         <args ARG_PragmaContext="directive" ARG_PragmaFunction="rsa" ARG_PragmaIsValid="1" ARG_PragmaOptions="name=rsa" ARG_PragmaType="top" ClangWarningOption="dump-hls-pragmas"/>
     </msg>
     <msg msg_groups="PRAGMA_VERBOSE_DUMP" msg_id="207-5471" msg_severity="WARNING" msg_loc="rsa.cpp:33:9" msg_body="HLS pragma dump">
@@ -634,6 +637,9 @@
     </msg>
     <msg msg_groups="PRAGMA_VERBOSE_DUMP" msg_id="207-5471" msg_severity="WARNING" msg_loc="rsa.cpp:37:9" msg_body="HLS pragma dump">
         <args ARG_PragmaFunction="rsa" ARG_PragmaIsValid="1" ARG_PragmaOptions="mode=s_axilite port=x" ARG_PragmaType="interface" ClangWarningOption="dump-hls-pragmas"/>
+    </msg>
+    <msg msg_groups="PRAGMA_VERBOSE_DUMP" msg_id="207-5471" msg_severity="WARNING" msg_loc="rsa.cpp:40:9" msg_body="HLS pragma dump">
+        <args ARG_PragmaFunction="rsa" ARG_PragmaIsValid="0" ARG_PragmaOptions="instances=div" ARG_PragmaType="allocation" ClangWarningOption="dump-hls-pragmas"/>
     </msg>
 </xilinx:hls_fe_msgs>
 

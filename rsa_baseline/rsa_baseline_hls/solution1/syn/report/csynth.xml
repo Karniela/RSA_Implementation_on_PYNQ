@@ -440,7 +440,9 @@
         </Module>
     </ModuleInformation>
     <FIFOInformation/>
-    <UserConfigCommands/>
+    <UserConfigCommands>
+        <config_export output="/home/cse237c_fa24_y_liao/Desktop/RSA_Implementation_on_PYNQ/rsa_baseline/rsa_baseline_hls"/>
+    </UserConfigCommands>
     <Args>
         <Arg ArgName="d" index="0" direction="in" srcType="ap_uint&lt;256&gt;" srcSize="256">
             <hwRefs>
@@ -873,12 +875,14 @@
     </ReportBurst>
     <PragmaReport>
         <Pragma type="inline" location="rsa.cpp:8" status="valid" parentFunction="mod_exp" variable="" isDirective="0" options="OFF"/>
-        <Pragma type="pipeline" location="rsa.cpp:13" status="valid" parentFunction="mod_exp" variable="" isDirective="0" options=""/>
         <Pragma type="interface" location="rsa.cpp:33" status="valid" parentFunction="rsa" variable="return" isDirective="0" options="mode=s_axilite port=return"/>
         <Pragma type="interface" location="rsa.cpp:34" status="valid" parentFunction="rsa" variable="d" isDirective="0" options="mode=s_axilite port=d"/>
         <Pragma type="interface" location="rsa.cpp:35" status="valid" parentFunction="rsa" variable="N" isDirective="0" options="mode=s_axilite port=N"/>
         <Pragma type="interface" location="rsa.cpp:36" status="valid" parentFunction="rsa" variable="y" isDirective="0" options="mode=s_axilite port=y"/>
         <Pragma type="interface" location="rsa.cpp:37" status="valid" parentFunction="rsa" variable="x" isDirective="0" options="mode=s_axilite port=x"/>
+        <Pragma type="allocation" location="rsa.cpp:40" status="invalid" parentFunction="rsa" variable="" isDirective="0" options="instances=div">
+            <Msg msg_id="207-5555" msg_severity="WARNING" msg_body="unexpected pragma argument 'div', expects function/operation"/>
+        </Pragma>
     </PragmaReport>
 </profile>
 

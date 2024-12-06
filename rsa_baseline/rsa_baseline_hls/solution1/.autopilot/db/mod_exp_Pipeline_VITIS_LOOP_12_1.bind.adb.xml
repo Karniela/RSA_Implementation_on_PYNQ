@@ -6531,79 +6531,78 @@ for.body:2 %lhs_1 = load i256 %lhs
 </operation>
 
 <operation id="1060" st_id="2" stage="1" lat="1">
+<core>NULL</core>
+<MemPortIdVec></MemPortIdVec>
+<condition id="-1">
+<or_exp><and_exp></and_exp></or_exp>
+</condition>
+
+<Node id="23" bw="0" op_0_bw="0" op_1_bw="32" op_2_bw="32" op_3_bw="32" op_4_bw="32" op_5_bw="0">
+<![CDATA[
+for.body:3 %specpipeline_ln0 = specpipeline void @_ssdm_op_SpecPipeline, i32 4294967295, i32 0, i32 1, i32 0, void @p_str
+
+]]></Node>
+<StgValue><ssdm name="specpipeline_ln0"/></StgValue>
+</operation>
+
+<operation id="1061" st_id="2" stage="1" lat="1">
 <core>Cmp</core>
 <MemPortIdVec></MemPortIdVec>
 <condition id="-1">
 <or_exp><and_exp></and_exp></or_exp>
 </condition>
 
-<Node id="23" bw="1" op_0_bw="9" op_1_bw="9">
+<Node id="24" bw="1" op_0_bw="9" op_1_bw="9">
 <![CDATA[
-for.body:3 %icmp_ln12 = icmp_eq  i9 %i_1, i9 256
+for.body:4 %icmp_ln12 = icmp_eq  i9 %i_1, i9 256
 
 ]]></Node>
 <StgValue><ssdm name="icmp_ln12"/></StgValue>
 </operation>
 
-<operation id="1061" st_id="2" stage="1" lat="1">
+<operation id="1062" st_id="2" stage="1" lat="1">
 <core>NULL</core>
 <MemPortIdVec></MemPortIdVec>
 <condition id="-1">
 <or_exp><and_exp></and_exp></or_exp>
 </condition>
 
-<Node id="24" bw="32" op_0_bw="32" op_1_bw="64" op_2_bw="64" op_3_bw="64">
+<Node id="25" bw="32" op_0_bw="32" op_1_bw="64" op_2_bw="64" op_3_bw="64">
 <![CDATA[
-for.body:4 %empty = speclooptripcount i32 @_ssdm_op_SpecLoopTripCount, i64 1, i64 256, i64 128
+for.body:5 %empty = speclooptripcount i32 @_ssdm_op_SpecLoopTripCount, i64 1, i64 256, i64 128
 
 ]]></Node>
 <StgValue><ssdm name="empty"/></StgValue>
 </operation>
 
-<operation id="1062" st_id="2" stage="1" lat="1">
+<operation id="1063" st_id="2" stage="1" lat="1">
 <core>Adder</core>
 <MemPortIdVec></MemPortIdVec>
 <condition id="-1">
 <or_exp><and_exp></and_exp></or_exp>
 </condition>
 
-<Node id="25" bw="9" op_0_bw="9" op_1_bw="9">
+<Node id="26" bw="9" op_0_bw="9" op_1_bw="9">
 <![CDATA[
-for.body:5 %i_2 = add i9 %i_1, i9 1
+for.body:6 %i_2 = add i9 %i_1, i9 1
 
 ]]></Node>
 <StgValue><ssdm name="i_2"/></StgValue>
-</operation>
-
-<operation id="1063" st_id="2" stage="1" lat="1">
-<core>NULL</core>
-<MemPortIdVec></MemPortIdVec>
-<condition id="-1">
-<or_exp><and_exp></and_exp></or_exp>
-</condition>
-
-<Node id="26" bw="0" op_0_bw="1" op_1_bw="0" op_2_bw="0">
-<![CDATA[
-for.body:6 %br_ln12 = br i1 %icmp_ln12, void %for.body.split, void %for.body.for.end_crit_edge.exitStub
-
-]]></Node>
-<StgValue><ssdm name="br_ln12"/></StgValue>
 </operation>
 
 <operation id="1064" st_id="2" stage="1" lat="1">
 <core>NULL</core>
 <MemPortIdVec></MemPortIdVec>
 <condition id="-1">
-<or_exp><and_exp><literal name="icmp_ln12" val="0"/>
-</and_exp></or_exp>
+<or_exp><and_exp></and_exp></or_exp>
 </condition>
 
-<Node id="28" bw="0" op_0_bw="0" op_1_bw="32" op_2_bw="32" op_3_bw="32" op_4_bw="32" op_5_bw="0">
+<Node id="27" bw="0" op_0_bw="1" op_1_bw="0" op_2_bw="0">
 <![CDATA[
-for.body.split:0 %specpipeline_ln13 = specpipeline void @_ssdm_op_SpecPipeline, i32 4294967295, i32 0, i32 0, i32 0, void @empty_0
+for.body:7 %br_ln12 = br i1 %icmp_ln12, void %for.body.split, void %for.body.for.end_crit_edge.exitStub
 
 ]]></Node>
-<StgValue><ssdm name="specpipeline_ln13"/></StgValue>
+<StgValue><ssdm name="br_ln12"/></StgValue>
 </operation>
 
 <operation id="1065" st_id="2" stage="1" lat="1">
@@ -6616,7 +6615,7 @@ for.body.split:0 %specpipeline_ln13 = specpipeline void @_ssdm_op_SpecPipeline, 
 
 <Node id="29" bw="0" op_0_bw="0" op_1_bw="0">
 <![CDATA[
-for.body.split:1 %specloopname_ln1633 = specloopname void @_ssdm_op_SpecLoopName, void @empty_7
+for.body.split:0 %specloopname_ln1633 = specloopname void @_ssdm_op_SpecLoopName, void @empty_7
 
 ]]></Node>
 <StgValue><ssdm name="specloopname_ln1633"/></StgValue>
@@ -6632,7 +6631,7 @@ for.body.split:1 %specloopname_ln1633 = specloopname void @_ssdm_op_SpecLoopName
 
 <Node id="30" bw="1" op_0_bw="256">
 <![CDATA[
-for.body.split:2 %trunc_ln1497 = trunc i256 %shr_i3_load
+for.body.split:1 %trunc_ln1497 = trunc i256 %shr_i3_load
 
 ]]></Node>
 <StgValue><ssdm name="trunc_ln1497"/></StgValue>
@@ -6648,7 +6647,7 @@ for.body.split:2 %trunc_ln1497 = trunc i256 %shr_i3_load
 
 <Node id="31" bw="0" op_0_bw="1" op_1_bw="0" op_2_bw="0">
 <![CDATA[
-for.body.split:3 %br_ln15 = br i1 %trunc_ln1497, void %if.end, void %if.then
+for.body.split:2 %br_ln15 = br i1 %trunc_ln1497, void %if.end, void %if.then
 
 ]]></Node>
 <StgValue><ssdm name="br_ln15"/></StgValue>
@@ -25872,35 +25871,35 @@ UnifiedReturnBlock:1 %ret_ln0 = ret i1 %UnifiedRetVal
 </dataflow>
 <dataflow id="3212" from="lhs" to="lhs_1" fromId="1047" toId="1059">
 </dataflow>
-<dataflow id="3213" from="i_1" to="icmp_ln12" fromId="1057" toId="1060">
+<dataflow id="3214" from="_ssdm_op_SpecPipeline" to="specpipeline_ln0" fromId="3213" toId="1060">
 </dataflow>
-<dataflow id="3215" from="StgValue_3214" to="icmp_ln12" fromId="3214" toId="1060">
+<dataflow id="3216" from="StgValue_3215" to="specpipeline_ln0" fromId="3215" toId="1060">
 </dataflow>
-<dataflow id="3217" from="_ssdm_op_SpecLoopTripCount" to="empty" fromId="3216" toId="1061">
+<dataflow id="3218" from="StgValue_3217" to="specpipeline_ln0" fromId="3217" toId="1060">
 </dataflow>
-<dataflow id="3219" from="StgValue_3218" to="empty" fromId="3218" toId="1061">
+<dataflow id="3219" from="StgValue_3187" to="specpipeline_ln0" fromId="3187" toId="1060">
 </dataflow>
-<dataflow id="3221" from="StgValue_3220" to="empty" fromId="3220" toId="1061">
+<dataflow id="3220" from="StgValue_3217" to="specpipeline_ln0" fromId="3217" toId="1060">
 </dataflow>
-<dataflow id="3223" from="StgValue_3222" to="empty" fromId="3222" toId="1061">
+<dataflow id="3222" from="p_str" to="specpipeline_ln0" fromId="3221" toId="1060">
 </dataflow>
-<dataflow id="3224" from="i_1" to="i_2" fromId="1057" toId="1062">
+<dataflow id="3223" from="i_1" to="icmp_ln12" fromId="1057" toId="1061">
 </dataflow>
-<dataflow id="3226" from="StgValue_3225" to="i_2" fromId="3225" toId="1062">
+<dataflow id="3225" from="StgValue_3224" to="icmp_ln12" fromId="3224" toId="1061">
 </dataflow>
-<dataflow id="3227" from="icmp_ln12" to="br_ln12" fromId="1060" toId="1063">
+<dataflow id="3227" from="_ssdm_op_SpecLoopTripCount" to="empty" fromId="3226" toId="1062">
 </dataflow>
-<dataflow id="3229" from="_ssdm_op_SpecPipeline" to="specpipeline_ln13" fromId="3228" toId="1064">
+<dataflow id="3229" from="StgValue_3228" to="empty" fromId="3228" toId="1062">
 </dataflow>
-<dataflow id="3231" from="StgValue_3230" to="specpipeline_ln13" fromId="3230" toId="1064">
+<dataflow id="3231" from="StgValue_3230" to="empty" fromId="3230" toId="1062">
 </dataflow>
-<dataflow id="3233" from="StgValue_3232" to="specpipeline_ln13" fromId="3232" toId="1064">
+<dataflow id="3233" from="StgValue_3232" to="empty" fromId="3232" toId="1062">
 </dataflow>
-<dataflow id="3234" from="StgValue_3232" to="specpipeline_ln13" fromId="3232" toId="1064">
+<dataflow id="3234" from="i_1" to="i_2" fromId="1057" toId="1063">
 </dataflow>
-<dataflow id="3235" from="StgValue_3232" to="specpipeline_ln13" fromId="3232" toId="1064">
+<dataflow id="3236" from="StgValue_3235" to="i_2" fromId="3235" toId="1063">
 </dataflow>
-<dataflow id="3237" from="empty_0" to="specpipeline_ln13" fromId="3236" toId="1064">
+<dataflow id="3237" from="icmp_ln12" to="br_ln12" fromId="1061" toId="1064">
 </dataflow>
 <dataflow id="3239" from="_ssdm_op_SpecLoopName" to="specloopname_ln1633" fromId="3238" toId="1065">
 </dataflow>
@@ -28040,7 +28039,7 @@ UnifiedReturnBlock:1 %ret_ln0 = ret i1 %UnifiedRetVal
 </dataflow>
 <dataflow id="4312" from="shr_i3" to="store_ln12" fromId="1046" toId="1604">
 </dataflow>
-<dataflow id="4313" from="i_2" to="store_ln12" fromId="1062" toId="1605">
+<dataflow id="4313" from="i_2" to="store_ln12" fromId="1063" toId="1605">
 </dataflow>
 <dataflow id="4314" from="i" to="store_ln12" fromId="1045" toId="1605">
 </dataflow>
@@ -30162,7 +30161,7 @@ UnifiedReturnBlock:1 %ret_ln0 = ret i1 %UnifiedRetVal
 </dataflow>
 <dataflow id="5371" from="UnifiedRetVal" to="ret_ln0" fromId="2133" toId="2134">
 </dataflow>
-<dataflow id="5372" from="icmp_ln12" to="StgValue_2" fromId="1060" toId="2">
+<dataflow id="5372" from="icmp_ln12" to="StgValue_2" fromId="1061" toId="2">
 </dataflow>
 <dataflow id="5373" from="trunc_ln1497" to="StgValue_2" fromId="1066" toId="2">
 </dataflow>

@@ -1,47 +1,145 @@
 INFO: [HLS 200-10] Running '/tools/Xilinx/Vitis_HLS/2022.2/bin/unwrapped/lnx64.o/vitis_hls'
-INFO: [HLS 200-10] For user 'cse237c_fa24_y_liao' on host 'waiter' (Linux_x86_64 version 5.15.0-125-generic) on Thu Dec 05 10:40:13 PST 2024
+INFO: [HLS 200-10] For user 'cse237c_fa24_y_liao' on host 'waiter' (Linux_x86_64 version 5.15.0-125-generic) on Thu Dec 05 17:11:10 PST 2024
 INFO: [HLS 200-10] On os Ubuntu 22.04.5 LTS
 INFO: [HLS 200-10] In directory '/home/cse237c_fa24_y_liao/Desktop/RSA_Implementation_on_PYNQ/rsa_baseline'
-Sourcing Tcl script '/home/cse237c_fa24_y_liao/Desktop/RSA_Implementation_on_PYNQ/rsa_baseline/rsa_baseline_hls/solution1/export.tcl'
-INFO: [HLS 200-1510] Running: source /home/cse237c_fa24_y_liao/Desktop/RSA_Implementation_on_PYNQ/rsa_baseline/rsa_baseline_hls/solution1/export.tcl
+Sourcing Tcl script '/home/cse237c_fa24_y_liao/Desktop/RSA_Implementation_on_PYNQ/rsa_baseline/rsa_baseline_hls/solution2-NoDSP/csynth.tcl'
+INFO: [HLS 200-1510] Running: source /home/cse237c_fa24_y_liao/Desktop/RSA_Implementation_on_PYNQ/rsa_baseline/rsa_baseline_hls/solution2-NoDSP/csynth.tcl
 INFO: [HLS 200-1510] Running: open_project rsa_baseline_hls 
 INFO: [HLS 200-10] Opening project '/home/cse237c_fa24_y_liao/Desktop/RSA_Implementation_on_PYNQ/rsa_baseline/rsa_baseline_hls'.
 INFO: [HLS 200-1510] Running: set_top rsa 
-INFO: [HLS 200-1510] Running: add_files rsa.cpp 
-INFO: [HLS 200-10] Adding design file 'rsa.cpp' to the project
 INFO: [HLS 200-1510] Running: add_files rsa.h 
 INFO: [HLS 200-10] Adding design file 'rsa.h' to the project
-INFO: [HLS 200-1510] Running: add_files -tb data/golden.txt 
-INFO: [HLS 200-10] Adding test bench file 'data/golden.txt' to the project
-INFO: [HLS 200-1510] Running: add_files -tb data/input.txt 
-INFO: [HLS 200-10] Adding test bench file 'data/input.txt' to the project
-INFO: [HLS 200-1510] Running: add_files -tb rsa_test.cpp 
+INFO: [HLS 200-1510] Running: add_files rsa.cpp 
+INFO: [HLS 200-10] Adding design file 'rsa.cpp' to the project
+INFO: [HLS 200-1510] Running: add_files -tb rsa_test.cpp -cflags -Wno-unknown-pragmas -csimflags -Wno-unknown-pragmas 
 INFO: [HLS 200-10] Adding test bench file 'rsa_test.cpp' to the project
-INFO: [HLS 200-1510] Running: open_solution solution1 -flow_target vivado 
-INFO: [HLS 200-10] Opening solution '/home/cse237c_fa24_y_liao/Desktop/RSA_Implementation_on_PYNQ/rsa_baseline/rsa_baseline_hls/solution1'.
+INFO: [HLS 200-1510] Running: add_files -tb data/input.txt -cflags -Wno-unknown-pragmas -csimflags -Wno-unknown-pragmas 
+INFO: [HLS 200-10] Adding test bench file 'data/input.txt' to the project
+INFO: [HLS 200-1510] Running: add_files -tb data/golden.txt -cflags -Wno-unknown-pragmas -csimflags -Wno-unknown-pragmas 
+INFO: [HLS 200-10] Adding test bench file 'data/golden.txt' to the project
+INFO: [HLS 200-1510] Running: open_solution solution2-NoDSP -flow_target vivado 
+INFO: [HLS 200-10] Opening solution '/home/cse237c_fa24_y_liao/Desktop/RSA_Implementation_on_PYNQ/rsa_baseline/rsa_baseline_hls/solution2-NoDSP'.
 INFO: [SYN 201-201] Setting up clock 'default' with a period of 10ns.
 INFO: [HLS 200-1611] Setting target device to 'xc7z020-clg400-1'
 INFO: [HLS 200-1505] Using flow_target 'vivado'
 Resolution: For help on HLS 200-1505 see www.xilinx.com/cgi-bin/docs/rdoc?v=2022.2;t=hls+guidance;d=200-1505.html
+INFO: [HLS 200-1464] Running solution command: config_export -format=ip_catalog
 INFO: [HLS 200-1464] Running solution command: config_export -output=/home/cse237c_fa24_y_liao/Desktop/RSA_Implementation_on_PYNQ/rsa_baseline/rsa_baseline_hls
-INFO: [HLS 200-1510] Running: set_part xc7z020clg400-1 
+INFO: [HLS 200-1464] Running solution command: config_export -rtl=verilog
+INFO: [HLS 200-1510] Running: set_part xc7z020-clg400-1 
 INFO: [HLS 200-1510] Running: create_clock -period 10 -name default 
-INFO: [SYN 201-201] Setting up clock 'default' with a period of 10ns.
-INFO: [HLS 200-1510] Running: config_export -output /home/cse237c_fa24_y_liao/Desktop/RSA_Implementation_on_PYNQ/rsa_baseline/rsa_baseline_hls 
-INFO: [HLS 200-1510] Running: export_design -rtl verilog -format ip_catalog -output /home/cse237c_fa24_y_liao/Desktop/RSA_Implementation_on_PYNQ/rsa_baseline/rsa_baseline_hls 
-Running Dispatch Server on port: 45455
-INFO: [IMPL 213-8] Exporting RTL as a Vivado IP.
-
-****** Vivado v2022.2 (64-bit)
-  **** SW Build 3671981 on Fri Oct 14 04:59:54 MDT 2022
-  **** IP Build 3669848 on Fri Oct 14 08:30:02 MDT 2022
-    ** Copyright 1986-2022 Xilinx, Inc. All Rights Reserved.
-
-source run_ippack.tcl -notrace
-INFO: [IP_Flow 19-234] Refreshing IP repositories
-INFO: [IP_Flow 19-1704] No user IP repositories specified
-INFO: [IP_Flow 19-2313] Loaded Vivado IP repository '/tools/Xilinx/Vivado/2022.2/data/ip'.
-INFO: [Common 17-206] Exiting Vivado at Thu Dec  5 10:40:28 2024...
-INFO: [HLS 200-802] Generated output file rsa_baseline_hls/export.zip
-INFO: [HLS 200-111] Finished Command export_design CPU user time: 5.02 seconds. CPU system time: 0.71 seconds. Elapsed time: 15.06 seconds; current allocated memory: 7.023 MB.
-INFO: [HLS 200-112] Total CPU user time: 5.63 seconds. Total CPU system time: 0.93 seconds. Total elapsed time: 25.79 seconds; peak allocated memory: 220.883 MB.
+INFO: [HLS 200-1510] Running: config_export -format ip_catalog -output /home/cse237c_fa24_y_liao/Desktop/RSA_Implementation_on_PYNQ/rsa_baseline/rsa_baseline_hls -rtl verilog 
+INFO: [HLS 200-1510] Running: source ./rsa_baseline_hls/solution2-NoDSP/directives.tcl
+INFO: [HLS 200-1510] Running: set_directive_top -name rsa rsa 
+INFO: [HLS 200-1510] Running: csynth_design 
+Running Dispatch Server on port: 45021
+INFO: [HLS 200-111] Finished File checks and directory preparation: CPU user time: 0.01 seconds. CPU system time: 0.01 seconds. Elapsed time: 10.02 seconds; current allocated memory: 214.375 MB.
+INFO: [HLS 200-10] Analyzing design file 'rsa.cpp' ... 
+WARNING: [HLS 207-5555] unexpected pragma argument 'dsp', expects function/operation (rsa.cpp:40:34)
+INFO: [HLS 200-111] Finished Source Code Analysis and Preprocessing: CPU user time: 9.75 seconds. CPU system time: 1.23 seconds. Elapsed time: 10.98 seconds; current allocated memory: 218.906 MB.
+INFO: [HLS 200-777] Using interface defaults for 'Vivado' flow target.
+INFO: [HLS 200-111] Finished Compiling Optimization and Transform: CPU user time: 1.62 seconds. CPU system time: 0.43 seconds. Elapsed time: 2.05 seconds; current allocated memory: 219.297 MB.
+INFO: [HLS 200-111] Finished Checking Pragmas: CPU user time: 0 seconds. CPU system time: 0 seconds. Elapsed time: 0 seconds; current allocated memory: 219.297 MB.
+INFO: [HLS 200-10] Starting code transformations ...
+INFO: [HLS 200-111] Finished Standard Transforms: CPU user time: 0.02 seconds. CPU system time: 0.01 seconds. Elapsed time: 0.02 seconds; current allocated memory: 222.211 MB.
+INFO: [HLS 200-10] Checking synthesizability ...
+INFO: [HLS 200-111] Finished Checking Synthesizability: CPU user time: 0.01 seconds. CPU system time: 0 seconds. Elapsed time: 0.02 seconds; current allocated memory: 226.133 MB.
+INFO: [XFORM 203-510] Pipelining loop 'VITIS_LOOP_12_1' in function 'mod_exp' automatically.
+INFO: [HLS 200-111] Finished Loop, function and other optimizations: CPU user time: 0.02 seconds. CPU system time: 0.01 seconds. Elapsed time: 0.03 seconds; current allocated memory: 250.684 MB.
+INFO: [HLS 200-111] Finished Architecture Synthesis: CPU user time: 0.02 seconds. CPU system time: 0.01 seconds. Elapsed time: 0.03 seconds; current allocated memory: 266.574 MB.
+INFO: [HLS 200-10] Starting hardware synthesis ...
+INFO: [HLS 200-10] Synthesizing 'rsa' ...
+INFO: [HLS 200-10] ----------------------------------------------------------------
+INFO: [HLS 200-42] -- Implementing module 'mod_exp_Pipeline_VITIS_LOOP_12_1' 
+INFO: [HLS 200-10] ----------------------------------------------------------------
+INFO: [SCHED 204-11] Starting scheduling ...
+INFO: [SCHED 204-61] Pipelining loop 'VITIS_LOOP_12_1'.
+WARNING: [HLS 200-880] The II Violation in module 'mod_exp_Pipeline_VITIS_LOOP_12_1' (loop 'VITIS_LOOP_12_1'): Unable to enforce a carried dependence constraint (II = 1, distance = 1, offset = 1) between 'urem' operation ('urem_ln1514_1') and 'mul' operation ('ret.V').
+Resolution: For help on HLS 200-880 see www.xilinx.com/cgi-bin/docs/rdoc?v=2022.2;t=hls+guidance;d=200-880.html
+WARNING: [HLS 200-880] The II Violation in module 'mod_exp_Pipeline_VITIS_LOOP_12_1' (loop 'VITIS_LOOP_12_1'): Unable to enforce a carried dependence constraint (II = 2, distance = 1, offset = 1) between 'urem' operation ('urem_ln1514_1') and 'mul' operation ('ret.V').
+Resolution: For help on HLS 200-880 see www.xilinx.com/cgi-bin/docs/rdoc?v=2022.2;t=hls+guidance;d=200-880.html
+WARNING: [HLS 200-880] The II Violation in module 'mod_exp_Pipeline_VITIS_LOOP_12_1' (loop 'VITIS_LOOP_12_1'): Unable to enforce a carried dependence constraint (II = 3, distance = 1, offset = 1) between 'urem' operation ('urem_ln1514_1') and 'mul' operation ('ret.V').
+Resolution: For help on HLS 200-880 see www.xilinx.com/cgi-bin/docs/rdoc?v=2022.2;t=hls+guidance;d=200-880.html
+WARNING: [HLS 200-880] The II Violation in module 'mod_exp_Pipeline_VITIS_LOOP_12_1' (loop 'VITIS_LOOP_12_1'): Unable to enforce a carried dependence constraint (II = 4, distance = 1, offset = 1) between 'urem' operation ('urem_ln1514_1') and 'mul' operation ('ret.V').
+Resolution: For help on HLS 200-880 see www.xilinx.com/cgi-bin/docs/rdoc?v=2022.2;t=hls+guidance;d=200-880.html
+WARNING: [HLS 200-880] The II Violation in module 'mod_exp_Pipeline_VITIS_LOOP_12_1' (loop 'VITIS_LOOP_12_1'): Unable to enforce a carried dependence constraint (II = 130, distance = 1, offset = 1) between 'urem' operation ('urem_ln1514_1') and 'mul' operation ('ret.V').
+Resolution: For help on HLS 200-880 see www.xilinx.com/cgi-bin/docs/rdoc?v=2022.2;t=hls+guidance;d=200-880.html
+WARNING: [HLS 200-880] The II Violation in module 'mod_exp_Pipeline_VITIS_LOOP_12_1' (loop 'VITIS_LOOP_12_1'): Unable to enforce a carried dependence constraint (II = 193, distance = 1, offset = 1) between 'urem' operation ('urem_ln1514_1') and 'mul' operation ('ret.V').
+Resolution: For help on HLS 200-880 see www.xilinx.com/cgi-bin/docs/rdoc?v=2022.2;t=hls+guidance;d=200-880.html
+WARNING: [HLS 200-880] The II Violation in module 'mod_exp_Pipeline_VITIS_LOOP_12_1' (loop 'VITIS_LOOP_12_1'): Unable to enforce a carried dependence constraint (II = 225, distance = 1, offset = 1) between 'urem' operation ('urem_ln1514_1') and 'mul' operation ('ret.V').
+Resolution: For help on HLS 200-880 see www.xilinx.com/cgi-bin/docs/rdoc?v=2022.2;t=hls+guidance;d=200-880.html
+WARNING: [HLS 200-880] The II Violation in module 'mod_exp_Pipeline_VITIS_LOOP_12_1' (loop 'VITIS_LOOP_12_1'): Unable to enforce a carried dependence constraint (II = 241, distance = 1, offset = 1) between 'urem' operation ('urem_ln1514_1') and 'mul' operation ('ret.V').
+Resolution: For help on HLS 200-880 see www.xilinx.com/cgi-bin/docs/rdoc?v=2022.2;t=hls+guidance;d=200-880.html
+WARNING: [HLS 200-880] The II Violation in module 'mod_exp_Pipeline_VITIS_LOOP_12_1' (loop 'VITIS_LOOP_12_1'): Unable to enforce a carried dependence constraint (II = 249, distance = 1, offset = 1) between 'urem' operation ('urem_ln1514_1') and 'mul' operation ('ret.V').
+Resolution: For help on HLS 200-880 see www.xilinx.com/cgi-bin/docs/rdoc?v=2022.2;t=hls+guidance;d=200-880.html
+WARNING: [HLS 200-880] The II Violation in module 'mod_exp_Pipeline_VITIS_LOOP_12_1' (loop 'VITIS_LOOP_12_1'): Unable to enforce a carried dependence constraint (II = 253, distance = 1, offset = 1) between 'urem' operation ('urem_ln1514_1') and 'mul' operation ('ret.V').
+Resolution: For help on HLS 200-880 see www.xilinx.com/cgi-bin/docs/rdoc?v=2022.2;t=hls+guidance;d=200-880.html
+WARNING: [HLS 200-880] The II Violation in module 'mod_exp_Pipeline_VITIS_LOOP_12_1' (loop 'VITIS_LOOP_12_1'): Unable to enforce a carried dependence constraint (II = 255, distance = 1, offset = 1) between 'urem' operation ('urem_ln1514_1') and 'mul' operation ('ret.V').
+Resolution: For help on HLS 200-880 see www.xilinx.com/cgi-bin/docs/rdoc?v=2022.2;t=hls+guidance;d=200-880.html
+WARNING: [HLS 200-880] The II Violation in module 'mod_exp_Pipeline_VITIS_LOOP_12_1' (loop 'VITIS_LOOP_12_1'): Unable to enforce a carried dependence constraint (II = 256, distance = 1, offset = 1) between 'urem' operation ('urem_ln1514_1') and 'mul' operation ('ret.V').
+Resolution: For help on HLS 200-880 see www.xilinx.com/cgi-bin/docs/rdoc?v=2022.2;t=hls+guidance;d=200-880.html
+INFO: [SCHED 204-61] Unable to satisfy pipeline directive for loop 'VITIS_LOOP_12_1': unable to pipeline.
+INFO: [SCHED 204-11] Finished scheduling.
+INFO: [HLS 200-111] Finished Scheduling: CPU user time: 0.67 seconds. CPU system time: 0.01 seconds. Elapsed time: 0.69 seconds; current allocated memory: 266.574 MB.
+INFO: [BIND 205-100] Starting micro-architecture generation ...
+INFO: [BIND 205-101] Performing variable lifetime analysis.
+INFO: [BIND 205-101] Exploring resource sharing.
+INFO: [BIND 205-101] Binding ...
+INFO: [BIND 205-100] Finished micro-architecture generation.
+INFO: [HLS 200-111] Finished Binding: CPU user time: 2.09 seconds. CPU system time: 0 seconds. Elapsed time: 2.09 seconds; current allocated memory: 271.312 MB.
+INFO: [HLS 200-10] ----------------------------------------------------------------
+INFO: [HLS 200-42] -- Implementing module 'mod_exp' 
+INFO: [HLS 200-10] ----------------------------------------------------------------
+INFO: [SCHED 204-11] Starting scheduling ...
+INFO: [SCHED 204-11] Finished scheduling.
+INFO: [HLS 200-111] Finished Scheduling: CPU user time: 0.6 seconds. CPU system time: 0.01 seconds. Elapsed time: 0.6 seconds; current allocated memory: 272.289 MB.
+INFO: [BIND 205-100] Starting micro-architecture generation ...
+INFO: [BIND 205-101] Performing variable lifetime analysis.
+INFO: [BIND 205-101] Exploring resource sharing.
+INFO: [BIND 205-101] Binding ...
+INFO: [BIND 205-100] Finished micro-architecture generation.
+INFO: [HLS 200-111] Finished Binding: CPU user time: 0.49 seconds. CPU system time: 0 seconds. Elapsed time: 0.49 seconds; current allocated memory: 272.445 MB.
+INFO: [HLS 200-10] ----------------------------------------------------------------
+INFO: [HLS 200-42] -- Implementing module 'rsa' 
+INFO: [HLS 200-10] ----------------------------------------------------------------
+INFO: [SCHED 204-11] Starting scheduling ...
+INFO: [SCHED 204-11] Finished scheduling.
+INFO: [HLS 200-111] Finished Scheduling: CPU user time: 0.13 seconds. CPU system time: 0 seconds. Elapsed time: 0.12 seconds; current allocated memory: 272.801 MB.
+INFO: [BIND 205-100] Starting micro-architecture generation ...
+INFO: [BIND 205-101] Performing variable lifetime analysis.
+INFO: [BIND 205-101] Exploring resource sharing.
+INFO: [BIND 205-101] Binding ...
+INFO: [BIND 205-100] Finished micro-architecture generation.
+INFO: [HLS 200-111] Finished Binding: CPU user time: 0.01 seconds. CPU system time: 0.01 seconds. Elapsed time: 0.01 seconds; current allocated memory: 272.844 MB.
+INFO: [HLS 200-10] ----------------------------------------------------------------
+INFO: [HLS 200-10] -- Generating RTL for module 'mod_exp_Pipeline_VITIS_LOOP_12_1' 
+INFO: [HLS 200-10] ----------------------------------------------------------------
+INFO: [RTGEN 206-100] Generating core module 'mul_256ns_256ns_512_5_1': 2 instance(s).
+INFO: [RTGEN 206-100] Generating core module 'urem_512ns_256ns_256_516_1': 2 instance(s).
+INFO: [RTGEN 206-100] Finished creating RTL model for 'mod_exp_Pipeline_VITIS_LOOP_12_1'.
+INFO: [HLS 200-111] Finished Creating RTL model: CPU user time: 0.09 seconds. CPU system time: 0 seconds. Elapsed time: 0.1 seconds; current allocated memory: 286.266 MB.
+INFO: [HLS 200-10] ----------------------------------------------------------------
+INFO: [HLS 200-10] -- Generating RTL for module 'mod_exp' 
+INFO: [HLS 200-10] ----------------------------------------------------------------
+INFO: [RTGEN 206-100] Generating core module 'urem_256ns_256ns_256_260_seq_1': 1 instance(s).
+INFO: [RTGEN 206-100] Finished creating RTL model for 'mod_exp'.
+INFO: [HLS 200-111] Finished Creating RTL model: CPU user time: 0.53 seconds. CPU system time: 0.02 seconds. Elapsed time: 0.54 seconds; current allocated memory: 291.871 MB.
+INFO: [HLS 200-10] ----------------------------------------------------------------
+INFO: [HLS 200-10] -- Generating RTL for module 'rsa' 
+INFO: [HLS 200-10] ----------------------------------------------------------------
+WARNING: [RTGEN 206-101] Design contains AXI ports. Reset is fixed to synchronous and active low.
+INFO: [RTGEN 206-500] Setting interface mode on port 'rsa/d' to 's_axilite & ap_none'.
+INFO: [RTGEN 206-500] Setting interface mode on port 'rsa/N' to 's_axilite & ap_none'.
+INFO: [RTGEN 206-500] Setting interface mode on port 'rsa/y' to 's_axilite & ap_none'.
+INFO: [RTGEN 206-500] Setting interface mode on port 'rsa/x' to 's_axilite & ap_vld'.
+INFO: [RTGEN 206-500] Setting interface mode on function 'rsa' to 's_axilite & ap_ctrl_hs'.
+INFO: [RTGEN 206-100] Bundling port 'd', 'N', 'y', 'x' to AXI-Lite port control.
+INFO: [RTGEN 206-100] Finished creating RTL model for 'rsa'.
+INFO: [HLS 200-111] Finished Creating RTL model: CPU user time: 0.14 seconds. CPU system time: 0 seconds. Elapsed time: 0.15 seconds; current allocated memory: 292.977 MB.
+INFO: [HLS 200-111] Finished Generating all RTL models: CPU user time: 0.09 seconds. CPU system time: 0.02 seconds. Elapsed time: 0.1 seconds; current allocated memory: 296.309 MB.
+INFO: [HLS 200-111] Finished Updating report files: CPU user time: 0.26 seconds. CPU system time: 0.01 seconds. Elapsed time: 0.28 seconds; current allocated memory: 304.680 MB.
+INFO: [VHDL 208-304] Generating VHDL RTL for rsa.
+INFO: [VLOG 209-307] Generating Verilog RTL for rsa.
+INFO: [HLS 200-789] **** Estimated Fmax: 143.31 MHz
+INFO: [HLS 200-111] Finished Command csynth_design CPU user time: 16.54 seconds. CPU system time: 1.77 seconds. Elapsed time: 18.33 seconds; current allocated memory: 90.477 MB.
+INFO: [HLS 200-112] Total CPU user time: 17.2 seconds. Total CPU system time: 1.96 seconds. Total elapsed time: 29.08 seconds; peak allocated memory: 304.852 MB.

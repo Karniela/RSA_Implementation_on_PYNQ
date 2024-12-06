@@ -30148,9 +30148,9 @@ data_t mod_exp(data_t base, data_t exp, data_t mod) {
     data_t b = base % mod;
 
     VITIS_LOOP_12_1: for (int i = 0; i < 256; i++) {
-#pragma HLS PIPELINE
 
- if (exp & 1) {
+
+        if (exp & 1) {
 
             result = (result * b) % mod;
 
@@ -30168,7 +30168,11 @@ data_t mod_exp(data_t base, data_t exp, data_t mod) {
 
 
 __attribute__((sdx_kernel("rsa", 0))) void rsa(data_t d, data_t N, data_t y, data_t &x) {
-#line 17 "/home/cse237c_fa24_y_liao/Desktop/RSA_Implementation_on_PYNQ/rsa_baseline/rsa_baseline_hls/solution1/csynth.tcl"
+#line 18 "/home/cse237c_fa24_y_liao/Desktop/RSA_Implementation_on_PYNQ/rsa_baseline/rsa_baseline_hls/solution1/csynth.tcl"
+#pragma HLSDIRECTIVE TOP name=rsa
+# 32 "rsa.cpp"
+
+#line 6 "/home/cse237c_fa24_y_liao/Desktop/RSA_Implementation_on_PYNQ/rsa_baseline/rsa_baseline_hls/solution1/directives.tcl"
 #pragma HLSDIRECTIVE TOP name=rsa
 # 32 "rsa.cpp"
 
@@ -30179,7 +30183,7 @@ __attribute__((sdx_kernel("rsa", 0))) void rsa(data_t d, data_t N, data_t y, dat
 #pragma HLS INTERFACE mode=s_axilite port=x
 
 
-
+#pragma HLS ALLOCATION instances=div limit=0
 
  x = mod_exp(y, d, N);
 }

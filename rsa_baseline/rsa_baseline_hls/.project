@@ -42,6 +42,11 @@
 			<location>/home/cse237c_fa24_y_liao/Desktop/RSA_Implementation_on_PYNQ/rsa_baseline/rsa_baseline_hls/solution1/.tcls</location>
 		</link>
 		<link>
+			<name>solution2-NoDSP/constraints</name>
+			<type>2</type>
+			<location>/home/cse237c_fa24_y_liao/Desktop/RSA_Implementation_on_PYNQ/rsa_baseline/rsa_baseline_hls/solution2-NoDSP/.tcls</location>
+		</link>
+		<link>
 			<name>source/rsa.cpp</name>
 			<type>1</type>
 			<location>/home/cse237c_fa24_y_liao/Desktop/RSA_Implementation_on_PYNQ/rsa_baseline/rsa.cpp</location>
@@ -80,6 +85,21 @@
 			<name>solution1/constraints/script.tcl</name>
 			<type>1</type>
 			<location>/home/cse237c_fa24_y_liao/Desktop/RSA_Implementation_on_PYNQ/rsa_baseline/rsa_baseline_hls/solution1/script.tcl</location>
+		</link>
+		<link>
+			<name>solution2-NoDSP/constraints/.xml.directive</name>
+			<type>1</type>
+			<location>/home/cse237c_fa24_y_liao/Desktop/RSA_Implementation_on_PYNQ/rsa_baseline/rsa_baseline_hls/solution2-NoDSP/solution2-NoDSP.directive</location>
+		</link>
+		<link>
+			<name>solution2-NoDSP/constraints/directives.tcl</name>
+			<type>1</type>
+			<location>/home/cse237c_fa24_y_liao/Desktop/RSA_Implementation_on_PYNQ/rsa_baseline/rsa_baseline_hls/solution2-NoDSP/directives.tcl</location>
+		</link>
+		<link>
+			<name>solution2-NoDSP/constraints/script.tcl</name>
+			<type>1</type>
+			<location>/home/cse237c_fa24_y_liao/Desktop/RSA_Implementation_on_PYNQ/rsa_baseline/rsa_baseline_hls/solution2-NoDSP/script.tcl</location>
 		</link>
 	</linkedResources>
 </projectDescription>

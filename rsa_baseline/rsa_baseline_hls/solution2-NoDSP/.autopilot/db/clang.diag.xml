@@ -1,0 +1,23 @@
+<dict>
+  <key>main-file</key>
+  <string>/home/cse237c_fa24_y_liao/Desktop/RSA_Implementation_on_PYNQ/rsa_baseline/rsa_baseline_hls/solution2-NoDSP/.autopilot/db/rsa.pp.0.cpp</string>
+  <key>diagnostics</key>
+  <array>
+    <dict>
+      <key>level</key>
+      <string>warning</string>
+      <key>filename</key>
+      <string>rsa.cpp</string>
+      <key>line</key>
+      <integer>40</integer>
+      <key>column</key>
+      <integer>34</integer>
+      <key>message</key>
+      <string>unexpected pragma argument &apos;dsp&apos;, expects function/operation</string>
+      <key>ID</key>
+      <integer>5555</integer>
+      <key>WarningOption</key>
+      <string>invalid-hls-pragmas</string>
+    </dict>
+  </array>
+</dict>

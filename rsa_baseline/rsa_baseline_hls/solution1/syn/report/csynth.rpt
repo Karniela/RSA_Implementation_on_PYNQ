@@ -4,7 +4,7 @@
 == Synthesis Summary Report of 'rsa'
 ================================================================
 + General Information: 
-    * Date:           Thu Dec  5 10:35:16 2024
+    * Date:           Thu Dec  5 17:05:39 2024
     * Version:        2022.2 (Build 3670227 on Oct 13 2022)
     * Project:        rsa_baseline_hls
     * Solution:       solution1 (Vivado IP Flow Target)
@@ -173,12 +173,18 @@
 ================================================================
 == Pragma Report
 ================================================================
+* Ignored Pragmas
++------------+---------------+-------------------+--------------------------------------------------------------+
+| Type       | Options       | Location          | Messages                                                     |
++------------+---------------+-------------------+--------------------------------------------------------------+
+| allocation | instances=div | rsa.cpp:40 in rsa | unexpected pragma argument 'div', expects function/operation |
++------------+---------------+-------------------+--------------------------------------------------------------+
+
 * Valid Pragma Syntax
 +-----------+----------------------------+---------------------------+
 | Type      | Options                    | Location                  |
 +-----------+----------------------------+---------------------------+
 | inline    | OFF                        | rsa.cpp:8 in mod_exp      |
-| pipeline  |                            | rsa.cpp:13 in mod_exp     |
 | interface | mode=s_axilite port=return | rsa.cpp:33 in rsa, return |
 | interface | mode=s_axilite port=d      | rsa.cpp:34 in rsa, d      |
 | interface | mode=s_axilite port=N      | rsa.cpp:35 in rsa, N      |

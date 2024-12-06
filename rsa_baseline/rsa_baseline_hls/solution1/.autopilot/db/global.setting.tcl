@@ -45,7 +45,7 @@ set TargetInfo xc7z020:-clg400:-1
 set SourceFiles {sc {} c ../../rsa.cpp}
 set SourceFlags {sc {} c {{}}}
 set DirectiveFile /home/cse237c_fa24_y_liao/Desktop/RSA_Implementation_on_PYNQ/rsa_baseline/rsa_baseline_hls/solution1/solution1.directive
-set TBFiles {verilog {../../rsa_test.cpp ../../data/input.txt ../../data/golden.txt} bc {../../rsa_test.cpp ../../data/input.txt ../../data/golden.txt} vhdl {../../rsa_test.cpp ../../data/input.txt ../../data/golden.txt} sc {../../rsa_test.cpp ../../data/input.txt ../../data/golden.txt} cas {../../rsa_test.cpp ../../data/input.txt ../../data/golden.txt} c {}}
+set TBFiles {verilog {../../data/golden.txt ../../data/input.txt ../../rsa_test.cpp} bc {../../data/golden.txt ../../data/input.txt ../../rsa_test.cpp} vhdl {../../data/golden.txt ../../data/input.txt ../../rsa_test.cpp} sc {../../data/golden.txt ../../data/input.txt ../../rsa_test.cpp} cas {../../data/golden.txt ../../data/input.txt ../../rsa_test.cpp} c {}}
 set SpecLanguage C
 set TVInFiles {bc {} c {} sc {} cas {} vhdl {} verilog {}}
 set TVOutFiles {bc {} c {} sc {} cas {} vhdl {} verilog {}}

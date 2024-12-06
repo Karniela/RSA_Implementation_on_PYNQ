@@ -1,12 +1,13 @@
 {"sourceFile": [{
       "name": "",
-      "directive": [{
+      "directive": [
+        {
           "functionName": "rsa",
           "label": "",
           "functionLabel": "",
           "id": "1",
-          "sourceFile": "\/home\/cse237c_fa24_y_liao\/Desktop\/RSA_Implementation_on_PYNQ\/rsa_baseline\/rsa_baseline_hls\/solution1\/csynth.tcl",
-          "sourceLine": "17",
+          "sourceFile": "\/home\/cse237c_fa24_y_liao\/Desktop\/RSA_Implementation_on_PYNQ\/rsa_baseline\/rsa_baseline_hls\/solution1\/directives.tcl",
+          "sourceLine": "6",
           "pragma": {
             "name": "TOP",
             "option": [{
@@ -14,5 +15,21 @@
                 "value": "rsa"
               }]
           }
-        }]
+        },
+        {
+          "functionName": "rsa",
+          "label": "",
+          "functionLabel": "",
+          "id": "2",
+          "sourceFile": "\/home\/cse237c_fa24_y_liao\/Desktop\/RSA_Implementation_on_PYNQ\/rsa_baseline\/rsa_baseline_hls\/solution1\/csynth.tcl",
+          "sourceLine": "18",
+          "pragma": {
+            "name": "TOP",
+            "option": [{
+                "name": "name",
+                "value": "rsa"
+              }]
+          }
+        }
+      ]
     }]}
