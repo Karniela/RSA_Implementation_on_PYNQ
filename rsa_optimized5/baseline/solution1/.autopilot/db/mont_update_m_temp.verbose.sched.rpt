@@ -1,0 +1,141 @@
+
+
+================================================================
+== Vitis HLS Report for 'mont_update_m_temp'
+================================================================
+* Date:           Thu Dec 12 16:24:57 2024
+
+* Version:        2022.2 (Build 3670227 on Oct 13 2022)
+* Project:        baseline
+* Solution:       solution1 (Vivado IP Flow Target)
+* Product family: zynq
+* Target device:  xc7z020-clg400-1
+
+
+================================================================
+== Performance Estimates
+================================================================
++ Timing: 
+    * Summary: 
+    +--------+----------+----------+------------+
+    |  Clock |  Target  | Estimated| Uncertainty|
+    +--------+----------+----------+------------+
+    |ap_clk  |  10.00 ns|  6.330 ns|     2.70 ns|
+    +--------+----------+----------+------------+
+
++ Latency: 
+    * Summary: 
+    +---------+---------+-----------+-----------+-----+-----+---------+
+    |  Latency (cycles) |   Latency (absolute)  |  Interval | Pipeline|
+    |   min   |   max   |    min    |    max    | min | max |   Type  |
+    +---------+---------+-----------+-----------+-----+-----+---------+
+    |        1|        1|  10.000 ns|  10.000 ns|    1|    1|      yes|
+    +---------+---------+-----------+-----------+-----+-----+---------+
+
+    + Detail: 
+        * Instance: 
+        N/A
+
+        * Loop: 
+        N/A
+
+============================================================
++ Verbose Summary: Synthesis Manager
+============================================================
+InlineROM: 1
+ExposeGlobal: 0
+============================================================
++ Verbose Summary: CDFG Model
+============================================================
+IsTopModel: 0
+ResetActiveHigh: 1
+IsCombinational: 0
+IsDatapathOnly: 0
+HasWiredReturn: 1
+HasMFsm: 2
+HasVarLatency: 0
+IsPipeline: 1
+IsRtlPipelined: 1
+IsInstanceOverlapped: 0
+IsDontTouch: 0
+HasImplIP: 0
+IsGatedGlobalClock: 0
+
++ Individual pipeline summary: 
+  * Pipeline-0: initiation interval (II) = 1, depth = 2
+
+
+============================================================
++ Verbose Summary: Schedule
+============================================================
+* Number of FSM states : 2
+* Pipeline : 1
+  Pipeline-0 : II = 1, D = 2, States = { 1 2 }
+* Dataflow Pipeline: 0
+
+* FSM state transitions: 
+1 --> 2 
+2 --> 
+
+* FSM state operations: 
+
+State 1 <SV = 0> <Delay = 6.33>
+ST_1 : Operation 3 [1/1] (0.00ns)   --->   "%m_read = read i130 @_ssdm_op_Read.ap_auto.i130, i130 %m"   --->   Operation 3 'read' 'm_read' <Predicate = true> <Delay = 0.00>
+ST_1 : Operation 4 [1/1] (0.00ns)   --->   "%N_read = read i128 @_ssdm_op_Read.ap_auto.i128, i128 %N"   --->   Operation 4 'read' 'N_read' <Predicate = true> <Delay = 0.00>
+ST_1 : Operation 5 [1/1] (0.00ns)   --->   "%b_read = read i128 @_ssdm_op_Read.ap_auto.i128, i128 %b"   --->   Operation 5 'read' 'b_read' <Predicate = true> <Delay = 0.00>
+ST_1 : Operation 6 [1/1] (0.00ns)   --->   "%a_read = read i1 @_ssdm_op_Read.ap_auto.i1, i1 %a"   --->   Operation 6 'read' 'a_read' <Predicate = true> <Delay = 0.00>
+ST_1 : Operation 7 [1/1] (0.00ns)   --->   "%trunc_ln1497 = trunc i130 %m_read"   --->   Operation 7 'trunc' 'trunc_ln1497' <Predicate = true> <Delay = 0.00>
+ST_1 : Operation 8 [1/1] (0.00ns) (grouped into LUT with out node add_ln186)   --->   "%d1_V = select i1 %a_read, i128 %b_read, i128 0" [rsa.cpp:17]   --->   Operation 8 'select' 'd1_V' <Predicate = true> <Delay = 0.00> <CoreInst = "Sel">   --->   Core 73 'Sel' <Latency = 0> <II = 1> <Delay = 1.92> <FuncUnit> <Opcode : 'select'> <InPorts = 3> <OutPorts = 1>
+ST_1 : Operation 9 [1/1] (0.00ns)   --->   "%trunc_ln1497_1 = trunc i128 %b_read"   --->   Operation 9 'trunc' 'trunc_ln1497_1' <Predicate = true> <Delay = 0.00>
+ST_1 : Operation 10 [1/1] (0.00ns) (grouped into LUT with out node or_ln18)   --->   "%xor_ln901 = xor i1 %trunc_ln1497, i1 1"   --->   Operation 10 'xor' 'xor_ln901' <Predicate = true> <Delay = 0.00> <CoreInst = "LogicGate">   --->   Core 74 'LogicGate' <Latency = 0> <II = 1> <Delay = 0.97> <FuncUnit> <Opcode : 'and' 'or' 'xor'> <InPorts = 2> <OutPorts = 1>
+ST_1 : Operation 11 [1/1] (0.00ns) (grouped into LUT with out node or_ln18)   --->   "%and_ln18 = and i1 %trunc_ln1497_1, i1 %a_read" [rsa.cpp:18]   --->   Operation 11 'and' 'and_ln18' <Predicate = true> <Delay = 0.00> <CoreInst = "LogicGate">   --->   Core 74 'LogicGate' <Latency = 0> <II = 1> <Delay = 0.97> <FuncUnit> <Opcode : 'and' 'or' 'xor'> <InPorts = 2> <OutPorts = 1>
+ST_1 : Operation 12 [1/1] (0.00ns) (grouped into LUT with out node or_ln18)   --->   "%xor_ln18 = xor i1 %and_ln18, i1 1" [rsa.cpp:18]   --->   Operation 12 'xor' 'xor_ln18' <Predicate = true> <Delay = 0.00> <CoreInst = "LogicGate">   --->   Core 74 'LogicGate' <Latency = 0> <II = 1> <Delay = 0.97> <FuncUnit> <Opcode : 'and' 'or' 'xor'> <InPorts = 2> <OutPorts = 1>
+ST_1 : Operation 13 [1/1] (0.00ns) (grouped into LUT with out node or_ln18)   --->   "%and_ln18_1 = and i1 %trunc_ln1497, i1 %xor_ln18" [rsa.cpp:18]   --->   Operation 13 'and' 'and_ln18_1' <Predicate = true> <Delay = 0.00> <CoreInst = "LogicGate">   --->   Core 74 'LogicGate' <Latency = 0> <II = 1> <Delay = 0.97> <FuncUnit> <Opcode : 'and' 'or' 'xor'> <InPorts = 2> <OutPorts = 1>
+ST_1 : Operation 14 [1/1] (0.00ns) (grouped into LUT with out node or_ln18)   --->   "%and_ln18_2 = and i1 %a_read, i1 %xor_ln901" [rsa.cpp:18]   --->   Operation 14 'and' 'and_ln18_2' <Predicate = true> <Delay = 0.00> <CoreInst = "LogicGate">   --->   Core 74 'LogicGate' <Latency = 0> <II = 1> <Delay = 0.97> <FuncUnit> <Opcode : 'and' 'or' 'xor'> <InPorts = 2> <OutPorts = 1>
+ST_1 : Operation 15 [1/1] (0.00ns) (grouped into LUT with out node or_ln18)   --->   "%and_ln18_3 = and i1 %and_ln18_2, i1 %trunc_ln1497_1" [rsa.cpp:18]   --->   Operation 15 'and' 'and_ln18_3' <Predicate = true> <Delay = 0.00> <CoreInst = "LogicGate">   --->   Core 74 'LogicGate' <Latency = 0> <II = 1> <Delay = 0.97> <FuncUnit> <Opcode : 'and' 'or' 'xor'> <InPorts = 2> <OutPorts = 1>
+ST_1 : Operation 16 [1/1] (0.97ns) (out node of the LUT)   --->   "%or_ln18 = or i1 %and_ln18_1, i1 %and_ln18_3" [rsa.cpp:18]   --->   Operation 16 'or' 'or_ln18' <Predicate = true> <Delay = 0.97> <CoreInst = "LogicGate">   --->   Core 74 'LogicGate' <Latency = 0> <II = 1> <Delay = 0.97> <FuncUnit> <Opcode : 'and' 'or' 'xor'> <InPorts = 2> <OutPorts = 1>
+ST_1 : Operation 17 [1/1] (0.00ns) (grouped into LUT with out node add_ln186)   --->   "%d2_V = select i1 %or_ln18, i128 %N_read, i128 0" [rsa.cpp:18]   --->   Operation 17 'select' 'd2_V' <Predicate = true> <Delay = 0.00> <CoreInst = "Sel">   --->   Core 73 'Sel' <Latency = 0> <II = 1> <Delay = 1.92> <FuncUnit> <Opcode : 'select'> <InPorts = 3> <OutPorts = 1>
+ST_1 : Operation 18 [1/1] (0.00ns) (grouped into LUT with out node add_ln186)   --->   "%zext_ln186 = zext i128 %d1_V"   --->   Operation 18 'zext' 'zext_ln186' <Predicate = true> <Delay = 0.00>
+ST_1 : Operation 19 [1/1] (0.00ns) (grouped into LUT with out node add_ln186)   --->   "%zext_ln186_1 = zext i128 %d2_V"   --->   Operation 19 'zext' 'zext_ln186_1' <Predicate = true> <Delay = 0.00>
+ST_1 : Operation 20 [1/1] (5.35ns) (out node of the LUT)   --->   "%add_ln186 = add i129 %zext_ln186, i129 %zext_ln186_1"   --->   Operation 20 'add' 'add_ln186' <Predicate = true> <Delay = 5.35> <CoreInst = "Adder">   --->   Core 1 'Adder' <Latency = 0> <II = 1> <Delay = 5.35> <FuncUnit> <Opcode : 'add' 'sub'> <InPorts = 2> <OutPorts = 1>
+
+State 2 <SV = 1> <Delay = 5.41>
+ST_2 : Operation 21 [1/1] (0.00ns)   --->   "%zext_ln186_2 = zext i129 %add_ln186"   --->   Operation 21 'zext' 'zext_ln186_2' <Predicate = true> <Delay = 0.00>
+ST_2 : Operation 22 [1/1] (5.41ns)   --->   "%add_ln186_1 = add i130 %zext_ln186_2, i130 %m_read"   --->   Operation 22 'add' 'add_ln186_1' <Predicate = true> <Delay = 5.41> <CoreInst = "Adder">   --->   Core 1 'Adder' <Latency = 0> <II = 1> <Delay = 5.41> <FuncUnit> <Opcode : 'add' 'sub'> <InPorts = 2> <OutPorts = 1>
+ST_2 : Operation 23 [1/1] (0.00ns)   --->   "%ret_ln21 = ret i130 %add_ln186_1" [rsa.cpp:21]   --->   Operation 23 'ret' 'ret_ln21' <Predicate = true> <Delay = 0.00>
+
+
+============================================================
++ Verbose Summary: Timing violations
+============================================================
+Target clock period: 10ns, clock uncertainty: 2.7ns.
+
+ <State 1>: 6.33ns
+The critical path consists of the following:
+	wire read operation ('m_read') on port 'm' [5]  (0 ns)
+	'and' operation ('and_ln18_1', rsa.cpp:18) [15]  (0 ns)
+	'or' operation ('or_ln18', rsa.cpp:18) [18]  (0.978 ns)
+	'select' operation ('d2.V', rsa.cpp:18) [19]  (0 ns)
+	'add' operation ('add_ln186') [22]  (5.35 ns)
+
+ <State 2>: 5.41ns
+The critical path consists of the following:
+	'add' operation ('temp.V') [24]  (5.41 ns)
+
+
+============================================================
++ Verbose Summary: Binding
+============================================================
+N/A
+* FSMD analyzer results:
+  - Output states:
+ - Input state : 
+  - Chain level:
+	State 1
+	State 2
+
+
+============================================================
++ Verbose Summary: Datapath Resource usage 
+============================================================
+N/A

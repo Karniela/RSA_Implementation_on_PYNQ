@@ -34,7 +34,11 @@
               <coreName/>
               <isStorage>0</isStorage>
               <storageDepth>0</storageDepth>
+<<<<<<< HEAD:rsa_baseline/rsa_baseline_hls/solution1/.autopilot/db/rsa.adb
               <coreId>0</coreId>
+=======
+              <coreId>4013576736</coreId>
+>>>>>>> origin/branch2:rsa_optimized1/baseline/solution1/.autopilot/db/rsa.adb
               <rtlModuleName/>
             </Obj>
             <bitwidth>256</bitwidth>
@@ -70,7 +74,11 @@
               <coreName/>
               <isStorage>0</isStorage>
               <storageDepth>0</storageDepth>
+<<<<<<< HEAD:rsa_baseline/rsa_baseline_hls/solution1/.autopilot/db/rsa.adb
               <coreId>2483028464</coreId>
+=======
+              <coreId>1212371803</coreId>
+>>>>>>> origin/branch2:rsa_optimized1/baseline/solution1/.autopilot/db/rsa.adb
               <rtlModuleName/>
             </Obj>
             <bitwidth>256</bitwidth>
@@ -106,7 +114,11 @@
               <coreName/>
               <isStorage>0</isStorage>
               <storageDepth>0</storageDepth>
+<<<<<<< HEAD:rsa_baseline/rsa_baseline_hls/solution1/.autopilot/db/rsa.adb
               <coreId>1330007625</coreId>
+=======
+              <coreId>4013592912</coreId>
+>>>>>>> origin/branch2:rsa_optimized1/baseline/solution1/.autopilot/db/rsa.adb
               <rtlModuleName/>
             </Obj>
             <bitwidth>256</bitwidth>
@@ -142,7 +154,11 @@
               <coreName/>
               <isStorage>0</isStorage>
               <storageDepth>0</storageDepth>
+<<<<<<< HEAD:rsa_baseline/rsa_baseline_hls/solution1/.autopilot/db/rsa.adb
               <coreId>2229251424</coreId>
+=======
+              <coreId>0</coreId>
+>>>>>>> origin/branch2:rsa_optimized1/baseline/solution1/.autopilot/db/rsa.adb
               <rtlModuleName/>
             </Obj>
             <bitwidth>256</bitwidth>
@@ -367,7 +383,11 @@
               <coreName/>
               <isStorage>0</isStorage>
               <storageDepth>0</storageDepth>
+<<<<<<< HEAD:rsa_baseline/rsa_baseline_hls/solution1/.autopilot/db/rsa.adb
               <coreId>2229448016</coreId>
+=======
+              <coreId>840972921</coreId>
+>>>>>>> origin/branch2:rsa_optimized1/baseline/solution1/.autopilot/db/rsa.adb
               <rtlModuleName/>
             </Obj>
             <bitwidth>256</bitwidth>
@@ -484,7 +504,11 @@
               <coreName/>
               <isStorage>0</isStorage>
               <storageDepth>0</storageDepth>
+<<<<<<< HEAD:rsa_baseline/rsa_baseline_hls/solution1/.autopilot/db/rsa.adb
               <coreId>6775156</coreId>
+=======
+              <coreId>543515506</coreId>
+>>>>>>> origin/branch2:rsa_optimized1/baseline/solution1/.autopilot/db/rsa.adb
               <rtlModuleName/>
             </Obj>
             <bitwidth>0</bitwidth>
@@ -529,7 +553,11 @@
               <coreName/>
               <isStorage>0</isStorage>
               <storageDepth>0</storageDepth>
+<<<<<<< HEAD:rsa_baseline/rsa_baseline_hls/solution1/.autopilot/db/rsa.adb
               <coreId>2229445840</coreId>
+=======
+              <coreId>543516513</coreId>
+>>>>>>> origin/branch2:rsa_optimized1/baseline/solution1/.autopilot/db/rsa.adb
               <rtlModuleName/>
             </Obj>
             <bitwidth>256</bitwidth>
@@ -563,7 +591,11 @@
             <coreName/>
             <isStorage>0</isStorage>
             <storageDepth>0</storageDepth>
+<<<<<<< HEAD:rsa_baseline/rsa_baseline_hls/solution1/.autopilot/db/rsa.adb
             <coreId>896</coreId>
+=======
+            <coreId>0</coreId>
+>>>>>>> origin/branch2:rsa_optimized1/baseline/solution1/.autopilot/db/rsa.adb
             <rtlModuleName/>
           </Obj>
           <node_objs>
@@ -667,8 +699,13 @@
         <mDepth>-1</mDepth>
         <mMinTripCount>-1</mMinTripCount>
         <mMaxTripCount>-1</mMaxTripCount>
+<<<<<<< HEAD:rsa_baseline/rsa_baseline_hls/solution1/.autopilot/db/rsa.adb
         <mMinLatency>786</mMinLatency>
         <mMaxLatency>267280</mMaxLatency>
+=======
+        <mMinLatency>214274</mMinLatency>
+        <mMaxLatency>427778</mMaxLatency>
+>>>>>>> origin/branch2:rsa_optimized1/baseline/solution1/.autopilot/db/rsa.adb
         <mIsDfPipe>0</mIsDfPipe>
         <mDfPipe class_id="-1"/>
       </item>
@@ -851,11 +888,19 @@
             </item>
             <item>
               <first>FF</first>
+<<<<<<< HEAD:rsa_baseline/rsa_baseline_hls/solution1/.autopilot/db/rsa.adb
               <second>23363</second>
             </item>
             <item>
               <first>LUT</first>
               <second>18741</second>
+=======
+              <second>17036</second>
+            </item>
+            <item>
+              <first>LUT</first>
+              <second>6165</second>
+>>>>>>> origin/branch2:rsa_optimized1/baseline/solution1/.autopilot/db/rsa.adb
             </item>
           </second>
         </item>

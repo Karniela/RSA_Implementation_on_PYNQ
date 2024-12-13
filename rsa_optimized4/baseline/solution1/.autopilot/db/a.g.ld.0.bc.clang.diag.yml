@@ -1,0 +1,60 @@
+--- !Passed
+Pass:            reflow-inliner
+Name:            AutoInline
+DebugLoc:        { File: rsa.cpp, Line: 97, Column: 0 }
+Function:        _Z7mod_exp7ap_uintILi256EES_ILi128EES1_RS1_
+Args:            
+  - String:          'Inlining function '''
+  - Callee:          'mod_product(ap_uint<128>, ap_uint<128>, ap_uint<128>)'
+    DebugLoc:        { File: rsa.cpp, Line: 68, Column: 0 }
+  - String:          ''' into '''
+  - Caller:          'mod_exp(ap_uint<256>, ap_uint<128>, ap_uint<128>, ap_uint<128>&)'
+    DebugLoc:        { File: rsa.cpp, Line: 97, Column: 0 }
+  - String:          ''''
+...
+--- !Passed
+Pass:            reflow-inliner
+Name:            AutoInline
+DebugLoc:        { File: rsa.cpp, Line: 148, Column: 0 }
+Function:        _Z3rsa7ap_uintILi128EES0_S_ILi256EES1_S1_RS1_
+Args:            
+  - String:          'Inlining function '''
+  - Callee:          'mod_product(ap_uint<128>, ap_uint<128>, ap_uint<128>)'
+    DebugLoc:        { File: rsa.cpp, Line: 68, Column: 0 }
+  - String:          ''' into '''
+  - Caller:          'rsa(ap_uint<128>, ap_uint<128>, ap_uint<256>, ap_uint<256>, ap_uint<256>, ap_uint<256>&)'
+    DebugLoc:        { File: rsa.cpp, Line: 148, Column: 0 }
+  - String:          ''''
+...
+--- !Missed
+Pass:            reflow-burst-inference
+Name:            CouldNotAnalyzeBoundsPattern
+DebugLoc:        { File: rsa.cpp, Line: 126, Column: 5 }
+Function:        _Z11mod_inverse7ap_uintILi128EES0_RS0_
+Args:            
+  - String:          Could not analyze the loop bounds
+  - String:          ' _XLX_SEP_ '
+  - LoopName:        MOD_INVERSE
+  - String:          ' '
+  - LoopLoc:         'rsa.cpp:126:5'
+  - String:          ' '
+  - Function:        'mod_inverse(ap_uint<128>, ap_uint<128>, ap_uint<128>&)'
+    DebugLoc:        { File: rsa.cpp, Line: 115, Column: 0 }
+  - String:          ' '
+...
+--- !Missed
+Pass:            reflow-burst-inference
+Name:            CouldNotAnalyzeBoundsPattern
+DebugLoc:        { File: rsa.cpp, Line: 102, Column: 5 }
+Function:        _Z7mod_exp7ap_uintILi256EES_ILi128EES1_RS1_
+Args:            
+  - String:          Could not analyze the loop bounds
+  - String:          ' _XLX_SEP_ '
+  - LoopName:        MOD_EXP
+  - String:          ' '
+  - LoopLoc:         'rsa.cpp:102:5'
+  - String:          ' '
+  - Function:        'mod_exp(ap_uint<256>, ap_uint<128>, ap_uint<128>, ap_uint<128>&)'
+    DebugLoc:        { File: rsa.cpp, Line: 97, Column: 0 }
+  - String:          ' '
+...

@@ -6,6 +6,18 @@ if {${::AESL::PGuard_rtl_comp_handler}} {
 }
 
 
+set name rsa_mul_256ns_256ns_512_5_1
+if {${::AESL::PGuard_rtl_comp_handler}} {
+	::AP::rtl_comp_handler $name BINDTYPE {op} TYPE {mul} IMPL {auto} LATENCY 4 ALLOW_PRAGMA 1
+}
+
+
+set name rsa_urem_512ns_256ns_256_516_seq_1
+if {${::AESL::PGuard_rtl_comp_handler}} {
+	::AP::rtl_comp_handler $name BINDTYPE {op} TYPE {urem} IMPL {auto_seq} LATENCY 515 ALLOW_PRAGMA 1
+}
+
+
 # clear list
 if {${::AESL::PGuard_autoexp_gen}} {
     cg_default_interface_gen_dc_begin
@@ -16,7 +28,11 @@ if {${::AESL::PGuard_autoexp_gen}} {
 # Direct connection:
 if {${::AESL::PGuard_autoexp_gen}} {
 eval "cg_default_interface_gen_dc { \
+<<<<<<< HEAD:rsa_baseline/rsa_baseline_hls/solution2-NoDSP/.autopilot/db/mod_exp.compgen.tcl
     id 14 \
+=======
+    id 9 \
+>>>>>>> origin/branch2:rsa_baseline/baseline/solution1/.autopilot/db/mod_exp.compgen.tcl
     name base_r \
     type other \
     dir I \
@@ -31,7 +47,11 @@ eval "cg_default_interface_gen_dc { \
 # Direct connection:
 if {${::AESL::PGuard_autoexp_gen}} {
 eval "cg_default_interface_gen_dc { \
+<<<<<<< HEAD:rsa_baseline/rsa_baseline_hls/solution2-NoDSP/.autopilot/db/mod_exp.compgen.tcl
     id 15 \
+=======
+    id 10 \
+>>>>>>> origin/branch2:rsa_baseline/baseline/solution1/.autopilot/db/mod_exp.compgen.tcl
     name exp \
     type other \
     dir I \
@@ -46,7 +66,11 @@ eval "cg_default_interface_gen_dc { \
 # Direct connection:
 if {${::AESL::PGuard_autoexp_gen}} {
 eval "cg_default_interface_gen_dc { \
+<<<<<<< HEAD:rsa_baseline/rsa_baseline_hls/solution2-NoDSP/.autopilot/db/mod_exp.compgen.tcl
     id 16 \
+=======
+    id 11 \
+>>>>>>> origin/branch2:rsa_baseline/baseline/solution1/.autopilot/db/mod_exp.compgen.tcl
     name mod_r \
     type other \
     dir I \

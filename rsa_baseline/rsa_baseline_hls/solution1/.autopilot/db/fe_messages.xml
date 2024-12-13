@@ -615,6 +615,18 @@
         <args ARG_PragmaFunction="hypot_fixed" ARG_PragmaIsValid="1" ARG_PragmaType="unroll" ClangWarningOption="dump-hls-pragmas"/>
     </msg>
     <msg msg_groups="PRAGMA_VERBOSE_DUMP" msg_id="207-5471" msg_severity="WARNING" msg_loc="rsa.cpp:8:9" msg_body="HLS pragma dump">
+<<<<<<< HEAD:rsa_baseline/rsa_baseline_hls/solution1/.autopilot/db/fe_messages.xml
+=======
+        <args ARG_PragmaFunction="mod_product" ARG_PragmaIsValid="1" ARG_PragmaOptions="OFF" ARG_PragmaType="inline" ClangWarningOption="dump-hls-pragmas"/>
+    </msg>
+    <msg msg_groups="PRAGMA_VERBOSE_DUMP" msg_id="207-5471" msg_severity="WARNING" msg_loc="rsa.cpp:14:9" msg_body="HLS pragma dump">
+        <args ARG_PragmaFunction="mod_product" ARG_PragmaIsValid="1" ARG_PragmaOptions="OFF" ARG_PragmaType="pipeline" ClangWarningOption="dump-hls-pragmas"/>
+    </msg>
+    <msg msg_groups="PRAGMA_VERBOSE_DUMP" msg_id="207-5471" msg_severity="WARNING" msg_loc="rsa.cpp:16:9" msg_body="HLS pragma dump">
+        <args ARG_PragmaFunction="mod_product" ARG_PragmaIsValid="1" ARG_PragmaOptions="FACTOR=4" ARG_PragmaType="unroll" ClangWarningOption="dump-hls-pragmas"/>
+    </msg>
+    <msg msg_groups="PRAGMA_VERBOSE_DUMP" msg_id="207-5471" msg_severity="WARNING" msg_loc="rsa.cpp:37:9" msg_body="HLS pragma dump">
+>>>>>>> origin/branch2:rsa_optimized1/baseline/solution1/.autopilot/db/fe_messages.xml
         <args ARG_PragmaFunction="mod_exp" ARG_PragmaIsValid="1" ARG_PragmaOptions="OFF" ARG_PragmaType="inline" ClangWarningOption="dump-hls-pragmas"/>
     </msg>
     <msg msg_groups="PRAGMA_VERBOSE_DUMP" msg_id="207-5471" msg_severity="WARNING" msg_loc="/home/cse237c_fa24_y_liao/Desktop/RSA_Implementation_on_PYNQ/rsa_baseline/rsa_baseline_hls/solution1/csynth.tcl:18:9" msg_body="HLS pragma dump">
@@ -638,8 +650,13 @@
     <msg msg_groups="PRAGMA_VERBOSE_DUMP" msg_id="207-5471" msg_severity="WARNING" msg_loc="rsa.cpp:37:9" msg_body="HLS pragma dump">
         <args ARG_PragmaFunction="rsa" ARG_PragmaIsValid="1" ARG_PragmaOptions="mode=s_axilite port=x" ARG_PragmaType="interface" ClangWarningOption="dump-hls-pragmas"/>
     </msg>
+<<<<<<< HEAD:rsa_baseline/rsa_baseline_hls/solution1/.autopilot/db/fe_messages.xml
     <msg msg_groups="PRAGMA_VERBOSE_DUMP" msg_id="207-5471" msg_severity="WARNING" msg_loc="rsa.cpp:40:9" msg_body="HLS pragma dump">
         <args ARG_PragmaFunction="rsa" ARG_PragmaIsValid="0" ARG_PragmaOptions="instances=div" ARG_PragmaType="allocation" ClangWarningOption="dump-hls-pragmas"/>
+=======
+    <msg msg_groups="PRAGMA_UNROLL" msg_id="214-188" msg_severity="INFO" msg_loc="rsa.cpp:7:0" msg_body="Unrolling loop 'MOD_PRODUCT' (rsa.cpp:13:5) in function 'mod_product' partially with a factor of 4">
+        <args Factor="4" LoopLoc="rsa.cpp:13:5" LoopName="MOD_PRODUCT"/>
+>>>>>>> origin/branch2:rsa_optimized1/baseline/solution1/.autopilot/db/fe_messages.xml
     </msg>
 </xilinx:hls_fe_msgs>
 

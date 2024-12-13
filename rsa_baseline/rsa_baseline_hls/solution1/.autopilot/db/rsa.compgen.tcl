@@ -55,7 +55,11 @@ dict set axilite_register_dict control $port_control
 if {${::AESL::PGuard_simmodel_gen}} {
 	if {[info proc ::AESL_LIB_XILADAPTER::s_axilite_gen] == "::AESL_LIB_XILADAPTER::s_axilite_gen"} {
 		eval "::AESL_LIB_XILADAPTER::s_axilite_gen { \
+<<<<<<< HEAD:rsa_baseline/rsa_baseline_hls/solution1/.autopilot/db/rsa.compgen.tcl
 			id 17 \
+=======
+			id 26 \
+>>>>>>> origin/branch2:rsa_optimized1/baseline/solution1/.autopilot/db/rsa.compgen.tcl
 			corename rsa_control_axilite \
 			name rsa_control_s_axi \
 			ports {$port_control} \

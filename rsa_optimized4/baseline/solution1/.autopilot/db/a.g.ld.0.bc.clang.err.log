@@ -1,0 +1,4 @@
+remark: rsa.cpp:97:0: Inlining function 'mod_product(ap_uint<128>, ap_uint<128>, ap_uint<128>)' into 'mod_exp(ap_uint<256>, ap_uint<128>, ap_uint<128>, ap_uint<128>&)'
+remark: rsa.cpp:148:0: Inlining function 'mod_product(ap_uint<128>, ap_uint<128>, ap_uint<128>)' into 'rsa(ap_uint<128>, ap_uint<128>, ap_uint<256>, ap_uint<256>, ap_uint<256>, ap_uint<256>&)'
+remark: rsa.cpp:126:5: Could not analyze the loop bounds _XLX_SEP_ MOD_INVERSE rsa.cpp:126:5 mod_inverse(ap_uint<128>, ap_uint<128>, ap_uint<128>&) 
+remark: rsa.cpp:102:5: Could not analyze the loop bounds _XLX_SEP_ MOD_EXP rsa.cpp:102:5 mod_exp(ap_uint<256>, ap_uint<128>, ap_uint<128>, ap_uint<128>&) 

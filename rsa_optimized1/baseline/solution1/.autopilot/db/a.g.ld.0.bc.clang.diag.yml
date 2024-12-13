@@ -1,0 +1,18 @@
+--- !Passed
+Pass:            reflow-pragma-loop-unroll
+Name:            PragmaPartiallyUnroll
+DebugLoc:        { File: rsa.cpp, Line: 7, Column: 0 }
+Function:        _Z11mod_product7ap_uintILi256EES0_S0_
+Args:            
+  - String:          'Unrolling loop '''
+  - LoopName:        MOD_PRODUCT
+  - String:          ''' ('
+  - LoopLoc:         'rsa.cpp:13:5'
+  - String:          ') '
+  - String:          'in function '''
+  - String:          mod_product
+  - String:          ''' partially '
+  - String:          ''
+  - String:          'with a factor of '
+  - Factor:          '4'
+...

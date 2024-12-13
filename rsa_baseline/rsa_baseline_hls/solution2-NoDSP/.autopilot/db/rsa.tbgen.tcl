@@ -70,13 +70,21 @@ set NewPortList {[
  	{ "name": "ap_rst_n", "direction": "in", "datatype": "sc_logic", "bitwidth":1, "type": "reset", "bundle":{"name": "ap_rst_n", "role": "default" }}  ]}
 
 set RtlHierarchyInfo {[
+<<<<<<< HEAD:rsa_baseline/rsa_baseline_hls/solution2-NoDSP/.autopilot/db/rsa.tbgen.tcl
 	{"ID" : "0", "Level" : "0", "Path" : "`AUTOTB_DUT_INST", "Parent" : "", "Child" : ["1", "8"],
+=======
+	{"ID" : "0", "Level" : "0", "Path" : "`AUTOTB_DUT_INST", "Parent" : "", "Child" : ["1", "7"],
+>>>>>>> origin/branch2:rsa_baseline/baseline/solution1/.autopilot/db/rsa.tbgen.tcl
 		"CDFG" : "rsa",
 		"Protocol" : "ap_ctrl_hs",
 		"ControlExist" : "1", "ap_start" : "1", "ap_ready" : "1", "ap_done" : "1", "ap_continue" : "0", "ap_idle" : "1", "real_start" : "0",
 		"Pipeline" : "None", "UnalignedPipeline" : "0", "RewindPipeline" : "0", "ProcessNetwork" : "0",
 		"II" : "0",
+<<<<<<< HEAD:rsa_baseline/rsa_baseline_hls/solution2-NoDSP/.autopilot/db/rsa.tbgen.tcl
 		"VariableLatency" : "1", "ExactLatency" : "-1", "EstimateLatencyMin" : "786", "EstimateLatencyMax" : "267280",
+=======
+		"VariableLatency" : "1", "ExactLatency" : "-1", "EstimateLatencyMin" : "784", "EstimateLatencyMax" : "267535",
+>>>>>>> origin/branch2:rsa_baseline/baseline/solution1/.autopilot/db/rsa.tbgen.tcl
 		"Combinational" : "0",
 		"Datapath" : "0",
 		"ClockEnable" : "0",
@@ -89,13 +97,21 @@ set RtlHierarchyInfo {[
 			{"Name" : "N", "Type" : "None", "Direction" : "I"},
 			{"Name" : "y", "Type" : "None", "Direction" : "I"},
 			{"Name" : "x", "Type" : "Vld", "Direction" : "O"}]},
+<<<<<<< HEAD:rsa_baseline/rsa_baseline_hls/solution2-NoDSP/.autopilot/db/rsa.tbgen.tcl
 	{"ID" : "1", "Level" : "1", "Path" : "`AUTOTB_DUT_INST.grp_mod_exp_fu_67", "Parent" : "0", "Child" : ["2", "7"],
+=======
+	{"ID" : "1", "Level" : "1", "Path" : "`AUTOTB_DUT_INST.grp_mod_exp_fu_67", "Parent" : "0", "Child" : ["2", "3", "4", "5", "6"],
+>>>>>>> origin/branch2:rsa_baseline/baseline/solution1/.autopilot/db/rsa.tbgen.tcl
 		"CDFG" : "mod_exp",
 		"Protocol" : "ap_ctrl_hs",
 		"ControlExist" : "1", "ap_start" : "1", "ap_ready" : "1", "ap_done" : "1", "ap_continue" : "0", "ap_idle" : "1", "real_start" : "0",
 		"Pipeline" : "None", "UnalignedPipeline" : "0", "RewindPipeline" : "0", "ProcessNetwork" : "0",
 		"II" : "0",
+<<<<<<< HEAD:rsa_baseline/rsa_baseline_hls/solution2-NoDSP/.autopilot/db/rsa.tbgen.tcl
 		"VariableLatency" : "1", "ExactLatency" : "-1", "EstimateLatencyMin" : "785", "EstimateLatencyMax" : "267279",
+=======
+		"VariableLatency" : "1", "ExactLatency" : "-1", "EstimateLatencyMin" : "783", "EstimateLatencyMax" : "267534",
+>>>>>>> origin/branch2:rsa_baseline/baseline/solution1/.autopilot/db/rsa.tbgen.tcl
 		"Combinational" : "0",
 		"Datapath" : "0",
 		"ClockEnable" : "0",
@@ -106,6 +122,7 @@ set RtlHierarchyInfo {[
 		"Port" : [
 			{"Name" : "base_r", "Type" : "None", "Direction" : "I"},
 			{"Name" : "exp", "Type" : "None", "Direction" : "I"},
+<<<<<<< HEAD:rsa_baseline/rsa_baseline_hls/solution2-NoDSP/.autopilot/db/rsa.tbgen.tcl
 			{"Name" : "mod_r", "Type" : "None", "Direction" : "I"}]},
 	{"ID" : "2", "Level" : "2", "Path" : "`AUTOTB_DUT_INST.grp_mod_exp_fu_67.grp_mod_exp_Pipeline_VITIS_LOOP_12_1_fu_38", "Parent" : "1", "Child" : ["3", "4", "5", "6"],
 		"CDFG" : "mod_exp_Pipeline_VITIS_LOOP_12_1",
@@ -136,6 +153,18 @@ set RtlHierarchyInfo {[
 	{"ID" : "6", "Level" : "3", "Path" : "`AUTOTB_DUT_INST.grp_mod_exp_fu_67.grp_mod_exp_Pipeline_VITIS_LOOP_12_1_fu_38.urem_512ns_256ns_256_516_1_U4", "Parent" : "2"},
 	{"ID" : "7", "Level" : "2", "Path" : "`AUTOTB_DUT_INST.grp_mod_exp_fu_67.urem_256ns_256ns_256_260_seq_1_U12", "Parent" : "1"},
 	{"ID" : "8", "Level" : "1", "Path" : "`AUTOTB_DUT_INST.control_s_axi_U", "Parent" : "0"}]}
+=======
+			{"Name" : "mod_r", "Type" : "None", "Direction" : "I"}],
+		"Loop" : [
+			{"Name" : "VITIS_LOOP_12_1", "PipelineType" : "no",
+				"LoopDec" : {"FSMBitwidth" : "1303", "FirstState" : "ap_ST_fsm_state261", "LastState" : ["ap_ST_fsm_state1302"], "QuitState" : ["ap_ST_fsm_state261", "ap_ST_fsm_state782"], "PreState" : ["ap_ST_fsm_state260"], "PostState" : ["ap_ST_fsm_state1303"], "OneDepthLoop" : "0", "OneStateBlock": ""}}]},
+	{"ID" : "2", "Level" : "2", "Path" : "`AUTOTB_DUT_INST.grp_mod_exp_fu_67.urem_256ns_256ns_256_260_seq_1_U1", "Parent" : "1"},
+	{"ID" : "3", "Level" : "2", "Path" : "`AUTOTB_DUT_INST.grp_mod_exp_fu_67.mul_256ns_256ns_512_5_1_U2", "Parent" : "1"},
+	{"ID" : "4", "Level" : "2", "Path" : "`AUTOTB_DUT_INST.grp_mod_exp_fu_67.urem_512ns_256ns_256_516_seq_1_U3", "Parent" : "1"},
+	{"ID" : "5", "Level" : "2", "Path" : "`AUTOTB_DUT_INST.grp_mod_exp_fu_67.mul_256ns_256ns_512_5_1_U4", "Parent" : "1"},
+	{"ID" : "6", "Level" : "2", "Path" : "`AUTOTB_DUT_INST.grp_mod_exp_fu_67.urem_512ns_256ns_256_516_seq_1_U5", "Parent" : "1"},
+	{"ID" : "7", "Level" : "1", "Path" : "`AUTOTB_DUT_INST.control_s_axi_U", "Parent" : "0"}]}
+>>>>>>> origin/branch2:rsa_baseline/baseline/solution1/.autopilot/db/rsa.tbgen.tcl
 
 
 set ArgLastReadFirstWriteLatency {
@@ -146,20 +175,26 @@ set ArgLastReadFirstWriteLatency {
 		x {Type O LastRead -1 FirstWrite 1}}
 	mod_exp {
 		base_r {Type I LastRead 0 FirstWrite -1}
-		exp {Type I LastRead 259 FirstWrite -1}
-		mod_r {Type I LastRead 0 FirstWrite -1}}
-	mod_exp_Pipeline_VITIS_LOOP_12_1 {
 		exp {Type I LastRead 0 FirstWrite -1}
+<<<<<<< HEAD:rsa_baseline/rsa_baseline_hls/solution2-NoDSP/.autopilot/db/rsa.tbgen.tcl
 		ret_V_5 {Type I LastRead 0 FirstWrite -1}
 		conv_i18 {Type I LastRead 0 FirstWrite -1}
 		lhs_out {Type O LastRead -1 FirstWrite 1}
 		conv2_i204_out {Type O LastRead -1 FirstWrite 521}}}
+=======
+		mod_r {Type I LastRead 0 FirstWrite -1}}}
+>>>>>>> origin/branch2:rsa_baseline/baseline/solution1/.autopilot/db/rsa.tbgen.tcl
 
 set hasDtUnsupportedChannel 0
 
 set PerformanceInfo {[
+<<<<<<< HEAD:rsa_baseline/rsa_baseline_hls/solution2-NoDSP/.autopilot/db/rsa.tbgen.tcl
 	{"Name" : "Latency", "Min" : "786", "Max" : "267280"}
 	, {"Name" : "Interval", "Min" : "787", "Max" : "267281"}
+=======
+	{"Name" : "Latency", "Min" : "784", "Max" : "267535"}
+	, {"Name" : "Interval", "Min" : "785", "Max" : "267536"}
+>>>>>>> origin/branch2:rsa_baseline/baseline/solution1/.autopilot/db/rsa.tbgen.tcl
 ]}
 
 set PipelineEnableSignalInfo {[

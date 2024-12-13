@@ -227,10 +227,10 @@ entry:11 %br_ln42 = br void %for.body
 
 <Node id="17" bw="9" op_0_bw="9" op_1_bw="0">
 <![CDATA[
-for.body:0 %i_3 = load i9 %i
+for.body:0 %i_4 = load i9 %i
 
 ]]></Node>
-<StgValue><ssdm name="i_3"/></StgValue>
+<StgValue><ssdm name="i_4"/></StgValue>
 </operation>
 
 <operation id="18" st_id="2" stage="1" lat="1">
@@ -242,7 +242,7 @@ for.body:0 %i_3 = load i9 %i
 
 <Node id="18" bw="1" op_0_bw="9" op_1_bw="9">
 <![CDATA[
-for.body:1 %icmp_ln42 = icmp_eq  i9 %i_3, i9 256
+for.body:1 %icmp_ln42 = icmp_eq  i9 %i_4, i9 256
 
 ]]></Node>
 <StgValue><ssdm name="icmp_ln42"/></StgValue>
@@ -272,10 +272,10 @@ for.body:2 %empty = speclooptripcount i32 @_ssdm_op_SpecLoopTripCount, i64 256, 
 
 <Node id="20" bw="9" op_0_bw="9" op_1_bw="9">
 <![CDATA[
-for.body:3 %i_4 = add i9 %i_3, i9 1
+for.body:3 %i_5 = add i9 %i_4, i9 1
 
 ]]></Node>
-<StgValue><ssdm name="i_4"/></StgValue>
+<StgValue><ssdm name="i_5"/></StgValue>
 </operation>
 
 <operation id="21" st_id="2" stage="1" lat="1">
@@ -402,10 +402,10 @@ if.then:1 %m_V_load_1 = load i256 %m_V
 
 <Node id="30" bw="256" op_0_bw="256" op_1_bw="256" op_2_bw="256" op_3_bw="256">
 <![CDATA[
-if.then:2 %m_V_4 = call i256 @mod_product, i256 %m_V_load_1, i256 %t_load_1, i256 %N_read
+if.then:2 %m_V_19 = call i256 @mod_product, i256 %m_V_load_1, i256 %t_load_1, i256 %N_read
 
 ]]></Node>
-<StgValue><ssdm name="m_V_4"/></StgValue>
+<StgValue><ssdm name="m_V_19"/></StgValue>
 </operation>
 
 <operation id="29" st_id="2" stage="1" lat="1">
@@ -453,10 +453,10 @@ for.end:1 %ret_ln53 = ret i256 %m_V_load
 
 <Node id="30" bw="256" op_0_bw="256" op_1_bw="256" op_2_bw="256" op_3_bw="256">
 <![CDATA[
-if.then:2 %m_V_4 = call i256 @mod_product, i256 %m_V_load_1, i256 %t_load_1, i256 %N_read
+if.then:2 %m_V_19 = call i256 @mod_product, i256 %m_V_load_1, i256 %t_load_1, i256 %N_read
 
 ]]></Node>
-<StgValue><ssdm name="m_V_4"/></StgValue>
+<StgValue><ssdm name="m_V_19"/></StgValue>
 </operation>
 
 <operation id="32" st_id="3" stage="1" lat="1">
@@ -469,7 +469,7 @@ if.then:2 %m_V_4 = call i256 @mod_product, i256 %m_V_load_1, i256 %t_load_1, i25
 
 <Node id="31" bw="0" op_0_bw="256" op_1_bw="256" op_2_bw="0" op_3_bw="0">
 <![CDATA[
-if.then:3 %store_ln48 = store i256 %m_V_4, i256 %m_V
+if.then:3 %store_ln48 = store i256 %m_V_19, i256 %m_V
 
 ]]></Node>
 <StgValue><ssdm name="store_ln48"/></StgValue>
@@ -530,7 +530,7 @@ for.inc:2 %ref_tmp3 = call i256 @mod_product, i256 %t_load, i256 %t_load, i256 %
 
 <Node id="40" bw="0" op_0_bw="9" op_1_bw="9" op_2_bw="0" op_3_bw="0">
 <![CDATA[
-for.inc:6 %store_ln42 = store i9 %i_4, i9 %i
+for.inc:6 %store_ln42 = store i9 %i_5, i9 %i
 
 ]]></Node>
 <StgValue><ssdm name="store_ln42"/></StgValue>
@@ -697,9 +697,9 @@ for.inc:8 %br_ln42 = br void %for.body
 </dataflow>
 <dataflow id="74" from="t" to="store_ln42" fromId="5" toId="15">
 </dataflow>
-<dataflow id="75" from="i" to="i_3" fromId="6" toId="17">
+<dataflow id="75" from="i" to="i_4" fromId="6" toId="17">
 </dataflow>
-<dataflow id="76" from="i_3" to="icmp_ln42" fromId="17" toId="18">
+<dataflow id="76" from="i_4" to="icmp_ln42" fromId="17" toId="18">
 </dataflow>
 <dataflow id="78" from="StgValue_77" to="icmp_ln42" fromId="77" toId="18">
 </dataflow>
@@ -711,9 +711,9 @@ for.inc:8 %br_ln42 = br void %for.body
 </dataflow>
 <dataflow id="84" from="StgValue_81" to="empty" fromId="81" toId="19">
 </dataflow>
-<dataflow id="85" from="i_3" to="i_4" fromId="17" toId="20">
+<dataflow id="85" from="i_4" to="i_5" fromId="17" toId="20">
 </dataflow>
-<dataflow id="87" from="StgValue_86" to="i_4" fromId="86" toId="20">
+<dataflow id="87" from="StgValue_86" to="i_5" fromId="86" toId="20">
 </dataflow>
 <dataflow id="88" from="icmp_ln42" to="br_ln42" fromId="18" toId="21">
 </dataflow>
@@ -731,27 +731,27 @@ for.inc:8 %br_ln42 = br void %for.body
 </dataflow>
 <dataflow id="97" from="m_V" to="m_V_load_1" fromId="8" toId="27">
 </dataflow>
-<dataflow id="99" from="mod_product" to="m_V_4" fromId="98" toId="28">
+<dataflow id="99" from="mod_product" to="m_V_19" fromId="98" toId="28">
 </dataflow>
-<dataflow id="100" from="m_V_load_1" to="m_V_4" fromId="27" toId="28">
+<dataflow id="100" from="m_V_load_1" to="m_V_19" fromId="27" toId="28">
 </dataflow>
-<dataflow id="101" from="t_load_1" to="m_V_4" fromId="26" toId="28">
+<dataflow id="101" from="t_load_1" to="m_V_19" fromId="26" toId="28">
 </dataflow>
-<dataflow id="102" from="N_read" to="m_V_4" fromId="9" toId="28">
+<dataflow id="102" from="N_read" to="m_V_19" fromId="9" toId="28">
 </dataflow>
 <dataflow id="103" from="m_V" to="m_V_load" fromId="8" toId="29">
 </dataflow>
 <dataflow id="104" from="m_V_load" to="ret_ln53" fromId="29" toId="30">
 </dataflow>
-<dataflow id="105" from="mod_product" to="m_V_4" fromId="98" toId="31">
+<dataflow id="105" from="mod_product" to="m_V_19" fromId="98" toId="31">
 </dataflow>
-<dataflow id="106" from="m_V_load_1" to="m_V_4" fromId="27" toId="31">
+<dataflow id="106" from="m_V_load_1" to="m_V_19" fromId="27" toId="31">
 </dataflow>
-<dataflow id="107" from="t_load_1" to="m_V_4" fromId="26" toId="31">
+<dataflow id="107" from="t_load_1" to="m_V_19" fromId="26" toId="31">
 </dataflow>
-<dataflow id="108" from="N_read" to="m_V_4" fromId="9" toId="31">
+<dataflow id="108" from="N_read" to="m_V_19" fromId="9" toId="31">
 </dataflow>
-<dataflow id="109" from="m_V_4" to="store_ln48" fromId="31" toId="32">
+<dataflow id="109" from="m_V_19" to="store_ln48" fromId="31" toId="32">
 </dataflow>
 <dataflow id="110" from="m_V" to="store_ln48" fromId="8" toId="32">
 </dataflow>
@@ -765,7 +765,7 @@ for.inc:8 %br_ln42 = br void %for.body
 </dataflow>
 <dataflow id="115" from="N_read" to="ref_tmp3" fromId="9" toId="35">
 </dataflow>
-<dataflow id="116" from="i_4" to="store_ln42" fromId="20" toId="36">
+<dataflow id="116" from="i_5" to="store_ln42" fromId="20" toId="36">
 </dataflow>
 <dataflow id="117" from="i" to="store_ln42" fromId="6" toId="36">
 </dataflow>

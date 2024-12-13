@@ -65626,9 +65626,13 @@ data_t Montgomery(data_t N, data_t a, data_t b){
  data_t d1, d2;
  Montgomery:
  for(int i = 0; i < 256; i++){
-#pragma HLS PIPELINE II=1
-# 43 "rsa.cpp"
- m = ((a & 1) && ((b & 1) ^ (m & 1))) ? ap_uint<256 +2>(m + b + N) : (!(a & 1) && (m & 1)) ? ap_uint<256 +2>(m + N) : ((a & 1)) ? ap_uint<256 +2>(m + b) : ap_uint<256 +2>(m);
+#pragma HLS PIPELINE II=4
+ if(a & 1){
+   m = m + b;
+  }
+  if(m & 1){
+   m = m + N;
+  }
   m = m >> 1;
   a = a >> 1;
  }
@@ -65645,7 +65649,7 @@ data_t mod_product(data_t b, data_t N) {
     ap_uint<256 +1> t = b;
  Mod_Product:
     for(int i = 0; i < 256; i++) {
-#pragma HLS PIPELINE II=1
+#pragma HLS PIPELINE OFF
 
  if(t + t > N){
          t = t + t - N;
@@ -65661,9 +65665,17 @@ data_t mod_product(data_t b, data_t N) {
 }
 
 __attribute__((sdx_kernel("rsa", 0))) void rsa(data_t d, data_t N, data_t y, data_t &x){
+<<<<<<< HEAD:rsa_optimized2/rsa_opt2_hls/solution1/.autopilot/db/rsa.pp.0.cpp
 #line 17 "/home/cse237c_fa24_y_liao/Desktop/RSA_Implementation_on_PYNQ/rsa_optimized2/rsa_opt2_hls/solution1/csynth.tcl"
+=======
+#line 18 "/home/cse237c_fa24_s_chen/RSA_Implementation_on_PYNQ/rsa_optimized2/baseline/solution1/csynth.tcl"
 #pragma HLSDIRECTIVE TOP name=rsa
-# 75 "rsa.cpp"
+# 61 "rsa.cpp"
+
+#line 6 "/home/cse237c_fa24_s_chen/RSA_Implementation_on_PYNQ/rsa_optimized2/baseline/solution1/directives.tcl"
+>>>>>>> origin/branch2:rsa_optimized2/baseline/solution1/.autopilot/db/rsa.pp.0.cpp
+#pragma HLSDIRECTIVE TOP name=rsa
+# 61 "rsa.cpp"
 
 #pragma HLS INTERFACE mode=s_axilite port=return
 #pragma HLS INTERFACE mode=s_axilite port=d

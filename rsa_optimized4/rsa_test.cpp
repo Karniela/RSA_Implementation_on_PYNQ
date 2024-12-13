@@ -13,7 +13,6 @@ using namespace std;
 int main(){
 	FILE *f_input;
 	data_t N, d;
-	ap_uint<BITWIDTH/2+1> mu_p, mu_q;
 	half_data_t p, q;
 	data_t y, x;
 
@@ -22,14 +21,6 @@ int main(){
 
 	char dec_str[BITWIDTH];
 	stringstream ss;
-
-	fscanf(f_input, "%s", dec_str);
-	mu_p = ap_uint<BITWIDTH/2+1>(dec_str);
-	cout << "The 128-bit mu_p in decimal is: " << dec << mu_p << endl;
-
-	fscanf(f_input, "%s", dec_str);
-	mu_q = ap_uint<BITWIDTH/2+1>(dec_str);
-	cout << "The 128-bit mu_q in decimal is: " << dec << mu_q << endl;
 
 	fscanf(f_input, "%s", dec_str);
 	p = half_data_t(dec_str);
@@ -51,7 +42,7 @@ int main(){
 		fscanf(f_input, "%s", dec_str);
 		y = ap_uint<BITWIDTH>(dec_str);
 		cout << "The 256-bit y in decimal is: " << dec << y << endl;
-		rsa(mu_p, mu_q, p, q, d, N, y, x);
+		rsa(p, q, d, N, y, x);
 		cout << "The 256-bit x in decimal is: " << dec << x << endl;
 		ss.clear();
 		ss.str("");

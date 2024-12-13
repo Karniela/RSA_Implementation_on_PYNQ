@@ -3,7 +3,11 @@
 ================================================================
 == Vitis HLS Report for 'rsa'
 ================================================================
+<<<<<<< HEAD:rsa_baseline/rsa_baseline_hls/solution1/.autopilot/db/rsa.verbose.sched.rpt
 * Date:           Thu Dec  5 17:05:38 2024
+=======
+* Date:           Thu Dec 12 17:19:57 2024
+>>>>>>> origin/branch2:rsa_optimized1/baseline/solution1/.autopilot/db/rsa.verbose.sched.rpt
 
 * Version:        2022.2 (Build 3670227 on Oct 13 2022)
 * Project:        rsa_baseline_hls
@@ -25,12 +29,21 @@
 
 + Latency: 
     * Summary: 
+<<<<<<< HEAD:rsa_baseline/rsa_baseline_hls/solution1/.autopilot/db/rsa.verbose.sched.rpt
     +---------+---------+----------+----------+-----+--------+---------+
     |  Latency (cycles) |  Latency (absolute) |   Interval   | Pipeline|
     |   min   |   max   |    min   |    max   | min |   max  |   Type  |
     +---------+---------+----------+----------+-----+--------+---------+
     |      786|   267280|  7.860 us|  2.673 ms|  787|  267281|       no|
     +---------+---------+----------+----------+-----+--------+---------+
+=======
+    +---------+---------+----------+----------+--------+--------+---------+
+    |  Latency (cycles) |  Latency (absolute) |     Interval    | Pipeline|
+    |   min   |   max   |    min   |    max   |   min  |   max  |   Type  |
+    +---------+---------+----------+----------+--------+--------+---------+
+    |   214274|   427778|  2.143 ms|  4.278 ms|  214275|  427779|       no|
+    +---------+---------+----------+----------+--------+--------+---------+
+>>>>>>> origin/branch2:rsa_optimized1/baseline/solution1/.autopilot/db/rsa.verbose.sched.rpt
 
     + Detail: 
         * Instance: 

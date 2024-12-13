@@ -22,23 +22,23 @@
 </SummaryOfTimingAnalysis>
 <SummaryOfOverallLatency>
 <unit>clock cycles</unit>
-<Best-caseLatency>258</Best-caseLatency>
-<Average-caseLatency>258</Average-caseLatency>
-<Worst-caseLatency>258</Worst-caseLatency>
-<Best-caseRealTimeLatency>2.580 us</Best-caseRealTimeLatency>
-<Average-caseRealTimeLatency>2.580 us</Average-caseRealTimeLatency>
-<Worst-caseRealTimeLatency>2.580 us</Worst-caseRealTimeLatency>
-<Interval-min>258</Interval-min>
-<Interval-max>258</Interval-max>
+<Best-caseLatency>1026</Best-caseLatency>
+<Average-caseLatency>1026</Average-caseLatency>
+<Worst-caseLatency>1026</Worst-caseLatency>
+<Best-caseRealTimeLatency>10.260 us</Best-caseRealTimeLatency>
+<Average-caseRealTimeLatency>10.260 us</Average-caseRealTimeLatency>
+<Worst-caseRealTimeLatency>10.260 us</Worst-caseRealTimeLatency>
+<Interval-min>1026</Interval-min>
+<Interval-max>1026</Interval-max>
 </SummaryOfOverallLatency>
 <SummaryOfLoopLatency>
 <Montgomery>
 <Slack>7.30</Slack>
 <TripCount>256</TripCount>
-<Latency>256</Latency>
-<AbsoluteTimeLatency>2560</AbsoluteTimeLatency>
-<PipelineII>1</PipelineII>
-<PipelineDepth>2</PipelineDepth>
+<Latency>1024</Latency>
+<AbsoluteTimeLatency>10240</AbsoluteTimeLatency>
+<PipelineII>4</PipelineII>
+<PipelineDepth>4</PipelineDepth>
 <InstanceList>
 </InstanceList>
 </Montgomery>
@@ -47,8 +47,8 @@
 
 <AreaEstimates>
 <Resources>
-<FF>2457</FF>
-<LUT>1135</LUT>
+<FF>2974</FF>
+<LUT>894</LUT>
 <BRAM_18K>0</BRAM_18K>
 <DSP>0</DSP>
 <URAM>0</URAM>
@@ -141,14 +141,14 @@
 <Attribute>data</Attribute>
 </RtlPorts>
 <RtlPorts>
-<name>b_cast</name>
-<Object>b_cast</Object>
+<name>zext_ln186</name>
+<Object>zext_ln186</Object>
 <Type>scalar</Type>
 <Scope></Scope>
 <IOProtocol>ap_none</IOProtocol>
 <IOConfig></IOConfig>
 <Dir>in</Dir>
-<Bits>1</Bits>
+<Bits>256</Bits>
 <Attribute>data</Attribute>
 </RtlPorts>
 <RtlPorts>
@@ -160,28 +160,6 @@
 <IOConfig></IOConfig>
 <Dir>in</Dir>
 <Bits>256</Bits>
-<Attribute>data</Attribute>
-</RtlPorts>
-<RtlPorts>
-<name>zext_ln1495_1</name>
-<Object>zext_ln1495_1</Object>
-<Type>scalar</Type>
-<Scope></Scope>
-<IOProtocol>ap_none</IOProtocol>
-<IOConfig></IOConfig>
-<Dir>in</Dir>
-<Bits>256</Bits>
-<Attribute>data</Attribute>
-</RtlPorts>
-<RtlPorts>
-<name>add_ln186</name>
-<Object>add_ln186</Object>
-<Type>scalar</Type>
-<Scope></Scope>
-<IOProtocol>ap_none</IOProtocol>
-<IOConfig></IOConfig>
-<Dir>in</Dir>
-<Bits>257</Bits>
 <Attribute>data</Attribute>
 </RtlPorts>
 <RtlPorts>

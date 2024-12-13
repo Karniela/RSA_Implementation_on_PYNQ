@@ -30,8 +30,6 @@ module rsa_control_s_axi
     output wire                          RVALID,
     input  wire                          RREADY,
     output wire                          interrupt,
-    output wire [127:0]                  p,
-    output wire [127:0]                  q,
     output wire [255:0]                  d,
     output wire [255:0]                  N,
     output wire [255:0]                  y,
@@ -62,92 +60,74 @@ module rsa_control_s_axi
 //        bit 0 - ap_done (Read/TOW)
 //        bit 1 - ap_ready (Read/TOW)
 //        others - reserved
-// 0x10 : Data signal of p
-//        bit 31~0 - p[31:0] (Read/Write)
-// 0x14 : Data signal of p
-//        bit 31~0 - p[63:32] (Read/Write)
-// 0x18 : Data signal of p
-//        bit 31~0 - p[95:64] (Read/Write)
-// 0x1c : Data signal of p
-//        bit 31~0 - p[127:96] (Read/Write)
-// 0x20 : reserved
-// 0x24 : Data signal of q
-//        bit 31~0 - q[31:0] (Read/Write)
-// 0x28 : Data signal of q
-//        bit 31~0 - q[63:32] (Read/Write)
-// 0x2c : Data signal of q
-//        bit 31~0 - q[95:64] (Read/Write)
-// 0x30 : Data signal of q
-//        bit 31~0 - q[127:96] (Read/Write)
-// 0x34 : reserved
-// 0x38 : Data signal of d
+// 0x10 : Data signal of d
 //        bit 31~0 - d[31:0] (Read/Write)
-// 0x3c : Data signal of d
+// 0x14 : Data signal of d
 //        bit 31~0 - d[63:32] (Read/Write)
-// 0x40 : Data signal of d
+// 0x18 : Data signal of d
 //        bit 31~0 - d[95:64] (Read/Write)
-// 0x44 : Data signal of d
+// 0x1c : Data signal of d
 //        bit 31~0 - d[127:96] (Read/Write)
-// 0x48 : Data signal of d
+// 0x20 : Data signal of d
 //        bit 31~0 - d[159:128] (Read/Write)
-// 0x4c : Data signal of d
+// 0x24 : Data signal of d
 //        bit 31~0 - d[191:160] (Read/Write)
-// 0x50 : Data signal of d
+// 0x28 : Data signal of d
 //        bit 31~0 - d[223:192] (Read/Write)
-// 0x54 : Data signal of d
+// 0x2c : Data signal of d
 //        bit 31~0 - d[255:224] (Read/Write)
-// 0x58 : reserved
-// 0x5c : Data signal of N
+// 0x30 : reserved
+// 0x34 : Data signal of N
 //        bit 31~0 - N[31:0] (Read/Write)
-// 0x60 : Data signal of N
+// 0x38 : Data signal of N
 //        bit 31~0 - N[63:32] (Read/Write)
-// 0x64 : Data signal of N
+// 0x3c : Data signal of N
 //        bit 31~0 - N[95:64] (Read/Write)
-// 0x68 : Data signal of N
+// 0x40 : Data signal of N
 //        bit 31~0 - N[127:96] (Read/Write)
-// 0x6c : Data signal of N
+// 0x44 : Data signal of N
 //        bit 31~0 - N[159:128] (Read/Write)
-// 0x70 : Data signal of N
+// 0x48 : Data signal of N
 //        bit 31~0 - N[191:160] (Read/Write)
-// 0x74 : Data signal of N
+// 0x4c : Data signal of N
 //        bit 31~0 - N[223:192] (Read/Write)
-// 0x78 : Data signal of N
+// 0x50 : Data signal of N
 //        bit 31~0 - N[255:224] (Read/Write)
-// 0x7c : reserved
-// 0x80 : Data signal of y
+// 0x54 : reserved
+// 0x58 : Data signal of y
 //        bit 31~0 - y[31:0] (Read/Write)
-// 0x84 : Data signal of y
+// 0x5c : Data signal of y
 //        bit 31~0 - y[63:32] (Read/Write)
-// 0x88 : Data signal of y
+// 0x60 : Data signal of y
 //        bit 31~0 - y[95:64] (Read/Write)
-// 0x8c : Data signal of y
+// 0x64 : Data signal of y
 //        bit 31~0 - y[127:96] (Read/Write)
-// 0x90 : Data signal of y
+// 0x68 : Data signal of y
 //        bit 31~0 - y[159:128] (Read/Write)
-// 0x94 : Data signal of y
+// 0x6c : Data signal of y
 //        bit 31~0 - y[191:160] (Read/Write)
-// 0x98 : Data signal of y
+// 0x70 : Data signal of y
 //        bit 31~0 - y[223:192] (Read/Write)
-// 0x9c : Data signal of y
+// 0x74 : Data signal of y
 //        bit 31~0 - y[255:224] (Read/Write)
-// 0xa0 : reserved
-// 0xa4 : Data signal of x
+// 0x78 : reserved
+// 0x7c : Data signal of x
 //        bit 31~0 - x[31:0] (Read)
-// 0xa8 : Data signal of x
+// 0x80 : Data signal of x
 //        bit 31~0 - x[63:32] (Read)
-// 0xac : Data signal of x
+// 0x84 : Data signal of x
 //        bit 31~0 - x[95:64] (Read)
-// 0xb0 : Data signal of x
+// 0x88 : Data signal of x
 //        bit 31~0 - x[127:96] (Read)
-// 0xb4 : Data signal of x
+// 0x8c : Data signal of x
 //        bit 31~0 - x[159:128] (Read)
-// 0xb8 : Data signal of x
+// 0x90 : Data signal of x
 //        bit 31~0 - x[191:160] (Read)
-// 0xbc : Data signal of x
+// 0x94 : Data signal of x
 //        bit 31~0 - x[223:192] (Read)
-// 0xc0 : Data signal of x
+// 0x98 : Data signal of x
 //        bit 31~0 - x[255:224] (Read)
-// 0xc4 : Control signal of x
+// 0x9c : Control signal of x
 //        bit 0  - x_ap_vld (Read/COR)
 //        others - reserved
 // (SC = Self Clear, COR = Clear on Read, TOW = Toggle on Write, COH = Clear on Handshake)
@@ -158,52 +138,42 @@ localparam
     ADDR_GIE      = 8'h04,
     ADDR_IER      = 8'h08,
     ADDR_ISR      = 8'h0c,
-    ADDR_P_DATA_0 = 8'h10,
-    ADDR_P_DATA_1 = 8'h14,
-    ADDR_P_DATA_2 = 8'h18,
-    ADDR_P_DATA_3 = 8'h1c,
-    ADDR_P_CTRL   = 8'h20,
-    ADDR_Q_DATA_0 = 8'h24,
-    ADDR_Q_DATA_1 = 8'h28,
-    ADDR_Q_DATA_2 = 8'h2c,
-    ADDR_Q_DATA_3 = 8'h30,
-    ADDR_Q_CTRL   = 8'h34,
-    ADDR_D_DATA_0 = 8'h38,
-    ADDR_D_DATA_1 = 8'h3c,
-    ADDR_D_DATA_2 = 8'h40,
-    ADDR_D_DATA_3 = 8'h44,
-    ADDR_D_DATA_4 = 8'h48,
-    ADDR_D_DATA_5 = 8'h4c,
-    ADDR_D_DATA_6 = 8'h50,
-    ADDR_D_DATA_7 = 8'h54,
-    ADDR_D_CTRL   = 8'h58,
-    ADDR_N_DATA_0 = 8'h5c,
-    ADDR_N_DATA_1 = 8'h60,
-    ADDR_N_DATA_2 = 8'h64,
-    ADDR_N_DATA_3 = 8'h68,
-    ADDR_N_DATA_4 = 8'h6c,
-    ADDR_N_DATA_5 = 8'h70,
-    ADDR_N_DATA_6 = 8'h74,
-    ADDR_N_DATA_7 = 8'h78,
-    ADDR_N_CTRL   = 8'h7c,
-    ADDR_Y_DATA_0 = 8'h80,
-    ADDR_Y_DATA_1 = 8'h84,
-    ADDR_Y_DATA_2 = 8'h88,
-    ADDR_Y_DATA_3 = 8'h8c,
-    ADDR_Y_DATA_4 = 8'h90,
-    ADDR_Y_DATA_5 = 8'h94,
-    ADDR_Y_DATA_6 = 8'h98,
-    ADDR_Y_DATA_7 = 8'h9c,
-    ADDR_Y_CTRL   = 8'ha0,
-    ADDR_X_DATA_0 = 8'ha4,
-    ADDR_X_DATA_1 = 8'ha8,
-    ADDR_X_DATA_2 = 8'hac,
-    ADDR_X_DATA_3 = 8'hb0,
-    ADDR_X_DATA_4 = 8'hb4,
-    ADDR_X_DATA_5 = 8'hb8,
-    ADDR_X_DATA_6 = 8'hbc,
-    ADDR_X_DATA_7 = 8'hc0,
-    ADDR_X_CTRL   = 8'hc4,
+    ADDR_D_DATA_0 = 8'h10,
+    ADDR_D_DATA_1 = 8'h14,
+    ADDR_D_DATA_2 = 8'h18,
+    ADDR_D_DATA_3 = 8'h1c,
+    ADDR_D_DATA_4 = 8'h20,
+    ADDR_D_DATA_5 = 8'h24,
+    ADDR_D_DATA_6 = 8'h28,
+    ADDR_D_DATA_7 = 8'h2c,
+    ADDR_D_CTRL   = 8'h30,
+    ADDR_N_DATA_0 = 8'h34,
+    ADDR_N_DATA_1 = 8'h38,
+    ADDR_N_DATA_2 = 8'h3c,
+    ADDR_N_DATA_3 = 8'h40,
+    ADDR_N_DATA_4 = 8'h44,
+    ADDR_N_DATA_5 = 8'h48,
+    ADDR_N_DATA_6 = 8'h4c,
+    ADDR_N_DATA_7 = 8'h50,
+    ADDR_N_CTRL   = 8'h54,
+    ADDR_Y_DATA_0 = 8'h58,
+    ADDR_Y_DATA_1 = 8'h5c,
+    ADDR_Y_DATA_2 = 8'h60,
+    ADDR_Y_DATA_3 = 8'h64,
+    ADDR_Y_DATA_4 = 8'h68,
+    ADDR_Y_DATA_5 = 8'h6c,
+    ADDR_Y_DATA_6 = 8'h70,
+    ADDR_Y_DATA_7 = 8'h74,
+    ADDR_Y_CTRL   = 8'h78,
+    ADDR_X_DATA_0 = 8'h7c,
+    ADDR_X_DATA_1 = 8'h80,
+    ADDR_X_DATA_2 = 8'h84,
+    ADDR_X_DATA_3 = 8'h88,
+    ADDR_X_DATA_4 = 8'h8c,
+    ADDR_X_DATA_5 = 8'h90,
+    ADDR_X_DATA_6 = 8'h94,
+    ADDR_X_DATA_7 = 8'h98,
+    ADDR_X_CTRL   = 8'h9c,
     WRIDLE        = 2'd0,
     WRDATA        = 2'd1,
     WRRESP        = 2'd2,
@@ -240,8 +210,6 @@ localparam
     reg                           int_gie = 1'b0;
     reg  [1:0]                    int_ier = 2'b0;
     reg  [1:0]                    int_isr = 2'b0;
-    reg  [127:0]                  int_p = 'b0;
-    reg  [127:0]                  int_q = 'b0;
     reg  [255:0]                  int_d = 'b0;
     reg  [255:0]                  int_N = 'b0;
     reg  [255:0]                  int_y = 'b0;
@@ -356,30 +324,6 @@ always @(posedge ACLK) begin
                 ADDR_ISR: begin
                     rdata <= int_isr;
                 end
-                ADDR_P_DATA_0: begin
-                    rdata <= int_p[31:0];
-                end
-                ADDR_P_DATA_1: begin
-                    rdata <= int_p[63:32];
-                end
-                ADDR_P_DATA_2: begin
-                    rdata <= int_p[95:64];
-                end
-                ADDR_P_DATA_3: begin
-                    rdata <= int_p[127:96];
-                end
-                ADDR_Q_DATA_0: begin
-                    rdata <= int_q[31:0];
-                end
-                ADDR_Q_DATA_1: begin
-                    rdata <= int_q[63:32];
-                end
-                ADDR_Q_DATA_2: begin
-                    rdata <= int_q[95:64];
-                end
-                ADDR_Q_DATA_3: begin
-                    rdata <= int_q[127:96];
-                end
                 ADDR_D_DATA_0: begin
                     rdata <= int_d[31:0];
                 end
@@ -491,8 +435,6 @@ assign ap_start          = int_ap_start;
 assign task_ap_done      = (ap_done && !auto_restart_status) || auto_restart_done;
 assign task_ap_ready     = ap_ready && !int_auto_restart;
 assign auto_restart_done = auto_restart_status && (ap_idle && !int_ap_idle);
-assign p                 = int_p;
-assign q                 = int_q;
 assign d                 = int_d;
 assign N                 = int_N;
 assign y                 = int_y;
@@ -625,86 +567,6 @@ always @(posedge ACLK) begin
             int_isr[1] <= 1'b1;
         else if (w_hs && waddr == ADDR_ISR && WSTRB[0])
             int_isr[1] <= int_isr[1] ^ WDATA[1]; // toggle on write
-    end
-end
-
-// int_p[31:0]
-always @(posedge ACLK) begin
-    if (ARESET)
-        int_p[31:0] <= 0;
-    else if (ACLK_EN) begin
-        if (w_hs && waddr == ADDR_P_DATA_0)
-            int_p[31:0] <= (WDATA[31:0] & wmask) | (int_p[31:0] & ~wmask);
-    end
-end
-
-// int_p[63:32]
-always @(posedge ACLK) begin
-    if (ARESET)
-        int_p[63:32] <= 0;
-    else if (ACLK_EN) begin
-        if (w_hs && waddr == ADDR_P_DATA_1)
-            int_p[63:32] <= (WDATA[31:0] & wmask) | (int_p[63:32] & ~wmask);
-    end
-end
-
-// int_p[95:64]
-always @(posedge ACLK) begin
-    if (ARESET)
-        int_p[95:64] <= 0;
-    else if (ACLK_EN) begin
-        if (w_hs && waddr == ADDR_P_DATA_2)
-            int_p[95:64] <= (WDATA[31:0] & wmask) | (int_p[95:64] & ~wmask);
-    end
-end
-
-// int_p[127:96]
-always @(posedge ACLK) begin
-    if (ARESET)
-        int_p[127:96] <= 0;
-    else if (ACLK_EN) begin
-        if (w_hs && waddr == ADDR_P_DATA_3)
-            int_p[127:96] <= (WDATA[31:0] & wmask) | (int_p[127:96] & ~wmask);
-    end
-end
-
-// int_q[31:0]
-always @(posedge ACLK) begin
-    if (ARESET)
-        int_q[31:0] <= 0;
-    else if (ACLK_EN) begin
-        if (w_hs && waddr == ADDR_Q_DATA_0)
-            int_q[31:0] <= (WDATA[31:0] & wmask) | (int_q[31:0] & ~wmask);
-    end
-end
-
-// int_q[63:32]
-always @(posedge ACLK) begin
-    if (ARESET)
-        int_q[63:32] <= 0;
-    else if (ACLK_EN) begin
-        if (w_hs && waddr == ADDR_Q_DATA_1)
-            int_q[63:32] <= (WDATA[31:0] & wmask) | (int_q[63:32] & ~wmask);
-    end
-end
-
-// int_q[95:64]
-always @(posedge ACLK) begin
-    if (ARESET)
-        int_q[95:64] <= 0;
-    else if (ACLK_EN) begin
-        if (w_hs && waddr == ADDR_Q_DATA_2)
-            int_q[95:64] <= (WDATA[31:0] & wmask) | (int_q[95:64] & ~wmask);
-    end
-end
-
-// int_q[127:96]
-always @(posedge ACLK) begin
-    if (ARESET)
-        int_q[127:96] <= 0;
-    else if (ACLK_EN) begin
-        if (w_hs && waddr == ADDR_Q_DATA_3)
-            int_q[127:96] <= (WDATA[31:0] & wmask) | (int_q[127:96] & ~wmask);
     end
 end
 

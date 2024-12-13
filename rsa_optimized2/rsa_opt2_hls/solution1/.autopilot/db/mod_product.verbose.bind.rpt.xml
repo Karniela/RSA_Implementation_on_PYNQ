@@ -1,7 +1,11 @@
 <profile>
 
 <section name = "Vitis HLS Report for 'mod_product'" level="0">
+<<<<<<< HEAD:rsa_optimized2/rsa_opt2_hls/solution1/.autopilot/db/mod_product.verbose.bind.rpt.xml
 <item name = "Date">Thu Dec  5 17:01:35 2024
+=======
+<item name = "Date">Thu Dec 12 16:52:59 2024
+>>>>>>> origin/branch2:rsa_optimized2/baseline/solution1/.autopilot/db/mod_product.verbose.bind.rpt.xml
 </item>
 <item name = "Version">2022.2 (Build 3670227 on Oct 13 2022)</item>
 <item name = "Project">rsa_opt2_hls</item>
@@ -24,7 +28,7 @@
 <section name = "" level="1">
 <item name = "Summary"><table name="" hasTotal="0">
 <keys size="8">, min, max, min, max, min, max, Type</keys>
-<column name="">258, 258, 2.580 us, 2.580 us, 258, 258, no</column>
+<column name="">513, 513, 5.130 us, 5.130 us, 513, 513, no</column>
 </table>
 </item>
 <item name = "Detail">
@@ -35,7 +39,7 @@
 </item>
 <item name = "Loop"><table name="" hasTotal="0">
 <keys size="8">Loop Name, min, max, Latency, achieved, target, Count, Pipelined</keys>
-<column name="- Mod_Product">256, 256, 2, 1, 1, 256, yes</column>
+<column name="- Mod_Product">512, 512, 2, -, -, 256, no</column>
 </table>
 </item>
 </section>

@@ -22,6 +22,7 @@
 </SummaryOfTimingAnalysis>
 <SummaryOfOverallLatency>
 <unit>clock cycles</unit>
+<<<<<<< HEAD:rsa_baseline/rsa_baseline_hls/solution1/syn/report/rsa_csynth.xml
 <Best-caseLatency>786</Best-caseLatency>
 <Average-caseLatency>100620</Average-caseLatency>
 <Worst-caseLatency>267280</Worst-caseLatency>
@@ -30,6 +31,16 @@
 <Worst-caseRealTimeLatency>2.673 ms</Worst-caseRealTimeLatency>
 <Interval-min>787</Interval-min>
 <Interval-max>267281</Interval-max>
+=======
+<Best-caseLatency>784</Best-caseLatency>
+<Average-caseLatency>100619</Average-caseLatency>
+<Worst-caseLatency>267535</Worst-caseLatency>
+<Best-caseRealTimeLatency>7.840 us</Best-caseRealTimeLatency>
+<Average-caseRealTimeLatency>1.006 ms</Average-caseRealTimeLatency>
+<Worst-caseRealTimeLatency>2.675 ms</Worst-caseRealTimeLatency>
+<Interval-min>785</Interval-min>
+<Interval-max>267536</Interval-max>
+>>>>>>> origin/branch2:rsa_baseline/baseline/solution1/syn/report/rsa_csynth.xml
 </SummaryOfOverallLatency>
 </PerformanceEstimates>
 
@@ -37,8 +48,13 @@
 <Resources>
 <BRAM_18K>0</BRAM_18K>
 <DSP>200</DSP>
+<<<<<<< HEAD:rsa_baseline/rsa_baseline_hls/solution1/syn/report/rsa_csynth.xml
 <FF>25218</FF>
 <LUT>20843</LUT>
+=======
+<FF>8955</FF>
+<LUT>6876</LUT>
+>>>>>>> origin/branch2:rsa_baseline/baseline/solution1/syn/report/rsa_csynth.xml
 <URAM>0</URAM>
 </Resources>
 <AvailableResources>

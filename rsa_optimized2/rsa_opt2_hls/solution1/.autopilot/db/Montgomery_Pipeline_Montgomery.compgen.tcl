@@ -77,14 +77,14 @@ eval "cg_default_interface_gen_dc { \
 if {${::AESL::PGuard_autoexp_gen}} {
 eval "cg_default_interface_gen_dc { \
     id 9 \
-    name b_cast \
+    name zext_ln186 \
     type other \
     dir I \
     reset_level 1 \
     sync_rst true \
-    corename dc_b_cast \
+    corename dc_zext_ln186 \
     op interface \
-    ports { b_cast { I 1 vector } } \
+    ports { zext_ln186 { I 256 vector } } \
 } "
 }
 
@@ -107,36 +107,6 @@ eval "cg_default_interface_gen_dc { \
 if {${::AESL::PGuard_autoexp_gen}} {
 eval "cg_default_interface_gen_dc { \
     id 11 \
-    name zext_ln1495_1 \
-    type other \
-    dir I \
-    reset_level 1 \
-    sync_rst true \
-    corename dc_zext_ln1495_1 \
-    op interface \
-    ports { zext_ln1495_1 { I 256 vector } } \
-} "
-}
-
-# Direct connection:
-if {${::AESL::PGuard_autoexp_gen}} {
-eval "cg_default_interface_gen_dc { \
-    id 12 \
-    name add_ln186 \
-    type other \
-    dir I \
-    reset_level 1 \
-    sync_rst true \
-    corename dc_add_ln186 \
-    op interface \
-    ports { add_ln186 { I 257 vector } } \
-} "
-}
-
-# Direct connection:
-if {${::AESL::PGuard_autoexp_gen}} {
-eval "cg_default_interface_gen_dc { \
-    id 13 \
     name m_V_out \
     type other \
     dir O \

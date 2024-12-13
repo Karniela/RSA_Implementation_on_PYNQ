@@ -30149,11 +30149,21 @@ data_t mod_exp(data_t base, data_t exp, data_t mod) {
 
     VITIS_LOOP_12_1: for (int i = 0; i < 256; i++) {
 
+<<<<<<< HEAD:rsa_baseline/rsa_baseline_hls/solution1/.autopilot/db/rsa.pp.0.cpp
 
         if (exp & 1) {
 
             result = (result * b) % mod;
 
+=======
+#pragma HLS UNROLL FACTOR=4
+ if (a & 1) {
+            if (m + t >= N) {
+                m = m + t - N;
+            } else {
+                m = m + t;
+            }
+>>>>>>> origin/branch2:rsa_optimized1/baseline/solution1/.autopilot/db/rsa.pp.0.cpp
         }
         exp = exp >> 1;
         if (exp == 0)

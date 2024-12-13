@@ -55,20 +55,6 @@ typedef struct {
     u32 word_1;
     u32 word_2;
     u32 word_3;
-} XRsa_P;
-
-typedef struct {
-    u32 word_0;
-    u32 word_1;
-    u32 word_2;
-    u32 word_3;
-} XRsa_Q;
-
-typedef struct {
-    u32 word_0;
-    u32 word_1;
-    u32 word_2;
-    u32 word_3;
     u32 word_4;
     u32 word_5;
     u32 word_6;
@@ -146,10 +132,6 @@ u32 XRsa_IsReady(XRsa *InstancePtr);
 void XRsa_EnableAutoRestart(XRsa *InstancePtr);
 void XRsa_DisableAutoRestart(XRsa *InstancePtr);
 
-void XRsa_Set_p(XRsa *InstancePtr, XRsa_P Data);
-XRsa_P XRsa_Get_p(XRsa *InstancePtr);
-void XRsa_Set_q(XRsa *InstancePtr, XRsa_Q Data);
-XRsa_Q XRsa_Get_q(XRsa *InstancePtr);
 void XRsa_Set_d(XRsa *InstancePtr, XRsa_D Data);
 XRsa_D XRsa_Get_d(XRsa *InstancePtr);
 void XRsa_Set_N(XRsa *InstancePtr, XRsa_N Data);

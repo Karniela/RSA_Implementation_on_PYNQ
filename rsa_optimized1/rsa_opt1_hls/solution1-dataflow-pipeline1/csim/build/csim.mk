@@ -75,7 +75,11 @@ all: $(TARGET)
 
 $(ObjDir)/rsa_test.o: ../../../../rsa_test.cpp $(ObjDir)/.dir
 	$(Echo) "   Compiling ../../../../rsa_test.cpp in $(BuildMode) mode" $(AVE_DIR_DLOG)
+<<<<<<< HEAD:rsa_optimized1/rsa_opt1_hls/solution1-dataflow-pipeline1/csim/build/csim.mk
 	$(Verb)  $(CC) ${CCFLAG} -c -MMD -Wno-unknown-pragmas -Wno-unknown-pragmas  $(IFLAG) $(DFLAG) $< -o $@ ; \
+=======
+	$(Verb)  $(CC) ${CCFLAG} -c -MMD -Wno-unknown-pragmas -Wno-unknown-pragmas -Wno-unknown-pragmas -Wno-unknown-pragmas -Wno-unknown-pragmas  $(IFLAG) $(DFLAG) $< -o $@ ; \
+>>>>>>> origin/branch2:rsa_optimized1/baseline/solution1/csim/build/csim.mk
 
 -include $(ObjDir)/rsa_test.d
 

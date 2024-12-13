@@ -1,129 +1,117 @@
-import sympy
-import random
-
-def barrett_reduction(x, n):
+def rsa(d: int, N: int, y: int, bitwidth: int) -> int:
     """
-    Perform Barrett Reduction to compute x mod n.
-    
+    RSA modular exponentiation using Montgomery reduction.
+
     Parameters:
-        x (int): The input number to reduce (x >= 0).
-        n (int): The modulus (n > 0).
-    
+    d (int): The private exponent.
+    N (int): The modulus.
+    y (int): The base.
+    bitwidth (int): Bitwidth of the operands.
+
     Returns:
-        int: The result of x % n using Barrett Reduction.
+    int: The result of modular exponentiation.
     """
-    if n <= 0:
-        raise ValueError("Modulus n must be greater than 0")
-    if x < 0:
-        raise ValueError("Input x must be non-negative")
-    
-    assert x <= pow(n, 2)
-    
-    k = n.bit_length()
-    mu = (1 << (2 * k)) // n
+    def mod_product(a: int, b: int, N: int, bitwidth: int) -> int:
+        """
+        Modular product helper function.
+        """
+        m = 0
+        t = b
+        for _ in range(bitwidth + 1):
+            if a & 1:
+                if m + t >= N:
+                    m = m + t - N
+                else:
+                    m = m + t
+            if t + t > N:
+                t = t + t - N
+            else:
+                t = t + t
+            a >>= 1
+            if a == 0:
+                break
+        return m
 
-    q1 = x * mu
-    q3 = q1 >> (2*k)
-    t = x - q3 * n
+    def montgomery(N: int, a: int, b: int, bitwidth: int) -> int:
+        """
+        Montgomery modular multiplication helper function.
+        """
+        m = 0
+        for _ in range(bitwidth):
+            if a & 1:
+                m += b
+            if m & 1:
+                m += N
+            m >>= 1
+            a >>= 1
+        if m >= N:
+            m -= N
+        # print(f'm = {m}')
+        return m
 
-    if t >= n:
-        t -= n
-    elif t < 0:
-        t += n
+    # RSA implementation
+    a = 1 << bitwidth  # Equivalent to 2^BITWIDTH
+    t = mod_product(a, y, N, bitwidth)
+    m = 1
+    print(f't after mod_product = {t}')
 
-    return t
+    for _ in range(bitwidth):
+        if d & 1:
+            print(f'before montgomery: m = {m}, t = {t}')
+            m = montgomery(N, m, t, bitwidth)
+            print(f'm after montgomery = {m}')
+        print(f'before montgomery: t = {t}')
+        t = montgomery(N, t, t, bitwidth)
+        print(f'after montgomery: t = {t}')
+        d >>= 1
+        if d == 0:
+            break
 
-def mod_exp(base, exp, mod):
-    """
-    Perform modular exponentiation: (base^exp) % mod
-    """
-    result = 1
-    # base = base % mod  # Ensure base is within mod
-    b = barrett_reduction(base, mod)
-    
-    for i in range(128):
-        #pragma HLS PIPELINE OFF
-        if (exp & 1):
-            # result = mod_product(b, result, mod);
-            result = barrett_reduction(b * result, mod)
-        
-        # b = (b * b) % mod;
-        b = barrett_reduction(b * b, mod)
-        exp = exp >> 1
-    
-    return result
-
-def mod_inverse(a, mod):
-    """
-    Compute the modular multiplicative inverse of a under modulus mod
-    """
-    m0, x0, x1 = mod, 0, 1
-    if mod == 1:
-        return 0  # Modular inverse does not exist for mod=1
-    
-    while a > 1:
-        q = a // mod
-        a, mod = mod, a % mod
-        x0, x1 = x1 - q * x0, x0
-        # print(f'x0 = {x0}, x1 = {x1}')
-    
-    if x1 < 0:
-        x1 += m0  # Make result positive
-        # print(f'x1 = {x1}')
-    
-    return x1
-
-def crt_rsa(p, q, N, y, d):
-    """
-    Decrypt RSA ciphertext y using CRT optimization
-    Inputs:
-      - p, q: Prime factors of N
-      - N: Public modulus (p * q)
-      - y: Ciphertext
-      - d: Private exponent
-    Output:
-      - Decrypted plaintext
-    """
-    # Compute CRT parameters
-    # dp = d % (p - 1) # dp is now bitwidth / 2 bits
-    dp = barrett_reduction(d, p-1)
-    # dq = d % (q - 1) # dq is now bitwidth / 2 bits
-    dq = barrett_reduction(d, q-1)
-    # print(f'dp = {dp}\ndq = {dq}')
-    q_inv = mod_inverse(q, p)
-    # print(f'q_inv = {q_inv}')
-    
-    # Modular exponentiation for m_p and m_q
-    mp = mod_exp(y, dp, p)
-    # print(f'mp = {mp}')
-    mq = mod_exp(y, dq, q)
-    # print(f'mq = {mq}')
-    
-    # CRT combination
-    # h = (q_inv * (mp - mq)) % p
-    # if h < 0:
-    #     h += p  # Ensure h is non-negative
-    
-    mm = mp - mq if mp > mq else mq - mp
-    h = barrett_reduction(mm * q_inv, p)
-    if (mp < mq):
-        h = p - h
-    
-    
-    m = (mq + h * q) 
     return m
 
+# Example usage
+result = rsa(d=40077, N=40633, y=8454, bitwidth=16)  # Example: d=13, N=23, y=5, bitwidth=5
 
 
-# Test the implementation
-if __name__ == "__main__":
-    # Example parameters
-    p = 170141183460469231731687303715884116147  # Prime p
-    q = 170141183460469231731687303715884114527  # Prime q
-    N = p * q  # Modulus
-    y = 15992842325075000729298110246954337332725622601628670928350614326331907696315  # Ciphertext
-    d = 5978919236142606547650399213717440902551390268385239648859999103680819781761  # Private exponent
-    
-    # Decrypt using CRT-based RSA
-    m = crt_rsa(p, q, N, y, d)
-    print(f"Decrypted plaintext: {m}")
+
+def montgomery(N: int, a: int, b: int, bitwidth: int) -> int:
+    """
+    Montgomery modular multiplication helper function.
+    """
+    m = 0
+    m2 = 0
+    for _ in range(bitwidth):
+        print(f'before: m2 = {m2}')
+        if a & 1:
+            m2 += b
+            print(f'm2 += b = {m2}')
+        if m2 & 1:
+            m2 += N
+            print(f'm2 += N = {m2}')
+        print(f'before m = {m}')
+        # if((a & 1) and (((b & 1) != (m & 1)))):
+        #     # print(f'm = {m}, m & 1 = {m & 1}, b = {b}, b & 1 = {b & 1}, logic = {(~((b & 1) != (m & 1)))}')
+        #     m = m + b + N
+        #     print(f'm += b + N = {m}')
+        # elif((~(a & 1) and (m & 1))):
+        #     m = m + N
+        #     print(f'm += N = {m}')
+        # elif((a & 1)):
+        #     m = m + b
+        #     print(f'm += b = {m}')
+        d1 = b if (a & 1) else 0
+        d2 = N if (((m & 1) and (~(a & 1) and ~(b & 1))) or ((a & 1) and (b & 1) and ~(m & 1))) else 0
+        print(f'd1 = {d1}, d2 = {d2}')
+        m = m + d1 + d2
+        print(f'after m = {m}, m2 = {m2}')
+        m2 >>= 1
+        m >>= 1
+        a >>= 1
+    if m >= N:
+        m -= N
+    if m2 >= N:
+        m2 -= N
+    print(f'm = {m}, m2 = {m2}')
+    return m
+
+montgomery(28948022309329048855892746252171981402981537383894273816512899164258300594241, 17519000568021920500922536647074530486618270853232372650071722198659287021156, 17519000568021920500922536647074530486618270853232372650071722198659287021156, 256)

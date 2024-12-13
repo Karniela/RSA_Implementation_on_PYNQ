@@ -22,6 +22,7 @@
 </SummaryOfTimingAnalysis>
 <SummaryOfOverallLatency>
 <unit>clock cycles</unit>
+<<<<<<< HEAD:rsa_optimized1/rsa_opt1_hls/solution2-dataflow-nopipeline/syn/report/rsa_csynth.xml
 <Best-caseLatency>263425</Best-caseLatency>
 <Average-caseLatency>394753</Average-caseLatency>
 <Worst-caseLatency>526081</Worst-caseLatency>
@@ -36,14 +37,29 @@
 </DataflowPipelineThroughput>
 <Interval-min>263426</Interval-min>
 <Interval-max>526082</Interval-max>
+=======
+<Best-caseLatency>214274</Best-caseLatency>
+<Average-caseLatency>321026</Average-caseLatency>
+<Worst-caseLatency>427778</Worst-caseLatency>
+<Best-caseRealTimeLatency>2.143 ms</Best-caseRealTimeLatency>
+<Average-caseRealTimeLatency>3.210 ms</Average-caseRealTimeLatency>
+<Worst-caseRealTimeLatency>4.278 ms</Worst-caseRealTimeLatency>
+<Interval-min>214275</Interval-min>
+<Interval-max>427779</Interval-max>
+>>>>>>> origin/branch2:rsa_optimized1/baseline/solution1/syn/report/rsa_csynth.xml
 </SummaryOfOverallLatency>
 </PerformanceEstimates>
 
 <AreaEstimates>
 <Resources>
 <BRAM_18K>0</BRAM_18K>
+<<<<<<< HEAD:rsa_optimized1/rsa_opt1_hls/solution2-dataflow-nopipeline/syn/report/rsa_csynth.xml
 <FF>7648</FF>
 <LUT>3870</LUT>
+=======
+<FF>18891</FF>
+<LUT>8267</LUT>
+>>>>>>> origin/branch2:rsa_optimized1/baseline/solution1/syn/report/rsa_csynth.xml
 <DSP>0</DSP>
 <URAM>0</URAM>
 </Resources>

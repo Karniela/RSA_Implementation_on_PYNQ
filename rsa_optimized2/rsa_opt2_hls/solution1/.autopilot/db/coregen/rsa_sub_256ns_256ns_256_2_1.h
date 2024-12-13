@@ -5,7 +5,7 @@
 // ==============================================================
 #ifndef __rsa_sub_256ns_256ns_256_2_1__HH__
 #define __rsa_sub_256ns_256ns_256_2_1__HH__
-#include "rsa_sub_256ns_256ns_256_2_1_Adder_3.h"
+#include "rsa_sub_256ns_256ns_256_2_1_Adder_2.h"
 
 template<
     int ID,
@@ -23,15 +23,15 @@ SC_MODULE(rsa_sub_256ns_256ns_256_2_1) {
 
 
 
-    rsa_sub_256ns_256ns_256_2_1_Adder_3 rsa_sub_256ns_256ns_256_2_1_Adder_3_U;
+    rsa_sub_256ns_256ns_256_2_1_Adder_2 rsa_sub_256ns_256ns_256_2_1_Adder_2_U;
 
-    SC_CTOR(rsa_sub_256ns_256ns_256_2_1):  rsa_sub_256ns_256ns_256_2_1_Adder_3_U ("rsa_sub_256ns_256ns_256_2_1_Adder_3_U") {
-        rsa_sub_256ns_256ns_256_2_1_Adder_3_U.clk(clk);
-        rsa_sub_256ns_256ns_256_2_1_Adder_3_U.reset(reset);
-        rsa_sub_256ns_256ns_256_2_1_Adder_3_U.ce(ce);
-        rsa_sub_256ns_256ns_256_2_1_Adder_3_U.a(din0);
-        rsa_sub_256ns_256ns_256_2_1_Adder_3_U.b(din1);
-        rsa_sub_256ns_256ns_256_2_1_Adder_3_U.s(dout);
+    SC_CTOR(rsa_sub_256ns_256ns_256_2_1):  rsa_sub_256ns_256ns_256_2_1_Adder_2_U ("rsa_sub_256ns_256ns_256_2_1_Adder_2_U") {
+        rsa_sub_256ns_256ns_256_2_1_Adder_2_U.clk(clk);
+        rsa_sub_256ns_256ns_256_2_1_Adder_2_U.reset(reset);
+        rsa_sub_256ns_256ns_256_2_1_Adder_2_U.ce(ce);
+        rsa_sub_256ns_256ns_256_2_1_Adder_2_U.a(din0);
+        rsa_sub_256ns_256ns_256_2_1_Adder_2_U.b(din1);
+        rsa_sub_256ns_256ns_256_2_1_Adder_2_U.s(dout);
 
     }
 

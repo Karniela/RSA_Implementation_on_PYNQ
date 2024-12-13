@@ -20,11 +20,10 @@ module rsa_Montgomery (
         ap_return
 );
 
-parameter    ap_ST_fsm_state1 = 5'd1;
-parameter    ap_ST_fsm_state2 = 5'd2;
-parameter    ap_ST_fsm_state3 = 5'd4;
-parameter    ap_ST_fsm_state4 = 5'd8;
-parameter    ap_ST_fsm_state5 = 5'd16;
+parameter    ap_ST_fsm_state1 = 4'd1;
+parameter    ap_ST_fsm_state2 = 4'd2;
+parameter    ap_ST_fsm_state3 = 4'd4;
+parameter    ap_ST_fsm_state4 = 4'd8;
 
 input   ap_clk;
 input   ap_rst;
@@ -42,20 +41,13 @@ reg ap_idle;
 reg ap_ready;
 reg[255:0] ap_return;
 
-(* fsm_encoding = "none" *) reg   [4:0] ap_CS_fsm;
+(* fsm_encoding = "none" *) reg   [3:0] ap_CS_fsm;
 wire    ap_CS_fsm_state1;
-wire   [0:0] empty_fu_47_p1;
-reg   [0:0] empty_reg_112;
-wire   [256:0] zext_ln1495_fu_51_p1;
-reg   [256:0] zext_ln1495_reg_117;
-wire    ap_CS_fsm_state2;
-wire   [256:0] grp_fu_59_p2;
-reg   [256:0] add_ln186_reg_133;
-wire   [0:0] icmp_ln1031_fu_69_p2;
-reg   [0:0] icmp_ln1031_reg_138;
-wire    ap_CS_fsm_state4;
-wire   [255:0] trunc_ln186_fu_74_p1;
-reg   [255:0] trunc_ln186_reg_143;
+wire   [0:0] icmp_ln1031_fu_53_p2;
+reg   [0:0] icmp_ln1031_reg_103;
+wire    ap_CS_fsm_state3;
+wire   [255:0] trunc_ln186_fu_59_p1;
+reg   [255:0] trunc_ln186_reg_108;
 wire    grp_Montgomery_Pipeline_Montgomery_fu_36_ap_start;
 wire    grp_Montgomery_Pipeline_Montgomery_fu_36_ap_done;
 wire    grp_Montgomery_Pipeline_Montgomery_fu_36_ap_idle;
@@ -63,26 +55,24 @@ wire    grp_Montgomery_Pipeline_Montgomery_fu_36_ap_ready;
 wire   [256:0] grp_Montgomery_Pipeline_Montgomery_fu_36_m_V_out;
 wire    grp_Montgomery_Pipeline_Montgomery_fu_36_m_V_out_ap_vld;
 reg    grp_Montgomery_Pipeline_Montgomery_fu_36_ap_start_reg;
-wire    ap_CS_fsm_state3;
-wire   [256:0] grp_fu_59_p0;
-wire   [256:0] grp_fu_59_p1;
-wire   [255:0] grp_fu_78_p0;
-wire    ap_CS_fsm_state5;
-wire   [0:0] xor_ln1031_fu_83_p2;
-wire   [255:0] grp_fu_78_p2;
-wire   [255:0] select_ln47_fu_88_p3;
+wire    ap_CS_fsm_state2;
+wire   [256:0] zext_ln22_fu_47_p1;
+wire   [255:0] grp_fu_63_p0;
+wire    ap_CS_fsm_state4;
+wire   [0:0] xor_ln1031_fu_68_p2;
+wire   [255:0] grp_fu_63_p2;
+wire   [255:0] select_ln33_fu_73_p3;
 reg   [255:0] ap_return_preg;
-reg   [4:0] ap_NS_fsm;
+reg   [3:0] ap_NS_fsm;
 reg    ap_ST_fsm_state1_blk;
-wire    ap_ST_fsm_state2_blk;
-reg    ap_ST_fsm_state3_blk;
+reg    ap_ST_fsm_state2_blk;
+wire    ap_ST_fsm_state3_blk;
 wire    ap_ST_fsm_state4_blk;
-wire    ap_ST_fsm_state5_blk;
 wire    ap_ce_reg;
 
 // power-on initialization
 initial begin
-#0 ap_CS_fsm = 5'd1;
+#0 ap_CS_fsm = 4'd1;
 #0 grp_Montgomery_Pipeline_Montgomery_fu_36_ap_start_reg = 1'b0;
 #0 ap_return_preg = 256'd0;
 end
@@ -95,27 +85,10 @@ rsa_Montgomery_Pipeline_Montgomery grp_Montgomery_Pipeline_Montgomery_fu_36(
     .ap_idle(grp_Montgomery_Pipeline_Montgomery_fu_36_ap_idle),
     .ap_ready(grp_Montgomery_Pipeline_Montgomery_fu_36_ap_ready),
     .a(a),
-    .b_cast(empty_reg_112),
-    .zext_ln1495(b),
-    .zext_ln1495_1(N),
-    .add_ln186(add_ln186_reg_133),
+    .zext_ln186(b),
+    .zext_ln1495(N),
     .m_V_out(grp_Montgomery_Pipeline_Montgomery_fu_36_m_V_out),
     .m_V_out_ap_vld(grp_Montgomery_Pipeline_Montgomery_fu_36_m_V_out_ap_vld)
-);
-
-rsa_add_257ns_257ns_257_2_1 #(
-    .ID( 1 ),
-    .NUM_STAGE( 2 ),
-    .din0_WIDTH( 257 ),
-    .din1_WIDTH( 257 ),
-    .dout_WIDTH( 257 ))
-add_257ns_257ns_257_2_1_U14(
-    .clk(ap_clk),
-    .reset(ap_rst),
-    .din0(grp_fu_59_p0),
-    .din1(grp_fu_59_p1),
-    .ce(1'b1),
-    .dout(grp_fu_59_p2)
 );
 
 rsa_sub_256ns_256ns_256_2_1 #(
@@ -124,13 +97,13 @@ rsa_sub_256ns_256ns_256_2_1 #(
     .din0_WIDTH( 256 ),
     .din1_WIDTH( 256 ),
     .dout_WIDTH( 256 ))
-sub_256ns_256ns_256_2_1_U15(
+sub_256ns_256ns_256_2_1_U12(
     .clk(ap_clk),
     .reset(ap_rst),
-    .din0(grp_fu_78_p0),
+    .din0(grp_fu_63_p0),
     .din1(N),
     .ce(1'b1),
-    .dout(grp_fu_78_p2)
+    .dout(grp_fu_63_p2)
 );
 
 always @ (posedge ap_clk) begin
@@ -145,8 +118,8 @@ always @ (posedge ap_clk) begin
     if (ap_rst == 1'b1) begin
         ap_return_preg <= 256'd0;
     end else begin
-        if ((1'b1 == ap_CS_fsm_state5)) begin
-            ap_return_preg <= select_ln47_fu_88_p3;
+        if ((1'b1 == ap_CS_fsm_state4)) begin
+            ap_return_preg <= select_ln33_fu_73_p3;
         end
     end
 end
@@ -155,7 +128,7 @@ always @ (posedge ap_clk) begin
     if (ap_rst == 1'b1) begin
         grp_Montgomery_Pipeline_Montgomery_fu_36_ap_start_reg <= 1'b0;
     end else begin
-        if ((1'b1 == ap_CS_fsm_state2)) begin
+        if (((ap_start == 1'b1) & (1'b1 == ap_CS_fsm_state1))) begin
             grp_Montgomery_Pipeline_Montgomery_fu_36_ap_start_reg <= 1'b1;
         end else if ((grp_Montgomery_Pipeline_Montgomery_fu_36_ap_ready == 1'b1)) begin
             grp_Montgomery_Pipeline_Montgomery_fu_36_ap_start_reg <= 1'b0;
@@ -164,22 +137,9 @@ always @ (posedge ap_clk) begin
 end
 
 always @ (posedge ap_clk) begin
-    if ((1'b1 == ap_CS_fsm_state2)) begin
-        add_ln186_reg_133 <= grp_fu_59_p2;
-    end
-end
-
-always @ (posedge ap_clk) begin
-    if ((1'b1 == ap_CS_fsm_state1)) begin
-        empty_reg_112 <= empty_fu_47_p1;
-        zext_ln1495_reg_117[255 : 0] <= zext_ln1495_fu_51_p1[255 : 0];
-    end
-end
-
-always @ (posedge ap_clk) begin
-    if ((1'b1 == ap_CS_fsm_state4)) begin
-        icmp_ln1031_reg_138 <= icmp_ln1031_fu_69_p2;
-        trunc_ln186_reg_143 <= trunc_ln186_fu_74_p1;
+    if ((1'b1 == ap_CS_fsm_state3)) begin
+        icmp_ln1031_reg_103 <= icmp_ln1031_fu_53_p2;
+        trunc_ln186_reg_108 <= trunc_ln186_fu_59_p1;
     end
 end
 
@@ -191,22 +151,20 @@ always @ (*) begin
     end
 end
 
-assign ap_ST_fsm_state2_blk = 1'b0;
-
 always @ (*) begin
     if ((grp_Montgomery_Pipeline_Montgomery_fu_36_ap_done == 1'b0)) begin
-        ap_ST_fsm_state3_blk = 1'b1;
+        ap_ST_fsm_state2_blk = 1'b1;
     end else begin
-        ap_ST_fsm_state3_blk = 1'b0;
+        ap_ST_fsm_state2_blk = 1'b0;
     end
 end
 
+assign ap_ST_fsm_state3_blk = 1'b0;
+
 assign ap_ST_fsm_state4_blk = 1'b0;
 
-assign ap_ST_fsm_state5_blk = 1'b0;
-
 always @ (*) begin
-    if (((1'b1 == ap_CS_fsm_state5) | ((1'b1 == ap_CS_fsm_state1) & (ap_start == 1'b0)))) begin
+    if (((1'b1 == ap_CS_fsm_state4) | ((ap_start == 1'b0) & (1'b1 == ap_CS_fsm_state1)))) begin
         ap_done = 1'b1;
     end else begin
         ap_done = 1'b0;
@@ -214,7 +172,7 @@ always @ (*) begin
 end
 
 always @ (*) begin
-    if (((1'b1 == ap_CS_fsm_state1) & (ap_start == 1'b0))) begin
+    if (((ap_start == 1'b0) & (1'b1 == ap_CS_fsm_state1))) begin
         ap_idle = 1'b1;
     end else begin
         ap_idle = 1'b0;
@@ -222,7 +180,7 @@ always @ (*) begin
 end
 
 always @ (*) begin
-    if ((1'b1 == ap_CS_fsm_state5)) begin
+    if ((1'b1 == ap_CS_fsm_state4)) begin
         ap_ready = 1'b1;
     end else begin
         ap_ready = 1'b0;
@@ -230,8 +188,8 @@ always @ (*) begin
 end
 
 always @ (*) begin
-    if ((1'b1 == ap_CS_fsm_state5)) begin
-        ap_return = select_ln47_fu_88_p3;
+    if ((1'b1 == ap_CS_fsm_state4)) begin
+        ap_return = select_ln33_fu_73_p3;
     end else begin
         ap_return = ap_return_preg;
     end
@@ -240,26 +198,23 @@ end
 always @ (*) begin
     case (ap_CS_fsm)
         ap_ST_fsm_state1 : begin
-            if (((1'b1 == ap_CS_fsm_state1) & (ap_start == 1'b1))) begin
+            if (((ap_start == 1'b1) & (1'b1 == ap_CS_fsm_state1))) begin
                 ap_NS_fsm = ap_ST_fsm_state2;
             end else begin
                 ap_NS_fsm = ap_ST_fsm_state1;
             end
         end
         ap_ST_fsm_state2 : begin
-            ap_NS_fsm = ap_ST_fsm_state3;
-        end
-        ap_ST_fsm_state3 : begin
-            if (((grp_Montgomery_Pipeline_Montgomery_fu_36_ap_done == 1'b1) & (1'b1 == ap_CS_fsm_state3))) begin
-                ap_NS_fsm = ap_ST_fsm_state4;
-            end else begin
+            if (((grp_Montgomery_Pipeline_Montgomery_fu_36_ap_done == 1'b1) & (1'b1 == ap_CS_fsm_state2))) begin
                 ap_NS_fsm = ap_ST_fsm_state3;
+            end else begin
+                ap_NS_fsm = ap_ST_fsm_state2;
             end
         end
-        ap_ST_fsm_state4 : begin
-            ap_NS_fsm = ap_ST_fsm_state5;
+        ap_ST_fsm_state3 : begin
+            ap_NS_fsm = ap_ST_fsm_state4;
         end
-        ap_ST_fsm_state5 : begin
+        ap_ST_fsm_state4 : begin
             ap_NS_fsm = ap_ST_fsm_state1;
         end
         default : begin
@@ -276,30 +231,18 @@ assign ap_CS_fsm_state3 = ap_CS_fsm[32'd2];
 
 assign ap_CS_fsm_state4 = ap_CS_fsm[32'd3];
 
-assign ap_CS_fsm_state5 = ap_CS_fsm[32'd4];
-
-assign empty_fu_47_p1 = b[0:0];
-
 assign grp_Montgomery_Pipeline_Montgomery_fu_36_ap_start = grp_Montgomery_Pipeline_Montgomery_fu_36_ap_start_reg;
 
-assign grp_fu_59_p0 = N;
+assign grp_fu_63_p0 = grp_Montgomery_Pipeline_Montgomery_fu_36_m_V_out[255:0];
 
-assign grp_fu_59_p1 = b;
+assign icmp_ln1031_fu_53_p2 = ((grp_Montgomery_Pipeline_Montgomery_fu_36_m_V_out < zext_ln22_fu_47_p1) ? 1'b1 : 1'b0);
 
-assign grp_fu_78_p0 = grp_Montgomery_Pipeline_Montgomery_fu_36_m_V_out[255:0];
+assign select_ln33_fu_73_p3 = ((xor_ln1031_fu_68_p2[0:0] == 1'b1) ? grp_fu_63_p2 : trunc_ln186_reg_108);
 
-assign icmp_ln1031_fu_69_p2 = ((grp_Montgomery_Pipeline_Montgomery_fu_36_m_V_out < zext_ln1495_reg_117) ? 1'b1 : 1'b0);
+assign trunc_ln186_fu_59_p1 = grp_Montgomery_Pipeline_Montgomery_fu_36_m_V_out[255:0];
 
-assign select_ln47_fu_88_p3 = ((xor_ln1031_fu_83_p2[0:0] == 1'b1) ? grp_fu_78_p2 : trunc_ln186_reg_143);
+assign xor_ln1031_fu_68_p2 = (icmp_ln1031_reg_103 ^ 1'd1);
 
-assign trunc_ln186_fu_74_p1 = grp_Montgomery_Pipeline_Montgomery_fu_36_m_V_out[255:0];
-
-assign xor_ln1031_fu_83_p2 = (icmp_ln1031_reg_138 ^ 1'd1);
-
-assign zext_ln1495_fu_51_p1 = N;
-
-always @ (posedge ap_clk) begin
-    zext_ln1495_reg_117[256] <= 1'b0;
-end
+assign zext_ln22_fu_47_p1 = N;
 
 endmodule //rsa_Montgomery

@@ -227,10 +227,10 @@ entry:11 %br_ln42 = br void %for.body
 
 <Node id="17" bw="9" op_0_bw="9" op_1_bw="0">
 <![CDATA[
-for.body:0 %i_3 = load i9 %i
+for.body:0 %i_4 = load i9 %i
 
 ]]></Node>
-<StgValue><ssdm name="i_3"/></StgValue>
+<StgValue><ssdm name="i_4"/></StgValue>
 </operation>
 
 <operation id="18" st_id="2" stage="1" lat="1">
@@ -242,7 +242,7 @@ for.body:0 %i_3 = load i9 %i
 
 <Node id="18" bw="1" op_0_bw="9" op_1_bw="9">
 <![CDATA[
-for.body:1 %icmp_ln42 = icmp_eq  i9 %i_3, i9 256
+for.body:1 %icmp_ln42 = icmp_eq  i9 %i_4, i9 256
 
 ]]></Node>
 <StgValue><ssdm name="icmp_ln42"/></StgValue>
@@ -272,10 +272,10 @@ for.body:2 %empty = speclooptripcount i32 @_ssdm_op_SpecLoopTripCount, i64 256, 
 
 <Node id="20" bw="9" op_0_bw="9" op_1_bw="9">
 <![CDATA[
-for.body:3 %i_4 = add i9 %i_3, i9 1
+for.body:3 %i_5 = add i9 %i_4, i9 1
 
 ]]></Node>
-<StgValue><ssdm name="i_4"/></StgValue>
+<StgValue><ssdm name="i_5"/></StgValue>
 </operation>
 
 <operation id="21" st_id="2" stage="1" lat="1">
@@ -402,10 +402,10 @@ if.then:1 %m_V_load_1 = load i256 %m_V
 
 <Node id="30" bw="256" op_0_bw="256" op_1_bw="256" op_2_bw="256" op_3_bw="256">
 <![CDATA[
-if.then:2 %m_V_4 = call i256 @mod_product, i256 %m_V_load_1, i256 %t_load_1, i256 %N_read
+if.then:2 %m_V_19 = call i256 @mod_product, i256 %m_V_load_1, i256 %t_load_1, i256 %N_read
 
 ]]></Node>
-<StgValue><ssdm name="m_V_4"/></StgValue>
+<StgValue><ssdm name="m_V_19"/></StgValue>
 </operation>
 
 <operation id="29" st_id="2" stage="1" lat="1">
@@ -453,10 +453,10 @@ for.end:1 %ret_ln53 = ret i256 %m_V_load
 
 <Node id="30" bw="256" op_0_bw="256" op_1_bw="256" op_2_bw="256" op_3_bw="256">
 <![CDATA[
-if.then:2 %m_V_4 = call i256 @mod_product, i256 %m_V_load_1, i256 %t_load_1, i256 %N_read
+if.then:2 %m_V_19 = call i256 @mod_product, i256 %m_V_load_1, i256 %t_load_1, i256 %N_read
 
 ]]></Node>
-<StgValue><ssdm name="m_V_4"/></StgValue>
+<StgValue><ssdm name="m_V_19"/></StgValue>
 </operation>
 
 <operation id="32" st_id="3" stage="1" lat="1">
@@ -469,7 +469,7 @@ if.then:2 %m_V_4 = call i256 @mod_product, i256 %m_V_load_1, i256 %t_load_1, i25
 
 <Node id="31" bw="0" op_0_bw="256" op_1_bw="256" op_2_bw="0" op_3_bw="0">
 <![CDATA[
-if.then:3 %store_ln48 = store i256 %m_V_4, i256 %m_V
+if.then:3 %store_ln48 = store i256 %m_V_19, i256 %m_V
 
 ]]></Node>
 <StgValue><ssdm name="store_ln48"/></StgValue>
@@ -530,7 +530,7 @@ for.inc:2 %ref_tmp3 = call i256 @mod_product, i256 %t_load, i256 %t_load, i256 %
 
 <Node id="40" bw="0" op_0_bw="9" op_1_bw="9" op_2_bw="0" op_3_bw="0">
 <![CDATA[
-for.inc:6 %store_ln42 = store i9 %i_4, i9 %i
+for.inc:6 %store_ln42 = store i9 %i_5, i9 %i
 
 ]]></Node>
 <StgValue><ssdm name="store_ln42"/></StgValue>

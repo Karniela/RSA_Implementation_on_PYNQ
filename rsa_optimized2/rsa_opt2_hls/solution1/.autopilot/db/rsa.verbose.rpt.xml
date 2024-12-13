@@ -1,7 +1,11 @@
 <profile>
 
 <section name = "Vitis HLS Report for 'rsa'" level="0">
+<<<<<<< HEAD:rsa_optimized2/rsa_opt2_hls/solution1/.autopilot/db/rsa.verbose.rpt.xml
 <item name = "Date">Thu Dec  5 17:01:35 2024
+=======
+<item name = "Date">Thu Dec 12 16:52:59 2024
+>>>>>>> origin/branch2:rsa_optimized2/baseline/solution1/.autopilot/db/rsa.verbose.rpt.xml
 </item>
 <item name = "Version">2022.2 (Build 3670227 on Oct 13 2022)</item>
 <item name = "Project">rsa_opt2_hls</item>
@@ -24,20 +28,20 @@
 <section name = "" level="1">
 <item name = "Summary"><table name="" hasTotal="0">
 <keys size="8">, min, max, min, max, min, max, Type</keys>
-<column name="">68356, 135684, 0.684 ms, 1.357 ms, 68357, 135685, no</column>
+<column name="">264963, 528643, 2.650 ms, 5.286 ms, 264964, 528644, no</column>
 </table>
 </item>
 <item name = "Detail">
 <section name = "" level="1">
 <item name = "Instance"><table name="" hasTotal="0">
 <keys size="9">Instance, Module, min, max, min, max, min, max, Type</keys>
-<column name="grp_mod_product_fu_107">mod_product, 258, 258, 2.580 us, 2.580 us, 258, 258, no</column>
-<column name="grp_Montgomery_fu_115">Montgomery, 263, 263, 2.630 us, 2.630 us, 263, 263, no</column>
+<column name="grp_mod_product_fu_107">mod_product, 513, 513, 5.130 us, 5.130 us, 513, 513, no</column>
+<column name="grp_Montgomery_fu_115">Montgomery, 1030, 1030, 10.300 us, 10.300 us, 1030, 1030, no</column>
 </table>
 </item>
 <item name = "Loop"><table name="" hasTotal="0">
 <keys size="8">Loop Name, min, max, Latency, achieved, target, Count, Pipelined</keys>
-<column name="- RSA_TOP">68096, 135424, 266 ~ 529, -, -, 256, no</column>
+<column name="- RSA_TOP">264448, 528128, 1033 ~ 2063, -, -, 256, no</column>
 </table>
 </item>
 </section>
@@ -52,21 +56,21 @@
 <column name="DSP">-, -, -, -, -</column>
 <column name="Expression">-, -, 0, 27, -</column>
 <column name="FIFO">-, -, -, -, -</column>
-<column name="Instance">0, -, 7353, 4450, -</column>
+<column name="Instance">0, -, 6774, 4044, -</column>
 <column name="Memory">-, -, -, -, -</column>
 <column name="Multiplexer">-, -, -, 81, -</column>
 <column name="Register">-, -, 1818, -, -</column>
 <specialColumn name="Available">280, 220, 106400, 53200, 0</specialColumn>
-<specialColumn name="Utilization (%)">0, 0, 8, 8, 0</specialColumn>
+<specialColumn name="Utilization (%)">0, 0, 8, 7, 0</specialColumn>
 </table>
 </item>
 <item name = "Detail">
 <section name = "" level="1">
 <item name = "Instance"><table name="" hasTotal="1">
 <keys size="7">Instance, Module, BRAM_18K, DSP, FF, LUT, URAM</keys>
-<column name="grp_Montgomery_fu_115">Montgomery, 0, 0, 4650, 1790, 0</column>
+<column name="grp_Montgomery_fu_115">Montgomery, 0, 0, 4072, 1411, 0</column>
 <column name="control_s_axi_U">control_s_axi, 0, 0, 1084, 2088, 0</column>
-<column name="grp_mod_product_fu_107">mod_product, 0, 0, 1619, 572, 0</column>
+<column name="grp_mod_product_fu_107">mod_product, 0, 0, 1618, 545, 0</column>
 </table>
 </item>
 <item name = "DSP"><table name="" hasTotal="0">
@@ -85,7 +89,7 @@
 <keys size="7">Variable Name, Operation, DSP, FF, LUT, Bitwidth P0, Bitwidth P1</keys>
 <column name="i_2_fu_170_p2">+, 0, 0, 14, 9, 1</column>
 <column name="ap_block_state4_on_subcall_done">and, 0, 0, 2, 1, 1</column>
-<column name="icmp_ln88_fu_164_p2">icmp, 0, 0, 11, 9, 10</column>
+<column name="icmp_ln74_fu_164_p2">icmp, 0, 0, 11, 9, 10</column>
 </table>
 </item>
 <item name = "Multiplexer"><table name="" hasTotal="1">

@@ -88,10 +88,14 @@ entry:17 %ref_tmp = call i256 @mod_exp, i256 %y_read, i256 %d_read, i256 %N_read
 
 <Node id="5" bw="0" op_0_bw="0" op_1_bw="0">
 <![CDATA[
+<<<<<<< HEAD:rsa_baseline/rsa_baseline_hls/solution1/.autopilot/db/rsa.adb.xml
 entry:0 %spectopmodule_ln32 = spectopmodule void @_ssdm_op_SpecTopModule, void @empty_8
+=======
+entry:0 %spectopmodule_ln30 = spectopmodule void @_ssdm_op_SpecTopModule, void @empty_8
+>>>>>>> origin/branch2:rsa_baseline/baseline/solution1/.autopilot/db/rsa.adb.xml
 
 ]]></Node>
-<StgValue><ssdm name="spectopmodule_ln32"/></StgValue>
+<StgValue><ssdm name="spectopmodule_ln30"/></StgValue>
 </operation>
 
 <operation id="8" st_id="2" stage="1" lat="1">
@@ -313,10 +317,10 @@ entry:17 %ref_tmp = call i256 @mod_exp, i256 %y_read, i256 %d_read, i256 %N_read
 
 <Node id="23" bw="0" op_0_bw="0" op_1_bw="256" op_2_bw="256">
 <![CDATA[
-entry:18 %write_ln42 = write void @_ssdm_op_Write.s_axilite.i256P0A, i256 %x, i256 %ref_tmp
+entry:18 %write_ln40 = write void @_ssdm_op_Write.s_axilite.i256P0A, i256 %x, i256 %ref_tmp
 
 ]]></Node>
-<StgValue><ssdm name="write_ln42"/></StgValue>
+<StgValue><ssdm name="write_ln40"/></StgValue>
 </operation>
 
 <operation id="23" st_id="2" stage="1" lat="1">
@@ -328,10 +332,10 @@ entry:18 %write_ln42 = write void @_ssdm_op_Write.s_axilite.i256P0A, i256 %x, i2
 
 <Node id="24" bw="0">
 <![CDATA[
-entry:19 %ret_ln43 = ret
+entry:19 %ret_ln41 = ret
 
 ]]></Node>
-<StgValue><ssdm name="ret_ln43"/></StgValue>
+<StgValue><ssdm name="ret_ln41"/></StgValue>
 </operation>
 </state>
 </state_list>
@@ -374,9 +378,13 @@ entry:19 %ret_ln43 = ret
 </dataflow>
 <dataflow id="40" from="N_read" to="ref_tmp" fromId="4" toId="6">
 </dataflow>
-<dataflow id="42" from="_ssdm_op_SpecTopModule" to="spectopmodule_ln32" fromId="41" toId="7">
+<dataflow id="42" from="_ssdm_op_SpecTopModule" to="spectopmodule_ln30" fromId="41" toId="7">
 </dataflow>
+<<<<<<< HEAD:rsa_baseline/rsa_baseline_hls/solution1/.autopilot/db/rsa.adb.xml
 <dataflow id="44" from="empty_8" to="spectopmodule_ln32" fromId="43" toId="7">
+=======
+<dataflow id="44" from="empty_8" to="spectopmodule_ln30" fromId="43" toId="7">
+>>>>>>> origin/branch2:rsa_baseline/baseline/solution1/.autopilot/db/rsa.adb.xml
 </dataflow>
 <dataflow id="46" from="_ssdm_op_SpecBitsMap" to="specbitsmap_ln0" fromId="45" toId="8">
 </dataflow>
@@ -744,11 +752,11 @@ entry:19 %ret_ln43 = ret
 </dataflow>
 <dataflow id="239" from="N_read" to="ref_tmp" fromId="4" toId="21">
 </dataflow>
-<dataflow id="241" from="_ssdm_op_Write.s_axilite.i256P0A" to="write_ln42" fromId="240" toId="22">
+<dataflow id="241" from="_ssdm_op_Write.s_axilite.i256P0A" to="write_ln40" fromId="240" toId="22">
 </dataflow>
-<dataflow id="242" from="x" to="write_ln42" fromId="28" toId="22">
+<dataflow id="242" from="x" to="write_ln40" fromId="28" toId="22">
 </dataflow>
-<dataflow id="243" from="ref_tmp" to="write_ln42" fromId="21" toId="22">
+<dataflow id="243" from="ref_tmp" to="write_ln40" fromId="21" toId="22">
 </dataflow>
 </dataflows>
 

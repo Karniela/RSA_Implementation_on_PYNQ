@@ -19,6 +19,7 @@
         </SummaryOfTimingAnalysis>
         <SummaryOfOverallLatency>
             <unit>clock cycles</unit>
+<<<<<<< HEAD:rsa_baseline/rsa_baseline_hls/solution1/syn/report/csynth.xml
             <Best-caseLatency>786</Best-caseLatency>
             <Average-caseLatency>100620</Average-caseLatency>
             <Worst-caseLatency>267280</Worst-caseLatency>
@@ -27,14 +28,29 @@
             <Worst-caseRealTimeLatency>2.673 ms</Worst-caseRealTimeLatency>
             <Interval-min>787</Interval-min>
             <Interval-max>267281</Interval-max>
+=======
+            <Best-caseLatency>784</Best-caseLatency>
+            <Average-caseLatency>100619</Average-caseLatency>
+            <Worst-caseLatency>267535</Worst-caseLatency>
+            <Best-caseRealTimeLatency>7.840 us</Best-caseRealTimeLatency>
+            <Average-caseRealTimeLatency>1.006 ms</Average-caseRealTimeLatency>
+            <Worst-caseRealTimeLatency>2.675 ms</Worst-caseRealTimeLatency>
+            <Interval-min>785</Interval-min>
+            <Interval-max>267536</Interval-max>
+>>>>>>> origin/branch2:rsa_baseline/baseline/solution1/syn/report/csynth.xml
         </SummaryOfOverallLatency>
     </PerformanceEstimates>
     <AreaEstimates>
         <Resources>
             <BRAM_18K>0</BRAM_18K>
             <DSP>200</DSP>
+<<<<<<< HEAD:rsa_baseline/rsa_baseline_hls/solution1/syn/report/csynth.xml
             <FF>25218</FF>
             <LUT>20843</LUT>
+=======
+            <FF>8955</FF>
+            <LUT>6876</LUT>
+>>>>>>> origin/branch2:rsa_baseline/baseline/solution1/syn/report/csynth.xml
             <URAM>0</URAM>
         </Resources>
         <AvailableResources>
@@ -268,7 +284,7 @@
         </RtlPorts>
     </InterfaceSummary>
     <RTLDesignHierarchy>
-        <TopModule MAX_DEPTH="4">
+        <TopModule MAX_DEPTH="3">
             <ModuleName>rsa</ModuleName>
             <InstancesList>
                 <Instance>
@@ -276,6 +292,7 @@
                     <ModuleName>mod_exp</ModuleName>
                     <IsCompInst>true</IsCompInst>
                     <ID>67</ID>
+<<<<<<< HEAD:rsa_baseline/rsa_baseline_hls/solution1/syn/report/csynth.xml
                     <InstancesList>
                         <Instance>
                             <InstName>grp_mod_exp_Pipeline_VITIS_LOOP_12_1_fu_38</InstName>
@@ -285,13 +302,16 @@
                             <BindInstances>i_2_fu_159_p2 mul_256ns_256ns_512_5_1_U1 mul_256ns_256ns_512_5_1_U3</BindInstances>
                         </Instance>
                     </InstancesList>
+=======
+                    <BindInstances>i_2_fu_126_p2 mul_256ns_256ns_512_5_1_U2 mul_256ns_256ns_512_5_1_U4</BindInstances>
+>>>>>>> origin/branch2:rsa_baseline/baseline/solution1/syn/report/csynth.xml
                 </Instance>
             </InstancesList>
         </TopModule>
     </RTLDesignHierarchy>
     <ModuleInformation>
         <Module>
-            <Name>mod_exp_Pipeline_VITIS_LOOP_12_1</Name>
+            <Name>mod_exp</Name>
             <Loops>
                 <VITIS_LOOP_12_1/>
             </Loops>
@@ -302,6 +322,7 @@
                     <EstimatedClockPeriod>6.978</EstimatedClockPeriod>
                 </SummaryOfTimingAnalysis>
                 <SummaryOfOverallLatency>
+<<<<<<< HEAD:rsa_baseline/rsa_baseline_hls/solution1/syn/report/csynth.xml
                     <Best-caseLatency>524</Best-caseLatency>
                     <Average-caseLatency>100358</Average-caseLatency>
                     <Worst-caseLatency>267018</Worst-caseLatency>
@@ -309,6 +330,15 @@
                     <Average-caseRealTimeLatency>1.004 ms</Average-caseRealTimeLatency>
                     <Worst-caseRealTimeLatency>2.670 ms</Worst-caseRealTimeLatency>
                     <PipelineInitiationInterval>524 ~ 267018</PipelineInitiationInterval>
+=======
+                    <Best-caseLatency>783</Best-caseLatency>
+                    <Average-caseLatency>100618</Average-caseLatency>
+                    <Worst-caseLatency>267534</Worst-caseLatency>
+                    <Best-caseRealTimeLatency>7.830 us</Best-caseRealTimeLatency>
+                    <Average-caseRealTimeLatency>1.006 ms</Average-caseRealTimeLatency>
+                    <Worst-caseRealTimeLatency>2.675 ms</Worst-caseRealTimeLatency>
+                    <PipelineInitiationInterval>783 ~ 267534</PipelineInitiationInterval>
+>>>>>>> origin/branch2:rsa_baseline/baseline/solution1/syn/report/csynth.xml
                     <PipelineType>no</PipelineType>
                 </SummaryOfOverallLatency>
                 <SummaryOfLoopLatency>
@@ -321,6 +351,7 @@
                                 <max>256</max>
                             </range>
                         </TripCount>
+<<<<<<< HEAD:rsa_baseline/rsa_baseline_hls/solution1/syn/report/csynth.xml
                         <Latency>522 ~ 267016</Latency>
                         <AbsoluteTimeLatency>5.220 us ~ 2.670 ms</AbsoluteTimeLatency>
                         <IterationLatency>
@@ -330,6 +361,17 @@
                             </range>
                         </IterationLatency>
                         <PipelineDepth>522 ~ 1041</PipelineDepth>
+=======
+                        <Latency>522 ~ 267273</Latency>
+                        <AbsoluteTimeLatency>5.220 us ~ 2.673 ms</AbsoluteTimeLatency>
+                        <IterationLatency>
+                            <range>
+                                <min>522</min>
+                                <max>1042</max>
+                            </range>
+                        </IterationLatency>
+                        <PipelineDepth>522 ~ 1042</PipelineDepth>
+>>>>>>> origin/branch2:rsa_baseline/baseline/solution1/syn/report/csynth.xml
                         <PipelineType>no</PipelineType>
                         <InstanceList/>
                     </VITIS_LOOP_12_1>
@@ -340,12 +382,21 @@
                     <DSP>200</DSP>
                     <AVAIL_DSP>220</AVAIL_DSP>
                     <UTIL_DSP>90</UTIL_DSP>
+<<<<<<< HEAD:rsa_baseline/rsa_baseline_hls/solution1/syn/report/csynth.xml
                     <FF>21552</FF>
                     <AVAIL_FF>106400</AVAIL_FF>
                     <UTIL_FF>20</UTIL_FF>
                     <LUT>16618</LUT>
                     <AVAIL_LUT>53200</AVAIL_LUT>
                     <UTIL_LUT>31</UTIL_LUT>
+=======
+                    <FF>7100</FF>
+                    <AVAIL_FF>106400</AVAIL_FF>
+                    <UTIL_FF>6</UTIL_FF>
+                    <LUT>4774</LUT>
+                    <AVAIL_LUT>53200</AVAIL_LUT>
+                    <UTIL_LUT>8</UTIL_LUT>
+>>>>>>> origin/branch2:rsa_baseline/baseline/solution1/syn/report/csynth.xml
                     <BRAM_18K>0</BRAM_18K>
                     <AVAIL_BRAM>280</AVAIL_BRAM>
                     <UTIL_BRAM>0</UTIL_BRAM>
@@ -355,6 +406,7 @@
                 </Resources>
             </AreaEstimates>
             <BindNodes>
+<<<<<<< HEAD:rsa_baseline/rsa_baseline_hls/solution1/syn/report/csynth.xml
                 <BindNode BINDTYPE="op" BRAM="0" BUNDLEDNAME="" DISPNAME="bind_op add" DSP="0" ID="" IMPL="fabric" LATENCY="0" LOOP="VITIS_LOOP_12_1" OPTYPE="add" PRAGMA="" RTLNAME="i_2_fu_159_p2" SOURCE="rsa.cpp:12" URAM="0" VARIABLE="i_2"/>
                 <BindNode BINDTYPE="op" BRAM="0" BUNDLEDNAME="" DISPNAME="bind_op mul" DSP="100" ID="" IMPL="auto" LATENCY="4" LOOP="VITIS_LOOP_12_1" OPTYPE="mul" PRAGMA="" RTLNAME="mul_256ns_256ns_512_5_1_U1" SOURCE="/tools/Xilinx/Vitis_HLS/2022.2/common/technology/autopilot/ap_int_base.h:1494" URAM="0" VARIABLE="ret_V"/>
                 <BindNode BINDTYPE="op" BRAM="0" BUNDLEDNAME="" DISPNAME="bind_op mul" DSP="100" ID="" IMPL="auto" LATENCY="4" LOOP="VITIS_LOOP_12_1" OPTYPE="mul" PRAGMA="" RTLNAME="mul_256ns_256ns_512_5_1_U3" SOURCE="/tools/Xilinx/Vitis_HLS/2022.2/common/technology/autopilot/ap_int_base.h:1494" URAM="0" VARIABLE="ret_V_2"/>
@@ -400,6 +452,14 @@
             </AreaEstimates>
         </Module>
         <Module>
+=======
+                <BindNode BINDTYPE="op" BRAM="0" BUNDLEDNAME="" DISPNAME="bind_op add" DSP="0" ID="" IMPL="fabric" LATENCY="0" LOOP="VITIS_LOOP_12_1" OPTYPE="add" PRAGMA="" RTLNAME="i_2_fu_126_p2" SOURCE="rsa.cpp:12" URAM="0" VARIABLE="i_2"/>
+                <BindNode BINDTYPE="op" BRAM="0" BUNDLEDNAME="" DISPNAME="bind_op mul" DSP="100" ID="" IMPL="auto" LATENCY="4" LOOP="VITIS_LOOP_12_1" OPTYPE="mul" PRAGMA="" RTLNAME="mul_256ns_256ns_512_5_1_U2" SOURCE="/tools/Xilinx/Vitis_HLS/2022.2/common/technology/autopilot/ap_int_base.h:1494" URAM="0" VARIABLE="ret_V"/>
+                <BindNode BINDTYPE="op" BRAM="0" BUNDLEDNAME="" DISPNAME="bind_op mul" DSP="100" ID="" IMPL="auto" LATENCY="4" LOOP="VITIS_LOOP_12_1" OPTYPE="mul" PRAGMA="" RTLNAME="mul_256ns_256ns_512_5_1_U4" SOURCE="/tools/Xilinx/Vitis_HLS/2022.2/common/technology/autopilot/ap_int_base.h:1494" URAM="0" VARIABLE="ret_V_3"/>
+            </BindNodes>
+        </Module>
+        <Module>
+>>>>>>> origin/branch2:rsa_baseline/baseline/solution1/syn/report/csynth.xml
             <Name>rsa</Name>
             <PerformanceEstimates>
                 <SummaryOfTimingAnalysis>
@@ -408,6 +468,7 @@
                     <EstimatedClockPeriod>6.978</EstimatedClockPeriod>
                 </SummaryOfTimingAnalysis>
                 <SummaryOfOverallLatency>
+<<<<<<< HEAD:rsa_baseline/rsa_baseline_hls/solution1/syn/report/csynth.xml
                     <Best-caseLatency>786</Best-caseLatency>
                     <Average-caseLatency>100620</Average-caseLatency>
                     <Worst-caseLatency>267280</Worst-caseLatency>
@@ -415,6 +476,15 @@
                     <Average-caseRealTimeLatency>1.006 ms</Average-caseRealTimeLatency>
                     <Worst-caseRealTimeLatency>2.673 ms</Worst-caseRealTimeLatency>
                     <PipelineInitiationInterval>787 ~ 267281</PipelineInitiationInterval>
+=======
+                    <Best-caseLatency>784</Best-caseLatency>
+                    <Average-caseLatency>100619</Average-caseLatency>
+                    <Worst-caseLatency>267535</Worst-caseLatency>
+                    <Best-caseRealTimeLatency>7.840 us</Best-caseRealTimeLatency>
+                    <Average-caseRealTimeLatency>1.006 ms</Average-caseRealTimeLatency>
+                    <Worst-caseRealTimeLatency>2.675 ms</Worst-caseRealTimeLatency>
+                    <PipelineInitiationInterval>785 ~ 267536</PipelineInitiationInterval>
+>>>>>>> origin/branch2:rsa_baseline/baseline/solution1/syn/report/csynth.xml
                     <PipelineType>no</PipelineType>
                 </SummaryOfOverallLatency>
             </PerformanceEstimates>
@@ -426,12 +496,21 @@
                     <DSP>200</DSP>
                     <AVAIL_DSP>220</AVAIL_DSP>
                     <UTIL_DSP>90</UTIL_DSP>
+<<<<<<< HEAD:rsa_baseline/rsa_baseline_hls/solution1/syn/report/csynth.xml
                     <FF>25218</FF>
                     <AVAIL_FF>106400</AVAIL_FF>
                     <UTIL_FF>23</UTIL_FF>
                     <LUT>20843</LUT>
                     <AVAIL_LUT>53200</AVAIL_LUT>
                     <UTIL_LUT>39</UTIL_LUT>
+=======
+                    <FF>8955</FF>
+                    <AVAIL_FF>106400</AVAIL_FF>
+                    <UTIL_FF>8</UTIL_FF>
+                    <LUT>6876</LUT>
+                    <AVAIL_LUT>53200</AVAIL_LUT>
+                    <UTIL_LUT>12</UTIL_LUT>
+>>>>>>> origin/branch2:rsa_baseline/baseline/solution1/syn/report/csynth.xml
                     <URAM>0</URAM>
                     <AVAIL_URAM>0</AVAIL_URAM>
                     <UTIL_URAM>0</UTIL_URAM>
@@ -875,6 +954,7 @@
     </ReportBurst>
     <PragmaReport>
         <Pragma type="inline" location="rsa.cpp:8" status="valid" parentFunction="mod_exp" variable="" isDirective="0" options="OFF"/>
+<<<<<<< HEAD:rsa_baseline/rsa_baseline_hls/solution1/syn/report/csynth.xml
         <Pragma type="interface" location="rsa.cpp:33" status="valid" parentFunction="rsa" variable="return" isDirective="0" options="mode=s_axilite port=return"/>
         <Pragma type="interface" location="rsa.cpp:34" status="valid" parentFunction="rsa" variable="d" isDirective="0" options="mode=s_axilite port=d"/>
         <Pragma type="interface" location="rsa.cpp:35" status="valid" parentFunction="rsa" variable="N" isDirective="0" options="mode=s_axilite port=N"/>
@@ -883,6 +963,15 @@
         <Pragma type="allocation" location="rsa.cpp:40" status="invalid" parentFunction="rsa" variable="" isDirective="0" options="instances=div">
             <Msg msg_id="207-5555" msg_severity="WARNING" msg_body="unexpected pragma argument 'div', expects function/operation"/>
         </Pragma>
+=======
+        <Pragma type="pipeline" location="rsa.cpp:13" status="valid" parentFunction="mod_exp" variable="" isDirective="0" options="OFF"/>
+        <Pragma type="interface" location="rsa.cpp:31" status="valid" parentFunction="rsa" variable="return" isDirective="0" options="mode=s_axilite port=return"/>
+        <Pragma type="interface" location="rsa.cpp:32" status="valid" parentFunction="rsa" variable="d" isDirective="0" options="mode=s_axilite port=d"/>
+        <Pragma type="interface" location="rsa.cpp:33" status="valid" parentFunction="rsa" variable="N" isDirective="0" options="mode=s_axilite port=N"/>
+        <Pragma type="interface" location="rsa.cpp:34" status="valid" parentFunction="rsa" variable="y" isDirective="0" options="mode=s_axilite port=y"/>
+        <Pragma type="interface" location="rsa.cpp:35" status="valid" parentFunction="rsa" variable="x" isDirective="0" options="mode=s_axilite port=x"/>
+        <Pragma type="pipeline" location="rsa.cpp:39" status="valid" parentFunction="rsa" variable="" isDirective="0" options="OFF"/>
+>>>>>>> origin/branch2:rsa_baseline/baseline/solution1/syn/report/csynth.xml
     </PragmaReport>
 </profile>
 

@@ -40,7 +40,7 @@ end;
 architecture behav of rsa is 
     attribute CORE_GENERATION_INFO : STRING;
     attribute CORE_GENERATION_INFO of behav : architecture is
-    "rsa_rsa,hls_ip_2022_2,{HLS_INPUT_TYPE=cxx,HLS_INPUT_FLOAT=0,HLS_INPUT_FIXED=0,HLS_INPUT_PART=xc7z020-clg400-1,HLS_INPUT_CLOCK=10.000000,HLS_INPUT_ARCH=others,HLS_SYN_CLOCK=6.584172,HLS_SYN_LAT=102148,HLS_SYN_TPT=none,HLS_SYN_MEM=0,HLS_SYN_DSP=0,HLS_SYN_FF=9171,HLS_SYN_LUT=4558,HLS_VERSION=2022_2}";
+    "rsa_rsa,hls_ip_2022_2,{HLS_INPUT_TYPE=cxx,HLS_INPUT_FLOAT=0,HLS_INPUT_FIXED=0,HLS_INPUT_PART=xc7z020-clg400-1,HLS_INPUT_CLOCK=10.000000,HLS_INPUT_ARCH=others,HLS_SYN_CLOCK=6.584172,HLS_SYN_LAT=396803,HLS_SYN_TPT=none,HLS_SYN_MEM=0,HLS_SYN_DSP=0,HLS_SYN_FF=8592,HLS_SYN_LUT=4152,HLS_VERSION=2022_2}";
     constant ap_const_logic_1 : STD_LOGIC := '1';
     constant ap_const_logic_0 : STD_LOGIC := '0';
     constant ap_ST_fsm_state1 : STD_LOGIC_VECTOR (4 downto 0) := "00001";
@@ -81,7 +81,7 @@ architecture behav of rsa is
     signal reg_135 : STD_LOGIC_VECTOR (255 downto 0);
     signal ap_CS_fsm_state3 : STD_LOGIC;
     attribute fsm_encoding of ap_CS_fsm_state3 : signal is "none";
-    signal icmp_ln88_fu_164_p2 : STD_LOGIC_VECTOR (0 downto 0);
+    signal icmp_ln74_fu_164_p2 : STD_LOGIC_VECTOR (0 downto 0);
     signal trunc_ln1497_fu_176_p1 : STD_LOGIC_VECTOR (0 downto 0);
     signal ap_CS_fsm_state4 : STD_LOGIC;
     attribute fsm_encoding of ap_CS_fsm_state4 : signal is "none";
@@ -275,7 +275,7 @@ begin
             if (ap_rst_n_inv = '1') then
                 grp_Montgomery_fu_115_ap_start_reg <= ap_const_logic_0;
             else
-                if ((((ap_const_boolean_0 = ap_block_state4_on_subcall_done) and (ap_const_logic_1 = ap_CS_fsm_state4)) or ((trunc_ln1497_fu_176_p1 = ap_const_lv1_1) and (icmp_ln88_fu_164_p2 = ap_const_lv1_0) and (ap_const_logic_1 = ap_CS_fsm_state3)))) then 
+                if ((((ap_const_boolean_0 = ap_block_state4_on_subcall_done) and (ap_const_logic_1 = ap_CS_fsm_state4)) or ((trunc_ln1497_fu_176_p1 = ap_const_lv1_1) and (icmp_ln74_fu_164_p2 = ap_const_lv1_0) and (ap_const_logic_1 = ap_CS_fsm_state3)))) then 
                     grp_Montgomery_fu_115_ap_start_reg <= ap_const_logic_1;
                 elsif ((grp_Montgomery_fu_115_ap_ready = ap_const_logic_1)) then 
                     grp_Montgomery_fu_115_ap_start_reg <= ap_const_logic_0;
@@ -364,7 +364,7 @@ begin
     process (ap_clk)
     begin
         if (ap_clk'event and ap_clk = '1') then
-            if (((trunc_ln1497_fu_176_p1 = ap_const_lv1_1) and (icmp_ln88_fu_164_p2 = ap_const_lv1_0) and (ap_const_logic_1 = ap_CS_fsm_state3))) then
+            if (((trunc_ln1497_fu_176_p1 = ap_const_lv1_1) and (icmp_ln74_fu_164_p2 = ap_const_lv1_0) and (ap_const_logic_1 = ap_CS_fsm_state3))) then
                 m_V_load_1_reg_264 <= m_V_fu_78;
             end if;
         end if;
@@ -372,7 +372,7 @@ begin
     process (ap_clk)
     begin
         if (ap_clk'event and ap_clk = '1') then
-            if ((((ap_const_boolean_0 = ap_block_state4_on_subcall_done) and (ap_const_logic_1 = ap_CS_fsm_state4)) or ((trunc_ln1497_fu_176_p1 = ap_const_lv1_1) and (icmp_ln88_fu_164_p2 = ap_const_lv1_0) and (ap_const_logic_1 = ap_CS_fsm_state3)))) then
+            if ((((ap_const_boolean_0 = ap_block_state4_on_subcall_done) and (ap_const_logic_1 = ap_CS_fsm_state4)) or ((trunc_ln1497_fu_176_p1 = ap_const_lv1_1) and (icmp_ln74_fu_164_p2 = ap_const_lv1_0) and (ap_const_logic_1 = ap_CS_fsm_state3)))) then
                 reg_135 <= t_V_1_fu_66;
             end if;
         end if;
@@ -380,13 +380,13 @@ begin
     process (ap_clk)
     begin
         if (ap_clk'event and ap_clk = '1') then
-            if (((icmp_ln88_fu_164_p2 = ap_const_lv1_0) and (ap_const_logic_1 = ap_CS_fsm_state3))) then
+            if (((icmp_ln74_fu_164_p2 = ap_const_lv1_0) and (ap_const_logic_1 = ap_CS_fsm_state3))) then
                 trunc_ln1497_reg_260 <= trunc_ln1497_fu_176_p1;
             end if;
         end if;
     end process;
 
-    ap_NS_fsm_assign_proc : process (ap_start, ap_CS_fsm, ap_CS_fsm_state1, ap_CS_fsm_state3, icmp_ln88_fu_164_p2, ap_CS_fsm_state4, grp_Montgomery_fu_115_ap_done, ap_block_state4_on_subcall_done, grp_mod_product_fu_107_ap_done, ap_CS_fsm_state2, ap_CS_fsm_state5)
+    ap_NS_fsm_assign_proc : process (ap_start, ap_CS_fsm, ap_CS_fsm_state1, ap_CS_fsm_state3, icmp_ln74_fu_164_p2, ap_CS_fsm_state4, grp_Montgomery_fu_115_ap_done, ap_block_state4_on_subcall_done, grp_mod_product_fu_107_ap_done, ap_CS_fsm_state2, ap_CS_fsm_state5)
     begin
         case ap_CS_fsm is
             when ap_ST_fsm_state1 => 
@@ -402,7 +402,7 @@ begin
                     ap_NS_fsm <= ap_ST_fsm_state2;
                 end if;
             when ap_ST_fsm_state3 => 
-                if (((icmp_ln88_fu_164_p2 = ap_const_lv1_1) and (ap_const_logic_1 = ap_CS_fsm_state3))) then
+                if (((icmp_ln74_fu_164_p2 = ap_const_lv1_1) and (ap_const_logic_1 = ap_CS_fsm_state3))) then
                     ap_NS_fsm <= ap_ST_fsm_state1;
                 else
                     ap_NS_fsm <= ap_ST_fsm_state4;
@@ -476,9 +476,9 @@ begin
     end process;
 
 
-    ap_done_assign_proc : process(ap_CS_fsm_state3, icmp_ln88_fu_164_p2)
+    ap_done_assign_proc : process(ap_CS_fsm_state3, icmp_ln74_fu_164_p2)
     begin
-        if (((icmp_ln88_fu_164_p2 = ap_const_lv1_1) and (ap_const_logic_1 = ap_CS_fsm_state3))) then 
+        if (((icmp_ln74_fu_164_p2 = ap_const_lv1_1) and (ap_const_logic_1 = ap_CS_fsm_state3))) then 
             ap_done <= ap_const_logic_1;
         else 
             ap_done <= ap_const_logic_0;
@@ -496,9 +496,9 @@ begin
     end process;
 
 
-    ap_ready_assign_proc : process(ap_CS_fsm_state3, icmp_ln88_fu_164_p2)
+    ap_ready_assign_proc : process(ap_CS_fsm_state3, icmp_ln74_fu_164_p2)
     begin
-        if (((icmp_ln88_fu_164_p2 = ap_const_lv1_1) and (ap_const_logic_1 = ap_CS_fsm_state3))) then 
+        if (((icmp_ln74_fu_164_p2 = ap_const_lv1_1) and (ap_const_logic_1 = ap_CS_fsm_state3))) then 
             ap_ready <= ap_const_logic_1;
         else 
             ap_ready <= ap_const_logic_0;
@@ -526,13 +526,13 @@ begin
     grp_Montgomery_fu_115_ap_start <= grp_Montgomery_fu_115_ap_start_reg;
     grp_mod_product_fu_107_ap_start <= grp_mod_product_fu_107_ap_start_reg;
     i_2_fu_170_p2 <= std_logic_vector(unsigned(i_fu_74) + unsigned(ap_const_lv9_1));
-    icmp_ln88_fu_164_p2 <= "1" when (i_fu_74 = ap_const_lv9_100) else "0";
+    icmp_ln74_fu_164_p2 <= "1" when (i_fu_74 = ap_const_lv9_100) else "0";
     r_V_fu_189_p4 <= d_V_fu_70(255 downto 1);
     trunc_ln1497_fu_176_p1 <= d_V_fu_70(1 - 1 downto 0);
 
-    x_ap_vld_assign_proc : process(ap_CS_fsm_state3, icmp_ln88_fu_164_p2)
+    x_ap_vld_assign_proc : process(ap_CS_fsm_state3, icmp_ln74_fu_164_p2)
     begin
-        if (((icmp_ln88_fu_164_p2 = ap_const_lv1_1) and (ap_const_logic_1 = ap_CS_fsm_state3))) then 
+        if (((icmp_ln74_fu_164_p2 = ap_const_lv1_1) and (ap_const_logic_1 = ap_CS_fsm_state3))) then 
             x_ap_vld <= ap_const_logic_1;
         else 
             x_ap_vld <= ap_const_logic_0;

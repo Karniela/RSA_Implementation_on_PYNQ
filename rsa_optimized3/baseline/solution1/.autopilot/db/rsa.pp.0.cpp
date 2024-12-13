@@ -5715,9 +5715,8 @@ inline __attribute__((nodebug)) bool operator!=(
 
 
 typedef ap_uint<256> data_t;
-typedef ap_uint<256/2> half_data_t;
 
-__attribute__((sdx_kernel("rsa", 0))) void rsa(ap_uint<256/2+1> mu_p, ap_uint<256/2+1> mu_q, half_data_t p, half_data_t q, data_t d, data_t N, data_t y, data_t &x);
+__attribute__((sdx_kernel("rsa", 0))) void rsa(data_t d, data_t N, data_t y, data_t &x);
 # 2 "rsa.cpp" 2
 # 1 "/tools/Xilinx/Vitis_HLS/2022.2/tps/lnx64/gcc-8.3.0/lib/gcc/x86_64-pc-linux-gnu/8.3.0/../../../../include/c++/8.3.0/cstdio" 1 3
 # 40 "/tools/Xilinx/Vitis_HLS/2022.2/tps/lnx64/gcc-8.3.0/lib/gcc/x86_64-pc-linux-gnu/8.3.0/../../../../include/c++/8.3.0/cstdio" 3
@@ -30142,6 +30141,87 @@ namespace hls {
 # 1 "/tools/Xilinx/Vitis_HLS/2022.2/common/technology/autopilot/ap_int.h" 1
 # 5 "rsa.cpp" 2
 
+# 1 "/tools/Xilinx/Vitis_HLS/2022.2/tps/lnx64/gcc-8.3.0/lib/gcc/x86_64-pc-linux-gnu/8.3.0/../../../../include/c++/8.3.0/math.h" 1 3
+# 36 "/tools/Xilinx/Vitis_HLS/2022.2/tps/lnx64/gcc-8.3.0/lib/gcc/x86_64-pc-linux-gnu/8.3.0/../../../../include/c++/8.3.0/math.h" 3
+# 1 "/tools/Xilinx/Vitis_HLS/2022.2/tps/lnx64/gcc-8.3.0/lib/gcc/x86_64-pc-linux-gnu/8.3.0/../../../../include/c++/8.3.0/cmath" 1 3
+# 40 "/tools/Xilinx/Vitis_HLS/2022.2/tps/lnx64/gcc-8.3.0/lib/gcc/x86_64-pc-linux-gnu/8.3.0/../../../../include/c++/8.3.0/cmath" 3
+# 37 "/tools/Xilinx/Vitis_HLS/2022.2/tps/lnx64/gcc-8.3.0/lib/gcc/x86_64-pc-linux-gnu/8.3.0/../../../../include/c++/8.3.0/math.h" 2 3
+
+using std::abs;
+using std::acos;
+using std::asin;
+using std::atan;
+using std::atan2;
+using std::cos;
+using std::sin;
+using std::tan;
+using std::cosh;
+using std::sinh;
+using std::tanh;
+using std::exp;
+using std::frexp;
+using std::ldexp;
+using std::log;
+using std::log10;
+using std::modf;
+using std::pow;
+using std::sqrt;
+using std::ceil;
+using std::fabs;
+using std::floor;
+using std::fmod;
+
+
+using std::fpclassify;
+using std::isfinite;
+using std::isinf;
+using std::isnan;
+using std::isnormal;
+using std::signbit;
+using std::isgreater;
+using std::isgreaterequal;
+using std::isless;
+using std::islessequal;
+using std::islessgreater;
+using std::isunordered;
+
+
+
+using std::acosh;
+using std::asinh;
+using std::atanh;
+using std::cbrt;
+using std::copysign;
+using std::erf;
+using std::erfc;
+using std::exp2;
+using std::expm1;
+using std::fdim;
+using std::fma;
+using std::fmax;
+using std::fmin;
+using std::hypot;
+using std::ilogb;
+using std::lgamma;
+using std::llrint;
+using std::llround;
+using std::log1p;
+using std::log2;
+using std::logb;
+using std::lrint;
+using std::lround;
+using std::nearbyint;
+using std::nextafter;
+using std::nexttoward;
+using std::remainder;
+using std::remquo;
+using std::rint;
+using std::round;
+using std::scalbln;
+using std::scalbn;
+using std::tgamma;
+using std::trunc;
+# 7 "rsa.cpp" 2
 # 1 "/tools/Xilinx/Vitis_HLS/2022.2/tps/lnx64/gcc-8.3.0/lib/gcc/x86_64-pc-linux-gnu/8.3.0/../../../../include/c++/8.3.0/stdlib.h" 1 3
 # 36 "/tools/Xilinx/Vitis_HLS/2022.2/tps/lnx64/gcc-8.3.0/lib/gcc/x86_64-pc-linux-gnu/8.3.0/../../../../include/c++/8.3.0/stdlib.h" 3
 # 1 "/tools/Xilinx/Vitis_HLS/2022.2/tps/lnx64/gcc-8.3.0/lib/gcc/x86_64-pc-linux-gnu/8.3.0/../../../../include/c++/8.3.0/cstdlib" 1 3
@@ -30310,7 +30390,7 @@ using std::system;
 
 using std::wcstombs;
 using std::wctomb;
-# 7 "rsa.cpp" 2
+# 8 "rsa.cpp" 2
 # 1 "/tools/Xilinx/Vitis_HLS/2022.2/tps/lnx64/gcc-8.3.0/lib/gcc/x86_64-pc-linux-gnu/8.3.0/../../../../include/c++/8.3.0/string" 1 3
 # 37 "/tools/Xilinx/Vitis_HLS/2022.2/tps/lnx64/gcc-8.3.0/lib/gcc/x86_64-pc-linux-gnu/8.3.0/../../../../include/c++/8.3.0/string" 3
 
@@ -46631,7 +46711,7 @@ namespace std __attribute__ ((__visibility__ ("default")))
 
 }
 # 54 "/tools/Xilinx/Vitis_HLS/2022.2/tps/lnx64/gcc-8.3.0/lib/gcc/x86_64-pc-linux-gnu/8.3.0/../../../../include/c++/8.3.0/string" 2 3
-# 8 "rsa.cpp" 2
+# 9 "rsa.cpp" 2
 # 1 "/tools/Xilinx/Vitis_HLS/2022.2/tps/lnx64/gcc-8.3.0/lib/gcc/x86_64-pc-linux-gnu/8.3.0/../../../../include/c++/8.3.0/iostream" 1 3
 # 37 "/tools/Xilinx/Vitis_HLS/2022.2/tps/lnx64/gcc-8.3.0/lib/gcc/x86_64-pc-linux-gnu/8.3.0/../../../../include/c++/8.3.0/iostream" 3
 
@@ -55409,7 +55489,7 @@ namespace std __attribute__ ((__visibility__ ("default")))
 
 
 }
-# 9 "rsa.cpp" 2
+# 10 "rsa.cpp" 2
 # 1 "/tools/Xilinx/Vitis_HLS/2022.2/tps/lnx64/gcc-8.3.0/lib/gcc/x86_64-pc-linux-gnu/8.3.0/../../../../include/c++/8.3.0/fstream" 1 3
 # 37 "/tools/Xilinx/Vitis_HLS/2022.2/tps/lnx64/gcc-8.3.0/lib/gcc/x86_64-pc-linux-gnu/8.3.0/../../../../include/c++/8.3.0/fstream" 3
 
@@ -57750,7 +57830,7 @@ namespace std __attribute__ ((__visibility__ ("default")))
 
 }
 # 1170 "/tools/Xilinx/Vitis_HLS/2022.2/tps/lnx64/gcc-8.3.0/lib/gcc/x86_64-pc-linux-gnu/8.3.0/../../../../include/c++/8.3.0/fstream" 2 3
-# 10 "rsa.cpp" 2
+# 11 "rsa.cpp" 2
 # 1 "/tools/Xilinx/Vitis_HLS/2022.2/tps/lnx64/gcc-8.3.0/lib/gcc/x86_64-pc-linux-gnu/8.3.0/../../../../include/c++/8.3.0/sstream" 1 3
 # 37 "/tools/Xilinx/Vitis_HLS/2022.2/tps/lnx64/gcc-8.3.0/lib/gcc/x86_64-pc-linux-gnu/8.3.0/../../../../include/c++/8.3.0/sstream" 3
 
@@ -58593,7 +58673,7 @@ namespace std __attribute__ ((__visibility__ ("default")))
 
 }
 # 828 "/tools/Xilinx/Vitis_HLS/2022.2/tps/lnx64/gcc-8.3.0/lib/gcc/x86_64-pc-linux-gnu/8.3.0/../../../../include/c++/8.3.0/sstream" 2 3
-# 11 "rsa.cpp" 2
+# 12 "rsa.cpp" 2
 # 1 "/tools/Xilinx/Vitis_HLS/2022.2/tps/lnx64/gcc-8.3.0/lib/gcc/x86_64-pc-linux-gnu/8.3.0/../../../../include/c++/8.3.0/iomanip" 1 3
 # 37 "/tools/Xilinx/Vitis_HLS/2022.2/tps/lnx64/gcc-8.3.0/lib/gcc/x86_64-pc-linux-gnu/8.3.0/../../../../include/c++/8.3.0/iomanip" 3
 
@@ -65535,145 +65615,94 @@ namespace std __attribute__ ((__visibility__ ("default")))
 
 
 }
-# 12 "rsa.cpp" 2
+# 13 "rsa.cpp" 2
 using namespace std;
 
 
 
-half_data_t mod_product(data_t a, half_data_t b, half_data_t N) {
+data_t Montgomery(data_t N, data_t a, data_t b){
+#pragma HLS INLINE OFF
+ ap_uint<256 +2> m = 0;
+ data_t d1, d2;
+ Montgomery:
+ for(int i = 0; i < 256; i++){
+#pragma HLS PIPELINE II=1
 
-    ap_uint<256/2+1> m = 0;
-    ap_uint<256/2+1> t = b;
-    MOD_PRODUCT:
+
+
+
+
+
+ if(((a & 1) && ((b & 1) ^ (m & 1)))){
+   m = m + b + N;
+  }
+  else if((!(a & 1) && (m & 1))){
+   m = m + N;
+  }
+  else if(((a & 1))){
+   m = m + b;
+  }
+
+
+
+
+
+  m = m >> 1;
+  a = a >> 1;
+ }
+ if(m >= N){
+  m = m - N;
+ }
+ return m;
+
+}
+
+data_t mod_product(data_t b, data_t N) {
+#pragma HLS INLINE OFF
+ ap_uint<256 +1> m = 0;
+    ap_uint<256 +1> t = b;
+ Mod_Product:
     for(int i = 0; i < 256; i++) {
-#pragma HLS PIPELINE off
+#pragma HLS PIPELINE II=1
 
- if(a & 1){
-      if (m + t >= N) {
-    m = m + t - N;
-   }
-   else{
-    m = m + t;
-   }
-
-     }
-
-        if(t + t > N){
+ if(t + t > N){
          t = t + t - N;
         }
         else{
          t = t + t;
         }
-  a = a >> 1;
     }
+ m = m + t;
 
     return m;
 }
 
-
-void mod_exp(data_t base, half_data_t exp, half_data_t mod, half_data_t &result) {
-
-    result = 1;
-    data_t b = base;
-    MOD_EXP:
-    for (int i = 0; i < 256/2; i++) {
-#pragma HLS PIPELINE OFF
- if (exp & 1) {
-
-            result = mod_product(b, result, mod);
-        }
-        b = (b * b) % mod;
-
-        exp = exp >> 1;
-        if (exp == 0) break;
-    }
-}
-
-void barrett_mod(data_t x, half_data_t N, ap_uint<256/2+1> MU, int K, half_data_t &y){
-
-    ap_uint<256*3/2+1> q2 = x * MU;
-    ap_uint<256/2+1> q3 = q2 >> (K << 1);
-    ap_uint<256/2+1> t = x - q3 * N;
-    if(t >= N){
-        t -= N;
-    }
-    y = t;
-
-}
-
-
-
-void mod_inverse(half_data_t a, half_data_t mod, half_data_t &x2) {
-#pragma HLS INLINE OFF
- if (mod == 0) {
-        std::cerr << "Error: Modulus is zero in mod_inverse\n";
-
-    }
-
-    ap_uint<256/2> m0 = mod;
- ap_int<256/2+1> t, q;
-    ap_int<256/2+1> x0 = 0, x1 = 1;
-    MOD_INVERSE:
-    for (int i = 0; i < 256/2; i++){
-#pragma HLS PIPELINE OFF
- if(a <= 1)
-   break;
-        q = a / mod;
-        t = mod;
-        mod = a % mod;
-        a = t;
-
-        t = x0;
-        x0 = x1 - q * x0;
-        x1 = t;
-    }
-
-    if (x1 < 0) x1 += m0;
-    x2 = x1;
-
-}
-
-
-__attribute__((sdx_kernel("rsa", 0))) void rsa(ap_uint<256/2+1> mu_p, ap_uint<256/2+1> mu_q, half_data_t p, half_data_t q, data_t d, data_t N, data_t y, data_t &x) {
-#line 18 "/home/cse237c_fa24_s_chen/RSA_Implementation_on_PYNQ/rsa_optimized3/baseline/solution1/csynth.tcl"
+__attribute__((sdx_kernel("rsa", 0))) void rsa(data_t d, data_t N, data_t y, data_t &x){
+#line 18 "/home/cse237c_fa24_s_chen/RSA_Implementation_on_PYNQ/rsa_optimized_Mont2/baseline/solution1/csynth.tcl"
 #pragma HLSDIRECTIVE TOP name=rsa
-# 110 "rsa.cpp"
+# 74 "rsa.cpp"
 
-#line 6 "/home/cse237c_fa24_s_chen/RSA_Implementation_on_PYNQ/rsa_optimized3/baseline/solution1/directives.tcl"
+#line 6 "/home/cse237c_fa24_s_chen/RSA_Implementation_on_PYNQ/rsa_optimized_Mont2/baseline/solution1/directives.tcl"
 #pragma HLSDIRECTIVE TOP name=rsa
-# 110 "rsa.cpp"
+# 74 "rsa.cpp"
 
-#pragma HLS INTERFACE s_axilite port=return
-#pragma HLS INTERFACE s_axilite port=p
-#pragma HLS INTERFACE s_axilite port=q
-#pragma HLS INTERFACE s_axilite port=N
-#pragma HLS INTERFACE s_axilite port=y
-#pragma HLS INTERFACE s_axilite port=d
-#pragma HLS INTERFACE s_axilite port=x
+#pragma HLS INTERFACE mode=s_axilite port=return
+#pragma HLS INTERFACE mode=s_axilite port=d
+#pragma HLS INTERFACE mode=s_axilite port=N
+#pragma HLS INTERFACE mode=s_axilite port=y
+#pragma HLS INTERFACE mode=s_axilite port=x
 
-
+ data_t t = mod_product(y, N);
+ data_t m = 1;
+ RSA_TOP:
+ for(int i = 0; i < 256; i++){
 #pragma HLS PIPELINE OFF
+ if(d & 1){
+   m = Montgomery(N, m, t);
+  }
+  t = Montgomery(N, t, t);
+  d = d >> 1;
+ }
+ x = m;
 
-
- half_data_t dp = d % (p - 1);
-
-
-    half_data_t dq = d % (q - 1);
-
-
-    half_data_t q_inv;
-    mod_inverse(q, p, q_inv);
-
-
-
-    half_data_t mp, mq;
-    mod_exp(y, dp, p, mp);
-    mod_exp(y, dq, q, mq);
-
-
-    data_t h = ((mp > mq ? mp - mq : mq - mp) * q_inv) % p;
-    if (mp < mq) {
-        h = p - h;
-    }
-    x = mq + h * q;
 }

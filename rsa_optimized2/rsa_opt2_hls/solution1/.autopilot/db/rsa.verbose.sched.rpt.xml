@@ -1,7 +1,11 @@
 <profile>
 
 <section name = "Vitis HLS Report for 'rsa'" level="0">
+<<<<<<< HEAD:rsa_optimized2/rsa_opt2_hls/solution1/.autopilot/db/rsa.verbose.sched.rpt.xml
 <item name = "Date">Thu Dec  5 17:01:35 2024
+=======
+<item name = "Date">Thu Dec 12 17:33:48 2024
+>>>>>>> origin/branch2:rsa_baseline/baseline/solution1/.autopilot/db/rsa.verbose.sched.rpt.xml
 </item>
 <item name = "Version">2022.2 (Build 3670227 on Oct 13 2022)</item>
 <item name = "Project">rsa_opt2_hls</item>
@@ -15,7 +19,11 @@
 <section name = "" level="1">
 <item name = "Summary"><table name="" hasTotal="0">
 <keys size="4">Clock, Target, Estimated, Uncertainty</keys>
+<<<<<<< HEAD:rsa_optimized2/rsa_opt2_hls/solution1/.autopilot/db/rsa.verbose.sched.rpt.xml
 <column name="ap_clk">10.00 ns, 6.584 ns, 2.70 ns</column>
+=======
+<column name="ap_clk">10.00 ns, 6.978 ns, 2.70 ns</column>
+>>>>>>> origin/branch2:rsa_baseline/baseline/solution1/.autopilot/db/rsa.verbose.sched.rpt.xml
 </table>
 </item>
 </section>
@@ -24,7 +32,11 @@
 <section name = "" level="1">
 <item name = "Summary"><table name="" hasTotal="0">
 <keys size="8">, min, max, min, max, min, max, Type</keys>
+<<<<<<< HEAD:rsa_optimized2/rsa_opt2_hls/solution1/.autopilot/db/rsa.verbose.sched.rpt.xml
 <column name="">68356, 135684, 0.684 ms, 1.357 ms, 68357, 135685, no</column>
+=======
+<column name="">784, 267535, 7.840 us, 2.675 ms, 785, 267536, no</column>
+>>>>>>> origin/branch2:rsa_baseline/baseline/solution1/.autopilot/db/rsa.verbose.sched.rpt.xml
 </table>
 </item>
 <item name = "Detail">

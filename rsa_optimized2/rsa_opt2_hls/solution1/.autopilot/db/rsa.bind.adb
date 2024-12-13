@@ -70,7 +70,11 @@
 						<coreName></coreName>
 						<isStorage>0</isStorage>
 						<storageDepth>0</storageDepth>
+<<<<<<< HEAD:rsa_optimized2/rsa_opt2_hls/solution1/.autopilot/db/rsa.bind.adb
 						<coreId>1504302111</coreId>
+=======
+						<coreId>1956312749</coreId>
+>>>>>>> origin/branch2:rsa_optimized2/baseline/solution1/.autopilot/db/rsa.bind.adb
 						<rtlModuleName></rtlModuleName>
 					</Obj>
 					<bitwidth>256</bitwidth>
@@ -106,7 +110,11 @@
 						<coreName></coreName>
 						<isStorage>0</isStorage>
 						<storageDepth>0</storageDepth>
+<<<<<<< HEAD:rsa_optimized2/rsa_opt2_hls/solution1/.autopilot/db/rsa.bind.adb
 						<coreId>2811490488</coreId>
+=======
+						<coreId>64</coreId>
+>>>>>>> origin/branch2:rsa_optimized2/baseline/solution1/.autopilot/db/rsa.bind.adb
 						<rtlModuleName></rtlModuleName>
 					</Obj>
 					<bitwidth>256</bitwidth>
@@ -224,7 +232,11 @@
 						<coreName></coreName>
 						<isStorage>0</isStorage>
 						<storageDepth>0</storageDepth>
+<<<<<<< HEAD:rsa_optimized2/rsa_opt2_hls/solution1/.autopilot/db/rsa.bind.adb
 						<coreId>1503806771</coreId>
+=======
+						<coreId>2322504528</coreId>
+>>>>>>> origin/branch2:rsa_optimized2/baseline/solution1/.autopilot/db/rsa.bind.adb
 						<rtlModuleName></rtlModuleName>
 					</Obj>
 					<bitwidth>256</bitwidth>
@@ -266,7 +278,11 @@
 						<coreName></coreName>
 						<isStorage>0</isStorage>
 						<storageDepth>0</storageDepth>
+<<<<<<< HEAD:rsa_optimized2/rsa_opt2_hls/solution1/.autopilot/db/rsa.bind.adb
 						<coreId>0</coreId>
+=======
+						<coreId>2322504528</coreId>
+>>>>>>> origin/branch2:rsa_optimized2/baseline/solution1/.autopilot/db/rsa.bind.adb
 						<rtlModuleName></rtlModuleName>
 					</Obj>
 					<bitwidth>9</bitwidth>
@@ -334,8 +350,13 @@
 						<id>23</id>
 						<name>y_read</name>
 						<fileName>rsa.cpp</fileName>
+<<<<<<< HEAD:rsa_optimized2/rsa_opt2_hls/solution1/.autopilot/db/rsa.bind.adb
 						<fileDirectory>/home/cse237c_fa24_y_liao/Desktop/RSA_Implementation_on_PYNQ/rsa_optimized2</fileDirectory>
 						<lineNumber>75</lineNumber>
+=======
+						<fileDirectory>/home/cse237c_fa24_s_chen/RSA_Implementation_on_PYNQ/rsa_optimized2</fileDirectory>
+						<lineNumber>61</lineNumber>
+>>>>>>> origin/branch2:rsa_optimized2/baseline/solution1/.autopilot/db/rsa.bind.adb
 						<contextFuncName>rsa</contextFuncName>
 						<contextNormFuncName>rsa</contextNormFuncName>
 						<inlineStackInfo>
@@ -351,7 +372,7 @@
 											<first>rsa.cpp</first>
 											<second>rsa</second>
 										</first>
-										<second>75</second>
+										<second>61</second>
 									</item>
 								</second>
 							</item>
@@ -391,8 +412,13 @@
 						<id>24</id>
 						<name>N_read</name>
 						<fileName>rsa.cpp</fileName>
+<<<<<<< HEAD:rsa_optimized2/rsa_opt2_hls/solution1/.autopilot/db/rsa.bind.adb
 						<fileDirectory>/home/cse237c_fa24_y_liao/Desktop/RSA_Implementation_on_PYNQ/rsa_optimized2</fileDirectory>
 						<lineNumber>75</lineNumber>
+=======
+						<fileDirectory>/home/cse237c_fa24_s_chen/RSA_Implementation_on_PYNQ/rsa_optimized2</fileDirectory>
+						<lineNumber>61</lineNumber>
+>>>>>>> origin/branch2:rsa_optimized2/baseline/solution1/.autopilot/db/rsa.bind.adb
 						<contextFuncName>rsa</contextFuncName>
 						<contextNormFuncName>rsa</contextNormFuncName>
 						<inlineStackInfo>
@@ -408,7 +434,7 @@
 											<first>rsa.cpp</first>
 											<second>rsa</second>
 										</first>
-										<second>75</second>
+										<second>61</second>
 									</item>
 								</second>
 							</item>
@@ -448,8 +474,13 @@
 						<id>25</id>
 						<name>d_read</name>
 						<fileName>rsa.cpp</fileName>
+<<<<<<< HEAD:rsa_optimized2/rsa_opt2_hls/solution1/.autopilot/db/rsa.bind.adb
 						<fileDirectory>/home/cse237c_fa24_y_liao/Desktop/RSA_Implementation_on_PYNQ/rsa_optimized2</fileDirectory>
 						<lineNumber>75</lineNumber>
+=======
+						<fileDirectory>/home/cse237c_fa24_s_chen/RSA_Implementation_on_PYNQ/rsa_optimized2</fileDirectory>
+						<lineNumber>61</lineNumber>
+>>>>>>> origin/branch2:rsa_optimized2/baseline/solution1/.autopilot/db/rsa.bind.adb
 						<contextFuncName>rsa</contextFuncName>
 						<contextNormFuncName>rsa</contextNormFuncName>
 						<inlineStackInfo>
@@ -465,7 +496,7 @@
 											<first>rsa.cpp</first>
 											<second>rsa</second>
 										</first>
-										<second>75</second>
+										<second>61</second>
 									</item>
 								</second>
 							</item>
@@ -505,8 +536,13 @@
 						<id>26</id>
 						<name>t_V</name>
 						<fileName>rsa.cpp</fileName>
+<<<<<<< HEAD:rsa_optimized2/rsa_opt2_hls/solution1/.autopilot/db/rsa.bind.adb
 						<fileDirectory>/home/cse237c_fa24_y_liao/Desktop/RSA_Implementation_on_PYNQ/rsa_optimized2</fileDirectory>
 						<lineNumber>85</lineNumber>
+=======
+						<fileDirectory>/home/cse237c_fa24_s_chen/RSA_Implementation_on_PYNQ/rsa_optimized2</fileDirectory>
+						<lineNumber>71</lineNumber>
+>>>>>>> origin/branch2:rsa_optimized2/baseline/solution1/.autopilot/db/rsa.bind.adb
 						<contextFuncName>rsa</contextFuncName>
 						<contextNormFuncName>rsa</contextNormFuncName>
 						<inlineStackInfo>
@@ -522,7 +558,7 @@
 											<first>rsa.cpp</first>
 											<second>rsa</second>
 										</first>
-										<second>85</second>
+										<second>71</second>
 									</item>
 								</second>
 							</item>
@@ -561,10 +597,15 @@
 					<Obj>
 						<type>0</type>
 						<id>27</id>
-						<name>m_V_write_ln88</name>
+						<name>m_V_write_ln74</name>
 						<fileName>rsa.cpp</fileName>
+<<<<<<< HEAD:rsa_optimized2/rsa_opt2_hls/solution1/.autopilot/db/rsa.bind.adb
 						<fileDirectory>/home/cse237c_fa24_y_liao/Desktop/RSA_Implementation_on_PYNQ/rsa_optimized2</fileDirectory>
 						<lineNumber>88</lineNumber>
+=======
+						<fileDirectory>/home/cse237c_fa24_s_chen/RSA_Implementation_on_PYNQ/rsa_optimized2</fileDirectory>
+						<lineNumber>74</lineNumber>
+>>>>>>> origin/branch2:rsa_optimized2/baseline/solution1/.autopilot/db/rsa.bind.adb
 						<contextFuncName>rsa</contextFuncName>
 						<contextNormFuncName>rsa</contextNormFuncName>
 						<inlineStackInfo>
@@ -580,7 +621,7 @@
 											<first>rsa.cpp</first>
 											<second>rsa</second>
 										</first>
-										<second>88</second>
+										<second>74</second>
 									</item>
 								</second>
 							</item>
@@ -593,7 +634,11 @@
 						<coreName></coreName>
 						<isStorage>0</isStorage>
 						<storageDepth>0</storageDepth>
+<<<<<<< HEAD:rsa_optimized2/rsa_opt2_hls/solution1/.autopilot/db/rsa.bind.adb
 						<coreId>2811791072</coreId>
+=======
+						<coreId>1953067520</coreId>
+>>>>>>> origin/branch2:rsa_optimized2/baseline/solution1/.autopilot/db/rsa.bind.adb
 						<rtlModuleName></rtlModuleName>
 					</Obj>
 					<bitwidth>0</bitwidth>
@@ -618,10 +663,15 @@
 					<Obj>
 						<type>0</type>
 						<id>28</id>
-						<name>i_write_ln88</name>
+						<name>i_write_ln74</name>
 						<fileName>rsa.cpp</fileName>
+<<<<<<< HEAD:rsa_optimized2/rsa_opt2_hls/solution1/.autopilot/db/rsa.bind.adb
 						<fileDirectory>/home/cse237c_fa24_y_liao/Desktop/RSA_Implementation_on_PYNQ/rsa_optimized2</fileDirectory>
 						<lineNumber>88</lineNumber>
+=======
+						<fileDirectory>/home/cse237c_fa24_s_chen/RSA_Implementation_on_PYNQ/rsa_optimized2</fileDirectory>
+						<lineNumber>74</lineNumber>
+>>>>>>> origin/branch2:rsa_optimized2/baseline/solution1/.autopilot/db/rsa.bind.adb
 						<contextFuncName>rsa</contextFuncName>
 						<contextNormFuncName>rsa</contextNormFuncName>
 						<inlineStackInfo>
@@ -637,7 +687,7 @@
 											<first>rsa.cpp</first>
 											<second>rsa</second>
 										</first>
-										<second>88</second>
+										<second>74</second>
 									</item>
 								</second>
 							</item>
@@ -650,7 +700,11 @@
 						<coreName></coreName>
 						<isStorage>0</isStorage>
 						<storageDepth>0</storageDepth>
+<<<<<<< HEAD:rsa_optimized2/rsa_opt2_hls/solution1/.autopilot/db/rsa.bind.adb
 						<coreId>543649385</coreId>
+=======
+						<coreId>2322571744</coreId>
+>>>>>>> origin/branch2:rsa_optimized2/baseline/solution1/.autopilot/db/rsa.bind.adb
 						<rtlModuleName></rtlModuleName>
 					</Obj>
 					<bitwidth>0</bitwidth>
@@ -675,10 +729,15 @@
 					<Obj>
 						<type>0</type>
 						<id>29</id>
-						<name>d_V_write_ln88</name>
+						<name>d_V_write_ln74</name>
 						<fileName>rsa.cpp</fileName>
+<<<<<<< HEAD:rsa_optimized2/rsa_opt2_hls/solution1/.autopilot/db/rsa.bind.adb
 						<fileDirectory>/home/cse237c_fa24_y_liao/Desktop/RSA_Implementation_on_PYNQ/rsa_optimized2</fileDirectory>
 						<lineNumber>88</lineNumber>
+=======
+						<fileDirectory>/home/cse237c_fa24_s_chen/RSA_Implementation_on_PYNQ/rsa_optimized2</fileDirectory>
+						<lineNumber>74</lineNumber>
+>>>>>>> origin/branch2:rsa_optimized2/baseline/solution1/.autopilot/db/rsa.bind.adb
 						<contextFuncName>rsa</contextFuncName>
 						<contextNormFuncName>rsa</contextNormFuncName>
 						<inlineStackInfo>
@@ -694,7 +753,7 @@
 											<first>rsa.cpp</first>
 											<second>rsa</second>
 										</first>
-										<second>88</second>
+										<second>74</second>
 									</item>
 								</second>
 							</item>
@@ -707,7 +766,11 @@
 						<coreName></coreName>
 						<isStorage>0</isStorage>
 						<storageDepth>0</storageDepth>
+<<<<<<< HEAD:rsa_optimized2/rsa_opt2_hls/solution1/.autopilot/db/rsa.bind.adb
 						<coreId>1397508187</coreId>
+=======
+						<coreId>1953394531</coreId>
+>>>>>>> origin/branch2:rsa_optimized2/baseline/solution1/.autopilot/db/rsa.bind.adb
 						<rtlModuleName></rtlModuleName>
 					</Obj>
 					<bitwidth>0</bitwidth>
@@ -732,10 +795,15 @@
 					<Obj>
 						<type>0</type>
 						<id>30</id>
-						<name>t_V_1_write_ln88</name>
+						<name>t_V_1_write_ln74</name>
 						<fileName>rsa.cpp</fileName>
+<<<<<<< HEAD:rsa_optimized2/rsa_opt2_hls/solution1/.autopilot/db/rsa.bind.adb
 						<fileDirectory>/home/cse237c_fa24_y_liao/Desktop/RSA_Implementation_on_PYNQ/rsa_optimized2</fileDirectory>
 						<lineNumber>88</lineNumber>
+=======
+						<fileDirectory>/home/cse237c_fa24_s_chen/RSA_Implementation_on_PYNQ/rsa_optimized2</fileDirectory>
+						<lineNumber>74</lineNumber>
+>>>>>>> origin/branch2:rsa_optimized2/baseline/solution1/.autopilot/db/rsa.bind.adb
 						<contextFuncName>rsa</contextFuncName>
 						<contextNormFuncName>rsa</contextNormFuncName>
 						<inlineStackInfo>
@@ -751,7 +819,7 @@
 											<first>rsa.cpp</first>
 											<second>rsa</second>
 										</first>
-										<second>88</second>
+										<second>74</second>
 									</item>
 								</second>
 							</item>
@@ -764,7 +832,11 @@
 						<coreName></coreName>
 						<isStorage>0</isStorage>
 						<storageDepth>0</storageDepth>
+<<<<<<< HEAD:rsa_optimized2/rsa_opt2_hls/solution1/.autopilot/db/rsa.bind.adb
 						<coreId>4294967295</coreId>
+=======
+						<coreId>1956049045</coreId>
+>>>>>>> origin/branch2:rsa_optimized2/baseline/solution1/.autopilot/db/rsa.bind.adb
 						<rtlModuleName></rtlModuleName>
 					</Obj>
 					<bitwidth>0</bitwidth>
@@ -789,10 +861,15 @@
 					<Obj>
 						<type>0</type>
 						<id>31</id>
-						<name>br_ln88</name>
+						<name>br_ln74</name>
 						<fileName>rsa.cpp</fileName>
+<<<<<<< HEAD:rsa_optimized2/rsa_opt2_hls/solution1/.autopilot/db/rsa.bind.adb
 						<fileDirectory>/home/cse237c_fa24_y_liao/Desktop/RSA_Implementation_on_PYNQ/rsa_optimized2</fileDirectory>
 						<lineNumber>88</lineNumber>
+=======
+						<fileDirectory>/home/cse237c_fa24_s_chen/RSA_Implementation_on_PYNQ/rsa_optimized2</fileDirectory>
+						<lineNumber>74</lineNumber>
+>>>>>>> origin/branch2:rsa_optimized2/baseline/solution1/.autopilot/db/rsa.bind.adb
 						<contextFuncName>rsa</contextFuncName>
 						<contextNormFuncName>rsa</contextNormFuncName>
 						<inlineStackInfo>
@@ -808,7 +885,7 @@
 											<first>rsa.cpp</first>
 											<second>rsa</second>
 										</first>
-										<second>88</second>
+										<second>74</second>
 									</item>
 								</second>
 							</item>
@@ -821,7 +898,11 @@
 						<coreName></coreName>
 						<isStorage>0</isStorage>
 						<storageDepth>0</storageDepth>
+<<<<<<< HEAD:rsa_optimized2/rsa_opt2_hls/solution1/.autopilot/db/rsa.bind.adb
 						<coreId>4294967295</coreId>
+=======
+						<coreId>0</coreId>
+>>>>>>> origin/branch2:rsa_optimized2/baseline/solution1/.autopilot/db/rsa.bind.adb
 						<rtlModuleName></rtlModuleName>
 					</Obj>
 					<bitwidth>0</bitwidth>
@@ -847,8 +928,13 @@
 						<id>33</id>
 						<name>i_1</name>
 						<fileName>rsa.cpp</fileName>
+<<<<<<< HEAD:rsa_optimized2/rsa_opt2_hls/solution1/.autopilot/db/rsa.bind.adb
 						<fileDirectory>/home/cse237c_fa24_y_liao/Desktop/RSA_Implementation_on_PYNQ/rsa_optimized2</fileDirectory>
 						<lineNumber>88</lineNumber>
+=======
+						<fileDirectory>/home/cse237c_fa24_s_chen/RSA_Implementation_on_PYNQ/rsa_optimized2</fileDirectory>
+						<lineNumber>74</lineNumber>
+>>>>>>> origin/branch2:rsa_optimized2/baseline/solution1/.autopilot/db/rsa.bind.adb
 						<contextFuncName>rsa</contextFuncName>
 						<contextNormFuncName>rsa</contextNormFuncName>
 						<inlineStackInfo>
@@ -864,7 +950,7 @@
 											<first>rsa.cpp</first>
 											<second>rsa</second>
 										</first>
-										<second>88</second>
+										<second>74</second>
 									</item>
 								</second>
 							</item>
@@ -877,7 +963,11 @@
 						<coreName></coreName>
 						<isStorage>0</isStorage>
 						<storageDepth>0</storageDepth>
+<<<<<<< HEAD:rsa_optimized2/rsa_opt2_hls/solution1/.autopilot/db/rsa.bind.adb
 						<coreId>2811929040</coreId>
+=======
+						<coreId>2322488112</coreId>
+>>>>>>> origin/branch2:rsa_optimized2/baseline/solution1/.autopilot/db/rsa.bind.adb
 						<rtlModuleName></rtlModuleName>
 					</Obj>
 					<bitwidth>9</bitwidth>
@@ -902,10 +992,15 @@
 					<Obj>
 						<type>0</type>
 						<id>34</id>
-						<name>icmp_ln88</name>
+						<name>icmp_ln74</name>
 						<fileName>rsa.cpp</fileName>
+<<<<<<< HEAD:rsa_optimized2/rsa_opt2_hls/solution1/.autopilot/db/rsa.bind.adb
 						<fileDirectory>/home/cse237c_fa24_y_liao/Desktop/RSA_Implementation_on_PYNQ/rsa_optimized2</fileDirectory>
 						<lineNumber>88</lineNumber>
+=======
+						<fileDirectory>/home/cse237c_fa24_s_chen/RSA_Implementation_on_PYNQ/rsa_optimized2</fileDirectory>
+						<lineNumber>74</lineNumber>
+>>>>>>> origin/branch2:rsa_optimized2/baseline/solution1/.autopilot/db/rsa.bind.adb
 						<contextFuncName>rsa</contextFuncName>
 						<contextNormFuncName>rsa</contextNormFuncName>
 						<inlineStackInfo>
@@ -921,7 +1016,7 @@
 											<first>rsa.cpp</first>
 											<second>rsa</second>
 										</first>
-										<second>88</second>
+										<second>74</second>
 									</item>
 								</second>
 							</item>
@@ -961,8 +1056,13 @@
 						<id>36</id>
 						<name>i_2</name>
 						<fileName>rsa.cpp</fileName>
+<<<<<<< HEAD:rsa_optimized2/rsa_opt2_hls/solution1/.autopilot/db/rsa.bind.adb
 						<fileDirectory>/home/cse237c_fa24_y_liao/Desktop/RSA_Implementation_on_PYNQ/rsa_optimized2</fileDirectory>
 						<lineNumber>88</lineNumber>
+=======
+						<fileDirectory>/home/cse237c_fa24_s_chen/RSA_Implementation_on_PYNQ/rsa_optimized2</fileDirectory>
+						<lineNumber>74</lineNumber>
+>>>>>>> origin/branch2:rsa_optimized2/baseline/solution1/.autopilot/db/rsa.bind.adb
 						<contextFuncName>rsa</contextFuncName>
 						<contextNormFuncName>rsa</contextNormFuncName>
 						<inlineStackInfo>
@@ -978,7 +1078,7 @@
 											<first>rsa.cpp</first>
 											<second>rsa</second>
 										</first>
-										<second>88</second>
+										<second>74</second>
 									</item>
 								</second>
 							</item>
@@ -1016,10 +1116,15 @@
 					<Obj>
 						<type>0</type>
 						<id>37</id>
-						<name>br_ln88</name>
+						<name>br_ln74</name>
 						<fileName>rsa.cpp</fileName>
+<<<<<<< HEAD:rsa_optimized2/rsa_opt2_hls/solution1/.autopilot/db/rsa.bind.adb
 						<fileDirectory>/home/cse237c_fa24_y_liao/Desktop/RSA_Implementation_on_PYNQ/rsa_optimized2</fileDirectory>
 						<lineNumber>88</lineNumber>
+=======
+						<fileDirectory>/home/cse237c_fa24_s_chen/RSA_Implementation_on_PYNQ/rsa_optimized2</fileDirectory>
+						<lineNumber>74</lineNumber>
+>>>>>>> origin/branch2:rsa_optimized2/baseline/solution1/.autopilot/db/rsa.bind.adb
 						<contextFuncName>rsa</contextFuncName>
 						<contextNormFuncName>rsa</contextNormFuncName>
 						<inlineStackInfo>
@@ -1035,7 +1140,7 @@
 											<first>rsa.cpp</first>
 											<second>rsa</second>
 										</first>
-										<second>88</second>
+										<second>74</second>
 									</item>
 								</second>
 							</item>
@@ -1048,7 +1153,11 @@
 						<coreName></coreName>
 						<isStorage>0</isStorage>
 						<storageDepth>0</storageDepth>
+<<<<<<< HEAD:rsa_optimized2/rsa_opt2_hls/solution1/.autopilot/db/rsa.bind.adb
 						<coreId>1702258035</coreId>
+=======
+						<coreId>2322701472</coreId>
+>>>>>>> origin/branch2:rsa_optimized2/baseline/solution1/.autopilot/db/rsa.bind.adb
 						<rtlModuleName></rtlModuleName>
 					</Obj>
 					<bitwidth>0</bitwidth>
@@ -1106,7 +1215,11 @@
 						<coreName></coreName>
 						<isStorage>0</isStorage>
 						<storageDepth>0</storageDepth>
+<<<<<<< HEAD:rsa_optimized2/rsa_opt2_hls/solution1/.autopilot/db/rsa.bind.adb
 						<coreId>0</coreId>
+=======
+						<coreId>784</coreId>
+>>>>>>> origin/branch2:rsa_optimized2/baseline/solution1/.autopilot/db/rsa.bind.adb
 						<rtlModuleName></rtlModuleName>
 					</Obj>
 					<bitwidth>256</bitwidth>
@@ -1187,10 +1300,15 @@
 					<Obj>
 						<type>0</type>
 						<id>42</id>
-						<name>br_ln90</name>
+						<name>br_ln76</name>
 						<fileName>rsa.cpp</fileName>
+<<<<<<< HEAD:rsa_optimized2/rsa_opt2_hls/solution1/.autopilot/db/rsa.bind.adb
 						<fileDirectory>/home/cse237c_fa24_y_liao/Desktop/RSA_Implementation_on_PYNQ/rsa_optimized2</fileDirectory>
 						<lineNumber>90</lineNumber>
+=======
+						<fileDirectory>/home/cse237c_fa24_s_chen/RSA_Implementation_on_PYNQ/rsa_optimized2</fileDirectory>
+						<lineNumber>76</lineNumber>
+>>>>>>> origin/branch2:rsa_optimized2/baseline/solution1/.autopilot/db/rsa.bind.adb
 						<contextFuncName>rsa</contextFuncName>
 						<contextNormFuncName>rsa</contextNormFuncName>
 						<inlineStackInfo>
@@ -1206,7 +1324,7 @@
 											<first>rsa.cpp</first>
 											<second>rsa</second>
 										</first>
-										<second>90</second>
+										<second>76</second>
 									</item>
 								</second>
 							</item>
@@ -1219,7 +1337,11 @@
 						<coreName></coreName>
 						<isStorage>0</isStorage>
 						<storageDepth>0</storageDepth>
+<<<<<<< HEAD:rsa_optimized2/rsa_opt2_hls/solution1/.autopilot/db/rsa.bind.adb
 						<coreId>2811954528</coreId>
+=======
+						<coreId>2322707248</coreId>
+>>>>>>> origin/branch2:rsa_optimized2/baseline/solution1/.autopilot/db/rsa.bind.adb
 						<rtlModuleName></rtlModuleName>
 					</Obj>
 					<bitwidth>0</bitwidth>
@@ -1247,8 +1369,13 @@
 						<id>44</id>
 						<name>t_V_1_load</name>
 						<fileName>rsa.cpp</fileName>
+<<<<<<< HEAD:rsa_optimized2/rsa_opt2_hls/solution1/.autopilot/db/rsa.bind.adb
 						<fileDirectory>/home/cse237c_fa24_y_liao/Desktop/RSA_Implementation_on_PYNQ/rsa_optimized2</fileDirectory>
 						<lineNumber>91</lineNumber>
+=======
+						<fileDirectory>/home/cse237c_fa24_s_chen/RSA_Implementation_on_PYNQ/rsa_optimized2</fileDirectory>
+						<lineNumber>77</lineNumber>
+>>>>>>> origin/branch2:rsa_optimized2/baseline/solution1/.autopilot/db/rsa.bind.adb
 						<contextFuncName>rsa</contextFuncName>
 						<contextNormFuncName>rsa</contextNormFuncName>
 						<inlineStackInfo>
@@ -1264,7 +1391,7 @@
 											<first>rsa.cpp</first>
 											<second>rsa</second>
 										</first>
-										<second>91</second>
+										<second>77</second>
 									</item>
 								</second>
 							</item>
@@ -1304,8 +1431,13 @@
 						<id>45</id>
 						<name>m_V_load_1</name>
 						<fileName>rsa.cpp</fileName>
+<<<<<<< HEAD:rsa_optimized2/rsa_opt2_hls/solution1/.autopilot/db/rsa.bind.adb
 						<fileDirectory>/home/cse237c_fa24_y_liao/Desktop/RSA_Implementation_on_PYNQ/rsa_optimized2</fileDirectory>
 						<lineNumber>91</lineNumber>
+=======
+						<fileDirectory>/home/cse237c_fa24_s_chen/RSA_Implementation_on_PYNQ/rsa_optimized2</fileDirectory>
+						<lineNumber>77</lineNumber>
+>>>>>>> origin/branch2:rsa_optimized2/baseline/solution1/.autopilot/db/rsa.bind.adb
 						<contextFuncName>rsa</contextFuncName>
 						<contextNormFuncName>rsa</contextNormFuncName>
 						<inlineStackInfo>
@@ -1321,7 +1453,7 @@
 											<first>rsa.cpp</first>
 											<second>rsa</second>
 										</first>
-										<second>91</second>
+										<second>77</second>
 									</item>
 								</second>
 							</item>
@@ -1334,7 +1466,11 @@
 						<coreName></coreName>
 						<isStorage>0</isStorage>
 						<storageDepth>0</storageDepth>
+<<<<<<< HEAD:rsa_optimized2/rsa_opt2_hls/solution1/.autopilot/db/rsa.bind.adb
 						<coreId>0</coreId>
+=======
+						<coreId>2322708512</coreId>
+>>>>>>> origin/branch2:rsa_optimized2/baseline/solution1/.autopilot/db/rsa.bind.adb
 						<rtlModuleName></rtlModuleName>
 					</Obj>
 					<bitwidth>256</bitwidth>
@@ -1361,8 +1497,13 @@
 						<id>46</id>
 						<name>m_V_1</name>
 						<fileName>rsa.cpp</fileName>
+<<<<<<< HEAD:rsa_optimized2/rsa_opt2_hls/solution1/.autopilot/db/rsa.bind.adb
 						<fileDirectory>/home/cse237c_fa24_y_liao/Desktop/RSA_Implementation_on_PYNQ/rsa_optimized2</fileDirectory>
 						<lineNumber>91</lineNumber>
+=======
+						<fileDirectory>/home/cse237c_fa24_s_chen/RSA_Implementation_on_PYNQ/rsa_optimized2</fileDirectory>
+						<lineNumber>77</lineNumber>
+>>>>>>> origin/branch2:rsa_optimized2/baseline/solution1/.autopilot/db/rsa.bind.adb
 						<contextFuncName>rsa</contextFuncName>
 						<contextNormFuncName>rsa</contextNormFuncName>
 						<inlineStackInfo>
@@ -1378,7 +1519,7 @@
 											<first>rsa.cpp</first>
 											<second>rsa</second>
 										</first>
-										<second>91</second>
+										<second>77</second>
 									</item>
 								</second>
 							</item>
@@ -1409,7 +1550,7 @@
 				<m_isOnCriticalPath>0</m_isOnCriticalPath>
 				<m_isLCDNode>0</m_isLCDNode>
 				<m_isStartOfPath>0</m_isStartOfPath>
-				<m_delay>3.44</m_delay>
+				<m_delay>1.58</m_delay>
 				<m_topoIndex>23</m_topoIndex>
 				<m_clusterGroupNumber>-1</m_clusterGroupNumber>
 			</item>
@@ -1418,10 +1559,15 @@
 					<Obj>
 						<type>0</type>
 						<id>47</id>
-						<name>m_V_write_ln92</name>
+						<name>m_V_write_ln78</name>
 						<fileName>rsa.cpp</fileName>
+<<<<<<< HEAD:rsa_optimized2/rsa_opt2_hls/solution1/.autopilot/db/rsa.bind.adb
 						<fileDirectory>/home/cse237c_fa24_y_liao/Desktop/RSA_Implementation_on_PYNQ/rsa_optimized2</fileDirectory>
 						<lineNumber>92</lineNumber>
+=======
+						<fileDirectory>/home/cse237c_fa24_s_chen/RSA_Implementation_on_PYNQ/rsa_optimized2</fileDirectory>
+						<lineNumber>78</lineNumber>
+>>>>>>> origin/branch2:rsa_optimized2/baseline/solution1/.autopilot/db/rsa.bind.adb
 						<contextFuncName>rsa</contextFuncName>
 						<contextNormFuncName>rsa</contextNormFuncName>
 						<inlineStackInfo>
@@ -1437,7 +1583,7 @@
 											<first>rsa.cpp</first>
 											<second>rsa</second>
 										</first>
-										<second>92</second>
+										<second>78</second>
 									</item>
 								</second>
 							</item>
@@ -1450,7 +1596,7 @@
 						<coreName></coreName>
 						<isStorage>0</isStorage>
 						<storageDepth>0</storageDepth>
-						<coreId>0</coreId>
+						<coreId>2322711488</coreId>
 						<rtlModuleName></rtlModuleName>
 					</Obj>
 					<bitwidth>0</bitwidth>
@@ -1477,10 +1623,15 @@
 					<Obj>
 						<type>0</type>
 						<id>48</id>
-						<name>br_ln92</name>
+						<name>br_ln78</name>
 						<fileName>rsa.cpp</fileName>
+<<<<<<< HEAD:rsa_optimized2/rsa_opt2_hls/solution1/.autopilot/db/rsa.bind.adb
 						<fileDirectory>/home/cse237c_fa24_y_liao/Desktop/RSA_Implementation_on_PYNQ/rsa_optimized2</fileDirectory>
 						<lineNumber>92</lineNumber>
+=======
+						<fileDirectory>/home/cse237c_fa24_s_chen/RSA_Implementation_on_PYNQ/rsa_optimized2</fileDirectory>
+						<lineNumber>78</lineNumber>
+>>>>>>> origin/branch2:rsa_optimized2/baseline/solution1/.autopilot/db/rsa.bind.adb
 						<contextFuncName>rsa</contextFuncName>
 						<contextNormFuncName>rsa</contextNormFuncName>
 						<inlineStackInfo>
@@ -1496,7 +1647,7 @@
 											<first>rsa.cpp</first>
 											<second>rsa</second>
 										</first>
-										<second>92</second>
+										<second>78</second>
 									</item>
 								</second>
 							</item>
@@ -1509,7 +1660,11 @@
 						<coreName></coreName>
 						<isStorage>0</isStorage>
 						<storageDepth>0</storageDepth>
+<<<<<<< HEAD:rsa_optimized2/rsa_opt2_hls/solution1/.autopilot/db/rsa.bind.adb
 						<coreId>997420912</coreId>
+=======
+						<coreId>1881154127</coreId>
+>>>>>>> origin/branch2:rsa_optimized2/baseline/solution1/.autopilot/db/rsa.bind.adb
 						<rtlModuleName></rtlModuleName>
 					</Obj>
 					<bitwidth>0</bitwidth>
@@ -1535,8 +1690,13 @@
 						<id>50</id>
 						<name>t_V_1_load_1</name>
 						<fileName>rsa.cpp</fileName>
+<<<<<<< HEAD:rsa_optimized2/rsa_opt2_hls/solution1/.autopilot/db/rsa.bind.adb
 						<fileDirectory>/home/cse237c_fa24_y_liao/Desktop/RSA_Implementation_on_PYNQ/rsa_optimized2</fileDirectory>
 						<lineNumber>93</lineNumber>
+=======
+						<fileDirectory>/home/cse237c_fa24_s_chen/RSA_Implementation_on_PYNQ/rsa_optimized2</fileDirectory>
+						<lineNumber>79</lineNumber>
+>>>>>>> origin/branch2:rsa_optimized2/baseline/solution1/.autopilot/db/rsa.bind.adb
 						<contextFuncName>rsa</contextFuncName>
 						<contextNormFuncName>rsa</contextNormFuncName>
 						<inlineStackInfo>
@@ -1552,7 +1712,7 @@
 											<first>rsa.cpp</first>
 											<second>rsa</second>
 										</first>
-										<second>93</second>
+										<second>79</second>
 									</item>
 								</second>
 							</item>
@@ -1565,7 +1725,11 @@
 						<coreName></coreName>
 						<isStorage>0</isStorage>
 						<storageDepth>0</storageDepth>
+<<<<<<< HEAD:rsa_optimized2/rsa_opt2_hls/solution1/.autopilot/db/rsa.bind.adb
 						<coreId>1919950882</coreId>
+=======
+						<coreId>1702127976</coreId>
+>>>>>>> origin/branch2:rsa_optimized2/baseline/solution1/.autopilot/db/rsa.bind.adb
 						<rtlModuleName></rtlModuleName>
 					</Obj>
 					<bitwidth>256</bitwidth>
@@ -1622,7 +1786,11 @@
 						<coreName></coreName>
 						<isStorage>0</isStorage>
 						<storageDepth>0</storageDepth>
+<<<<<<< HEAD:rsa_optimized2/rsa_opt2_hls/solution1/.autopilot/db/rsa.bind.adb
 						<coreId>176</coreId>
+=======
+						<coreId>1699560457</coreId>
+>>>>>>> origin/branch2:rsa_optimized2/baseline/solution1/.autopilot/db/rsa.bind.adb
 						<rtlModuleName></rtlModuleName>
 					</Obj>
 					<bitwidth>256</bitwidth>
@@ -1649,8 +1817,13 @@
 						<id>52</id>
 						<name>ref_tmp8</name>
 						<fileName>rsa.cpp</fileName>
+<<<<<<< HEAD:rsa_optimized2/rsa_opt2_hls/solution1/.autopilot/db/rsa.bind.adb
 						<fileDirectory>/home/cse237c_fa24_y_liao/Desktop/RSA_Implementation_on_PYNQ/rsa_optimized2</fileDirectory>
 						<lineNumber>93</lineNumber>
+=======
+						<fileDirectory>/home/cse237c_fa24_s_chen/RSA_Implementation_on_PYNQ/rsa_optimized2</fileDirectory>
+						<lineNumber>79</lineNumber>
+>>>>>>> origin/branch2:rsa_optimized2/baseline/solution1/.autopilot/db/rsa.bind.adb
 						<contextFuncName>rsa</contextFuncName>
 						<contextNormFuncName>rsa</contextNormFuncName>
 						<inlineStackInfo>
@@ -1666,7 +1839,7 @@
 											<first>rsa.cpp</first>
 											<second>rsa</second>
 										</first>
-										<second>93</second>
+										<second>79</second>
 									</item>
 								</second>
 							</item>
@@ -1679,7 +1852,11 @@
 						<coreName></coreName>
 						<isStorage>0</isStorage>
 						<storageDepth>0</storageDepth>
+<<<<<<< HEAD:rsa_optimized2/rsa_opt2_hls/solution1/.autopilot/db/rsa.bind.adb
 						<coreId>2811816192</coreId>
+=======
+						<coreId>0</coreId>
+>>>>>>> origin/branch2:rsa_optimized2/baseline/solution1/.autopilot/db/rsa.bind.adb
 						<rtlModuleName></rtlModuleName>
 					</Obj>
 					<bitwidth>256</bitwidth>
@@ -1697,7 +1874,7 @@
 				<m_isOnCriticalPath>0</m_isOnCriticalPath>
 				<m_isLCDNode>0</m_isLCDNode>
 				<m_isStartOfPath>0</m_isStartOfPath>
-				<m_delay>3.44</m_delay>
+				<m_delay>1.58</m_delay>
 				<m_topoIndex>30</m_topoIndex>
 				<m_clusterGroupNumber>-1</m_clusterGroupNumber>
 			</item>
@@ -1738,7 +1915,11 @@
 						<coreName></coreName>
 						<isStorage>0</isStorage>
 						<storageDepth>0</storageDepth>
+<<<<<<< HEAD:rsa_optimized2/rsa_opt2_hls/solution1/.autopilot/db/rsa.bind.adb
 						<coreId>1503825966</coreId>
+=======
+						<coreId>2322576776</coreId>
+>>>>>>> origin/branch2:rsa_optimized2/baseline/solution1/.autopilot/db/rsa.bind.adb
 						<rtlModuleName></rtlModuleName>
 					</Obj>
 					<bitwidth>255</bitwidth>
@@ -1797,7 +1978,11 @@
 						<coreName></coreName>
 						<isStorage>0</isStorage>
 						<storageDepth>0</storageDepth>
+<<<<<<< HEAD:rsa_optimized2/rsa_opt2_hls/solution1/.autopilot/db/rsa.bind.adb
 						<coreId>2811819176</coreId>
+=======
+						<coreId>1956079419</coreId>
+>>>>>>> origin/branch2:rsa_optimized2/baseline/solution1/.autopilot/db/rsa.bind.adb
 						<rtlModuleName></rtlModuleName>
 					</Obj>
 					<bitwidth>256</bitwidth>
@@ -1821,10 +2006,15 @@
 					<Obj>
 						<type>0</type>
 						<id>55</id>
-						<name>i_write_ln88</name>
+						<name>i_write_ln74</name>
 						<fileName>rsa.cpp</fileName>
+<<<<<<< HEAD:rsa_optimized2/rsa_opt2_hls/solution1/.autopilot/db/rsa.bind.adb
 						<fileDirectory>/home/cse237c_fa24_y_liao/Desktop/RSA_Implementation_on_PYNQ/rsa_optimized2</fileDirectory>
 						<lineNumber>88</lineNumber>
+=======
+						<fileDirectory>/home/cse237c_fa24_s_chen/RSA_Implementation_on_PYNQ/rsa_optimized2</fileDirectory>
+						<lineNumber>74</lineNumber>
+>>>>>>> origin/branch2:rsa_optimized2/baseline/solution1/.autopilot/db/rsa.bind.adb
 						<contextFuncName>rsa</contextFuncName>
 						<contextNormFuncName>rsa</contextNormFuncName>
 						<inlineStackInfo>
@@ -1840,7 +2030,7 @@
 											<first>rsa.cpp</first>
 											<second>rsa</second>
 										</first>
-										<second>88</second>
+										<second>74</second>
 									</item>
 								</second>
 							</item>
@@ -1853,7 +2043,11 @@
 						<coreName></coreName>
 						<isStorage>0</isStorage>
 						<storageDepth>0</storageDepth>
+<<<<<<< HEAD:rsa_optimized2/rsa_opt2_hls/solution1/.autopilot/db/rsa.bind.adb
 						<coreId>176</coreId>
+=======
+						<coreId>1230261845</coreId>
+>>>>>>> origin/branch2:rsa_optimized2/baseline/solution1/.autopilot/db/rsa.bind.adb
 						<rtlModuleName></rtlModuleName>
 					</Obj>
 					<bitwidth>0</bitwidth>
@@ -1880,10 +2074,15 @@
 					<Obj>
 						<type>0</type>
 						<id>56</id>
-						<name>d_V_write_ln88</name>
+						<name>d_V_write_ln74</name>
 						<fileName>rsa.cpp</fileName>
+<<<<<<< HEAD:rsa_optimized2/rsa_opt2_hls/solution1/.autopilot/db/rsa.bind.adb
 						<fileDirectory>/home/cse237c_fa24_y_liao/Desktop/RSA_Implementation_on_PYNQ/rsa_optimized2</fileDirectory>
 						<lineNumber>88</lineNumber>
+=======
+						<fileDirectory>/home/cse237c_fa24_s_chen/RSA_Implementation_on_PYNQ/rsa_optimized2</fileDirectory>
+						<lineNumber>74</lineNumber>
+>>>>>>> origin/branch2:rsa_optimized2/baseline/solution1/.autopilot/db/rsa.bind.adb
 						<contextFuncName>rsa</contextFuncName>
 						<contextNormFuncName>rsa</contextNormFuncName>
 						<inlineStackInfo>
@@ -1899,7 +2098,7 @@
 											<first>rsa.cpp</first>
 											<second>rsa</second>
 										</first>
-										<second>88</second>
+										<second>74</second>
 									</item>
 								</second>
 							</item>
@@ -1912,7 +2111,11 @@
 						<coreName></coreName>
 						<isStorage>0</isStorage>
 						<storageDepth>0</storageDepth>
+<<<<<<< HEAD:rsa_optimized2/rsa_opt2_hls/solution1/.autopilot/db/rsa.bind.adb
 						<coreId>2811820640</coreId>
+=======
+						<coreId>1956079260</coreId>
+>>>>>>> origin/branch2:rsa_optimized2/baseline/solution1/.autopilot/db/rsa.bind.adb
 						<rtlModuleName></rtlModuleName>
 					</Obj>
 					<bitwidth>0</bitwidth>
@@ -1940,10 +2143,15 @@
 					<Obj>
 						<type>0</type>
 						<id>57</id>
-						<name>t_V_1_write_ln88</name>
+						<name>t_V_1_write_ln74</name>
 						<fileName>rsa.cpp</fileName>
+<<<<<<< HEAD:rsa_optimized2/rsa_opt2_hls/solution1/.autopilot/db/rsa.bind.adb
 						<fileDirectory>/home/cse237c_fa24_y_liao/Desktop/RSA_Implementation_on_PYNQ/rsa_optimized2</fileDirectory>
 						<lineNumber>88</lineNumber>
+=======
+						<fileDirectory>/home/cse237c_fa24_s_chen/RSA_Implementation_on_PYNQ/rsa_optimized2</fileDirectory>
+						<lineNumber>74</lineNumber>
+>>>>>>> origin/branch2:rsa_optimized2/baseline/solution1/.autopilot/db/rsa.bind.adb
 						<contextFuncName>rsa</contextFuncName>
 						<contextNormFuncName>rsa</contextNormFuncName>
 						<inlineStackInfo>
@@ -1959,7 +2167,7 @@
 											<first>rsa.cpp</first>
 											<second>rsa</second>
 										</first>
-										<second>88</second>
+										<second>74</second>
 									</item>
 								</second>
 							</item>
@@ -1972,7 +2180,7 @@
 						<coreName></coreName>
 						<isStorage>0</isStorage>
 						<storageDepth>0</storageDepth>
-						<coreId>0</coreId>
+						<coreId>2620750160</coreId>
 						<rtlModuleName></rtlModuleName>
 					</Obj>
 					<bitwidth>0</bitwidth>
@@ -2000,10 +2208,15 @@
 					<Obj>
 						<type>0</type>
 						<id>58</id>
-						<name>br_ln88</name>
+						<name>br_ln74</name>
 						<fileName>rsa.cpp</fileName>
+<<<<<<< HEAD:rsa_optimized2/rsa_opt2_hls/solution1/.autopilot/db/rsa.bind.adb
 						<fileDirectory>/home/cse237c_fa24_y_liao/Desktop/RSA_Implementation_on_PYNQ/rsa_optimized2</fileDirectory>
 						<lineNumber>88</lineNumber>
+=======
+						<fileDirectory>/home/cse237c_fa24_s_chen/RSA_Implementation_on_PYNQ/rsa_optimized2</fileDirectory>
+						<lineNumber>74</lineNumber>
+>>>>>>> origin/branch2:rsa_optimized2/baseline/solution1/.autopilot/db/rsa.bind.adb
 						<contextFuncName>rsa</contextFuncName>
 						<contextNormFuncName>rsa</contextNormFuncName>
 						<inlineStackInfo>
@@ -2019,7 +2232,7 @@
 											<first>rsa.cpp</first>
 											<second>rsa</second>
 										</first>
-										<second>88</second>
+										<second>74</second>
 									</item>
 								</second>
 							</item>
@@ -2032,7 +2245,11 @@
 						<coreName></coreName>
 						<isStorage>0</isStorage>
 						<storageDepth>0</storageDepth>
+<<<<<<< HEAD:rsa_optimized2/rsa_opt2_hls/solution1/.autopilot/db/rsa.bind.adb
 						<coreId>0</coreId>
+=======
+						<coreId>2322582400</coreId>
+>>>>>>> origin/branch2:rsa_optimized2/baseline/solution1/.autopilot/db/rsa.bind.adb
 						<rtlModuleName></rtlModuleName>
 					</Obj>
 					<bitwidth>0</bitwidth>
@@ -2058,8 +2275,13 @@
 						<id>60</id>
 						<name>m_V_load</name>
 						<fileName>rsa.cpp</fileName>
+<<<<<<< HEAD:rsa_optimized2/rsa_opt2_hls/solution1/.autopilot/db/rsa.bind.adb
 						<fileDirectory>/home/cse237c_fa24_y_liao/Desktop/RSA_Implementation_on_PYNQ/rsa_optimized2</fileDirectory>
 						<lineNumber>98</lineNumber>
+=======
+						<fileDirectory>/home/cse237c_fa24_s_chen/RSA_Implementation_on_PYNQ/rsa_optimized2</fileDirectory>
+						<lineNumber>84</lineNumber>
+>>>>>>> origin/branch2:rsa_optimized2/baseline/solution1/.autopilot/db/rsa.bind.adb
 						<contextFuncName>rsa</contextFuncName>
 						<contextNormFuncName>rsa</contextNormFuncName>
 						<inlineStackInfo>
@@ -2075,7 +2297,7 @@
 											<first>rsa.cpp</first>
 											<second>rsa</second>
 										</first>
-										<second>98</second>
+										<second>84</second>
 									</item>
 								</second>
 							</item>
@@ -2088,7 +2310,11 @@
 						<coreName></coreName>
 						<isStorage>0</isStorage>
 						<storageDepth>0</storageDepth>
+<<<<<<< HEAD:rsa_optimized2/rsa_opt2_hls/solution1/.autopilot/db/rsa.bind.adb
 						<coreId>2811702256</coreId>
+=======
+						<coreId>1330007625</coreId>
+>>>>>>> origin/branch2:rsa_optimized2/baseline/solution1/.autopilot/db/rsa.bind.adb
 						<rtlModuleName></rtlModuleName>
 					</Obj>
 					<bitwidth>256</bitwidth>
@@ -2113,10 +2339,15 @@
 					<Obj>
 						<type>0</type>
 						<id>61</id>
-						<name>x_write_ln98</name>
+						<name>x_write_ln84</name>
 						<fileName>rsa.cpp</fileName>
+<<<<<<< HEAD:rsa_optimized2/rsa_opt2_hls/solution1/.autopilot/db/rsa.bind.adb
 						<fileDirectory>/home/cse237c_fa24_y_liao/Desktop/RSA_Implementation_on_PYNQ/rsa_optimized2</fileDirectory>
 						<lineNumber>98</lineNumber>
+=======
+						<fileDirectory>/home/cse237c_fa24_s_chen/RSA_Implementation_on_PYNQ/rsa_optimized2</fileDirectory>
+						<lineNumber>84</lineNumber>
+>>>>>>> origin/branch2:rsa_optimized2/baseline/solution1/.autopilot/db/rsa.bind.adb
 						<contextFuncName>rsa</contextFuncName>
 						<contextNormFuncName>rsa</contextNormFuncName>
 						<inlineStackInfo>
@@ -2132,7 +2363,7 @@
 											<first>rsa.cpp</first>
 											<second>rsa</second>
 										</first>
-										<second>98</second>
+										<second>84</second>
 									</item>
 								</second>
 							</item>
@@ -2171,10 +2402,15 @@
 					<Obj>
 						<type>0</type>
 						<id>62</id>
-						<name>_ln100</name>
+						<name>_ln86</name>
 						<fileName>rsa.cpp</fileName>
+<<<<<<< HEAD:rsa_optimized2/rsa_opt2_hls/solution1/.autopilot/db/rsa.bind.adb
 						<fileDirectory>/home/cse237c_fa24_y_liao/Desktop/RSA_Implementation_on_PYNQ/rsa_optimized2</fileDirectory>
 						<lineNumber>100</lineNumber>
+=======
+						<fileDirectory>/home/cse237c_fa24_s_chen/RSA_Implementation_on_PYNQ/rsa_optimized2</fileDirectory>
+						<lineNumber>86</lineNumber>
+>>>>>>> origin/branch2:rsa_optimized2/baseline/solution1/.autopilot/db/rsa.bind.adb
 						<contextFuncName>rsa</contextFuncName>
 						<contextNormFuncName>rsa</contextNormFuncName>
 						<inlineStackInfo>
@@ -2190,7 +2426,7 @@
 											<first>rsa.cpp</first>
 											<second>rsa</second>
 										</first>
-										<second>100</second>
+										<second>86</second>
 									</item>
 								</second>
 							</item>
@@ -2203,7 +2439,11 @@
 						<coreName></coreName>
 						<isStorage>0</isStorage>
 						<storageDepth>0</storageDepth>
+<<<<<<< HEAD:rsa_optimized2/rsa_opt2_hls/solution1/.autopilot/db/rsa.bind.adb
 						<coreId>1031365995</coreId>
+=======
+						<coreId>2322585104</coreId>
+>>>>>>> origin/branch2:rsa_optimized2/baseline/solution1/.autopilot/db/rsa.bind.adb
 						<rtlModuleName></rtlModuleName>
 					</Obj>
 					<bitwidth>0</bitwidth>
@@ -2248,7 +2488,11 @@
 						<coreName></coreName>
 						<isStorage>0</isStorage>
 						<storageDepth>0</storageDepth>
+<<<<<<< HEAD:rsa_optimized2/rsa_opt2_hls/solution1/.autopilot/db/rsa.bind.adb
 						<coreId>762278499</coreId>
+=======
+						<coreId>171847458</coreId>
+>>>>>>> origin/branch2:rsa_optimized2/baseline/solution1/.autopilot/db/rsa.bind.adb
 						<rtlModuleName></rtlModuleName>
 					</Obj>
 					<bitwidth>32</bitwidth>
@@ -2279,7 +2523,11 @@
 						<coreName></coreName>
 						<isStorage>0</isStorage>
 						<storageDepth>0</storageDepth>
+<<<<<<< HEAD:rsa_optimized2/rsa_opt2_hls/solution1/.autopilot/db/rsa.bind.adb
 						<coreId>1869182069</coreId>
+=======
+						<coreId>1031301478</coreId>
+>>>>>>> origin/branch2:rsa_optimized2/baseline/solution1/.autopilot/db/rsa.bind.adb
 						<rtlModuleName></rtlModuleName>
 					</Obj>
 					<bitwidth>256</bitwidth>
@@ -2310,7 +2558,11 @@
 						<coreName></coreName>
 						<isStorage>0</isStorage>
 						<storageDepth>0</storageDepth>
+<<<<<<< HEAD:rsa_optimized2/rsa_opt2_hls/solution1/.autopilot/db/rsa.bind.adb
 						<coreId>1869182069</coreId>
+=======
+						<coreId>1663056755</coreId>
+>>>>>>> origin/branch2:rsa_optimized2/baseline/solution1/.autopilot/db/rsa.bind.adb
 						<rtlModuleName></rtlModuleName>
 					</Obj>
 					<bitwidth>256</bitwidth>
@@ -2341,7 +2593,11 @@
 						<coreName></coreName>
 						<isStorage>0</isStorage>
 						<storageDepth>0</storageDepth>
+<<<<<<< HEAD:rsa_optimized2/rsa_opt2_hls/solution1/.autopilot/db/rsa.bind.adb
 						<coreId>1330007625</coreId>
+=======
+						<coreId>1145391171</coreId>
+>>>>>>> origin/branch2:rsa_optimized2/baseline/solution1/.autopilot/db/rsa.bind.adb
 						<rtlModuleName></rtlModuleName>
 					</Obj>
 					<bitwidth>9</bitwidth>
@@ -2372,7 +2628,11 @@
 						<coreName></coreName>
 						<isStorage>0</isStorage>
 						<storageDepth>0</storageDepth>
+<<<<<<< HEAD:rsa_optimized2/rsa_opt2_hls/solution1/.autopilot/db/rsa.bind.adb
 						<coreId>741548093</coreId>
+=======
+						<coreId>1629515375</coreId>
+>>>>>>> origin/branch2:rsa_optimized2/baseline/solution1/.autopilot/db/rsa.bind.adb
 						<rtlModuleName></rtlModuleName>
 					</Obj>
 					<bitwidth>9</bitwidth>
@@ -2403,7 +2663,11 @@
 						<coreName></coreName>
 						<isStorage>0</isStorage>
 						<storageDepth>0</storageDepth>
+<<<<<<< HEAD:rsa_optimized2/rsa_opt2_hls/solution1/.autopilot/db/rsa.bind.adb
 						<coreId>1986360096</coreId>
+=======
+						<coreId>1919950882</coreId>
+>>>>>>> origin/branch2:rsa_optimized2/baseline/solution1/.autopilot/db/rsa.bind.adb
 						<rtlModuleName></rtlModuleName>
 					</Obj>
 					<bitwidth>9</bitwidth>
@@ -2434,7 +2698,11 @@
 						<coreName></coreName>
 						<isStorage>0</isStorage>
 						<storageDepth>0</storageDepth>
+<<<<<<< HEAD:rsa_optimized2/rsa_opt2_hls/solution1/.autopilot/db/rsa.bind.adb
 						<coreId>1914708526</coreId>
+=======
+						<coreId>1819243365</coreId>
+>>>>>>> origin/branch2:rsa_optimized2/baseline/solution1/.autopilot/db/rsa.bind.adb
 						<rtlModuleName></rtlModuleName>
 					</Obj>
 					<bitwidth>256</bitwidth>
@@ -2465,7 +2733,11 @@
 						<coreName></coreName>
 						<isStorage>0</isStorage>
 						<storageDepth>0</storageDepth>
+<<<<<<< HEAD:rsa_optimized2/rsa_opt2_hls/solution1/.autopilot/db/rsa.bind.adb
 						<coreId>1769104758</coreId>
+=======
+						<coreId>757935405</coreId>
+>>>>>>> origin/branch2:rsa_optimized2/baseline/solution1/.autopilot/db/rsa.bind.adb
 						<rtlModuleName></rtlModuleName>
 					</Obj>
 					<bitwidth>32</bitwidth>
@@ -3318,8 +3590,8 @@
 			<mDepth>-1</mDepth>
 			<mMinTripCount>-1</mMinTripCount>
 			<mMaxTripCount>-1</mMaxTripCount>
-			<mMinLatency>68356</mMinLatency>
-			<mMaxLatency>135684</mMaxLatency>
+			<mMinLatency>264963</mMinLatency>
+			<mMaxLatency>528643</mMaxLatency>
 			<mIsDfPipe>0</mIsDfPipe>
 			<mDfPipe class_id="-1"></mDfPipe>
 		</item>
@@ -3341,8 +3613,8 @@
 			<mDepth>-1</mDepth>
 			<mMinTripCount>-1</mMinTripCount>
 			<mMaxTripCount>-1</mMaxTripCount>
-			<mMinLatency>259</mMinLatency>
-			<mMaxLatency>259</mMaxLatency>
+			<mMinLatency>514</mMinLatency>
+			<mMaxLatency>514</mMaxLatency>
 			<mIsDfPipe>0</mIsDfPipe>
 			<mDfPipe class_id="-1"></mDfPipe>
 		</item>
@@ -3367,8 +3639,8 @@
 			<mDepth>-1</mDepth>
 			<mMinTripCount>256</mMinTripCount>
 			<mMaxTripCount>256</mMaxTripCount>
-			<mMinLatency>68096</mMinLatency>
-			<mMaxLatency>135424</mMaxLatency>
+			<mMinLatency>264448</mMinLatency>
+			<mMaxLatency>528128</mMaxLatency>
 			<mIsDfPipe>0</mIsDfPipe>
 			<mDfPipe class_id="-1"></mDfPipe>
 		</item>
@@ -4372,7 +4644,7 @@
 			</second>
 		</item>
 		<item>
-			<first>icmp_ln88_fu_164</first>
+			<first>icmp_ln74_fu_164</first>
 			<second>
 				<count>1</count>
 				<item_version>0</item_version>
@@ -4499,7 +4771,7 @@
 			</second>
 		</item>
 		<item>
-			<first>store_ln88_store_fu_141</first>
+			<first>store_ln74_store_fu_141</first>
 			<second>
 				<count>1</count>
 				<item_version>0</item_version>
@@ -4507,7 +4779,7 @@
 			</second>
 		</item>
 		<item>
-			<first>store_ln88_store_fu_146</first>
+			<first>store_ln74_store_fu_146</first>
 			<second>
 				<count>1</count>
 				<item_version>0</item_version>
@@ -4515,7 +4787,7 @@
 			</second>
 		</item>
 		<item>
-			<first>store_ln88_store_fu_151</first>
+			<first>store_ln74_store_fu_151</first>
 			<second>
 				<count>1</count>
 				<item_version>0</item_version>
@@ -4523,7 +4795,7 @@
 			</second>
 		</item>
 		<item>
-			<first>store_ln88_store_fu_156</first>
+			<first>store_ln74_store_fu_156</first>
 			<second>
 				<count>1</count>
 				<item_version>0</item_version>
@@ -4531,7 +4803,7 @@
 			</second>
 		</item>
 		<item>
-			<first>store_ln88_store_fu_185</first>
+			<first>store_ln74_store_fu_185</first>
 			<second>
 				<count>1</count>
 				<item_version>0</item_version>
@@ -4539,7 +4811,7 @@
 			</second>
 		</item>
 		<item>
-			<first>store_ln88_store_fu_203</first>
+			<first>store_ln74_store_fu_203</first>
 			<second>
 				<count>1</count>
 				<item_version>0</item_version>
@@ -4547,7 +4819,7 @@
 			</second>
 		</item>
 		<item>
-			<first>store_ln88_store_fu_208</first>
+			<first>store_ln74_store_fu_208</first>
 			<second>
 				<count>1</count>
 				<item_version>0</item_version>
@@ -4555,7 +4827,7 @@
 			</second>
 		</item>
 		<item>
-			<first>store_ln92_store_fu_180</first>
+			<first>store_ln78_store_fu_180</first>
 			<second>
 				<count>1</count>
 				<item_version>0</item_version>
@@ -4563,7 +4835,7 @@
 			</second>
 		</item>
 		<item>
-			<first>write_ln98_write_fu_100</first>
+			<first>write_ln84_write_fu_100</first>
 			<second>
 				<count>1</count>
 				<item_version>0</item_version>

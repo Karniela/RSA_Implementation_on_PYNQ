@@ -88,10 +88,14 @@ entry:17 %ref_tmp = call i256 @mod_exp, i256 %y_read, i256 %d_read, i256 %N_read
 
 <Node id="5" bw="0" op_0_bw="0" op_1_bw="0">
 <![CDATA[
+<<<<<<< HEAD:rsa_baseline/rsa_baseline_hls/solution1/.autopilot/db/rsa.sched.adb.xml
 entry:0 %spectopmodule_ln32 = spectopmodule void @_ssdm_op_SpecTopModule, void @empty_8
+=======
+entry:0 %spectopmodule_ln30 = spectopmodule void @_ssdm_op_SpecTopModule, void @empty_8
+>>>>>>> origin/branch2:rsa_baseline/baseline/solution1/.autopilot/db/rsa.sched.adb.xml
 
 ]]></Node>
-<StgValue><ssdm name="spectopmodule_ln32"/></StgValue>
+<StgValue><ssdm name="spectopmodule_ln30"/></StgValue>
 </operation>
 
 <operation id="8" st_id="2" stage="1" lat="1">
@@ -313,10 +317,10 @@ entry:17 %ref_tmp = call i256 @mod_exp, i256 %y_read, i256 %d_read, i256 %N_read
 
 <Node id="23" bw="0" op_0_bw="0" op_1_bw="256" op_2_bw="256">
 <![CDATA[
-entry:18 %write_ln42 = write void @_ssdm_op_Write.s_axilite.i256P0A, i256 %x, i256 %ref_tmp
+entry:18 %write_ln40 = write void @_ssdm_op_Write.s_axilite.i256P0A, i256 %x, i256 %ref_tmp
 
 ]]></Node>
-<StgValue><ssdm name="write_ln42"/></StgValue>
+<StgValue><ssdm name="write_ln40"/></StgValue>
 </operation>
 
 <operation id="23" st_id="2" stage="1" lat="1">
@@ -328,10 +332,10 @@ entry:18 %write_ln42 = write void @_ssdm_op_Write.s_axilite.i256P0A, i256 %x, i2
 
 <Node id="24" bw="0">
 <![CDATA[
-entry:19 %ret_ln43 = ret
+entry:19 %ret_ln41 = ret
 
 ]]></Node>
-<StgValue><ssdm name="ret_ln43"/></StgValue>
+<StgValue><ssdm name="ret_ln41"/></StgValue>
 </operation>
 </state>
 </state_list>

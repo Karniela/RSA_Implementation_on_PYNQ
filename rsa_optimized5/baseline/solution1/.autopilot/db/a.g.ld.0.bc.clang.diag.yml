@@ -1,0 +1,16 @@
+--- !Missed
+Pass:            reflow-burst-inference
+Name:            CouldNotAnalyzeBoundsPattern
+DebugLoc:        { File: rsa.cpp, Line: 150, Column: 5 }
+Function:        _Z11mod_inverse7ap_uintILi128EES0_RS0_
+Args:            
+  - String:          Could not analyze the loop bounds
+  - String:          ' _XLX_SEP_ '
+  - LoopName:        MOD_INVERSE
+  - String:          ' '
+  - LoopLoc:         'rsa.cpp:150:5'
+  - String:          ' '
+  - Function:        'mod_inverse(ap_uint<128>, ap_uint<128>, ap_uint<128>&)'
+    DebugLoc:        { File: rsa.cpp, Line: 139, Column: 0 }
+  - String:          ' '
+...

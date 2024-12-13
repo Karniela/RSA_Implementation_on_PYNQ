@@ -1,0 +1,135 @@
+
+
+================================================================
+== Vitis HLS Report for 'Montgomery'
+================================================================
+* Date:           Thu Dec 12 16:24:57 2024
+
+* Version:        2022.2 (Build 3670227 on Oct 13 2022)
+* Project:        baseline
+* Solution:       solution1 (Vivado IP Flow Target)
+* Product family: zynq
+* Target device:  xc7z020-clg400-1
+
+
+================================================================
+== Performance Estimates
+================================================================
++ Timing: 
+    * Summary: 
+    +--------+----------+----------+------------+
+    |  Clock |  Target  | Estimated| Uncertainty|
+    +--------+----------+----------+------------+
+    |ap_clk  |  10.00 ns|  7.275 ns|     2.70 ns|
+    +--------+----------+----------+------------+
+
++ Latency: 
+    * Summary: 
+    +---------+---------+----------+----------+-----+-----+---------+
+    |  Latency (cycles) |  Latency (absolute) |  Interval | Pipeline|
+    |   min   |   max   |    min   |    max   | min | max |   Type  |
+    +---------+---------+----------+----------+-----+-----+---------+
+    |      133|      133|  1.330 us|  1.330 us|  133|  133|       no|
+    +---------+---------+----------+----------+-----+-----+---------+
+
+    + Detail: 
+        * Instance: 
+        N/A
+
+        * Loop: 
+        N/A
+
+============================================================
++ Verbose Summary: Synthesis Manager
+============================================================
+InlineROM: 1
+ExposeGlobal: 0
+============================================================
++ Verbose Summary: CDFG Model
+============================================================
+IsTopModel: 0
+ResetActiveHigh: 1
+IsCombinational: 0
+IsDatapathOnly: 0
+HasWiredReturn: 1
+HasMFsm: 0
+HasVarLatency: 1
+IsPipeline: 0
+IsRtlPipelined: 0
+IsInstanceOverlapped: 0
+IsDontTouch: 0
+HasImplIP: 0
+IsGatedGlobalClock: 0
+
+
+============================================================
++ Verbose Summary: Schedule
+============================================================
+* Number of FSM states : 3
+* Pipeline : 0
+* Dataflow Pipeline: 0
+
+* FSM state transitions: 
+1 --> 2 
+2 --> 3 
+3 --> 
+
+* FSM state operations: 
+
+State 1 <SV = 0> <Delay = 1.58>
+ST_1 : Operation 4 [1/1] (0.00ns)   --->   "%b_read = read i128 @_ssdm_op_Read.ap_auto.i128, i128 %b"   --->   Operation 4 'read' 'b_read' <Predicate = true> <Delay = 0.00>
+ST_1 : Operation 5 [1/1] (0.00ns)   --->   "%a_read = read i128 @_ssdm_op_Read.ap_auto.i128, i128 %a"   --->   Operation 5 'read' 'a_read' <Predicate = true> <Delay = 0.00>
+ST_1 : Operation 6 [1/1] (0.00ns)   --->   "%N_read = read i128 @_ssdm_op_Read.ap_auto.i128, i128 %N"   --->   Operation 6 'read' 'N_read' <Predicate = true> <Delay = 0.00>
+ST_1 : Operation 7 [1/1] (0.00ns)   --->   "%m_V_7_0_loc = alloca i64 1"   --->   Operation 7 'alloca' 'm_V_7_0_loc' <Predicate = true> <Delay = 0.00>
+ST_1 : Operation 8 [2/2] (1.58ns)   --->   "%call_ln0 = call void @Montgomery_Pipeline_Montgomery, i128 %a_read, i128 %b_read, i128 %N_read, i130 %m_V_7_0_loc"   --->   Operation 8 'call' 'call_ln0' <Predicate = true> <Delay = 1.58> <CoreType = "Generic">   --->   Core 0 '' <Latency = 0> <II = 1> <Delay = 1.00> <Generic> <Opcode : >
+
+State 2 <SV = 1> <Delay = 0.00>
+ST_2 : Operation 9 [1/2] (0.00ns)   --->   "%call_ln0 = call void @Montgomery_Pipeline_Montgomery, i128 %a_read, i128 %b_read, i128 %N_read, i130 %m_V_7_0_loc"   --->   Operation 9 'call' 'call_ln0' <Predicate = true> <Delay = 0.00> <CoreType = "Generic">   --->   Core 0 '' <Latency = 0> <II = 1> <Delay = 1.00> <Generic> <Opcode : >
+
+State 3 <SV = 2> <Delay = 7.27>
+ST_3 : Operation 10 [1/1] (0.00ns)   --->   "%m_V_7_0_loc_load = load i130 %m_V_7_0_loc"   --->   Operation 10 'load' 'm_V_7_0_loc_load' <Predicate = true> <Delay = 0.00>
+ST_3 : Operation 11 [1/1] (0.00ns)   --->   "%zext_ln1031 = zext i128 %N_read"   --->   Operation 11 'zext' 'zext_ln1031' <Predicate = true> <Delay = 0.00>
+ST_3 : Operation 12 [1/1] (3.49ns)   --->   "%icmp_ln1031 = icmp_ult  i130 %m_V_7_0_loc_load, i130 %zext_ln1031"   --->   Operation 12 'icmp' 'icmp_ln1031' <Predicate = true> <Delay = 3.49> <CoreInst = "Cmp">   --->   Core 9 'Cmp' <Latency = 0> <II = 1> <Delay = 3.49> <FuncUnit> <Opcode : 'icmp'> <InPorts = 2> <OutPorts = 1>
+ST_3 : Operation 13 [1/1] (0.00ns)   --->   "%trunc_ln186 = trunc i130 %m_V_7_0_loc_load"   --->   Operation 13 'trunc' 'trunc_ln186' <Predicate = true> <Delay = 0.00>
+ST_3 : Operation 14 [1/1] (5.35ns)   --->   "%sub_ln39 = sub i128 %trunc_ln186, i128 %N_read" [rsa.cpp:39]   --->   Operation 14 'sub' 'sub_ln39' <Predicate = true> <Delay = 5.35> <CoreInst = "Adder">   --->   Core 1 'Adder' <Latency = 0> <II = 1> <Delay = 5.35> <FuncUnit> <Opcode : 'add' 'sub'> <InPorts = 2> <OutPorts = 1>
+ST_3 : Operation 15 [1/1] (1.92ns)   --->   "%select_ln39 = select i1 %icmp_ln1031, i128 %trunc_ln186, i128 %sub_ln39" [rsa.cpp:39]   --->   Operation 15 'select' 'select_ln39' <Predicate = true> <Delay = 1.92> <CoreInst = "Sel">   --->   Core 73 'Sel' <Latency = 0> <II = 1> <Delay = 1.92> <FuncUnit> <Opcode : 'select'> <InPorts = 3> <OutPorts = 1>
+ST_3 : Operation 16 [1/1] (0.00ns)   --->   "%ret_ln44 = ret i128 %select_ln39" [rsa.cpp:44]   --->   Operation 16 'ret' 'ret_ln44' <Predicate = true> <Delay = 0.00>
+
+
+============================================================
++ Verbose Summary: Timing violations
+============================================================
+Target clock period: 10ns, clock uncertainty: 2.7ns.
+
+ <State 1>: 1.59ns
+The critical path consists of the following:
+	wire read operation ('b_read') on port 'b' [4]  (0 ns)
+	'call' operation ('call_ln0') to 'Montgomery_Pipeline_Montgomery' [8]  (1.59 ns)
+
+ <State 2>: 0ns
+The critical path consists of the following:
+
+ <State 3>: 7.28ns
+The critical path consists of the following:
+	'load' operation ('m_V_7_0_loc_load') on local variable 'm_V_7_0_loc' [9]  (0 ns)
+	'sub' operation ('sub_ln39', rsa.cpp:39) [13]  (5.35 ns)
+	'select' operation ('select_ln39', rsa.cpp:39) [14]  (1.92 ns)
+
+
+============================================================
++ Verbose Summary: Binding
+============================================================
+N/A
+* FSMD analyzer results:
+  - Output states:
+ - Input state : 
+  - Chain level:
+	State 1
+	State 2
+	State 3
+
+
+============================================================
++ Verbose Summary: Datapath Resource usage 
+============================================================
+N/A

@@ -34,7 +34,11 @@
               <coreName/>
               <isStorage>0</isStorage>
               <storageDepth>0</storageDepth>
+<<<<<<< HEAD:rsa_baseline/rsa_baseline_hls/solution2-NoDSP/.autopilot/db/rsa.adb
               <coreId>0</coreId>
+=======
+              <coreId>4294967040</coreId>
+>>>>>>> origin/branch2:rsa_baseline/baseline/solution1/.autopilot/db/rsa.adb
               <rtlModuleName/>
             </Obj>
             <bitwidth>256</bitwidth>
@@ -70,7 +74,7 @@
               <coreName/>
               <isStorage>0</isStorage>
               <storageDepth>0</storageDepth>
-              <coreId>0</coreId>
+              <coreId>3342336624</coreId>
               <rtlModuleName/>
             </Obj>
             <bitwidth>256</bitwidth>
@@ -106,7 +110,7 @@
               <coreName/>
               <isStorage>0</isStorage>
               <storageDepth>0</storageDepth>
-              <coreId>0</coreId>
+              <coreId>847542112</coreId>
               <rtlModuleName/>
             </Obj>
             <bitwidth>256</bitwidth>
@@ -167,7 +171,7 @@
               <name>y_read</name>
               <fileName>rsa.cpp</fileName>
               <fileDirectory>..</fileDirectory>
-              <lineNumber>32</lineNumber>
+              <lineNumber>30</lineNumber>
               <contextFuncName>rsa</contextFuncName>
               <contextNormFuncName>rsa</contextNormFuncName>
               <inlineStackInfo>
@@ -183,7 +187,7 @@
                         <first>rsa.cpp</first>
                         <second>rsa</second>
                       </first>
-                      <second>32</second>
+                      <second>30</second>
                     </item>
                   </second>
                 </item>
@@ -224,7 +228,7 @@
               <name>N_read</name>
               <fileName>rsa.cpp</fileName>
               <fileDirectory>..</fileDirectory>
-              <lineNumber>32</lineNumber>
+              <lineNumber>30</lineNumber>
               <contextFuncName>rsa</contextFuncName>
               <contextNormFuncName>rsa</contextNormFuncName>
               <inlineStackInfo>
@@ -240,7 +244,7 @@
                         <first>rsa.cpp</first>
                         <second>rsa</second>
                       </first>
-                      <second>32</second>
+                      <second>30</second>
                     </item>
                   </second>
                 </item>
@@ -281,7 +285,7 @@
               <name>d_read</name>
               <fileName>rsa.cpp</fileName>
               <fileDirectory>..</fileDirectory>
-              <lineNumber>32</lineNumber>
+              <lineNumber>30</lineNumber>
               <contextFuncName>rsa</contextFuncName>
               <contextNormFuncName>rsa</contextNormFuncName>
               <inlineStackInfo>
@@ -297,7 +301,7 @@
                         <first>rsa.cpp</first>
                         <second>rsa</second>
                       </first>
-                      <second>32</second>
+                      <second>30</second>
                     </item>
                   </second>
                 </item>
@@ -338,7 +342,7 @@
               <name>ref_tmp</name>
               <fileName>rsa.cpp</fileName>
               <fileDirectory>..</fileDirectory>
-              <lineNumber>42</lineNumber>
+              <lineNumber>40</lineNumber>
               <contextFuncName>rsa</contextFuncName>
               <contextNormFuncName>rsa</contextNormFuncName>
               <inlineStackInfo>
@@ -354,7 +358,7 @@
                         <first>rsa.cpp</first>
                         <second>rsa</second>
                       </first>
-                      <second>42</second>
+                      <second>40</second>
                     </item>
                   </second>
                 </item>
@@ -367,7 +371,11 @@
               <coreName/>
               <isStorage>0</isStorage>
               <storageDepth>0</storageDepth>
+<<<<<<< HEAD:rsa_baseline/rsa_baseline_hls/solution2-NoDSP/.autopilot/db/rsa.adb
               <coreId>0</coreId>
+=======
+              <coreId>179760</coreId>
+>>>>>>> origin/branch2:rsa_baseline/baseline/solution1/.autopilot/db/rsa.adb
               <rtlModuleName/>
             </Obj>
             <bitwidth>256</bitwidth>
@@ -394,10 +402,10 @@
             <Obj>
               <type>0</type>
               <id>23</id>
-              <name>x_write_ln42</name>
+              <name>x_write_ln40</name>
               <fileName>rsa.cpp</fileName>
               <fileDirectory>..</fileDirectory>
-              <lineNumber>42</lineNumber>
+              <lineNumber>40</lineNumber>
               <contextFuncName>rsa</contextFuncName>
               <contextNormFuncName>rsa</contextNormFuncName>
               <inlineStackInfo>
@@ -413,7 +421,7 @@
                         <first>rsa.cpp</first>
                         <second>rsa</second>
                       </first>
-                      <second>42</second>
+                      <second>40</second>
                     </item>
                   </second>
                 </item>
@@ -452,10 +460,10 @@
             <Obj>
               <type>0</type>
               <id>24</id>
-              <name>_ln43</name>
+              <name>_ln41</name>
               <fileName>rsa.cpp</fileName>
               <fileDirectory>..</fileDirectory>
-              <lineNumber>43</lineNumber>
+              <lineNumber>41</lineNumber>
               <contextFuncName>rsa</contextFuncName>
               <contextNormFuncName>rsa</contextNormFuncName>
               <inlineStackInfo>
@@ -471,7 +479,7 @@
                         <first>rsa.cpp</first>
                         <second>rsa</second>
                       </first>
-                      <second>43</second>
+                      <second>41</second>
                     </item>
                   </second>
                 </item>
@@ -484,7 +492,11 @@
               <coreName/>
               <isStorage>0</isStorage>
               <storageDepth>0</storageDepth>
+<<<<<<< HEAD:rsa_baseline/rsa_baseline_hls/solution2-NoDSP/.autopilot/db/rsa.adb
               <coreId>2095247760</coreId>
+=======
+              <coreId>3342444992</coreId>
+>>>>>>> origin/branch2:rsa_baseline/baseline/solution1/.autopilot/db/rsa.adb
               <rtlModuleName/>
             </Obj>
             <bitwidth>0</bitwidth>
@@ -667,8 +679,13 @@
         <mDepth>-1</mDepth>
         <mMinTripCount>-1</mMinTripCount>
         <mMaxTripCount>-1</mMaxTripCount>
+<<<<<<< HEAD:rsa_baseline/rsa_baseline_hls/solution2-NoDSP/.autopilot/db/rsa.adb
         <mMinLatency>786</mMinLatency>
         <mMaxLatency>267280</mMaxLatency>
+=======
+        <mMinLatency>784</mMinLatency>
+        <mMaxLatency>267535</mMaxLatency>
+>>>>>>> origin/branch2:rsa_baseline/baseline/solution1/.autopilot/db/rsa.adb
         <mIsDfPipe>0</mIsDfPipe>
         <mDfPipe class_id="-1"/>
       </item>
@@ -851,11 +868,19 @@
             </item>
             <item>
               <first>FF</first>
+<<<<<<< HEAD:rsa_baseline/rsa_baseline_hls/solution2-NoDSP/.autopilot/db/rsa.adb
               <second>23363</second>
             </item>
             <item>
               <first>LUT</first>
               <second>18741</second>
+=======
+              <second>7100</second>
+            </item>
+            <item>
+              <first>LUT</first>
+              <second>4774</second>
+>>>>>>> origin/branch2:rsa_baseline/baseline/solution1/.autopilot/db/rsa.adb
             </item>
           </second>
         </item>
@@ -1184,7 +1209,7 @@
         </second>
       </item>
       <item>
-        <first>write_ln42_write_fu_60</first>
+        <first>write_ln40_write_fu_60</first>
         <second>
           <count>1</count>
           <item_version>0</item_version>

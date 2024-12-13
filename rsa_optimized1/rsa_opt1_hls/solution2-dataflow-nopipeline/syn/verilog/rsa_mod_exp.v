@@ -53,8 +53,8 @@ wire    ap_CS_fsm_state3;
 wire    grp_mod_product_fu_66_ap_done;
 reg   [0:0] trunc_ln1497_reg_204;
 reg    ap_block_state3_on_subcall_done;
-wire   [8:0] i_4_fu_120_p2;
-reg   [8:0] i_4_reg_199;
+wire   [8:0] i_5_fu_120_p2;
+reg   [8:0] i_5_reg_199;
 reg   [255:0] m_V_load_1_reg_208;
 wire    grp_mod_product_fu_66_ap_start;
 wire    grp_mod_product_fu_66_ap_idle;
@@ -133,7 +133,7 @@ always @ (posedge ap_clk) begin
     if ((~((ap_start == 1'b0) | (ap_done_reg == 1'b1)) & (1'b1 == ap_CS_fsm_state1))) begin
         i_fu_36 <= 9'd0;
     end else if (((1'b0 == ap_block_state3_on_subcall_done) & (1'b1 == ap_CS_fsm_state3))) begin
-        i_fu_36 <= i_4_reg_199;
+        i_fu_36 <= i_5_reg_199;
     end
 end
 
@@ -163,7 +163,7 @@ end
 
 always @ (posedge ap_clk) begin
     if ((1'b1 == ap_CS_fsm_state2)) begin
-        i_4_reg_199 <= i_4_fu_120_p2;
+        i_5_reg_199 <= i_5_fu_120_p2;
     end
 end
 
@@ -301,7 +301,7 @@ assign ap_return = m_V_fu_44;
 
 assign grp_mod_product_fu_66_ap_start = grp_mod_product_fu_66_ap_start_reg;
 
-assign i_4_fu_120_p2 = (i_fu_36 + 9'd1);
+assign i_5_fu_120_p2 = (i_fu_36 + 9'd1);
 
 assign icmp_ln42_fu_114_p2 = ((i_fu_36 == 9'd256) ? 1'b1 : 1'b0);
 

@@ -14,21 +14,17 @@ set C_modelName {Montgomery_Pipeline_Montgomery}
 set C_modelType { void 0 }
 set C_modelArgList {
 	{ a int 256 regular  }
-	{ b_cast int 1 regular  }
+	{ zext_ln186 int 256 regular  }
 	{ zext_ln1495 int 256 regular  }
-	{ zext_ln1495_1 int 256 regular  }
-	{ add_ln186 int 257 regular  }
 	{ m_V_out int 257 regular {pointer 1}  }
 }
 set C_modelArgMapList {[ 
 	{ "Name" : "a", "interface" : "wire", "bitwidth" : 256, "direction" : "READONLY"} , 
- 	{ "Name" : "b_cast", "interface" : "wire", "bitwidth" : 1, "direction" : "READONLY"} , 
+ 	{ "Name" : "zext_ln186", "interface" : "wire", "bitwidth" : 256, "direction" : "READONLY"} , 
  	{ "Name" : "zext_ln1495", "interface" : "wire", "bitwidth" : 256, "direction" : "READONLY"} , 
- 	{ "Name" : "zext_ln1495_1", "interface" : "wire", "bitwidth" : 256, "direction" : "READONLY"} , 
- 	{ "Name" : "add_ln186", "interface" : "wire", "bitwidth" : 257, "direction" : "READONLY"} , 
  	{ "Name" : "m_V_out", "interface" : "wire", "bitwidth" : 257, "direction" : "WRITEONLY"} ]}
 # RTL Port declarations: 
-set portNum 13
+set portNum 11
 set portList { 
 	{ ap_clk sc_in sc_logic 1 clock -1 } 
 	{ ap_rst sc_in sc_logic 1 reset -1 active_high_sync } 
@@ -37,12 +33,10 @@ set portList {
 	{ ap_idle sc_out sc_logic 1 done -1 } 
 	{ ap_ready sc_out sc_logic 1 ready -1 } 
 	{ a sc_in sc_lv 256 signal 0 } 
-	{ b_cast sc_in sc_lv 1 signal 1 } 
+	{ zext_ln186 sc_in sc_lv 256 signal 1 } 
 	{ zext_ln1495 sc_in sc_lv 256 signal 2 } 
-	{ zext_ln1495_1 sc_in sc_lv 256 signal 3 } 
-	{ add_ln186 sc_in sc_lv 257 signal 4 } 
-	{ m_V_out sc_out sc_lv 257 signal 5 } 
-	{ m_V_out_ap_vld sc_out sc_logic 1 outvld 5 } 
+	{ m_V_out sc_out sc_lv 257 signal 3 } 
+	{ m_V_out_ap_vld sc_out sc_logic 1 outvld 3 } 
 }
 set NewPortList {[ 
 	{ "name": "ap_clk", "direction": "in", "datatype": "sc_logic", "bitwidth":1, "type": "clock", "bundle":{"name": "ap_clk", "role": "default" }} , 
@@ -52,10 +46,8 @@ set NewPortList {[
  	{ "name": "ap_idle", "direction": "out", "datatype": "sc_logic", "bitwidth":1, "type": "done", "bundle":{"name": "ap_idle", "role": "default" }} , 
  	{ "name": "ap_ready", "direction": "out", "datatype": "sc_logic", "bitwidth":1, "type": "ready", "bundle":{"name": "ap_ready", "role": "default" }} , 
  	{ "name": "a", "direction": "in", "datatype": "sc_lv", "bitwidth":256, "type": "signal", "bundle":{"name": "a", "role": "default" }} , 
- 	{ "name": "b_cast", "direction": "in", "datatype": "sc_lv", "bitwidth":1, "type": "signal", "bundle":{"name": "b_cast", "role": "default" }} , 
+ 	{ "name": "zext_ln186", "direction": "in", "datatype": "sc_lv", "bitwidth":256, "type": "signal", "bundle":{"name": "zext_ln186", "role": "default" }} , 
  	{ "name": "zext_ln1495", "direction": "in", "datatype": "sc_lv", "bitwidth":256, "type": "signal", "bundle":{"name": "zext_ln1495", "role": "default" }} , 
- 	{ "name": "zext_ln1495_1", "direction": "in", "datatype": "sc_lv", "bitwidth":256, "type": "signal", "bundle":{"name": "zext_ln1495_1", "role": "default" }} , 
- 	{ "name": "add_ln186", "direction": "in", "datatype": "sc_lv", "bitwidth":257, "type": "signal", "bundle":{"name": "add_ln186", "role": "default" }} , 
  	{ "name": "m_V_out", "direction": "out", "datatype": "sc_lv", "bitwidth":257, "type": "signal", "bundle":{"name": "m_V_out", "role": "default" }} , 
  	{ "name": "m_V_out_ap_vld", "direction": "out", "datatype": "sc_logic", "bitwidth":1, "type": "outvld", "bundle":{"name": "m_V_out", "role": "ap_vld" }}  ]}
 
@@ -66,7 +58,7 @@ set RtlHierarchyInfo {[
 		"ControlExist" : "1", "ap_start" : "1", "ap_ready" : "1", "ap_done" : "1", "ap_continue" : "0", "ap_idle" : "1", "real_start" : "0",
 		"Pipeline" : "None", "UnalignedPipeline" : "0", "RewindPipeline" : "0", "ProcessNetwork" : "0",
 		"II" : "0",
-		"VariableLatency" : "1", "ExactLatency" : "-1", "EstimateLatencyMin" : "258", "EstimateLatencyMax" : "258",
+		"VariableLatency" : "1", "ExactLatency" : "-1", "EstimateLatencyMin" : "1026", "EstimateLatencyMax" : "1026",
 		"Combinational" : "0",
 		"Datapath" : "0",
 		"ClockEnable" : "0",
@@ -76,14 +68,12 @@ set RtlHierarchyInfo {[
 		"IsBlackBox" : "0",
 		"Port" : [
 			{"Name" : "a", "Type" : "None", "Direction" : "I"},
-			{"Name" : "b_cast", "Type" : "None", "Direction" : "I"},
+			{"Name" : "zext_ln186", "Type" : "None", "Direction" : "I"},
 			{"Name" : "zext_ln1495", "Type" : "None", "Direction" : "I"},
-			{"Name" : "zext_ln1495_1", "Type" : "None", "Direction" : "I"},
-			{"Name" : "add_ln186", "Type" : "None", "Direction" : "I"},
 			{"Name" : "m_V_out", "Type" : "Vld", "Direction" : "O"}],
 		"Loop" : [
 			{"Name" : "Montgomery", "PipelineType" : "UPC",
-				"LoopDec" : {"FSMBitwidth" : "1", "FirstState" : "ap_ST_fsm_pp0_stage0", "FirstStateIter" : "ap_enable_reg_pp0_iter1", "FirstStateBlock" : "ap_block_pp0_stage0_subdone", "LastState" : "ap_ST_fsm_pp0_stage0", "LastStateIter" : "ap_enable_reg_pp0_iter2", "LastStateBlock" : "ap_block_pp0_stage0_subdone", "QuitState" : "ap_ST_fsm_pp0_stage0", "QuitStateIter" : "ap_enable_reg_pp0_iter1", "QuitStateBlock" : "ap_block_pp0_stage0_subdone", "OneDepthLoop" : "0", "has_ap_ctrl" : "1", "has_continue" : "0"}}]},
+				"LoopDec" : {"FSMBitwidth" : "4", "FirstState" : "ap_ST_fsm_pp0_stage1", "FirstStateIter" : "ap_enable_reg_pp0_iter0", "FirstStateBlock" : "ap_block_pp0_stage1_subdone", "LastState" : "ap_ST_fsm_pp0_stage0", "LastStateIter" : "ap_enable_reg_pp0_iter1", "LastStateBlock" : "ap_block_pp0_stage0_subdone", "QuitState" : "ap_ST_fsm_pp0_stage1", "QuitStateIter" : "ap_enable_reg_pp0_iter0", "QuitStateBlock" : "ap_block_pp0_stage1_subdone", "OneDepthLoop" : "0", "has_ap_ctrl" : "1", "has_continue" : "0"}}]},
 	{"ID" : "1", "Level" : "1", "Path" : "`AUTOTB_DUT_INST.add_258ns_258ns_258_2_1_U5", "Parent" : "0"},
 	{"ID" : "2", "Level" : "1", "Path" : "`AUTOTB_DUT_INST.add_258ns_258ns_258_2_1_U6", "Parent" : "0"},
 	{"ID" : "3", "Level" : "1", "Path" : "`AUTOTB_DUT_INST.flow_control_loop_pipe_sequential_init_U", "Parent" : "0"}]}
@@ -92,17 +82,15 @@ set RtlHierarchyInfo {[
 set ArgLastReadFirstWriteLatency {
 	Montgomery_Pipeline_Montgomery {
 		a {Type I LastRead 0 FirstWrite -1}
-		b_cast {Type I LastRead 0 FirstWrite -1}
+		zext_ln186 {Type I LastRead 0 FirstWrite -1}
 		zext_ln1495 {Type I LastRead 0 FirstWrite -1}
-		zext_ln1495_1 {Type I LastRead 0 FirstWrite -1}
-		add_ln186 {Type I LastRead 0 FirstWrite -1}
 		m_V_out {Type O LastRead -1 FirstWrite 1}}}
 
 set hasDtUnsupportedChannel 0
 
 set PerformanceInfo {[
-	{"Name" : "Latency", "Min" : "258", "Max" : "258"}
-	, {"Name" : "Interval", "Min" : "258", "Max" : "258"}
+	{"Name" : "Latency", "Min" : "1026", "Max" : "1026"}
+	, {"Name" : "Interval", "Min" : "1026", "Max" : "1026"}
 ]}
 
 set PipelineEnableSignalInfo {[
@@ -111,9 +99,7 @@ set PipelineEnableSignalInfo {[
 
 set Spec2ImplPortList { 
 	a { ap_none {  { a in_data 0 256 } } }
-	b_cast { ap_none {  { b_cast in_data 0 1 } } }
+	zext_ln186 { ap_none {  { zext_ln186 in_data 0 256 } } }
 	zext_ln1495 { ap_none {  { zext_ln1495 in_data 0 256 } } }
-	zext_ln1495_1 { ap_none {  { zext_ln1495_1 in_data 0 256 } } }
-	add_ln186 { ap_none {  { add_ln186 in_data 0 257 } } }
 	m_V_out { ap_vld {  { m_V_out out_data 1 257 }  { m_V_out_ap_vld out_vld 1 1 } } }
 }

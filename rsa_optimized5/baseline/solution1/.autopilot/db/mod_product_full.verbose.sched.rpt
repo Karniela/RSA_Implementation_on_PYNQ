@@ -1,0 +1,187 @@
+
+
+================================================================
+== Vitis HLS Report for 'mod_product_full'
+================================================================
+* Date:           Thu Dec 12 16:24:57 2024
+
+* Version:        2022.2 (Build 3670227 on Oct 13 2022)
+* Project:        baseline
+* Solution:       solution1 (Vivado IP Flow Target)
+* Product family: zynq
+* Target device:  xc7z020-clg400-1
+
+
+================================================================
+== Performance Estimates
+================================================================
++ Timing: 
+    * Summary: 
+    +--------+----------+----------+------------+
+    |  Clock |  Target  | Estimated| Uncertainty|
+    +--------+----------+----------+------------+
+    |ap_clk  |  10.00 ns|  7.284 ns|     2.70 ns|
+    +--------+----------+----------+------------+
+
++ Latency: 
+    * Summary: 
+    +---------+---------+----------+----------+-----+-----+---------+
+    |  Latency (cycles) |  Latency (absolute) |  Interval | Pipeline|
+    |   min   |   max   |    min   |    max   | min | max |   Type  |
+    +---------+---------+----------+----------+-----+-----+---------+
+    |      385|      385|  3.850 us|  3.850 us|  385|  385|       no|
+    +---------+---------+----------+----------+-----+-----+---------+
+
+    + Detail: 
+        * Instance: 
+        N/A
+
+        * Loop: 
+        +---------------+---------+---------+----------+-----------+-----------+------+----------+
+        |               |  Latency (cycles) | Iteration|  Initiation Interval  | Trip |          |
+        |   Loop Name   |   min   |   max   |  Latency |  achieved |   target  | Count| Pipelined|
+        +---------------+---------+---------+----------+-----------+-----------+------+----------+
+        |- MOD_PRODUCT  |      384|      384|         3|          -|          -|   128|        no|
+        +---------------+---------+---------+----------+-----------+-----------+------+----------+
+
+============================================================
++ Verbose Summary: Synthesis Manager
+============================================================
+InlineROM: 1
+ExposeGlobal: 0
+============================================================
++ Verbose Summary: CDFG Model
+============================================================
+IsTopModel: 0
+ResetActiveHigh: 1
+IsCombinational: 0
+IsDatapathOnly: 0
+HasWiredReturn: 1
+HasMFsm: 0
+HasVarLatency: 1
+IsPipeline: 0
+IsRtlPipelined: 0
+IsInstanceOverlapped: 0
+IsDontTouch: 0
+HasImplIP: 0
+IsGatedGlobalClock: 0
+
+
+============================================================
++ Verbose Summary: Schedule
+============================================================
+* Number of FSM states : 4
+* Pipeline : 0
+* Dataflow Pipeline: 0
+
+* FSM state transitions: 
+1 --> 2 
+2 --> 3 
+3 --> 4 
+4 --> 2 
+
+* FSM state operations: 
+
+State 1 <SV = 0> <Delay = 1.58>
+ST_1 : Operation 5 [1/1] (0.00ns)   --->   "%lhs = alloca i32 1"   --->   Operation 5 'alloca' 'lhs' <Predicate = true> <Delay = 0.00>
+ST_1 : Operation 6 [1/1] (0.00ns)   --->   "%lhs_1 = alloca i32 1"   --->   Operation 6 'alloca' 'lhs_1' <Predicate = true> <Delay = 0.00>
+ST_1 : Operation 7 [1/1] (0.00ns)   --->   "%i = alloca i32 1"   --->   Operation 7 'alloca' 'i' <Predicate = true> <Delay = 0.00>
+ST_1 : Operation 8 [1/1] (0.00ns)   --->   "%shr_i4 = alloca i32 1"   --->   Operation 8 'alloca' 'shr_i4' <Predicate = true> <Delay = 0.00>
+ST_1 : Operation 9 [1/1] (0.00ns)   --->   "%N_read = read i128 @_ssdm_op_Read.ap_auto.i128, i128 %N"   --->   Operation 9 'read' 'N_read' <Predicate = true> <Delay = 0.00>
+ST_1 : Operation 10 [1/1] (0.00ns)   --->   "%b_read = read i128 @_ssdm_op_Read.ap_auto.i128, i128 %b"   --->   Operation 10 'read' 'b_read' <Predicate = true> <Delay = 0.00>
+ST_1 : Operation 11 [1/1] (0.00ns)   --->   "%a_read = read i128 @_ssdm_op_Read.ap_auto.i128, i128 %a"   --->   Operation 11 'read' 'a_read' <Predicate = true> <Delay = 0.00>
+ST_1 : Operation 12 [1/1] (0.00ns)   --->   "%zext_ln186 = zext i128 %b_read"   --->   Operation 12 'zext' 'zext_ln186' <Predicate = true> <Delay = 0.00>
+ST_1 : Operation 13 [1/1] (0.00ns)   --->   "%conv_i167 = zext i128 %N_read"   --->   Operation 13 'zext' 'conv_i167' <Predicate = true> <Delay = 0.00>
+ST_1 : Operation 14 [1/1] (0.00ns)   --->   "%zext_ln1496 = zext i128 %N_read"   --->   Operation 14 'zext' 'zext_ln1496' <Predicate = true> <Delay = 0.00>
+ST_1 : Operation 15 [1/1] (1.58ns)   --->   "%store_ln175 = store i128 %a_read, i128 %shr_i4" [rsa.cpp:175]   --->   Operation 15 'store' 'store_ln175' <Predicate = true> <Delay = 1.58>
+ST_1 : Operation 16 [1/1] (1.58ns)   --->   "%store_ln175 = store i8 0, i8 %i" [rsa.cpp:175]   --->   Operation 16 'store' 'store_ln175' <Predicate = true> <Delay = 1.58>
+ST_1 : Operation 17 [1/1] (1.58ns)   --->   "%store_ln175 = store i129 %zext_ln186, i129 %lhs_1" [rsa.cpp:175]   --->   Operation 17 'store' 'store_ln175' <Predicate = true> <Delay = 1.58>
+ST_1 : Operation 18 [1/1] (1.58ns)   --->   "%store_ln175 = store i129 0, i129 %lhs" [rsa.cpp:175]   --->   Operation 18 'store' 'store_ln175' <Predicate = true> <Delay = 1.58>
+ST_1 : Operation 19 [1/1] (0.00ns)   --->   "%br_ln175 = br void %for.body" [rsa.cpp:175]   --->   Operation 19 'br' 'br_ln175' <Predicate = true> <Delay = 0.00>
+
+State 2 <SV = 1> <Delay = 7.28>
+ST_2 : Operation 20 [1/1] (0.00ns)   --->   "%i_6 = load i8 %i" [rsa.cpp:175]   --->   Operation 20 'load' 'i_6' <Predicate = true> <Delay = 0.00>
+ST_2 : Operation 21 [1/1] (1.55ns)   --->   "%icmp_ln175 = icmp_eq  i8 %i_6, i8 128" [rsa.cpp:175]   --->   Operation 21 'icmp' 'icmp_ln175' <Predicate = true> <Delay = 1.55> <CoreInst = "Cmp">   --->   Core 9 'Cmp' <Latency = 0> <II = 1> <Delay = 1.55> <FuncUnit> <Opcode : 'icmp'> <InPorts = 2> <OutPorts = 1>
+ST_2 : Operation 22 [1/1] (0.00ns)   --->   "%empty = speclooptripcount i32 @_ssdm_op_SpecLoopTripCount, i64 128, i64 128, i64 128"   --->   Operation 22 'speclooptripcount' 'empty' <Predicate = true> <Delay = 0.00>
+ST_2 : Operation 23 [1/1] (1.91ns)   --->   "%i_7 = add i8 %i_6, i8 1" [rsa.cpp:175]   --->   Operation 23 'add' 'i_7' <Predicate = true> <Delay = 1.91> <CoreInst = "Adder">   --->   Core 1 'Adder' <Latency = 0> <II = 1> <Delay = 1.91> <FuncUnit> <Opcode : 'add' 'sub'> <InPorts = 2> <OutPorts = 1>
+ST_2 : Operation 24 [1/1] (0.00ns)   --->   "%br_ln175 = br i1 %icmp_ln175, void %for.body.split_ifconv, void %for.end" [rsa.cpp:175]   --->   Operation 24 'br' 'br_ln175' <Predicate = true> <Delay = 0.00>
+ST_2 : Operation 25 [1/1] (0.00ns)   --->   "%lhs_load_1 = load i129 %lhs"   --->   Operation 25 'load' 'lhs_load_1' <Predicate = (!icmp_ln175)> <Delay = 0.00>
+ST_2 : Operation 26 [1/1] (0.00ns)   --->   "%lhs_1_load = load i129 %lhs_1"   --->   Operation 26 'load' 'lhs_1_load' <Predicate = (!icmp_ln175)> <Delay = 0.00>
+ST_2 : Operation 27 [1/1] (0.00ns)   --->   "%zext_ln186_4 = zext i129 %lhs_1_load"   --->   Operation 27 'zext' 'zext_ln186_4' <Predicate = (!icmp_ln175)> <Delay = 0.00>
+ST_2 : Operation 28 [1/1] (0.00ns)   --->   "%zext_ln186_5 = zext i129 %lhs_load_1"   --->   Operation 28 'zext' 'zext_ln186_5' <Predicate = (!icmp_ln175)> <Delay = 0.00>
+ST_2 : Operation 29 [1/1] (5.38ns)   --->   "%ret_V = add i130 %zext_ln186_5, i130 %zext_ln186_4"   --->   Operation 29 'add' 'ret_V' <Predicate = (!icmp_ln175)> <Delay = 5.38> <CoreInst = "Adder">   --->   Core 1 'Adder' <Latency = 0> <II = 1> <Delay = 5.38> <FuncUnit> <Opcode : 'add' 'sub'> <InPorts = 2> <OutPorts = 1>
+ST_2 : Operation 30 [1/1] (5.38ns)   --->   "%m_V = add i129 %lhs_load_1, i129 %lhs_1_load"   --->   Operation 30 'add' 'm_V' <Predicate = (!icmp_ln175)> <Delay = 5.38> <CoreInst = "Adder">   --->   Core 1 'Adder' <Latency = 0> <II = 1> <Delay = 5.38> <FuncUnit> <Opcode : 'add' 'sub'> <InPorts = 2> <OutPorts = 1>
+ST_2 : Operation 31 [1/1] (0.00ns)   --->   "%ret_V_6 = bitconcatenate i130 @_ssdm_op_BitConcatenate.i130.i129.i1, i129 %lhs_1_load, i1 0"   --->   Operation 31 'bitconcatenate' 'ret_V_6' <Predicate = (!icmp_ln175)> <Delay = 0.00>
+ST_2 : Operation 32 [1/1] (3.49ns)   --->   "%icmp_ln1035 = icmp_ugt  i130 %ret_V_6, i130 %conv_i167"   --->   Operation 32 'icmp' 'icmp_ln1035' <Predicate = (!icmp_ln175)> <Delay = 3.49> <CoreInst = "Cmp">   --->   Core 9 'Cmp' <Latency = 0> <II = 1> <Delay = 3.49> <FuncUnit> <Opcode : 'icmp'> <InPorts = 2> <OutPorts = 1>
+ST_2 : Operation 33 [1/1] (0.00ns)   --->   "%t_V_5 = shl i129 %lhs_1_load, i129 1"   --->   Operation 33 'shl' 't_V_5' <Predicate = (!icmp_ln175)> <Delay = 0.00>
+ST_2 : Operation 34 [1/1] (5.38ns)   --->   "%t_V = sub i129 %t_V_5, i129 %zext_ln1496"   --->   Operation 34 'sub' 't_V' <Predicate = (!icmp_ln175)> <Delay = 5.38> <CoreInst = "Adder">   --->   Core 1 'Adder' <Latency = 0> <II = 1> <Delay = 5.38> <FuncUnit> <Opcode : 'add' 'sub'> <InPorts = 2> <OutPorts = 1>
+ST_2 : Operation 35 [1/1] (1.90ns)   --->   "%t_V_6 = select i1 %icmp_ln1035, i129 %t_V, i129 %t_V_5" [rsa.cpp:185]   --->   Operation 35 'select' 't_V_6' <Predicate = (!icmp_ln175)> <Delay = 1.90> <CoreInst = "Sel">   --->   Core 73 'Sel' <Latency = 0> <II = 1> <Delay = 1.90> <FuncUnit> <Opcode : 'select'> <InPorts = 3> <OutPorts = 1>
+ST_2 : Operation 36 [1/1] (1.58ns)   --->   "%store_ln175 = store i8 %i_7, i8 %i" [rsa.cpp:175]   --->   Operation 36 'store' 'store_ln175' <Predicate = (!icmp_ln175)> <Delay = 1.58>
+ST_2 : Operation 37 [1/1] (0.00ns)   --->   "%lhs_load = load i129 %lhs" [rsa.cpp:193]   --->   Operation 37 'load' 'lhs_load' <Predicate = (icmp_ln175)> <Delay = 0.00>
+ST_2 : Operation 38 [1/1] (0.00ns)   --->   "%ret_ln193 = ret i129 %lhs_load" [rsa.cpp:193]   --->   Operation 38 'ret' 'ret_ln193' <Predicate = (icmp_ln175)> <Delay = 0.00>
+
+State 3 <SV = 2> <Delay = 7.28>
+ST_3 : Operation 39 [1/1] (0.00ns)   --->   "%shr_i4_load = load i128 %shr_i4"   --->   Operation 39 'load' 'shr_i4_load' <Predicate = true> <Delay = 0.00>
+ST_3 : Operation 40 [1/1] (0.00ns)   --->   "%trunc_ln1497 = trunc i128 %shr_i4_load"   --->   Operation 40 'trunc' 'trunc_ln1497' <Predicate = true> <Delay = 0.00>
+ST_3 : Operation 41 [1/1] (3.49ns)   --->   "%icmp_ln1031 = icmp_ult  i130 %ret_V, i130 %conv_i167"   --->   Operation 41 'icmp' 'icmp_ln1031' <Predicate = true> <Delay = 3.49> <CoreInst = "Cmp">   --->   Core 9 'Cmp' <Latency = 0> <II = 1> <Delay = 3.49> <FuncUnit> <Opcode : 'icmp'> <InPorts = 2> <OutPorts = 1>
+ST_3 : Operation 42 [1/1] (5.38ns)   --->   "%m_V_3 = sub i129 %m_V, i129 %zext_ln1496"   --->   Operation 42 'sub' 'm_V_3' <Predicate = true> <Delay = 5.38> <CoreInst = "Adder">   --->   Core 1 'Adder' <Latency = 0> <II = 1> <Delay = 5.38> <FuncUnit> <Opcode : 'add' 'sub'> <InPorts = 2> <OutPorts = 1>
+ST_3 : Operation 43 [1/1] (0.00ns) (grouped into LUT with out node m_V_5)   --->   "%and_ln1031 = and i1 %icmp_ln1031, i1 %trunc_ln1497"   --->   Operation 43 'and' 'and_ln1031' <Predicate = true> <Delay = 0.00> <CoreInst = "LogicGate">   --->   Core 74 'LogicGate' <Latency = 0> <II = 1> <Delay = 0.97> <FuncUnit> <Opcode : 'and' 'or' 'xor'> <InPorts = 2> <OutPorts = 1>
+ST_3 : Operation 44 [1/1] (0.00ns) (grouped into LUT with out node m_V_5)   --->   "%m_V_4 = select i1 %and_ln1031, i129 %m_V, i129 %m_V_3"   --->   Operation 44 'select' 'm_V_4' <Predicate = true> <Delay = 0.00> <CoreInst = "Sel">   --->   Core 73 'Sel' <Latency = 0> <II = 1> <Delay = 1.90> <FuncUnit> <Opcode : 'select'> <InPorts = 3> <OutPorts = 1>
+ST_3 : Operation 45 [1/1] (1.90ns) (out node of the LUT)   --->   "%m_V_5 = select i1 %trunc_ln1497, i129 %m_V_4, i129 %lhs_load_1" [rsa.cpp:177]   --->   Operation 45 'select' 'm_V_5' <Predicate = true> <Delay = 1.90> <CoreInst = "Sel">   --->   Core 73 'Sel' <Latency = 0> <II = 1> <Delay = 1.90> <FuncUnit> <Opcode : 'select'> <InPorts = 3> <OutPorts = 1>
+ST_3 : Operation 46 [1/1] (0.00ns)   --->   "%r_V = partselect i127 @_ssdm_op_PartSelect.i127.i128.i32.i32, i128 %shr_i4_load, i32 1, i32 127"   --->   Operation 46 'partselect' 'r_V' <Predicate = true> <Delay = 0.00>
+ST_3 : Operation 47 [1/1] (0.00ns)   --->   "%zext_ln1669 = zext i127 %r_V"   --->   Operation 47 'zext' 'zext_ln1669' <Predicate = true> <Delay = 0.00>
+ST_3 : Operation 48 [1/1] (1.58ns)   --->   "%store_ln175 = store i128 %zext_ln1669, i128 %shr_i4" [rsa.cpp:175]   --->   Operation 48 'store' 'store_ln175' <Predicate = true> <Delay = 1.58>
+ST_3 : Operation 49 [1/1] (1.58ns)   --->   "%store_ln175 = store i129 %t_V_6, i129 %lhs_1" [rsa.cpp:175]   --->   Operation 49 'store' 'store_ln175' <Predicate = true> <Delay = 1.58>
+
+State 4 <SV = 3> <Delay = 1.58>
+ST_4 : Operation 50 [1/1] (0.00ns)   --->   "%specloopname_ln1633 = specloopname void @_ssdm_op_SpecLoopName, void @empty_15"   --->   Operation 50 'specloopname' 'specloopname_ln1633' <Predicate = true> <Delay = 0.00>
+ST_4 : Operation 51 [1/1] (1.58ns)   --->   "%store_ln175 = store i129 %m_V_5, i129 %lhs" [rsa.cpp:175]   --->   Operation 51 'store' 'store_ln175' <Predicate = true> <Delay = 1.58>
+ST_4 : Operation 52 [1/1] (0.00ns)   --->   "%br_ln175 = br void %for.body" [rsa.cpp:175]   --->   Operation 52 'br' 'br_ln175' <Predicate = true> <Delay = 0.00>
+
+
+============================================================
++ Verbose Summary: Timing violations
+============================================================
+Target clock period: 10ns, clock uncertainty: 2.7ns.
+
+ <State 1>: 1.59ns
+The critical path consists of the following:
+	'alloca' operation ('shr_i4') [7]  (0 ns)
+	'store' operation ('store_ln175', rsa.cpp:175) of variable 'a_read' on local variable 'shr_i4' [14]  (1.59 ns)
+
+ <State 2>: 7.28ns
+The critical path consists of the following:
+	'load' operation ('lhs_1_load') on local variable 'lhs' [27]  (0 ns)
+	'shl' operation ('t.V') [42]  (0 ns)
+	'sub' operation ('t.V') [43]  (5.38 ns)
+	'select' operation ('t.V', rsa.cpp:185) [44]  (1.9 ns)
+
+ <State 3>: 7.28ns
+The critical path consists of the following:
+	'sub' operation ('m.V') [36]  (5.38 ns)
+	'select' operation ('m.V') [38]  (0 ns)
+	'select' operation ('m.V', rsa.cpp:177) [39]  (1.9 ns)
+
+ <State 4>: 1.59ns
+The critical path consists of the following:
+	'store' operation ('store_ln175', rsa.cpp:175) of variable 'm.V', rsa.cpp:177 on local variable 'lhs' [50]  (1.59 ns)
+
+
+============================================================
++ Verbose Summary: Binding
+============================================================
+N/A
+* FSMD analyzer results:
+  - Output states:
+ - Input state : 
+  - Chain level:
+	State 1
+	State 2
+	State 3
+	State 4
+
+
+============================================================
++ Verbose Summary: Datapath Resource usage 
+============================================================
+N/A

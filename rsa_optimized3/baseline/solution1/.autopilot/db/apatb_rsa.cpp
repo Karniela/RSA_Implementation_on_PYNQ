@@ -18,14 +18,6 @@
 using namespace std;
 
 // wrapc file define:
-#define AUTOTB_TVIN_mu_p "../tv/cdatafile/c.rsa.autotvin_mu_p.dat"
-#define AUTOTB_TVOUT_mu_p "../tv/cdatafile/c.rsa.autotvout_mu_p.dat"
-#define AUTOTB_TVIN_mu_q "../tv/cdatafile/c.rsa.autotvin_mu_q.dat"
-#define AUTOTB_TVOUT_mu_q "../tv/cdatafile/c.rsa.autotvout_mu_q.dat"
-#define AUTOTB_TVIN_p "../tv/cdatafile/c.rsa.autotvin_p.dat"
-#define AUTOTB_TVOUT_p "../tv/cdatafile/c.rsa.autotvout_p.dat"
-#define AUTOTB_TVIN_q "../tv/cdatafile/c.rsa.autotvin_q.dat"
-#define AUTOTB_TVOUT_q "../tv/cdatafile/c.rsa.autotvout_q.dat"
 #define AUTOTB_TVIN_d "../tv/cdatafile/c.rsa.autotvin_d.dat"
 #define AUTOTB_TVOUT_d "../tv/cdatafile/c.rsa.autotvout_d.dat"
 #define AUTOTB_TVIN_N "../tv/cdatafile/c.rsa.autotvin_N.dat"
@@ -962,56 +954,12 @@ namespace hls::sim
 
 
 extern "C"
-void rsa_hw_stub_wrapper(hls::sim::Byte<32>*, hls::sim::Byte<32>*, hls::sim::Byte<16>*, hls::sim::Byte<16>*, hls::sim::Byte<32>*, hls::sim::Byte<32>*, hls::sim::Byte<32>*, void*);
+void rsa_hw_stub_wrapper(hls::sim::Byte<32>*, hls::sim::Byte<32>*, hls::sim::Byte<32>*, void*);
 
 extern "C"
-void apatb_rsa_hw(hls::sim::Byte<32>* __xlx_apatb_param_mu_p, hls::sim::Byte<32>* __xlx_apatb_param_mu_q, hls::sim::Byte<16>* __xlx_apatb_param_p, hls::sim::Byte<16>* __xlx_apatb_param_q, hls::sim::Byte<32>* __xlx_apatb_param_d, hls::sim::Byte<32>* __xlx_apatb_param_N, hls::sim::Byte<32>* __xlx_apatb_param_y, void* __xlx_apatb_param_x)
+void apatb_rsa_hw(hls::sim::Byte<32>* __xlx_apatb_param_d, hls::sim::Byte<32>* __xlx_apatb_param_N, hls::sim::Byte<32>* __xlx_apatb_param_y, void* __xlx_apatb_param_x)
 {
   static hls::sim::Register port0 {
-    .name = "mu_p",
-    .width = 129,
-#ifdef POST_CHECK
-#else
-    .owriter = nullptr,
-    .iwriter = new hls::sim::Writer(AUTOTB_TVIN_mu_p),
-#endif
-  };
-  port0.param = __xlx_apatb_param_mu_p;
-
-  static hls::sim::Register port1 {
-    .name = "mu_q",
-    .width = 129,
-#ifdef POST_CHECK
-#else
-    .owriter = nullptr,
-    .iwriter = new hls::sim::Writer(AUTOTB_TVIN_mu_q),
-#endif
-  };
-  port1.param = __xlx_apatb_param_mu_q;
-
-  static hls::sim::Register port2 {
-    .name = "p",
-    .width = 128,
-#ifdef POST_CHECK
-#else
-    .owriter = nullptr,
-    .iwriter = new hls::sim::Writer(AUTOTB_TVIN_p),
-#endif
-  };
-  port2.param = __xlx_apatb_param_p;
-
-  static hls::sim::Register port3 {
-    .name = "q",
-    .width = 128,
-#ifdef POST_CHECK
-#else
-    .owriter = nullptr,
-    .iwriter = new hls::sim::Writer(AUTOTB_TVIN_q),
-#endif
-  };
-  port3.param = __xlx_apatb_param_q;
-
-  static hls::sim::Register port4 {
     .name = "d",
     .width = 256,
 #ifdef POST_CHECK
@@ -1020,9 +968,9 @@ void apatb_rsa_hw(hls::sim::Byte<32>* __xlx_apatb_param_mu_p, hls::sim::Byte<32>
     .iwriter = new hls::sim::Writer(AUTOTB_TVIN_d),
 #endif
   };
-  port4.param = __xlx_apatb_param_d;
+  port0.param = __xlx_apatb_param_d;
 
-  static hls::sim::Register port5 {
+  static hls::sim::Register port1 {
     .name = "N",
     .width = 256,
 #ifdef POST_CHECK
@@ -1031,9 +979,9 @@ void apatb_rsa_hw(hls::sim::Byte<32>* __xlx_apatb_param_mu_p, hls::sim::Byte<32>
     .iwriter = new hls::sim::Writer(AUTOTB_TVIN_N),
 #endif
   };
-  port5.param = __xlx_apatb_param_N;
+  port1.param = __xlx_apatb_param_N;
 
-  static hls::sim::Register port6 {
+  static hls::sim::Register port2 {
     .name = "y",
     .width = 256,
 #ifdef POST_CHECK
@@ -1042,9 +990,9 @@ void apatb_rsa_hw(hls::sim::Byte<32>* __xlx_apatb_param_mu_p, hls::sim::Byte<32>
     .iwriter = new hls::sim::Writer(AUTOTB_TVIN_y),
 #endif
   };
-  port6.param = __xlx_apatb_param_y;
+  port2.param = __xlx_apatb_param_y;
 
-  static hls::sim::Register port7 {
+  static hls::sim::Register port3 {
     .name = "x",
     .width = 256,
 #ifdef POST_CHECK
@@ -1054,13 +1002,13 @@ void apatb_rsa_hw(hls::sim::Byte<32>* __xlx_apatb_param_mu_p, hls::sim::Byte<32>
     .iwriter = new hls::sim::Writer(AUTOTB_TVIN_x),
 #endif
   };
-  port7.param = __xlx_apatb_param_x;
+  port3.param = __xlx_apatb_param_x;
 
   refine_signal_handler();
   try {
 #ifdef POST_CHECK
     CodeState = ENTER_WRAPC_PC;
-    check(port7);
+    check(port3);
 #else
     static hls::sim::RefTCL tcl("../tv/cdatafile/ref.tcl");
     CodeState = DUMP_INPUTS;
@@ -1068,22 +1016,14 @@ void apatb_rsa_hw(hls::sim::Byte<32>* __xlx_apatb_param_mu_p, hls::sim::Byte<32>
     dump(port1, port1.iwriter, tcl.AESL_transaction);
     dump(port2, port2.iwriter, tcl.AESL_transaction);
     dump(port3, port3.iwriter, tcl.AESL_transaction);
-    dump(port4, port4.iwriter, tcl.AESL_transaction);
-    dump(port5, port5.iwriter, tcl.AESL_transaction);
-    dump(port6, port6.iwriter, tcl.AESL_transaction);
-    dump(port7, port7.iwriter, tcl.AESL_transaction);
     port0.doTCL(tcl);
     port1.doTCL(tcl);
     port2.doTCL(tcl);
     port3.doTCL(tcl);
-    port4.doTCL(tcl);
-    port5.doTCL(tcl);
-    port6.doTCL(tcl);
-    port7.doTCL(tcl);
     CodeState = CALL_C_DUT;
-    rsa_hw_stub_wrapper(__xlx_apatb_param_mu_p, __xlx_apatb_param_mu_q, __xlx_apatb_param_p, __xlx_apatb_param_q, __xlx_apatb_param_d, __xlx_apatb_param_N, __xlx_apatb_param_y, __xlx_apatb_param_x);
+    rsa_hw_stub_wrapper(__xlx_apatb_param_d, __xlx_apatb_param_N, __xlx_apatb_param_y, __xlx_apatb_param_x);
     CodeState = DUMP_OUTPUTS;
-    dump(port7, port7.owriter, tcl.AESL_transaction);
+    dump(port3, port3.owriter, tcl.AESL_transaction);
     tcl.AESL_transaction++;
 #endif
   } catch (const hls::sim::SimException &e) {

@@ -1,7 +1,7 @@
 <profile>
 
 <section name = "Vitis HLS Report for 'rsa'" level="0">
-<item name = "Date">Tue Dec  3 15:56:41 2024
+<item name = "Date">Thu Dec 12 16:45:52 2024
 </item>
 <item name = "Version">2022.2 (Build 3670227 on Oct 13 2022)</item>
 <item name = "Project">baseline</item>
@@ -15,7 +15,7 @@
 <section name = "" level="1">
 <item name = "Summary"><table name="" hasTotal="0">
 <keys size="4">Clock, Target, Estimated, Uncertainty</keys>
-<column name="ap_clk">10.00 ns, 7.284 ns, 2.70 ns</column>
+<column name="ap_clk">10.00 ns, 6.584 ns, 2.70 ns</column>
 </table>
 </item>
 </section>
@@ -24,20 +24,20 @@
 <section name = "" level="1">
 <item name = "Summary"><table name="" hasTotal="0">
 <keys size="8">, min, max, min, max, min, max, Type</keys>
-<column name="">1059, 133411, 10.590 us, 1.334 ms, 1060, 133412, no</column>
+<column name="">68356, 135684, 0.684 ms, 1.357 ms, 68357, 135685, no</column>
 </table>
 </item>
 <item name = "Detail">
 <section name = "" level="1">
 <item name = "Instance"><table name="" hasTotal="0">
 <keys size="9">Instance, Module, min, max, min, max, min, max, Type</keys>
-<column name="grp_mod_inverse_fu_91">mod_inverse, 139, 17665, 1.390 us, 0.177 ms, 139, 17665, no</column>
-<column name="grp_mod_exp_fu_97">mod_exp, 523, 132875, 5.230 us, 1.329 ms, 523, 132875, no</column>
-<column name="grp_mod_exp_fu_104">mod_exp, 523, 132875, 5.230 us, 1.329 ms, 523, 132875, no</column>
+<column name="grp_mod_product_fu_107">mod_product, 258, 258, 2.580 us, 2.580 us, 258, 258, no</column>
+<column name="grp_Montgomery_fu_115">Montgomery, 263, 263, 2.630 us, 2.630 us, 263, 263, no</column>
 </table>
 </item>
 <item name = "Loop"><table name="" hasTotal="0">
 <keys size="8">Loop Name, min, max, Latency, achieved, target, Count, Pipelined</keys>
+<column name="- RSA_TOP">68096, 135424, 266 ~ 529, -, -, 256, no</column>
 </table>
 </item>
 </section>
@@ -50,30 +50,23 @@
 <item name = "Summary"><table name="" hasTotal="1">
 <keys size="6">Name, BRAM_18K, DSP, FF, LUT, URAM</keys>
 <column name="DSP">-, -, -, -, -</column>
-<column name="Expression">-, -, 0, 1042, -</column>
+<column name="Expression">-, -, 0, 27, -</column>
 <column name="FIFO">-, -, -, -, -</column>
-<column name="Instance">0, 265, 17272, 16396, -</column>
+<column name="Instance">0, -, 7353, 4450, -</column>
 <column name="Memory">-, -, -, -, -</column>
-<column name="Multiplexer">-, -, -, 2693, -</column>
-<column name="Register">-, -, 3108, -, -</column>
+<column name="Multiplexer">-, -, -, 81, -</column>
+<column name="Register">-, -, 1818, -, -</column>
 <specialColumn name="Available">280, 220, 106400, 53200, 0</specialColumn>
-<specialColumn name="Utilization (%)">0, 120, 19, 37, 0</specialColumn>
+<specialColumn name="Utilization (%)">0, 0, 8, 8, 0</specialColumn>
 </table>
 </item>
 <item name = "Detail">
 <section name = "" level="1">
 <item name = "Instance"><table name="" hasTotal="1">
 <keys size="7">Instance, Module, BRAM_18K, DSP, FF, LUT, URAM</keys>
-<column name="add_256ns_256ns_256_2_1_U21">add_256ns_256ns_256_2_1, 0, 0, 580, 132, 0</column>
-<column name="control_s_axi_U">control_s_axi, 0, 0, 1352, 2600, 0</column>
-<column name="grp_mod_exp_fu_97">mod_exp, 0, 100, 4602, 4642, 0</column>
-<column name="grp_mod_exp_fu_104">mod_exp, 0, 100, 4602, 4642, 0</column>
-<column name="grp_mod_inverse_fu_91">mod_inverse, 0, 15, 2917, 2461, 0</column>
-<column name="mul_129s_128ns_257_5_1_U18">mul_129s_128ns_257_5_1, 0, 25, 441, 256, 0</column>
-<column name="mul_130s_128ns_256_5_1_U20">mul_130s_128ns_256_5_1, 0, 25, 441, 256, 0</column>
-<column name="srem_257ns_129ns_129_261_seq_1_U19">srem_257ns_129ns_129_261_seq_1, 0, 0, 779, 469, 0</column>
-<column name="urem_256ns_256s_128_260_seq_1_U16">urem_256ns_256s_128_260_seq_1, 0, 0, 779, 469, 0</column>
-<column name="urem_256ns_256s_128_260_seq_1_U17">urem_256ns_256s_128_260_seq_1, 0, 0, 779, 469, 0</column>
+<column name="grp_Montgomery_fu_115">Montgomery, 0, 0, 4650, 1790, 0</column>
+<column name="control_s_axi_U">control_s_axi, 0, 0, 1084, 2088, 0</column>
+<column name="grp_mod_product_fu_107">mod_product, 0, 0, 1619, 572, 0</column>
 </table>
 </item>
 <item name = "DSP"><table name="" hasTotal="0">
@@ -90,46 +83,36 @@
 </item>
 <item name = "Expression"><table name="" hasTotal="1">
 <keys size="7">Variable Name, Operation, DSP, FF, LUT, Bitwidth P0, Bitwidth P1</keys>
-<column name="ret_V_1_fu_125_p2">+, 0, 0, 136, 129, 2</column>
-<column name="ret_V_fu_115_p2">+, 0, 0, 136, 129, 2</column>
-<column name="h_V_1_fu_221_p2">-, 0, 0, 137, 130, 130</column>
-<column name="ret_V_2_fu_167_p2">-, 0, 0, 136, 129, 129</column>
-<column name="ret_V_3_fu_173_p2">-, 0, 0, 136, 129, 129</column>
-<column name="icmp_ln1027_fu_187_p2">icmp, 0, 0, 50, 128, 128</column>
-<column name="icmp_ln1035_fu_157_p2">icmp, 0, 0, 50, 128, 128</column>
-<column name="ap_block_state262_on_subcall_done">or, 0, 0, 2, 1, 1</column>
-<column name="h_V_2_fu_227_p3">select, 0, 0, 130, 1, 130</column>
-<column name="lhs_fu_179_p3">select, 0, 0, 129, 1, 129</column>
+<column name="i_2_fu_170_p2">+, 0, 0, 14, 9, 1</column>
+<column name="ap_block_state4_on_subcall_done">and, 0, 0, 2, 1, 1</column>
+<column name="icmp_ln84_fu_164_p2">icmp, 0, 0, 11, 9, 10</column>
 </table>
 </item>
 <item name = "Multiplexer"><table name="" hasTotal="1">
 <keys size="5">Name, LUT, Input Size, Bits, Total Bits</keys>
-<column name="ap_NS_fsm">2693, 538, 1, 538</column>
+<column name="ap_NS_fsm">31, 6, 1, 6</column>
+<column name="d_V_fu_70">9, 2, 256, 512</column>
+<column name="grp_Montgomery_fu_115_a">14, 3, 256, 768</column>
+<column name="i_fu_74">9, 2, 9, 18</column>
+<column name="m_V_fu_78">9, 2, 256, 512</column>
+<column name="t_V_1_fu_66">9, 2, 256, 512</column>
 </table>
 </item>
 <item name = "Register"><table name="" hasTotal="1">
 <keys size="5">Name, FF, LUT, Bits, Const Bits</keys>
-<column name="ap_CS_fsm">537, 0, 537, 0</column>
-<column name="d_read_reg_261">256, 0, 256, 0</column>
-<column name="dp_V_reg_302">128, 0, 128, 0</column>
-<column name="dq_V_reg_307">128, 0, 128, 0</column>
-<column name="grp_mod_exp_fu_104_ap_start_reg">1, 0, 1, 0</column>
-<column name="grp_mod_exp_fu_97_ap_start_reg">1, 0, 1, 0</column>
-<column name="grp_mod_inverse_fu_91_ap_start_reg">1, 0, 1, 0</column>
-<column name="h_V_2_reg_367">130, 0, 130, 0</column>
-<column name="icmp_ln1027_reg_337">1, 0, 1, 0</column>
-<column name="lhs_reg_332">129, 0, 129, 0</column>
-<column name="mp_V_reg_317">128, 0, 128, 0</column>
-<column name="mq_V_reg_324">128, 0, 128, 0</column>
-<column name="mul_ln186_reg_382">256, 0, 256, 0</column>
-<column name="p_read_reg_274">128, 0, 128, 0</column>
-<column name="q_inv_V_reg_312">128, 0, 128, 0</column>
-<column name="q_read_reg_267">128, 0, 128, 0</column>
-<column name="ret_V_1_reg_287">129, 0, 129, 0</column>
-<column name="ret_V_4_reg_352">257, 0, 257, 0</column>
-<column name="ret_V_6_reg_362">129, 0, 129, 0</column>
-<column name="ret_V_reg_282">129, 0, 129, 0</column>
-<column name="y_read_reg_255">256, 0, 256, 0</column>
+<column name="N_read_reg_246">256, 0, 256, 0</column>
+<column name="ap_CS_fsm">5, 0, 5, 0</column>
+<column name="d_V_fu_70">256, 0, 256, 0</column>
+<column name="grp_Montgomery_fu_115_ap_start_reg">1, 0, 1, 0</column>
+<column name="grp_mod_product_fu_107_ap_start_reg">1, 0, 1, 0</column>
+<column name="i_2_reg_255">9, 0, 9, 0</column>
+<column name="i_fu_74">9, 0, 9, 0</column>
+<column name="m_V_fu_78">256, 0, 256, 0</column>
+<column name="m_V_load_1_reg_264">256, 0, 256, 0</column>
+<column name="reg_135">256, 0, 256, 0</column>
+<column name="t_V_1_fu_66">256, 0, 256, 0</column>
+<column name="trunc_ln1497_reg_260">1, 0, 1, 0</column>
+<column name="y_read_reg_241">256, 0, 256, 0</column>
 </table>
 </item>
 </section>
@@ -159,8 +142,6 @@
 <column name="ap_clk">in, 1, ap_ctrl_hs, rsa, return value</column>
 <column name="ap_rst_n">in, 1, ap_ctrl_hs, rsa, return value</column>
 <column name="interrupt">out, 1, ap_ctrl_hs, rsa, return value</column>
-<column name="mu_p">in, 129, ap_none, mu_p, scalar</column>
-<column name="mu_q">in, 129, ap_none, mu_q, scalar</column>
 </table>
 </item>
 </section>

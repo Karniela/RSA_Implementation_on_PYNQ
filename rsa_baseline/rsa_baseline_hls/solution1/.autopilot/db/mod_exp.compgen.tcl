@@ -16,8 +16,13 @@ if {${::AESL::PGuard_autoexp_gen}} {
 # Direct connection:
 if {${::AESL::PGuard_autoexp_gen}} {
 eval "cg_default_interface_gen_dc { \
+<<<<<<< HEAD:rsa_baseline/rsa_baseline_hls/solution1/.autopilot/db/mod_exp.compgen.tcl
     id 14 \
     name base_r \
+=======
+    id 23 \
+    name y \
+>>>>>>> origin/branch2:rsa_optimized1/baseline/solution1/.autopilot/db/mod_exp.compgen.tcl
     type other \
     dir I \
     reset_level 1 \
@@ -31,8 +36,13 @@ eval "cg_default_interface_gen_dc { \
 # Direct connection:
 if {${::AESL::PGuard_autoexp_gen}} {
 eval "cg_default_interface_gen_dc { \
+<<<<<<< HEAD:rsa_baseline/rsa_baseline_hls/solution1/.autopilot/db/mod_exp.compgen.tcl
     id 15 \
     name exp \
+=======
+    id 24 \
+    name d \
+>>>>>>> origin/branch2:rsa_optimized1/baseline/solution1/.autopilot/db/mod_exp.compgen.tcl
     type other \
     dir I \
     reset_level 1 \
@@ -46,8 +56,13 @@ eval "cg_default_interface_gen_dc { \
 # Direct connection:
 if {${::AESL::PGuard_autoexp_gen}} {
 eval "cg_default_interface_gen_dc { \
+<<<<<<< HEAD:rsa_baseline/rsa_baseline_hls/solution1/.autopilot/db/mod_exp.compgen.tcl
     id 16 \
     name mod_r \
+=======
+    id 25 \
+    name N \
+>>>>>>> origin/branch2:rsa_optimized1/baseline/solution1/.autopilot/db/mod_exp.compgen.tcl
     type other \
     dir I \
     reset_level 1 \

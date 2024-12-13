@@ -1,7 +1,11 @@
 <profile>
 
 <section name = "Vitis HLS Report for 'rsa'" level="0">
+<<<<<<< HEAD:rsa_baseline/rsa_baseline_hls/solution1/.autopilot/db/rsa.verbose.rpt.xml
 <item name = "Date">Thu Dec  5 17:05:39 2024
+=======
+<item name = "Date">Thu Dec 12 17:19:57 2024
+>>>>>>> origin/branch2:rsa_optimized1/baseline/solution1/.autopilot/db/rsa.verbose.rpt.xml
 </item>
 <item name = "Version">2022.2 (Build 3670227 on Oct 13 2022)</item>
 <item name = "Project">rsa_baseline_hls</item>
@@ -24,14 +28,22 @@
 <section name = "" level="1">
 <item name = "Summary"><table name="" hasTotal="0">
 <keys size="8">, min, max, min, max, min, max, Type</keys>
+<<<<<<< HEAD:rsa_baseline/rsa_baseline_hls/solution1/.autopilot/db/rsa.verbose.rpt.xml
 <column name="">786, 267280, 7.860 us, 2.673 ms, 787, 267281, no</column>
+=======
+<column name="">214274, 427778, 2.143 ms, 4.278 ms, 214275, 427779, no</column>
+>>>>>>> origin/branch2:rsa_optimized1/baseline/solution1/.autopilot/db/rsa.verbose.rpt.xml
 </table>
 </item>
 <item name = "Detail">
 <section name = "" level="1">
 <item name = "Instance"><table name="" hasTotal="0">
 <keys size="9">Instance, Module, min, max, min, max, min, max, Type</keys>
+<<<<<<< HEAD:rsa_baseline/rsa_baseline_hls/solution1/.autopilot/db/rsa.verbose.rpt.xml
 <column name="grp_mod_exp_fu_67">mod_exp, 785, 267279, 7.850 us, 2.673 ms, 785, 267279, no</column>
+=======
+<column name="grp_mod_exp_fu_67">mod_exp, 214273, 427777, 2.143 ms, 4.278 ms, 214273, 427777, no</column>
+>>>>>>> origin/branch2:rsa_optimized1/baseline/solution1/.autopilot/db/rsa.verbose.rpt.xml
 </table>
 </item>
 <item name = "Loop"><table name="" hasTotal="0">
@@ -50,12 +62,20 @@
 <column name="DSP">-, -, -, -, -</column>
 <column name="Expression">-, -, -, -, -</column>
 <column name="FIFO">-, -, -, -, -</column>
+<<<<<<< HEAD:rsa_baseline/rsa_baseline_hls/solution1/.autopilot/db/rsa.verbose.rpt.xml
 <column name="Instance">0, 200, 24447, 20829, -</column>
+=======
+<column name="Instance">0, -, 18120, 8253, -</column>
+>>>>>>> origin/branch2:rsa_optimized1/baseline/solution1/.autopilot/db/rsa.verbose.rpt.xml
 <column name="Memory">-, -, -, -, -</column>
 <column name="Multiplexer">-, -, -, 14, -</column>
 <column name="Register">-, -, 771, -, -</column>
 <specialColumn name="Available">280, 220, 106400, 53200, 0</specialColumn>
+<<<<<<< HEAD:rsa_baseline/rsa_baseline_hls/solution1/.autopilot/db/rsa.verbose.rpt.xml
 <specialColumn name="Utilization (%)">0, 90, 23, 39, 0</specialColumn>
+=======
+<specialColumn name="Utilization (%)">0, 0, 17, 15, 0</specialColumn>
+>>>>>>> origin/branch2:rsa_optimized1/baseline/solution1/.autopilot/db/rsa.verbose.rpt.xml
 </table>
 </item>
 <item name = "Detail">
@@ -63,7 +83,11 @@
 <item name = "Instance"><table name="" hasTotal="1">
 <keys size="7">Instance, Module, BRAM_18K, DSP, FF, LUT, URAM</keys>
 <column name="control_s_axi_U">control_s_axi, 0, 0, 1084, 2088, 0</column>
+<<<<<<< HEAD:rsa_baseline/rsa_baseline_hls/solution1/.autopilot/db/rsa.verbose.rpt.xml
 <column name="grp_mod_exp_fu_67">mod_exp, 0, 200, 23363, 18741, 0</column>
+=======
+<column name="grp_mod_exp_fu_67">mod_exp, 0, 0, 17036, 6165, 0</column>
+>>>>>>> origin/branch2:rsa_optimized1/baseline/solution1/.autopilot/db/rsa.verbose.rpt.xml
 </table>
 </item>
 <item name = "DSP"><table name="" hasTotal="0">

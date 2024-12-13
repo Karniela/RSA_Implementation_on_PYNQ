@@ -9,14 +9,6 @@
 <ModuleName>mod_exp</ModuleName>
 <IsCompInst>true</IsCompInst>
 <ID>67</ID>
-<InstancesList>
-<Instance>
-<InstName>grp_mod_exp_Pipeline_VITIS_LOOP_12_1_fu_38</InstName>
-<ModuleName>mod_exp_Pipeline_VITIS_LOOP_12_1</ModuleName>
-<IsCompInst>true</IsCompInst>
-<ID>38</ID>
-</Instance>
-</InstancesList>
 </Instance>
 </InstancesList>
 </TopModule>
@@ -24,7 +16,7 @@
 
 <ModuleInformation>
 <Module>
-<Name>mod_exp_Pipeline_VITIS_LOOP_12_1</Name>
+<Name>mod_exp</Name>
 <Loops>
 <VITIS_LOOP_12_1></VITIS_LOOP_12_1>
 </Loops>
@@ -35,6 +27,7 @@
 <EstimatedClockPeriod>6.978</EstimatedClockPeriod>
 </SummaryOfTimingAnalysis>
 <SummaryOfOverallLatency>
+<<<<<<< HEAD:rsa_baseline/rsa_baseline_hls/solution2-NoDSP/.autopilot/db/rsa.design.xml
 <Best-caseLatency>524</Best-caseLatency>
 <Average-caseLatency>100358</Average-caseLatency>
 <Worst-caseLatency>267018</Worst-caseLatency>
@@ -42,6 +35,15 @@
 <Average-caseRealTimeLatency>1.004 ms</Average-caseRealTimeLatency>
 <Worst-caseRealTimeLatency>2.670 ms</Worst-caseRealTimeLatency>
 <PipelineInitiationInterval>524 ~ 267018</PipelineInitiationInterval>
+=======
+<Best-caseLatency>783</Best-caseLatency>
+<Average-caseLatency>100618</Average-caseLatency>
+<Worst-caseLatency>267534</Worst-caseLatency>
+<Best-caseRealTimeLatency>7.830 us</Best-caseRealTimeLatency>
+<Average-caseRealTimeLatency>1.006 ms</Average-caseRealTimeLatency>
+<Worst-caseRealTimeLatency>2.675 ms</Worst-caseRealTimeLatency>
+<PipelineInitiationInterval>783 ~ 267534</PipelineInitiationInterval>
+>>>>>>> origin/branch2:rsa_baseline/baseline/solution1/.autopilot/db/rsa.design.xml
 <PipelineType>no</PipelineType>
 </SummaryOfOverallLatency>
 <SummaryOfLoopLatency>
@@ -54,6 +56,7 @@
 <max>256</max>
 </range>
 </TripCount>
+<<<<<<< HEAD:rsa_baseline/rsa_baseline_hls/solution2-NoDSP/.autopilot/db/rsa.design.xml
 <Latency>522 ~ 267016</Latency>
 <AbsoluteTimeLatency>5.220 us ~ 2.670 ms</AbsoluteTimeLatency>
 <IterationLatency>
@@ -63,6 +66,17 @@
 </range>
 </IterationLatency>
 <PipelineDepth>522 ~ 1041</PipelineDepth>
+=======
+<Latency>522 ~ 267273</Latency>
+<AbsoluteTimeLatency>5.220 us ~ 2.673 ms</AbsoluteTimeLatency>
+<IterationLatency>
+<range>
+<min>522</min>
+<max>1042</max>
+</range>
+</IterationLatency>
+<PipelineDepth>522 ~ 1042</PipelineDepth>
+>>>>>>> origin/branch2:rsa_baseline/baseline/solution1/.autopilot/db/rsa.design.xml
 <PipelineType>no</PipelineType>
 <InstanceList>
 </InstanceList>
@@ -74,6 +88,7 @@
 <DSP>200</DSP>
 <AVAIL_DSP>220</AVAIL_DSP>
 <UTIL_DSP>90</UTIL_DSP>
+<<<<<<< HEAD:rsa_baseline/rsa_baseline_hls/solution2-NoDSP/.autopilot/db/rsa.design.xml
 <FF>21552</FF>
 <AVAIL_FF>106400</AVAIL_FF>
 <UTIL_FF>20</UTIL_FF>
@@ -275,6 +290,14 @@
 <LUT>18741</LUT>
 <AVAIL_LUT>53200</AVAIL_LUT>
 <UTIL_LUT>35</UTIL_LUT>
+=======
+<FF>7100</FF>
+<AVAIL_FF>106400</AVAIL_FF>
+<UTIL_FF>6</UTIL_FF>
+<LUT>4774</LUT>
+<AVAIL_LUT>53200</AVAIL_LUT>
+<UTIL_LUT>8</UTIL_LUT>
+>>>>>>> origin/branch2:rsa_baseline/baseline/solution1/.autopilot/db/rsa.design.xml
 <BRAM_18K>0</BRAM_18K>
 <AVAIL_BRAM>280</AVAIL_BRAM>
 <UTIL_BRAM>0</UTIL_BRAM>
@@ -405,6 +428,7 @@
 <EstimatedClockPeriod>6.978</EstimatedClockPeriod>
 </SummaryOfTimingAnalysis>
 <SummaryOfOverallLatency>
+<<<<<<< HEAD:rsa_baseline/rsa_baseline_hls/solution2-NoDSP/.autopilot/db/rsa.design.xml
 <Best-caseLatency>786</Best-caseLatency>
 <Average-caseLatency>100620</Average-caseLatency>
 <Worst-caseLatency>267280</Worst-caseLatency>
@@ -412,6 +436,15 @@
 <Average-caseRealTimeLatency>1.006 ms</Average-caseRealTimeLatency>
 <Worst-caseRealTimeLatency>2.673 ms</Worst-caseRealTimeLatency>
 <PipelineInitiationInterval>787 ~ 267281</PipelineInitiationInterval>
+=======
+<Best-caseLatency>784</Best-caseLatency>
+<Average-caseLatency>100619</Average-caseLatency>
+<Worst-caseLatency>267535</Worst-caseLatency>
+<Best-caseRealTimeLatency>7.840 us</Best-caseRealTimeLatency>
+<Average-caseRealTimeLatency>1.006 ms</Average-caseRealTimeLatency>
+<Worst-caseRealTimeLatency>2.675 ms</Worst-caseRealTimeLatency>
+<PipelineInitiationInterval>785 ~ 267536</PipelineInitiationInterval>
+>>>>>>> origin/branch2:rsa_baseline/baseline/solution1/.autopilot/db/rsa.design.xml
 <PipelineType>no</PipelineType>
 </SummaryOfOverallLatency>
 </PerformanceEstimates>
@@ -423,12 +456,21 @@
 <DSP>200</DSP>
 <AVAIL_DSP>220</AVAIL_DSP>
 <UTIL_DSP>90</UTIL_DSP>
+<<<<<<< HEAD:rsa_baseline/rsa_baseline_hls/solution2-NoDSP/.autopilot/db/rsa.design.xml
 <FF>25218</FF>
 <AVAIL_FF>106400</AVAIL_FF>
 <UTIL_FF>23</UTIL_FF>
 <LUT>20843</LUT>
 <AVAIL_LUT>53200</AVAIL_LUT>
 <UTIL_LUT>39</UTIL_LUT>
+=======
+<FF>8955</FF>
+<AVAIL_FF>106400</AVAIL_FF>
+<UTIL_FF>8</UTIL_FF>
+<LUT>6876</LUT>
+<AVAIL_LUT>53200</AVAIL_LUT>
+<UTIL_LUT>12</UTIL_LUT>
+>>>>>>> origin/branch2:rsa_baseline/baseline/solution1/.autopilot/db/rsa.design.xml
 <URAM>0</URAM>
 <AVAIL_URAM>0</AVAIL_URAM>
 <UTIL_URAM>0</UTIL_URAM>

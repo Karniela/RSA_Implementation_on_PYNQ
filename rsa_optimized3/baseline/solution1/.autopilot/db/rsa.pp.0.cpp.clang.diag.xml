@@ -1,6 +1,6 @@
 <dict>
   <key>main-file</key>
-  <string>/home/cse237c_fa24_s_chen/RSA_Implementation_on_PYNQ/rsa_optimized3/baseline/solution1/.autopilot/db/rsa.pp.0.cpp</string>
+  <string>/home/cse237c_fa24_s_chen/RSA_Implementation_on_PYNQ/rsa_optimized_Mont2/baseline/solution1/.autopilot/db/rsa.pp.0.cpp</string>
   <key>diagnostics</key>
   <array>
     <dict>
@@ -3273,11 +3273,11 @@
       <key>filename</key>
       <string>rsa.cpp</string>
       <key>line</key>
-      <integer>22</integer>
+      <integer>18</integer>
       <key>column</key>
       <integer>9</integer>
       <key>message</key>
-      <string>HLS pragma dump _XLX_SEP_ PragmaIsValid=1_XLX_SEP_ PragmaType=pipeline_XLX_SEP_ PragmaContext=_XLX_SEP_ PragmaFunction=mod_product_XLX_SEP_ PragmaOptions=off_XLX_SEP_</string>
+      <string>HLS pragma dump _XLX_SEP_ PragmaIsValid=1_XLX_SEP_ PragmaType=inline_XLX_SEP_ PragmaContext=_XLX_SEP_ PragmaFunction=Montgomery_XLX_SEP_ PragmaOptions=OFF_XLX_SEP_</string>
       <key>ID</key>
       <integer>5471</integer>
       <key>WarningOption</key>
@@ -3289,11 +3289,11 @@
       <key>filename</key>
       <string>rsa.cpp</string>
       <key>line</key>
-      <integer>53</integer>
+      <integer>23</integer>
       <key>column</key>
       <integer>9</integer>
       <key>message</key>
-      <string>HLS pragma dump _XLX_SEP_ PragmaIsValid=1_XLX_SEP_ PragmaType=pipeline_XLX_SEP_ PragmaContext=_XLX_SEP_ PragmaFunction=mod_exp_XLX_SEP_ PragmaOptions=OFF_XLX_SEP_</string>
+      <string>HLS pragma dump _XLX_SEP_ PragmaIsValid=1_XLX_SEP_ PragmaType=pipeline_XLX_SEP_ PragmaContext=_XLX_SEP_ PragmaFunction=Montgomery_XLX_SEP_ PragmaOptions=II=1_XLX_SEP_</string>
       <key>ID</key>
       <integer>5471</integer>
       <key>WarningOption</key>
@@ -3305,11 +3305,11 @@
       <key>filename</key>
       <string>rsa.cpp</string>
       <key>line</key>
-      <integer>80</integer>
+      <integer>55</integer>
       <key>column</key>
       <integer>9</integer>
       <key>message</key>
-      <string>HLS pragma dump _XLX_SEP_ PragmaIsValid=1_XLX_SEP_ PragmaType=inline_XLX_SEP_ PragmaContext=_XLX_SEP_ PragmaFunction=mod_inverse_XLX_SEP_ PragmaOptions=OFF_XLX_SEP_</string>
+      <string>HLS pragma dump _XLX_SEP_ PragmaIsValid=1_XLX_SEP_ PragmaType=inline_XLX_SEP_ PragmaContext=_XLX_SEP_ PragmaFunction=mod_product_XLX_SEP_ PragmaOptions=OFF_XLX_SEP_</string>
       <key>ID</key>
       <integer>5471</integer>
       <key>WarningOption</key>
@@ -3321,11 +3321,11 @@
       <key>filename</key>
       <string>rsa.cpp</string>
       <key>line</key>
-      <integer>91</integer>
+      <integer>60</integer>
       <key>column</key>
       <integer>9</integer>
       <key>message</key>
-      <string>HLS pragma dump _XLX_SEP_ PragmaIsValid=1_XLX_SEP_ PragmaType=pipeline_XLX_SEP_ PragmaContext=_XLX_SEP_ PragmaFunction=mod_inverse_XLX_SEP_ PragmaOptions=OFF_XLX_SEP_</string>
+      <string>HLS pragma dump _XLX_SEP_ PragmaIsValid=1_XLX_SEP_ PragmaType=pipeline_XLX_SEP_ PragmaContext=_XLX_SEP_ PragmaFunction=mod_product_XLX_SEP_ PragmaOptions=II=1_XLX_SEP_</string>
       <key>ID</key>
       <integer>5471</integer>
       <key>WarningOption</key>
@@ -3335,7 +3335,7 @@
       <key>level</key>
       <string>warning</string>
       <key>filename</key>
-      <string>/home/cse237c_fa24_s_chen/RSA_Implementation_on_PYNQ/rsa_optimized3/baseline/solution1/csynth.tcl</string>
+      <string>/home/cse237c_fa24_s_chen/RSA_Implementation_on_PYNQ/rsa_optimized_Mont2/baseline/solution1/csynth.tcl</string>
       <key>line</key>
       <integer>18</integer>
       <key>column</key>
@@ -3351,7 +3351,7 @@
       <key>level</key>
       <string>warning</string>
       <key>filename</key>
-      <string>/home/cse237c_fa24_s_chen/RSA_Implementation_on_PYNQ/rsa_optimized3/baseline/solution1/directives.tcl</string>
+      <string>/home/cse237c_fa24_s_chen/RSA_Implementation_on_PYNQ/rsa_optimized_Mont2/baseline/solution1/directives.tcl</string>
       <key>line</key>
       <integer>6</integer>
       <key>column</key>
@@ -3369,11 +3369,11 @@
       <key>filename</key>
       <string>rsa.cpp</string>
       <key>line</key>
-      <integer>111</integer>
+      <integer>75</integer>
       <key>column</key>
       <integer>9</integer>
       <key>message</key>
-      <string>HLS pragma dump _XLX_SEP_ PragmaIsValid=1_XLX_SEP_ PragmaType=interface_XLX_SEP_ PragmaContext=_XLX_SEP_ PragmaFunction=rsa_XLX_SEP_ PragmaOptions=s_axilite port=return_XLX_SEP_</string>
+      <string>HLS pragma dump _XLX_SEP_ PragmaIsValid=1_XLX_SEP_ PragmaType=interface_XLX_SEP_ PragmaContext=_XLX_SEP_ PragmaFunction=rsa_XLX_SEP_ PragmaOptions=mode=s_axilite port=return_XLX_SEP_</string>
       <key>ID</key>
       <integer>5471</integer>
       <key>WarningOption</key>
@@ -3385,11 +3385,11 @@
       <key>filename</key>
       <string>rsa.cpp</string>
       <key>line</key>
-      <integer>112</integer>
+      <integer>76</integer>
       <key>column</key>
       <integer>9</integer>
       <key>message</key>
-      <string>HLS pragma dump _XLX_SEP_ PragmaIsValid=1_XLX_SEP_ PragmaType=interface_XLX_SEP_ PragmaContext=_XLX_SEP_ PragmaFunction=rsa_XLX_SEP_ PragmaOptions=s_axilite port=p_XLX_SEP_</string>
+      <string>HLS pragma dump _XLX_SEP_ PragmaIsValid=1_XLX_SEP_ PragmaType=interface_XLX_SEP_ PragmaContext=_XLX_SEP_ PragmaFunction=rsa_XLX_SEP_ PragmaOptions=mode=s_axilite port=d_XLX_SEP_</string>
       <key>ID</key>
       <integer>5471</integer>
       <key>WarningOption</key>
@@ -3401,11 +3401,11 @@
       <key>filename</key>
       <string>rsa.cpp</string>
       <key>line</key>
-      <integer>113</integer>
+      <integer>77</integer>
       <key>column</key>
       <integer>9</integer>
       <key>message</key>
-      <string>HLS pragma dump _XLX_SEP_ PragmaIsValid=1_XLX_SEP_ PragmaType=interface_XLX_SEP_ PragmaContext=_XLX_SEP_ PragmaFunction=rsa_XLX_SEP_ PragmaOptions=s_axilite port=q_XLX_SEP_</string>
+      <string>HLS pragma dump _XLX_SEP_ PragmaIsValid=1_XLX_SEP_ PragmaType=interface_XLX_SEP_ PragmaContext=_XLX_SEP_ PragmaFunction=rsa_XLX_SEP_ PragmaOptions=mode=s_axilite port=N_XLX_SEP_</string>
       <key>ID</key>
       <integer>5471</integer>
       <key>WarningOption</key>
@@ -3417,11 +3417,11 @@
       <key>filename</key>
       <string>rsa.cpp</string>
       <key>line</key>
-      <integer>114</integer>
+      <integer>78</integer>
       <key>column</key>
       <integer>9</integer>
       <key>message</key>
-      <string>HLS pragma dump _XLX_SEP_ PragmaIsValid=1_XLX_SEP_ PragmaType=interface_XLX_SEP_ PragmaContext=_XLX_SEP_ PragmaFunction=rsa_XLX_SEP_ PragmaOptions=s_axilite port=N_XLX_SEP_</string>
+      <string>HLS pragma dump _XLX_SEP_ PragmaIsValid=1_XLX_SEP_ PragmaType=interface_XLX_SEP_ PragmaContext=_XLX_SEP_ PragmaFunction=rsa_XLX_SEP_ PragmaOptions=mode=s_axilite port=y_XLX_SEP_</string>
       <key>ID</key>
       <integer>5471</integer>
       <key>WarningOption</key>
@@ -3433,11 +3433,11 @@
       <key>filename</key>
       <string>rsa.cpp</string>
       <key>line</key>
-      <integer>115</integer>
+      <integer>79</integer>
       <key>column</key>
       <integer>9</integer>
       <key>message</key>
-      <string>HLS pragma dump _XLX_SEP_ PragmaIsValid=1_XLX_SEP_ PragmaType=interface_XLX_SEP_ PragmaContext=_XLX_SEP_ PragmaFunction=rsa_XLX_SEP_ PragmaOptions=s_axilite port=y_XLX_SEP_</string>
+      <string>HLS pragma dump _XLX_SEP_ PragmaIsValid=1_XLX_SEP_ PragmaType=interface_XLX_SEP_ PragmaContext=_XLX_SEP_ PragmaFunction=rsa_XLX_SEP_ PragmaOptions=mode=s_axilite port=x_XLX_SEP_</string>
       <key>ID</key>
       <integer>5471</integer>
       <key>WarningOption</key>
@@ -3449,39 +3449,7 @@
       <key>filename</key>
       <string>rsa.cpp</string>
       <key>line</key>
-      <integer>116</integer>
-      <key>column</key>
-      <integer>9</integer>
-      <key>message</key>
-      <string>HLS pragma dump _XLX_SEP_ PragmaIsValid=1_XLX_SEP_ PragmaType=interface_XLX_SEP_ PragmaContext=_XLX_SEP_ PragmaFunction=rsa_XLX_SEP_ PragmaOptions=s_axilite port=d_XLX_SEP_</string>
-      <key>ID</key>
-      <integer>5471</integer>
-      <key>WarningOption</key>
-      <string>dump-hls-pragmas</string>
-    </dict>
-    <dict>
-      <key>level</key>
-      <string>warning</string>
-      <key>filename</key>
-      <string>rsa.cpp</string>
-      <key>line</key>
-      <integer>117</integer>
-      <key>column</key>
-      <integer>9</integer>
-      <key>message</key>
-      <string>HLS pragma dump _XLX_SEP_ PragmaIsValid=1_XLX_SEP_ PragmaType=interface_XLX_SEP_ PragmaContext=_XLX_SEP_ PragmaFunction=rsa_XLX_SEP_ PragmaOptions=s_axilite port=x_XLX_SEP_</string>
-      <key>ID</key>
-      <integer>5471</integer>
-      <key>WarningOption</key>
-      <string>dump-hls-pragmas</string>
-    </dict>
-    <dict>
-      <key>level</key>
-      <string>warning</string>
-      <key>filename</key>
-      <string>rsa.cpp</string>
-      <key>line</key>
-      <integer>120</integer>
+      <integer>85</integer>
       <key>column</key>
       <integer>9</integer>
       <key>message</key>
@@ -3490,38 +3458,6 @@
       <integer>5471</integer>
       <key>WarningOption</key>
       <string>dump-hls-pragmas</string>
-    </dict>
-    <dict>
-      <key>level</key>
-      <string>warning</string>
-      <key>filename</key>
-      <string>rsa.cpp</string>
-      <key>line</key>
-      <integer>110</integer>
-      <key>column</key>
-      <integer>65</integer>
-      <key>message</key>
-      <string>unused parameter &apos;mu_p&apos;</string>
-      <key>ID</key>
-      <integer>5292</integer>
-      <key>WarningOption</key>
-      <string>unused-parameter</string>
-    </dict>
-    <dict>
-      <key>level</key>
-      <string>warning</string>
-      <key>filename</key>
-      <string>rsa.cpp</string>
-      <key>line</key>
-      <integer>110</integer>
-      <key>column</key>
-      <integer>88</integer>
-      <key>message</key>
-      <string>unused parameter &apos;mu_q&apos;</string>
-      <key>ID</key>
-      <integer>5292</integer>
-      <key>WarningOption</key>
-      <string>unused-parameter</string>
     </dict>
   </array>
 </dict>

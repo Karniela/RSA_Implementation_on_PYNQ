@@ -1,4 +1,12 @@
 <pragmas>
+<<<<<<< HEAD:rsa_optimized1/rsa_opt1_hls/solution2-dataflow-nopipeline/.autopilot/db/fe_pragma_dump.reflow.0.xml
+=======
+<pragma file="/tools/Xilinx/Vitis_HLS/2022.2/common/technology/autopilot/ap_common.h" line="0" pragmaType="inline" parentfunction="ssdm_int<256, false>::ssdm_int()" off="0" region="0" recursive="0"/>
+<pragma file="rsa.cpp" line="8" pragmaType="inline" parentfunction="mod_product" off="1" region="0" recursive="0"/>
+<pragma file="rsa.cpp" line="16" pragmaType="unroll" parentfunction="mod_product" factor="4" skip_exit_check="0"/>
+<pragma file="rsa.cpp" line="14" pragmaType="pipeline" parentfunction="mod_product" off="1" ii="0" rewind="0" style=""/>
+<pragma file="" line="0" pragmaType="inline" parentfunction="ap_uint<256>::ap_uint<256, false>(ap_int_base<256, false> const&)" off="0" region="0" recursive="0"/>
+>>>>>>> origin/branch2:rsa_optimized1/baseline/solution1/.autopilot/db/fe_pragma_dump.reflow.0.xml
 <pragma file="" line="0" pragmaType="inline" parentfunction="ap_uint<257>::ap_uint(int)" off="0" region="0" recursive="0"/>
 <pragma file="" line="0" pragmaType="inline" parentfunction="ap_uint<257>::ap_uint<256>(ap_uint<256> const&)" off="0" region="0" recursive="0"/>
 <pragma file="/tools/Xilinx/Vitis_HLS/2022.2/common/technology/autopilot/ap_int_base.h" line="1633" pragmaType="inline" parentfunction="ap_int_base<256, false>::RType<($_0)32, true>::logic operator&<256, false>(ap_int_base<256, false> const&, int)" off="0" region="0" recursive="0"/>
@@ -53,8 +61,12 @@
 <pragma file="/tools/Xilinx/Vitis_HLS/2022.2/common/technology/autopilot/ap_int_base.h" line="0" pragmaType="inline" parentfunction="checkOverflowCsim" off="0" region="0" recursive="0"/>
 <pragma file="/tools/Xilinx/Vitis_HLS/2022.2/common/technology/autopilot/ap_int_base.h" line="0" pragmaType="inline" parentfunction="checkOverflowCsim" off="0" region="0" recursive="0"/>
 <pragma file="/tools/Xilinx/Vitis_HLS/2022.2/common/technology/autopilot/ap_int_base.h" line="0" pragmaType="inline" parentfunction="checkOverflowCsim" off="0" region="0" recursive="0"/>
+<pragma file="/tools/Xilinx/Vitis_HLS/2022.2/common/technology/autopilot/ap_int_base.h" line="0" pragmaType="inline" parentfunction="checkOverflowCsim" off="0" region="0" recursive="0"/>
 <pragma file="/tools/Xilinx/Vitis_HLS/2022.2/common/technology/autopilot/ap_int_base.h" line="0" pragmaType="inline" parentfunction="checkOverflowBaseC" off="0" region="0" recursive="0"/>
 <pragma file="/tools/Xilinx/Vitis_HLS/2022.2/common/technology/autopilot/ap_int_base.h" line="0" pragmaType="inline" parentfunction="checkOverflowBaseC" off="0" region="0" recursive="0"/>
+<<<<<<< HEAD:rsa_optimized1/rsa_opt1_hls/solution2-dataflow-nopipeline/.autopilot/db/fe_pragma_dump.reflow.0.xml
 <pragma file="/tools/Xilinx/Vitis_HLS/2022.2/common/technology/autopilot/ap_common.h" line="0" pragmaType="inline" parentfunction="ssdm_int<256, false>::ssdm_int()" off="0" region="0" recursive="0"/>
+=======
+>>>>>>> origin/branch2:rsa_optimized1/baseline/solution1/.autopilot/db/fe_pragma_dump.reflow.0.xml
 <pragma file="/tools/Xilinx/Vitis_HLS/2022.2/common/technology/autopilot/ap_int_base.h" line="0" pragmaType="inline" parentfunction="checkOverflowCsim" off="0" region="0" recursive="0"/>
 </pragmas>

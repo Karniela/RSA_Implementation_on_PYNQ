@@ -3277,7 +3277,11 @@
       <key>column</key>
       <integer>9</integer>
       <key>message</key>
+<<<<<<< HEAD:rsa_optimized2/rsa_opt2_hls/solution1/.autopilot/db/rsa.pp.0.cpp.clang.diag.xml
       <string>HLS pragma dump _XLX_SEP_ PragmaIsValid=1_XLX_SEP_ PragmaType=inline_XLX_SEP_ PragmaContext=_XLX_SEP_ PragmaFunction=Montgomery_XLX_SEP_ PragmaOptions=OFF_XLX_SEP_</string>
+=======
+      <string>HLS pragma dump _XLX_SEP_ PragmaIsValid=1_XLX_SEP_ PragmaType=inline_XLX_SEP_ PragmaContext=_XLX_SEP_ PragmaFunction=mod_exp_XLX_SEP_ PragmaOptions=OFF_XLX_SEP_</string>
+>>>>>>> origin/branch2:rsa_baseline/baseline/solution1/.autopilot/db/rsa.pp.0.cpp.clang.diag.xml
       <key>ID</key>
       <integer>5471</integer>
       <key>WarningOption</key>
@@ -3289,11 +3293,19 @@
       <key>filename</key>
       <string>rsa.cpp</string>
       <key>line</key>
+<<<<<<< HEAD:rsa_optimized2/rsa_opt2_hls/solution1/.autopilot/db/rsa.pp.0.cpp.clang.diag.xml
       <integer>23</integer>
       <key>column</key>
       <integer>9</integer>
       <key>message</key>
       <string>HLS pragma dump _XLX_SEP_ PragmaIsValid=1_XLX_SEP_ PragmaType=pipeline_XLX_SEP_ PragmaContext=_XLX_SEP_ PragmaFunction=Montgomery_XLX_SEP_ PragmaOptions=II=1_XLX_SEP_</string>
+=======
+      <integer>13</integer>
+      <key>column</key>
+      <integer>9</integer>
+      <key>message</key>
+      <string>HLS pragma dump _XLX_SEP_ PragmaIsValid=1_XLX_SEP_ PragmaType=pipeline_XLX_SEP_ PragmaContext=_XLX_SEP_ PragmaFunction=mod_exp_XLX_SEP_ PragmaOptions=OFF_XLX_SEP_</string>
+>>>>>>> origin/branch2:rsa_baseline/baseline/solution1/.autopilot/db/rsa.pp.0.cpp.clang.diag.xml
       <key>ID</key>
       <integer>5471</integer>
       <key>WarningOption</key>
@@ -3353,7 +3365,11 @@
       <key>filename</key>
       <string>rsa.cpp</string>
       <key>line</key>
+<<<<<<< HEAD:rsa_optimized2/rsa_opt2_hls/solution1/.autopilot/db/rsa.pp.0.cpp.clang.diag.xml
       <integer>76</integer>
+=======
+      <integer>31</integer>
+>>>>>>> origin/branch2:rsa_baseline/baseline/solution1/.autopilot/db/rsa.pp.0.cpp.clang.diag.xml
       <key>column</key>
       <integer>9</integer>
       <key>message</key>
@@ -3369,7 +3385,11 @@
       <key>filename</key>
       <string>rsa.cpp</string>
       <key>line</key>
+<<<<<<< HEAD:rsa_optimized2/rsa_opt2_hls/solution1/.autopilot/db/rsa.pp.0.cpp.clang.diag.xml
       <integer>77</integer>
+=======
+      <integer>32</integer>
+>>>>>>> origin/branch2:rsa_baseline/baseline/solution1/.autopilot/db/rsa.pp.0.cpp.clang.diag.xml
       <key>column</key>
       <integer>9</integer>
       <key>message</key>
@@ -3385,7 +3405,11 @@
       <key>filename</key>
       <string>rsa.cpp</string>
       <key>line</key>
+<<<<<<< HEAD:rsa_optimized2/rsa_opt2_hls/solution1/.autopilot/db/rsa.pp.0.cpp.clang.diag.xml
       <integer>78</integer>
+=======
+      <integer>33</integer>
+>>>>>>> origin/branch2:rsa_baseline/baseline/solution1/.autopilot/db/rsa.pp.0.cpp.clang.diag.xml
       <key>column</key>
       <integer>9</integer>
       <key>message</key>
@@ -3401,7 +3425,11 @@
       <key>filename</key>
       <string>rsa.cpp</string>
       <key>line</key>
+<<<<<<< HEAD:rsa_optimized2/rsa_opt2_hls/solution1/.autopilot/db/rsa.pp.0.cpp.clang.diag.xml
       <integer>79</integer>
+=======
+      <integer>34</integer>
+>>>>>>> origin/branch2:rsa_baseline/baseline/solution1/.autopilot/db/rsa.pp.0.cpp.clang.diag.xml
       <key>column</key>
       <integer>9</integer>
       <key>message</key>
@@ -3417,7 +3445,11 @@
       <key>filename</key>
       <string>rsa.cpp</string>
       <key>line</key>
+<<<<<<< HEAD:rsa_optimized2/rsa_opt2_hls/solution1/.autopilot/db/rsa.pp.0.cpp.clang.diag.xml
       <integer>80</integer>
+=======
+      <integer>35</integer>
+>>>>>>> origin/branch2:rsa_baseline/baseline/solution1/.autopilot/db/rsa.pp.0.cpp.clang.diag.xml
       <key>column</key>
       <integer>9</integer>
       <key>message</key>
@@ -3433,7 +3465,11 @@
       <key>filename</key>
       <string>rsa.cpp</string>
       <key>line</key>
+<<<<<<< HEAD:rsa_optimized2/rsa_opt2_hls/solution1/.autopilot/db/rsa.pp.0.cpp.clang.diag.xml
       <integer>89</integer>
+=======
+      <integer>39</integer>
+>>>>>>> origin/branch2:rsa_baseline/baseline/solution1/.autopilot/db/rsa.pp.0.cpp.clang.diag.xml
       <key>column</key>
       <integer>9</integer>
       <key>message</key>

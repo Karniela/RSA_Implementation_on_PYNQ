@@ -3,7 +3,11 @@
 ================================================================
 == Vitis HLS Report for 'rsa'
 ================================================================
+<<<<<<< HEAD:rsa_baseline/rsa_baseline_hls/solution2-NoDSP/syn/report/rsa_csynth.rpt
 * Date:           Thu Dec  5 17:11:38 2024
+=======
+* Date:           Thu Dec 12 17:33:49 2024
+>>>>>>> origin/branch2:rsa_baseline/baseline/solution1/syn/report/rsa_csynth.rpt
 
 * Version:        2022.2 (Build 3670227 on Oct 13 2022)
 * Project:        rsa_baseline_hls
@@ -29,7 +33,11 @@
     |  Latency (cycles) |  Latency (absolute) |   Interval   | Pipeline|
     |   min   |   max   |    min   |    max   | min |   max  |   Type  |
     +---------+---------+----------+----------+-----+--------+---------+
+<<<<<<< HEAD:rsa_baseline/rsa_baseline_hls/solution2-NoDSP/syn/report/rsa_csynth.rpt
     |      786|   267280|  7.860 us|  2.673 ms|  787|  267281|       no|
+=======
+    |      784|   267535|  7.840 us|  2.675 ms|  785|  267536|       no|
+>>>>>>> origin/branch2:rsa_baseline/baseline/solution1/syn/report/rsa_csynth.rpt
     +---------+---------+----------+----------+-----+--------+---------+
 
     + Detail: 
@@ -38,7 +46,11 @@
         |                   |         |  Latency (cycles) |  Latency (absolute) |   Interval   | Pipeline|
         |      Instance     |  Module |   min   |   max   |    min   |    max   | min |   max  |   Type  |
         +-------------------+---------+---------+---------+----------+----------+-----+--------+---------+
+<<<<<<< HEAD:rsa_baseline/rsa_baseline_hls/solution2-NoDSP/syn/report/rsa_csynth.rpt
         |grp_mod_exp_fu_67  |mod_exp  |      785|   267279|  7.850 us|  2.673 ms|  785|  267279|       no|
+=======
+        |grp_mod_exp_fu_67  |mod_exp  |      783|   267534|  7.830 us|  2.675 ms|  783|  267534|       no|
+>>>>>>> origin/branch2:rsa_baseline/baseline/solution1/syn/report/rsa_csynth.rpt
         +-------------------+---------+---------+---------+----------+----------+-----+--------+---------+
 
         * Loop: 
@@ -56,20 +68,33 @@
 |DSP              |        -|    -|       -|      -|    -|
 |Expression       |        -|    -|       -|      -|    -|
 |FIFO             |        -|    -|       -|      -|    -|
+<<<<<<< HEAD:rsa_baseline/rsa_baseline_hls/solution2-NoDSP/syn/report/rsa_csynth.rpt
 |Instance         |        0|  200|   24447|  20829|    -|
+=======
+|Instance         |        0|  200|    8184|   6862|    -|
+>>>>>>> origin/branch2:rsa_baseline/baseline/solution1/syn/report/rsa_csynth.rpt
 |Memory           |        -|    -|       -|      -|    -|
 |Multiplexer      |        -|    -|       -|     14|    -|
 |Register         |        -|    -|     771|      -|    -|
 +-----------------+---------+-----+--------+-------+-----+
+<<<<<<< HEAD:rsa_baseline/rsa_baseline_hls/solution2-NoDSP/syn/report/rsa_csynth.rpt
 |Total            |        0|  200|   25218|  20843|    0|
 +-----------------+---------+-----+--------+-------+-----+
 |Available        |      280|  220|  106400|  53200|    0|
 +-----------------+---------+-----+--------+-------+-----+
 |Utilization (%)  |        0|   90|      23|     39|    0|
+=======
+|Total            |        0|  200|    8955|   6876|    0|
++-----------------+---------+-----+--------+-------+-----+
+|Available        |      280|  220|  106400|  53200|    0|
++-----------------+---------+-----+--------+-------+-----+
+|Utilization (%)  |        0|   90|       8|     12|    0|
+>>>>>>> origin/branch2:rsa_baseline/baseline/solution1/syn/report/rsa_csynth.rpt
 +-----------------+---------+-----+--------+-------+-----+
 
 + Detail: 
     * Instance: 
+<<<<<<< HEAD:rsa_baseline/rsa_baseline_hls/solution2-NoDSP/syn/report/rsa_csynth.rpt
     +-------------------+---------------+---------+-----+-------+-------+-----+
     |      Instance     |     Module    | BRAM_18K| DSP |   FF  |  LUT  | URAM|
     +-------------------+---------------+---------+-----+-------+-------+-----+
@@ -78,6 +103,16 @@
     +-------------------+---------------+---------+-----+-------+-------+-----+
     |Total              |               |        0|  200|  24447|  20829|    0|
     +-------------------+---------------+---------+-----+-------+-------+-----+
+=======
+    +-------------------+---------------+---------+-----+------+------+-----+
+    |      Instance     |     Module    | BRAM_18K| DSP |  FF  |  LUT | URAM|
+    +-------------------+---------------+---------+-----+------+------+-----+
+    |control_s_axi_U    |control_s_axi  |        0|    0|  1084|  2088|    0|
+    |grp_mod_exp_fu_67  |mod_exp        |        0|  200|  7100|  4774|    0|
+    +-------------------+---------------+---------+-----+------+------+-----+
+    |Total              |               |        0|  200|  8184|  6862|    0|
+    +-------------------+---------------+---------+-----+------+------+-----+
+>>>>>>> origin/branch2:rsa_baseline/baseline/solution1/syn/report/rsa_csynth.rpt
 
     * DSP: 
     N/A

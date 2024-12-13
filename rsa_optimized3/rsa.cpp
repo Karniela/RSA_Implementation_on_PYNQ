@@ -3,6 +3,7 @@
 #include "hls_math.h"
 #include <ap_int.h>
 #include <stdio.h>
+#include <math.h>
 #include <stdlib.h>
 #include <string>
 #include <iostream>
@@ -11,25 +12,52 @@
 #include <iomanip> // for std::hex
 using namespace std;
 
-// Helper function for modular exponentiation
+// Montgomery Algorithm
 
-half_data_t mod_product(data_t a, half_data_t b, half_data_t N) {
+data_t Montgomery(data_t N, data_t a, data_t b){
+	#pragma HLS INLINE OFF
+	ap_uint<BITWIDTH+2> m = 0;
+	data_t d1, d2;
+	Montgomery:
+	for(int i = 0; i < BITWIDTH; i++){
+		#pragma HLS PIPELINE II=1
+		// if(a & 1){
+		// 	m = m + b;
+		// }
+		// if(m & 1){
+		// 	m = m + N; // -> overflow ?
+		// }
+		if(((a & 1) && ((b & 1) ^ (m & 1)))){
+			m = m + b + N;
+		}
+		else if((!(a & 1) && (m & 1))){
+			m = m + N;
+		}
+		else if(((a & 1))){
+			m = m + b;
+		}
+		// d1 = (a & 1) ? b : data_t(0);
+		// d2 = (((m & 1) && !(((a & 1)) && ((b & 1)))) || ((a & 1) && (b & 1) && (!(m & 1)))) ? N : data_t(0);
 
-    ap_uint<BITWIDTH/2+1> m = 0;
-    ap_uint<BITWIDTH/2+1> t = b;
-    MOD_PRODUCT:
+		// m = m + d1 + d2; 
+		// m = ((a & 1) && ((b & 1) ^ (m & 1))) ? ap_uint<BITWIDTH+2>(m + b + N) : (!(a & 1) && (m & 1)) ? ap_uint<BITWIDTH+2>(m + N) : ((a & 1)) ? ap_uint<BITWIDTH+2>(m + b) : ap_uint<BITWIDTH+2>(m);
+		m = m >> 1;
+		a = a >> 1;
+	}
+	if(m >= N){
+		m = m - N;
+	}
+	return m;
+
+}
+
+data_t mod_product(data_t b, data_t N) {
+	#pragma HLS INLINE OFF
+    ap_uint<BITWIDTH+1> m = 0;
+    ap_uint<BITWIDTH+1> t = b;
+	Mod_Product:
     for(int i = 0; i < BITWIDTH; i++) {
-		#pragma HLS PIPELINE off
-
-    	if(a & 1){
-    		if (m + t >= N) { // If exp is odd
-				m = m + t - N;
-			}
-			else{
-				m = m + t;
-			}
-			// printf("m = %d\n", m);
-    	}
+		#pragma HLS PIPELINE II=1
 
         if(t + t > N){
         	t = t + t - N;
@@ -37,90 +65,31 @@ half_data_t mod_product(data_t a, half_data_t b, half_data_t N) {
         else{
         	t = t + t;
         }
-		a = a >> 1;
     }
+	m = m + t;
 
     return m;
 }
 
+void rsa(data_t d, data_t N, data_t y, data_t &x){
+	#pragma HLS INTERFACE mode=s_axilite port=return
+	#pragma HLS INTERFACE mode=s_axilite port=d
+	#pragma HLS INTERFACE mode=s_axilite port=N
+	#pragma HLS INTERFACE mode=s_axilite port=y
+	#pragma HLS INTERFACE mode=s_axilite port=x
 
-void mod_exp(data_t base, half_data_t exp, half_data_t mod, half_data_t &result) {
-    // #pragma HLS INLINE
-    result = 1;
-    data_t b = base;
-    MOD_EXP:
-    for (int i = 0; i < BITWIDTH/2; i++) {
-        #pragma HLS PIPELINE OFF
-        if (exp & 1) {
-            // result = (result * b) % mod;
-            result = mod_product(b, result, mod);
-        }
-        b = (b * b) % mod;
-        // b = mod_product_full(b, b, mod);
-        exp = exp >> 1;
-        if (exp == 0) break;
-    }
+	data_t t = mod_product(y, N);
+	data_t m = 1;
+	RSA_TOP:
+	for(int i = 0; i < BITWIDTH; i++){
+		#pragma HLS PIPELINE OFF
+		if(d & 1){
+			m = Montgomery(N, m, t);
+		}
+		t = Montgomery(N, t, t);
+		d = d >> 1;
+	}
+	x = m;
+
 }
 
-
-// Helper function for modular inverse using Extended Euclidean Algorithm
-void mod_inverse(half_data_t a, half_data_t mod, half_data_t &x2) {
-    #pragma HLS INLINE OFF
-    if (mod == 0) {
-        std::cerr << "Error: Modulus is zero in mod_inverse\n";
-        // return 0;  // Or throw an exception
-    }
-
-    ap_uint<BITWIDTH/2> m0 = mod;
-	ap_int<BITWIDTH/2+1> t, q;
-    ap_int<BITWIDTH/2+1> x0 = 0, x1 = 1;
-    MOD_INVERSE:
-    for (int i = 0; i < BITWIDTH/2; i++){
-        #pragma HLS PIPELINE OFF
-		if(a <= 1)
-			break;
-        q = a / mod;
-        t = mod;
-        mod = a % mod;
-        a = t;
-
-        t = x0;
-        x0 = x1 - q * x0;
-        x1 = t;
-    }
-
-    if (x1 < 0) x1 += m0;
-    x2 = x1;
-    // return x1;
-}
-
-
-void rsa(half_data_t p, half_data_t q, data_t d, data_t N, data_t y, data_t &x) {
-    #pragma HLS INTERFACE s_axilite port=return
-    #pragma HLS INTERFACE s_axilite port=p
-    #pragma HLS INTERFACE s_axilite port=q
-    #pragma HLS INTERFACE s_axilite port=N
-    #pragma HLS INTERFACE s_axilite port=y
-    #pragma HLS INTERFACE s_axilite port=d
-    #pragma HLS INTERFACE s_axilite port=x
-
-    // Precompute d_p, d_q, and q_inv
-    #pragma HLS PIPELINE OFF
-
-    half_data_t dp = d % (p - 1);
-    half_data_t dq = d % (q - 1);
-    half_data_t q_inv;
-    mod_inverse(q, p, q_inv);
-
-    // Compute m_p and m_q using modular exponentiation
-    half_data_t mp, mq;
-    mod_exp(y, dp, p, mp);
-    mod_exp(y, dq, q, mq);
-	
-    // Combine results using CRT
-    data_t h = ((mp > mq ? mp - mq : mq - mp) * q_inv) % p;
-    if (mp < mq) {
-        h = p - h;
-    }
-    x = mq + h * q;
-}
