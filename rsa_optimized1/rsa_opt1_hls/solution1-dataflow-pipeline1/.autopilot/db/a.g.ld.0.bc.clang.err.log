@@ -1,2 +1,0 @@
-remark: rsa.cpp:13:5: Loop 'MOD_PRODUCT' is marked as complete unroll implied by the pipeline pragma
-remark: rsa.cpp:7:0: Unrolling loop 'MOD_PRODUCT' (rsa.cpp:13:5) in function 'mod_product' completely with a factor of 256

@@ -1,4 +1,0 @@
-rsa.cpp:40:34: warning: unexpected pragma argument 'dsp', expects function/operation [-Winvalid-hls-pragmas]
-#pragma HLS ALLOCATION instances=dsp limit=0
-                                 ^
-1 warning generated.
