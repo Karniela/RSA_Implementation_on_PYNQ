@@ -4,7 +4,7 @@
 == Synthesis Summary Report of 'rsa'
 ================================================================
 + General Information: 
-    * Date:           Tue Dec  3 22:25:43 2024
+    * Date:           Thu Dec 12 16:52:59 2024
     * Version:        2022.2 (Build 3670227 on Oct 13 2022)
     * Project:        baseline
     * Solution:       solution1 (Vivado IP Flow Target)
@@ -19,13 +19,13 @@
     |               Modules               | Issue|      | Latency |  Latency  | Iteration|         | Trip |          |      |    |           |           |     |
     |               & Loops               | Type | Slack| (cycles)|    (ns)   |  Latency | Interval| Count| Pipelined| BRAM | DSP|     FF    |    LUT    | URAM|
     +-------------------------------------+------+------+---------+-----------+----------+---------+------+----------+------+----+-----------+-----------+-----+
-    |+ rsa                                |     -|  0.72|   135684|  1.357e+06|         -|   135685|     -|        no|     -|   -|  9171 (8%)|  4558 (8%)|    -|
-    | + mod_product                       |     -|  0.72|      258|  2.580e+03|         -|      258|     -|        no|     -|   -|  1619 (1%)|   572 (1%)|    -|
-    |  o Mod_Product                      |     -|  7.30|      256|  2.560e+03|         2|        1|   256|       yes|     -|   -|          -|          -|    -|
-    | o RSA_TOP                           |     -|  7.30|   135424|  1.354e+06|       529|        -|   256|        no|     -|   -|          -|          -|    -|
-    |  + Montgomery                       |     -|  0.72|      263|  2.630e+03|         -|      263|     -|        no|     -|   -|  4650 (4%)|  1790 (3%)|    -|
-    |   + Montgomery_Pipeline_Montgomery  |     -|  0.72|      258|  2.580e+03|         -|      258|     -|        no|     -|   -|  2457 (2%)|  1135 (2%)|    -|
-    |    o Montgomery                     |     -|  7.30|      256|  2.560e+03|         2|        1|   256|       yes|     -|   -|          -|          -|    -|
+    |+ rsa                                |     -|  0.72|   528643|  5.286e+06|         -|   528644|     -|        no|     -|   -|  8592 (8%)|  4152 (7%)|    -|
+    | + mod_product                       |     -|  0.72|      513|  5.130e+03|         -|      513|     -|        no|     -|   -|  1618 (1%)|   545 (1%)|    -|
+    |  o Mod_Product                      |     -|  7.30|      512|  5.120e+03|         2|        -|   256|        no|     -|   -|          -|          -|    -|
+    | o RSA_TOP                           |     -|  7.30|   528128|  5.281e+06|      2063|        -|   256|        no|     -|   -|          -|          -|    -|
+    |  + Montgomery                       |     -|  0.72|     1030|  1.030e+04|         -|     1030|     -|        no|     -|   -|  4072 (3%)|  1411 (2%)|    -|
+    |   + Montgomery_Pipeline_Montgomery  |     -|  0.72|     1026|  1.026e+04|         -|     1026|     -|        no|     -|   -|  2974 (2%)|   894 (1%)|    -|
+    |    o Montgomery                     |     -|  7.30|     1024|  1.024e+04|         4|        4|   256|       yes|     -|   -|          -|          -|    -|
     +-------------------------------------+------+------+---------+-----------+----------+---------+------+----------+------+----+-----------+-----------+-----+
 
 
@@ -149,22 +149,21 @@
 ================================================================
 == Bind Op Report
 ================================================================
-+------------------------------------+-----+--------+-------------+-----+--------+---------+
-| Name                               | DSP | Pragma | Variable    | Op  | Impl   | Latency |
-+------------------------------------+-----+--------+-------------+-----+--------+---------+
-| + rsa                              | 0   |        |             |     |        |         |
-|   i_2_fu_170_p2                    | -   |        | i_2         | add | fabric | 0       |
-|  + mod_product                     | 0   |        |             |     |        |         |
-|    i_4_fu_85_p2                    | -   |        | i_4         | add | fabric | 0       |
-|    sub_257ns_257ns_257_2_1_U1      | -   |        | t_V         | sub | fabric | 1       |
-|  + Montgomery                      | 0   |        |             |     |        |         |
-|    add_257ns_257ns_257_2_1_U14     | -   |        | add_ln186   | add | fabric | 1       |
-|    sub_256ns_256ns_256_2_1_U15     | -   |        | sub_ln47    | sub | fabric | 1       |
-|   + Montgomery_Pipeline_Montgomery | 0   |        |             |     |        |         |
-|     i_5_fu_139_p2                  | -   |        | i_5         | add | fabric | 0       |
-|     add_258ns_258ns_258_2_1_U5     | -   |        | add_ln186_1 | add | fabric | 1       |
-|     add_258ns_258ns_258_2_1_U6     | -   |        | add_ln43    | add | fabric | 1       |
-+------------------------------------+-----+--------+-------------+-----+--------+---------+
++------------------------------------+-----+--------+----------+-----+--------+---------+
+| Name                               | DSP | Pragma | Variable | Op  | Impl   | Latency |
++------------------------------------+-----+--------+----------+-----+--------+---------+
+| + rsa                              | 0   |        |          |     |        |         |
+|   i_2_fu_170_p2                    | -   |        | i_2      | add | fabric | 0       |
+|  + mod_product                     | 0   |        |          |     |        |         |
+|    i_4_fu_82_p2                    | -   |        | i_4      | add | fabric | 0       |
+|    sub_257ns_257ns_257_2_1_U1      | -   |        | t_V      | sub | fabric | 1       |
+|  + Montgomery                      | 0   |        |          |     |        |         |
+|    sub_256ns_256ns_256_2_1_U12     | -   |        | sub_ln33 | sub | fabric | 1       |
+|   + Montgomery_Pipeline_Montgomery | 0   |        |          |     |        |         |
+|     i_5_fu_115_p2                  | -   |        | i_5      | add | fabric | 0       |
+|     add_258ns_258ns_258_2_1_U5     | -   |        | m_V_2    | add | fabric | 1       |
+|     add_258ns_258ns_258_2_1_U6     | -   |        | m_V_4    | add | fabric | 1       |
++------------------------------------+-----+--------+----------+-----+--------+---------+
 
 
 ================================================================
@@ -180,15 +179,15 @@
 | Type      | Options                    | Location                  |
 +-----------+----------------------------+---------------------------+
 | inline    | OFF                        | rsa.cpp:18 in montgomery  |
-| pipeline  | II=1                       | rsa.cpp:23 in montgomery  |
-| inline    | OFF                        | rsa.cpp:55 in mod_product |
-| pipeline  | II=1                       | rsa.cpp:60 in mod_product |
-| interface | mode=s_axilite port=return | rsa.cpp:76 in rsa, return |
-| interface | mode=s_axilite port=d      | rsa.cpp:77 in rsa, d      |
-| interface | mode=s_axilite port=N      | rsa.cpp:78 in rsa, N      |
-| interface | mode=s_axilite port=y      | rsa.cpp:79 in rsa, y      |
-| interface | mode=s_axilite port=x      | rsa.cpp:80 in rsa, x      |
-| pipeline  | OFF                        | rsa.cpp:89 in rsa         |
+| pipeline  | II=4                       | rsa.cpp:23 in montgomery  |
+| inline    | OFF                        | rsa.cpp:41 in mod_product |
+| pipeline  | OFF                        | rsa.cpp:46 in mod_product |
+| interface | mode=s_axilite port=return | rsa.cpp:62 in rsa, return |
+| interface | mode=s_axilite port=d      | rsa.cpp:63 in rsa, d      |
+| interface | mode=s_axilite port=N      | rsa.cpp:64 in rsa, N      |
+| interface | mode=s_axilite port=y      | rsa.cpp:65 in rsa, y      |
+| interface | mode=s_axilite port=x      | rsa.cpp:66 in rsa, x      |
+| pipeline  | OFF                        | rsa.cpp:75 in rsa         |
 +-----------+----------------------------+---------------------------+
 
 

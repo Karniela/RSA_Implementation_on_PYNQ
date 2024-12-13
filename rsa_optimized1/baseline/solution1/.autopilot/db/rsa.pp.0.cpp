@@ -30151,7 +30151,7 @@ data_t mod_product(data_t a, data_t b, data_t N) {
     for (int i = 0; i < 256; i++) {
 #pragma HLS PIPELINE OFF
 
-
+#pragma HLS UNROLL FACTOR=4
  if (a & 1) {
             if (m + t >= N) {
                 m = m + t - N;

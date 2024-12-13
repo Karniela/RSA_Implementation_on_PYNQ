@@ -1,7 +1,7 @@
 <profile>
 
 <section name = "Vitis HLS Report for 'mod_product'" level="0">
-<item name = "Date">Tue Dec  3 22:41:16 2024
+<item name = "Date">Thu Dec 12 17:19:57 2024
 </item>
 <item name = "Version">2022.2 (Build 3670227 on Oct 13 2022)</item>
 <item name = "Project">baseline</item>
@@ -24,7 +24,7 @@
 <section name = "" level="1">
 <item name = "Summary"><table name="" hasTotal="0">
 <keys size="8">, min, max, min, max, min, max, Type</keys>
-<column name="">1026, 1026, 10.260 us, 10.260 us, 1026, 1026, no</column>
+<column name="">834, 834, 8.340 us, 8.340 us, 834, 834, no</column>
 </table>
 </item>
 <item name = "Detail">
@@ -35,7 +35,7 @@
 </item>
 <item name = "Loop"><table name="" hasTotal="0">
 <keys size="8">Loop Name, min, max, Latency, achieved, target, Count, Pipelined</keys>
-<column name="- MOD_PRODUCT">1024, 1024, 4, -, -, 256, no</column>
+<column name="- MOD_PRODUCT">832, 832, 13, -, -, 64, no</column>
 </table>
 </item>
 </section>
@@ -48,14 +48,14 @@
 <item name = "Summary"><table name="" hasTotal="1">
 <keys size="6">Name, BRAM_18K, DSP, FF, LUT, URAM</keys>
 <column name="DSP">-, -, -, -, -</column>
-<column name="Expression">-, -, 0, 984, -</column>
+<column name="Expression">-, -, 0, 3850, -</column>
 <column name="FIFO">-, -, -, -, -</column>
-<column name="Instance">-, -, 2320, 528, -</column>
+<column name="Instance">-, -, 9280, 2112, -</column>
 <column name="Memory">-, -, -, -, -</column>
-<column name="Multiplexer">-, -, -, 67, -</column>
-<column name="Register">-, -, 2582, -, -</column>
+<column name="Multiplexer">-, -, -, 101, -</column>
+<column name="Register">-, -, 6452, -, -</column>
 <specialColumn name="Available">280, 220, 106400, 53200, 0</specialColumn>
-<specialColumn name="Utilization (%)">0, 0, 4, 2, 0</specialColumn>
+<specialColumn name="Utilization (%)">0, 0, 14, 11, 0</specialColumn>
 </table>
 </item>
 <item name = "Detail">
@@ -63,9 +63,21 @@
 <item name = "Instance"><table name="" hasTotal="1">
 <keys size="7">Instance, Module, BRAM_18K, DSP, FF, LUT, URAM</keys>
 <column name="add_257ns_257ns_257_2_1_U2">add_257ns_257ns_257_2_1, 0, 0, 580, 132, 0</column>
+<column name="add_257ns_257ns_257_2_1_U6">add_257ns_257ns_257_2_1, 0, 0, 580, 132, 0</column>
+<column name="add_257ns_257ns_257_2_1_U10">add_257ns_257ns_257_2_1, 0, 0, 580, 132, 0</column>
+<column name="add_257ns_257ns_257_2_1_U15">add_257ns_257ns_257_2_1, 0, 0, 580, 132, 0</column>
 <column name="add_258ns_258ns_258_2_1_U1">add_258ns_258ns_258_2_1, 0, 0, 580, 132, 0</column>
+<column name="add_258ns_258ns_258_2_1_U5">add_258ns_258ns_258_2_1, 0, 0, 580, 132, 0</column>
+<column name="add_258ns_258ns_258_2_1_U9">add_258ns_258ns_258_2_1, 0, 0, 580, 132, 0</column>
+<column name="add_258ns_258ns_258_2_1_U14">add_258ns_258ns_258_2_1, 0, 0, 580, 132, 0</column>
 <column name="sub_257ns_257ns_257_2_1_U3">sub_257ns_257ns_257_2_1, 0, 0, 580, 132, 0</column>
 <column name="sub_257ns_257ns_257_2_1_U4">sub_257ns_257ns_257_2_1, 0, 0, 580, 132, 0</column>
+<column name="sub_257ns_257ns_257_2_1_U7">sub_257ns_257ns_257_2_1, 0, 0, 580, 132, 0</column>
+<column name="sub_257ns_257ns_257_2_1_U8">sub_257ns_257ns_257_2_1, 0, 0, 580, 132, 0</column>
+<column name="sub_257ns_257ns_257_2_1_U11">sub_257ns_257ns_257_2_1, 0, 0, 580, 132, 0</column>
+<column name="sub_257ns_257ns_257_2_1_U12">sub_257ns_257ns_257_2_1, 0, 0, 580, 132, 0</column>
+<column name="sub_257ns_257ns_257_2_1_U13">sub_257ns_257ns_257_2_1, 0, 0, 580, 132, 0</column>
+<column name="sub_257ns_257ns_257_2_1_U16">sub_257ns_257ns_257_2_1, 0, 0, 580, 132, 0</column>
 </table>
 </item>
 <item name = "DSP"><table name="" hasTotal="0">
@@ -82,40 +94,78 @@
 </item>
 <item name = "Expression"><table name="" hasTotal="1">
 <keys size="7">Variable Name, Operation, DSP, FF, LUT, Bitwidth P0, Bitwidth P1</keys>
-<column name="i_2_fu_114_p2">+, 0, 0, 14, 9, 1</column>
-<column name="and_ln1031_fu_203_p2">and, 0, 0, 2, 1, 1</column>
-<column name="icmp_ln1031_fu_199_p2">icmp, 0, 0, 93, 258, 258</column>
-<column name="icmp_ln1035_fu_151_p2">icmp, 0, 0, 93, 258, 258</column>
-<column name="icmp_ln13_fu_108_p2">icmp, 0, 0, 11, 9, 10</column>
-<column name="m_V_2_fu_209_p3">select, 0, 0, 257, 1, 257</column>
-<column name="m_V_3_fu_216_p3">select, 0, 0, 257, 1, 257</column>
-<column name="t_V_2_fu_181_p3">select, 0, 0, 257, 1, 257</column>
+<column name="i_3_fu_149_p2">+, 0, 0, 14, 9, 3</column>
+<column name="and_ln1031_1_fu_318_p2">and, 0, 0, 2, 1, 1</column>
+<column name="and_ln1031_2_fu_395_p2">and, 0, 0, 2, 1, 1</column>
+<column name="and_ln1031_3_fu_471_p2">and, 0, 0, 2, 1, 1</column>
+<column name="and_ln1031_fu_202_p2">and, 0, 0, 2, 1, 1</column>
+<column name="icmp_ln1031_1_fu_314_p2">icmp, 0, 0, 93, 258, 258</column>
+<column name="icmp_ln1031_2_fu_391_p2">icmp, 0, 0, 93, 258, 258</column>
+<column name="icmp_ln1031_3_fu_467_p2">icmp, 0, 0, 93, 258, 258</column>
+<column name="icmp_ln1031_fu_198_p2">icmp, 0, 0, 93, 258, 258</column>
+<column name="icmp_ln1035_1_fu_299_p2">icmp, 0, 0, 93, 258, 258</column>
+<column name="icmp_ln1035_2_fu_365_p2">icmp, 0, 0, 93, 258, 258</column>
+<column name="icmp_ln1035_3_fu_420_p2">icmp, 0, 0, 93, 258, 258</column>
+<column name="icmp_ln1035_fu_176_p2">icmp, 0, 0, 93, 258, 258</column>
+<column name="m_V_10_fu_400_p3">select, 0, 0, 257, 1, 257</column>
+<column name="m_V_14_fu_476_p3">select, 0, 0, 257, 1, 257</column>
+<column name="m_V_15_fu_483_p3">select, 0, 0, 257, 1, 257</column>
+<column name="m_V_16_fu_215_p3">select, 0, 0, 257, 1, 257</column>
+<column name="m_V_17_fu_330_p3">select, 0, 0, 257, 1, 257</column>
+<column name="m_V_18_fu_407_p3">select, 0, 0, 257, 1, 257</column>
+<column name="m_V_2_fu_208_p3">select, 0, 0, 257, 1, 257</column>
+<column name="m_V_6_fu_323_p3">select, 0, 0, 257, 1, 257</column>
+<column name="t_V_11_fu_451_p3">select, 0, 0, 257, 1, 257</column>
+<column name="t_V_12_fu_222_p3">select, 0, 0, 257, 1, 257</column>
+<column name="t_V_13_fu_336_p3">select, 0, 0, 257, 1, 257</column>
+<column name="t_V_14_fu_385_p3">select, 0, 0, 257, 1, 257</column>
 </table>
 </item>
 <item name = "Multiplexer"><table name="" hasTotal="1">
 <keys size="5">Name, LUT, Input Size, Bits, Total Bits</keys>
-<column name="ap_NS_fsm">31, 6, 1, 6</column>
-<column name="empty_fu_48">9, 2, 256, 512</column>
-<column name="i_fu_44">9, 2, 9, 18</column>
-<column name="lhs_1_fu_40">9, 2, 257, 514</column>
-<column name="lhs_fu_36">9, 2, 257, 514</column>
+<column name="ap_NS_fsm">65, 15, 1, 15</column>
+<column name="i_fu_54">9, 2, 9, 18</column>
+<column name="lhs_1_fu_50">9, 2, 257, 514</column>
+<column name="lhs_fu_46">9, 2, 257, 514</column>
+<column name="shr_i_34_fu_58">9, 2, 256, 512</column>
 </table>
 </item>
 <item name = "Register"><table name="" hasTotal="1">
 <keys size="5">Name, FF, LUT, Bits, Const Bits</keys>
-<column name="ap_CS_fsm">5, 0, 5, 0</column>
-<column name="conv_i167_reg_274">256, 0, 258, 2</column>
-<column name="empty_fu_48">256, 0, 256, 0</column>
-<column name="i_fu_44">9, 0, 9, 0</column>
-<column name="icmp_ln1035_reg_308">1, 0, 1, 0</column>
-<column name="lhs_1_fu_40">257, 0, 257, 0</column>
-<column name="lhs_fu_36">257, 0, 257, 0</column>
-<column name="lhs_load_1_reg_289">257, 0, 257, 0</column>
-<column name="m_V_3_reg_330">257, 0, 257, 0</column>
-<column name="m_V_reg_324">257, 0, 257, 0</column>
-<column name="ret_V_reg_319">258, 0, 258, 0</column>
-<column name="t_V_1_reg_313">256, 0, 257, 1</column>
-<column name="zext_ln1496_reg_280">256, 0, 257, 1</column>
+<column name="ap_CS_fsm">14, 0, 14, 0</column>
+<column name="conv_i167_reg_521">256, 0, 258, 2</column>
+<column name="i_fu_54">9, 0, 9, 0</column>
+<column name="icmp_ln1035_1_reg_643">1, 0, 1, 0</column>
+<column name="icmp_ln1035_2_reg_679">1, 0, 1, 0</column>
+<column name="icmp_ln1035_3_reg_716">1, 0, 1, 0</column>
+<column name="icmp_ln1035_reg_578">1, 0, 1, 0</column>
+<column name="lhs_1_fu_50">257, 0, 257, 0</column>
+<column name="lhs_fu_46">257, 0, 257, 0</column>
+<column name="lhs_load_1_reg_548">257, 0, 257, 0</column>
+<column name="m_V_12_reg_742">257, 0, 257, 0</column>
+<column name="m_V_15_reg_748">257, 0, 257, 0</column>
+<column name="m_V_16_reg_589">257, 0, 257, 0</column>
+<column name="m_V_17_reg_654">257, 0, 257, 0</column>
+<column name="m_V_18_reg_709">257, 0, 257, 0</column>
+<column name="m_V_4_reg_637">257, 0, 257, 0</column>
+<column name="m_V_8_reg_695">257, 0, 257, 0</column>
+<column name="m_V_reg_572">257, 0, 257, 0</column>
+<column name="ret_V_2_reg_632">258, 0, 258, 0</column>
+<column name="ret_V_4_reg_690">258, 0, 258, 0</column>
+<column name="ret_V_6_reg_737">258, 0, 258, 0</column>
+<column name="ret_V_reg_567">258, 0, 258, 0</column>
+<column name="shr_i_34_fu_58">256, 0, 256, 0</column>
+<column name="t_V_10_reg_721">256, 0, 257, 1</column>
+<column name="t_V_12_reg_596">257, 0, 257, 0</column>
+<column name="t_V_13_reg_661">257, 0, 257, 0</column>
+<column name="t_V_14_reg_701">257, 0, 257, 0</column>
+<column name="t_V_1_reg_583">256, 0, 257, 1</column>
+<column name="t_V_4_reg_648">256, 0, 257, 1</column>
+<column name="t_V_7_reg_684">256, 0, 257, 1</column>
+<column name="tmp_1_reg_604">1, 0, 1, 0</column>
+<column name="tmp_2_reg_610">1, 0, 1, 0</column>
+<column name="tmp_3_reg_616">1, 0, 1, 0</column>
+<column name="zext_ln1496_reg_533">256, 0, 257, 1</column>
 </table>
 </item>
 </section>

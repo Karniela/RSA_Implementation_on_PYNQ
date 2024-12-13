@@ -617,6 +617,9 @@
     <msg msg_groups="PRAGMA_VERBOSE_DUMP" msg_id="207-5471" msg_severity="WARNING" msg_loc="rsa.cpp:14:9" msg_body="HLS pragma dump">
         <args ARG_PragmaFunction="mod_product" ARG_PragmaIsValid="1" ARG_PragmaOptions="OFF" ARG_PragmaType="pipeline" ClangWarningOption="dump-hls-pragmas"/>
     </msg>
+    <msg msg_groups="PRAGMA_VERBOSE_DUMP" msg_id="207-5471" msg_severity="WARNING" msg_loc="rsa.cpp:16:9" msg_body="HLS pragma dump">
+        <args ARG_PragmaFunction="mod_product" ARG_PragmaIsValid="1" ARG_PragmaOptions="FACTOR=4" ARG_PragmaType="unroll" ClangWarningOption="dump-hls-pragmas"/>
+    </msg>
     <msg msg_groups="PRAGMA_VERBOSE_DUMP" msg_id="207-5471" msg_severity="WARNING" msg_loc="rsa.cpp:37:9" msg_body="HLS pragma dump">
         <args ARG_PragmaFunction="mod_exp" ARG_PragmaIsValid="1" ARG_PragmaOptions="OFF" ARG_PragmaType="inline" ClangWarningOption="dump-hls-pragmas"/>
     </msg>
@@ -643,6 +646,9 @@
     </msg>
     <msg msg_groups="PRAGMA_VERBOSE_DUMP" msg_id="207-5471" msg_severity="WARNING" msg_loc="rsa.cpp:61:9" msg_body="HLS pragma dump">
         <args ARG_PragmaFunction="rsa" ARG_PragmaIsValid="1" ARG_PragmaOptions="mode=s_axilite port=x" ARG_PragmaType="interface" ClangWarningOption="dump-hls-pragmas"/>
+    </msg>
+    <msg msg_groups="PRAGMA_UNROLL" msg_id="214-188" msg_severity="INFO" msg_loc="rsa.cpp:7:0" msg_body="Unrolling loop 'MOD_PRODUCT' (rsa.cpp:13:5) in function 'mod_product' partially with a factor of 4">
+        <args Factor="4" LoopLoc="rsa.cpp:13:5" LoopName="MOD_PRODUCT"/>
     </msg>
 </xilinx:hls_fe_msgs>
 

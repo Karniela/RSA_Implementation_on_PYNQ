@@ -27,40 +27,30 @@ end;
 architecture behav of rsa_Montgomery is 
     constant ap_const_logic_1 : STD_LOGIC := '1';
     constant ap_const_logic_0 : STD_LOGIC := '0';
-    constant ap_ST_fsm_state1 : STD_LOGIC_VECTOR (4 downto 0) := "00001";
-    constant ap_ST_fsm_state2 : STD_LOGIC_VECTOR (4 downto 0) := "00010";
-    constant ap_ST_fsm_state3 : STD_LOGIC_VECTOR (4 downto 0) := "00100";
-    constant ap_ST_fsm_state4 : STD_LOGIC_VECTOR (4 downto 0) := "01000";
-    constant ap_ST_fsm_state5 : STD_LOGIC_VECTOR (4 downto 0) := "10000";
+    constant ap_ST_fsm_state1 : STD_LOGIC_VECTOR (3 downto 0) := "0001";
+    constant ap_ST_fsm_state2 : STD_LOGIC_VECTOR (3 downto 0) := "0010";
+    constant ap_ST_fsm_state3 : STD_LOGIC_VECTOR (3 downto 0) := "0100";
+    constant ap_ST_fsm_state4 : STD_LOGIC_VECTOR (3 downto 0) := "1000";
     constant ap_const_boolean_1 : BOOLEAN := true;
     constant ap_const_lv32_0 : STD_LOGIC_VECTOR (31 downto 0) := "00000000000000000000000000000000";
-    constant ap_const_lv32_1 : STD_LOGIC_VECTOR (31 downto 0) := "00000000000000000000000000000001";
-    constant ap_const_lv32_3 : STD_LOGIC_VECTOR (31 downto 0) := "00000000000000000000000000000011";
     constant ap_const_lv32_2 : STD_LOGIC_VECTOR (31 downto 0) := "00000000000000000000000000000010";
+    constant ap_const_lv32_1 : STD_LOGIC_VECTOR (31 downto 0) := "00000000000000000000000000000001";
     constant ap_const_lv1_1 : STD_LOGIC_VECTOR (0 downto 0) := "1";
-    constant ap_const_lv32_4 : STD_LOGIC_VECTOR (31 downto 0) := "00000000000000000000000000000100";
+    constant ap_const_lv32_3 : STD_LOGIC_VECTOR (31 downto 0) := "00000000000000000000000000000011";
     constant ap_const_lv256_lc_2 : STD_LOGIC_VECTOR (255 downto 0) := "0000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000";
 
 attribute shreg_extract : string;
-    signal ap_CS_fsm : STD_LOGIC_VECTOR (4 downto 0) := "00001";
+    signal ap_CS_fsm : STD_LOGIC_VECTOR (3 downto 0) := "0001";
     attribute fsm_encoding : string;
     attribute fsm_encoding of ap_CS_fsm : signal is "none";
     signal ap_CS_fsm_state1 : STD_LOGIC;
     attribute fsm_encoding of ap_CS_fsm_state1 : signal is "none";
-    signal empty_fu_47_p1 : STD_LOGIC_VECTOR (0 downto 0);
-    signal empty_reg_112 : STD_LOGIC_VECTOR (0 downto 0);
-    signal zext_ln1495_fu_51_p1 : STD_LOGIC_VECTOR (256 downto 0);
-    signal zext_ln1495_reg_117 : STD_LOGIC_VECTOR (256 downto 0);
-    signal ap_CS_fsm_state2 : STD_LOGIC;
-    attribute fsm_encoding of ap_CS_fsm_state2 : signal is "none";
-    signal grp_fu_59_p2 : STD_LOGIC_VECTOR (256 downto 0);
-    signal add_ln186_reg_133 : STD_LOGIC_VECTOR (256 downto 0);
-    signal icmp_ln1031_fu_69_p2 : STD_LOGIC_VECTOR (0 downto 0);
-    signal icmp_ln1031_reg_138 : STD_LOGIC_VECTOR (0 downto 0);
-    signal ap_CS_fsm_state4 : STD_LOGIC;
-    attribute fsm_encoding of ap_CS_fsm_state4 : signal is "none";
-    signal trunc_ln186_fu_74_p1 : STD_LOGIC_VECTOR (255 downto 0);
-    signal trunc_ln186_reg_143 : STD_LOGIC_VECTOR (255 downto 0);
+    signal icmp_ln1031_fu_53_p2 : STD_LOGIC_VECTOR (0 downto 0);
+    signal icmp_ln1031_reg_103 : STD_LOGIC_VECTOR (0 downto 0);
+    signal ap_CS_fsm_state3 : STD_LOGIC;
+    attribute fsm_encoding of ap_CS_fsm_state3 : signal is "none";
+    signal trunc_ln186_fu_59_p1 : STD_LOGIC_VECTOR (255 downto 0);
+    signal trunc_ln186_reg_108 : STD_LOGIC_VECTOR (255 downto 0);
     signal grp_Montgomery_Pipeline_Montgomery_fu_36_ap_start : STD_LOGIC;
     signal grp_Montgomery_Pipeline_Montgomery_fu_36_ap_done : STD_LOGIC;
     signal grp_Montgomery_Pipeline_Montgomery_fu_36_ap_idle : STD_LOGIC;
@@ -68,23 +58,21 @@ attribute shreg_extract : string;
     signal grp_Montgomery_Pipeline_Montgomery_fu_36_m_V_out : STD_LOGIC_VECTOR (256 downto 0);
     signal grp_Montgomery_Pipeline_Montgomery_fu_36_m_V_out_ap_vld : STD_LOGIC;
     signal grp_Montgomery_Pipeline_Montgomery_fu_36_ap_start_reg : STD_LOGIC := '0';
-    signal ap_CS_fsm_state3 : STD_LOGIC;
-    attribute fsm_encoding of ap_CS_fsm_state3 : signal is "none";
-    signal grp_fu_59_p0 : STD_LOGIC_VECTOR (256 downto 0);
-    signal grp_fu_59_p1 : STD_LOGIC_VECTOR (256 downto 0);
-    signal grp_fu_78_p0 : STD_LOGIC_VECTOR (255 downto 0);
-    signal ap_CS_fsm_state5 : STD_LOGIC;
-    attribute fsm_encoding of ap_CS_fsm_state5 : signal is "none";
-    signal xor_ln1031_fu_83_p2 : STD_LOGIC_VECTOR (0 downto 0);
-    signal grp_fu_78_p2 : STD_LOGIC_VECTOR (255 downto 0);
-    signal select_ln47_fu_88_p3 : STD_LOGIC_VECTOR (255 downto 0);
+    signal ap_CS_fsm_state2 : STD_LOGIC;
+    attribute fsm_encoding of ap_CS_fsm_state2 : signal is "none";
+    signal zext_ln22_fu_47_p1 : STD_LOGIC_VECTOR (256 downto 0);
+    signal grp_fu_63_p0 : STD_LOGIC_VECTOR (255 downto 0);
+    signal ap_CS_fsm_state4 : STD_LOGIC;
+    attribute fsm_encoding of ap_CS_fsm_state4 : signal is "none";
+    signal xor_ln1031_fu_68_p2 : STD_LOGIC_VECTOR (0 downto 0);
+    signal grp_fu_63_p2 : STD_LOGIC_VECTOR (255 downto 0);
+    signal select_ln33_fu_73_p3 : STD_LOGIC_VECTOR (255 downto 0);
     signal ap_return_preg : STD_LOGIC_VECTOR (255 downto 0) := "0000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000";
-    signal ap_NS_fsm : STD_LOGIC_VECTOR (4 downto 0);
+    signal ap_NS_fsm : STD_LOGIC_VECTOR (3 downto 0);
     signal ap_ST_fsm_state1_blk : STD_LOGIC;
     signal ap_ST_fsm_state2_blk : STD_LOGIC;
     signal ap_ST_fsm_state3_blk : STD_LOGIC;
     signal ap_ST_fsm_state4_blk : STD_LOGIC;
-    signal ap_ST_fsm_state5_blk : STD_LOGIC;
     signal ap_ce_reg : STD_LOGIC;
 
     component rsa_Montgomery_Pipeline_Montgomery IS
@@ -96,29 +84,10 @@ attribute shreg_extract : string;
         ap_idle : OUT STD_LOGIC;
         ap_ready : OUT STD_LOGIC;
         a : IN STD_LOGIC_VECTOR (255 downto 0);
-        b_cast : IN STD_LOGIC_VECTOR (0 downto 0);
+        zext_ln186 : IN STD_LOGIC_VECTOR (255 downto 0);
         zext_ln1495 : IN STD_LOGIC_VECTOR (255 downto 0);
-        zext_ln1495_1 : IN STD_LOGIC_VECTOR (255 downto 0);
-        add_ln186 : IN STD_LOGIC_VECTOR (256 downto 0);
         m_V_out : OUT STD_LOGIC_VECTOR (256 downto 0);
         m_V_out_ap_vld : OUT STD_LOGIC );
-    end component;
-
-
-    component rsa_add_257ns_257ns_257_2_1 IS
-    generic (
-        ID : INTEGER;
-        NUM_STAGE : INTEGER;
-        din0_WIDTH : INTEGER;
-        din1_WIDTH : INTEGER;
-        dout_WIDTH : INTEGER );
-    port (
-        clk : IN STD_LOGIC;
-        reset : IN STD_LOGIC;
-        din0 : IN STD_LOGIC_VECTOR (256 downto 0);
-        din1 : IN STD_LOGIC_VECTOR (256 downto 0);
-        ce : IN STD_LOGIC;
-        dout : OUT STD_LOGIC_VECTOR (256 downto 0) );
     end component;
 
 
@@ -150,29 +119,12 @@ begin
         ap_idle => grp_Montgomery_Pipeline_Montgomery_fu_36_ap_idle,
         ap_ready => grp_Montgomery_Pipeline_Montgomery_fu_36_ap_ready,
         a => a,
-        b_cast => empty_reg_112,
-        zext_ln1495 => b,
-        zext_ln1495_1 => N,
-        add_ln186 => add_ln186_reg_133,
+        zext_ln186 => b,
+        zext_ln1495 => N,
         m_V_out => grp_Montgomery_Pipeline_Montgomery_fu_36_m_V_out,
         m_V_out_ap_vld => grp_Montgomery_Pipeline_Montgomery_fu_36_m_V_out_ap_vld);
 
-    add_257ns_257ns_257_2_1_U14 : component rsa_add_257ns_257ns_257_2_1
-    generic map (
-        ID => 1,
-        NUM_STAGE => 2,
-        din0_WIDTH => 257,
-        din1_WIDTH => 257,
-        dout_WIDTH => 257)
-    port map (
-        clk => ap_clk,
-        reset => ap_rst,
-        din0 => grp_fu_59_p0,
-        din1 => grp_fu_59_p1,
-        ce => ap_const_logic_1,
-        dout => grp_fu_59_p2);
-
-    sub_256ns_256ns_256_2_1_U15 : component rsa_sub_256ns_256ns_256_2_1
+    sub_256ns_256ns_256_2_1_U12 : component rsa_sub_256ns_256ns_256_2_1
     generic map (
         ID => 1,
         NUM_STAGE => 2,
@@ -182,10 +134,10 @@ begin
     port map (
         clk => ap_clk,
         reset => ap_rst,
-        din0 => grp_fu_78_p0,
+        din0 => grp_fu_63_p0,
         din1 => N,
         ce => ap_const_logic_1,
-        dout => grp_fu_78_p2);
+        dout => grp_fu_63_p2);
 
 
 
@@ -209,8 +161,8 @@ begin
             if (ap_rst = '1') then
                 ap_return_preg <= ap_const_lv256_lc_2;
             else
-                if ((ap_const_logic_1 = ap_CS_fsm_state5)) then 
-                    ap_return_preg <= select_ln47_fu_88_p3;
+                if ((ap_const_logic_1 = ap_CS_fsm_state4)) then 
+                    ap_return_preg <= select_ln33_fu_73_p3;
                 end if; 
             end if;
         end if;
@@ -223,7 +175,7 @@ begin
             if (ap_rst = '1') then
                 grp_Montgomery_Pipeline_Montgomery_fu_36_ap_start_reg <= ap_const_logic_0;
             else
-                if ((ap_const_logic_1 = ap_CS_fsm_state2)) then 
+                if (((ap_start = ap_const_logic_1) and (ap_const_logic_1 = ap_CS_fsm_state1))) then 
                     grp_Montgomery_Pipeline_Montgomery_fu_36_ap_start_reg <= ap_const_logic_1;
                 elsif ((grp_Montgomery_Pipeline_Montgomery_fu_36_ap_ready = ap_const_logic_1)) then 
                     grp_Montgomery_Pipeline_Montgomery_fu_36_ap_start_reg <= ap_const_logic_0;
@@ -235,61 +187,40 @@ begin
     process (ap_clk)
     begin
         if (ap_clk'event and ap_clk = '1') then
-            if ((ap_const_logic_1 = ap_CS_fsm_state2)) then
-                add_ln186_reg_133 <= grp_fu_59_p2;
+            if ((ap_const_logic_1 = ap_CS_fsm_state3)) then
+                icmp_ln1031_reg_103 <= icmp_ln1031_fu_53_p2;
+                trunc_ln186_reg_108 <= trunc_ln186_fu_59_p1;
             end if;
         end if;
     end process;
-    process (ap_clk)
-    begin
-        if (ap_clk'event and ap_clk = '1') then
-            if ((ap_const_logic_1 = ap_CS_fsm_state1)) then
-                empty_reg_112 <= empty_fu_47_p1;
-                    zext_ln1495_reg_117(255 downto 0) <= zext_ln1495_fu_51_p1(255 downto 0);
-            end if;
-        end if;
-    end process;
-    process (ap_clk)
-    begin
-        if (ap_clk'event and ap_clk = '1') then
-            if ((ap_const_logic_1 = ap_CS_fsm_state4)) then
-                icmp_ln1031_reg_138 <= icmp_ln1031_fu_69_p2;
-                trunc_ln186_reg_143 <= trunc_ln186_fu_74_p1;
-            end if;
-        end if;
-    end process;
-    zext_ln1495_reg_117(256) <= '0';
 
-    ap_NS_fsm_assign_proc : process (ap_start, ap_CS_fsm, ap_CS_fsm_state1, grp_Montgomery_Pipeline_Montgomery_fu_36_ap_done, ap_CS_fsm_state3)
+    ap_NS_fsm_assign_proc : process (ap_start, ap_CS_fsm, ap_CS_fsm_state1, grp_Montgomery_Pipeline_Montgomery_fu_36_ap_done, ap_CS_fsm_state2)
     begin
         case ap_CS_fsm is
             when ap_ST_fsm_state1 => 
-                if (((ap_const_logic_1 = ap_CS_fsm_state1) and (ap_start = ap_const_logic_1))) then
+                if (((ap_start = ap_const_logic_1) and (ap_const_logic_1 = ap_CS_fsm_state1))) then
                     ap_NS_fsm <= ap_ST_fsm_state2;
                 else
                     ap_NS_fsm <= ap_ST_fsm_state1;
                 end if;
             when ap_ST_fsm_state2 => 
-                ap_NS_fsm <= ap_ST_fsm_state3;
-            when ap_ST_fsm_state3 => 
-                if (((grp_Montgomery_Pipeline_Montgomery_fu_36_ap_done = ap_const_logic_1) and (ap_const_logic_1 = ap_CS_fsm_state3))) then
-                    ap_NS_fsm <= ap_ST_fsm_state4;
-                else
+                if (((grp_Montgomery_Pipeline_Montgomery_fu_36_ap_done = ap_const_logic_1) and (ap_const_logic_1 = ap_CS_fsm_state2))) then
                     ap_NS_fsm <= ap_ST_fsm_state3;
+                else
+                    ap_NS_fsm <= ap_ST_fsm_state2;
                 end if;
+            when ap_ST_fsm_state3 => 
+                ap_NS_fsm <= ap_ST_fsm_state4;
             when ap_ST_fsm_state4 => 
-                ap_NS_fsm <= ap_ST_fsm_state5;
-            when ap_ST_fsm_state5 => 
                 ap_NS_fsm <= ap_ST_fsm_state1;
             when others =>  
-                ap_NS_fsm <= "XXXXX";
+                ap_NS_fsm <= "XXXX";
         end case;
     end process;
     ap_CS_fsm_state1 <= ap_CS_fsm(0);
     ap_CS_fsm_state2 <= ap_CS_fsm(1);
     ap_CS_fsm_state3 <= ap_CS_fsm(2);
     ap_CS_fsm_state4 <= ap_CS_fsm(3);
-    ap_CS_fsm_state5 <= ap_CS_fsm(4);
 
     ap_ST_fsm_state1_blk_assign_proc : process(ap_start)
     begin
@@ -300,23 +231,22 @@ begin
         end if; 
     end process;
 
-    ap_ST_fsm_state2_blk <= ap_const_logic_0;
 
-    ap_ST_fsm_state3_blk_assign_proc : process(grp_Montgomery_Pipeline_Montgomery_fu_36_ap_done)
+    ap_ST_fsm_state2_blk_assign_proc : process(grp_Montgomery_Pipeline_Montgomery_fu_36_ap_done)
     begin
         if ((grp_Montgomery_Pipeline_Montgomery_fu_36_ap_done = ap_const_logic_0)) then 
-            ap_ST_fsm_state3_blk <= ap_const_logic_1;
+            ap_ST_fsm_state2_blk <= ap_const_logic_1;
         else 
-            ap_ST_fsm_state3_blk <= ap_const_logic_0;
+            ap_ST_fsm_state2_blk <= ap_const_logic_0;
         end if; 
     end process;
 
+    ap_ST_fsm_state3_blk <= ap_const_logic_0;
     ap_ST_fsm_state4_blk <= ap_const_logic_0;
-    ap_ST_fsm_state5_blk <= ap_const_logic_0;
 
-    ap_done_assign_proc : process(ap_start, ap_CS_fsm_state1, ap_CS_fsm_state5)
+    ap_done_assign_proc : process(ap_start, ap_CS_fsm_state1, ap_CS_fsm_state4)
     begin
-        if (((ap_const_logic_1 = ap_CS_fsm_state5) or ((ap_const_logic_1 = ap_CS_fsm_state1) and (ap_start = ap_const_logic_0)))) then 
+        if (((ap_const_logic_1 = ap_CS_fsm_state4) or ((ap_start = ap_const_logic_0) and (ap_const_logic_1 = ap_CS_fsm_state1)))) then 
             ap_done <= ap_const_logic_1;
         else 
             ap_done <= ap_const_logic_0;
@@ -326,7 +256,7 @@ begin
 
     ap_idle_assign_proc : process(ap_start, ap_CS_fsm_state1)
     begin
-        if (((ap_const_logic_1 = ap_CS_fsm_state1) and (ap_start = ap_const_logic_0))) then 
+        if (((ap_start = ap_const_logic_0) and (ap_const_logic_1 = ap_CS_fsm_state1))) then 
             ap_idle <= ap_const_logic_1;
         else 
             ap_idle <= ap_const_logic_0;
@@ -334,9 +264,9 @@ begin
     end process;
 
 
-    ap_ready_assign_proc : process(ap_CS_fsm_state5)
+    ap_ready_assign_proc : process(ap_CS_fsm_state4)
     begin
-        if ((ap_const_logic_1 = ap_CS_fsm_state5)) then 
+        if ((ap_const_logic_1 = ap_CS_fsm_state4)) then 
             ap_ready <= ap_const_logic_1;
         else 
             ap_ready <= ap_const_logic_0;
@@ -344,25 +274,22 @@ begin
     end process;
 
 
-    ap_return_assign_proc : process(ap_CS_fsm_state5, select_ln47_fu_88_p3, ap_return_preg)
+    ap_return_assign_proc : process(ap_CS_fsm_state4, select_ln33_fu_73_p3, ap_return_preg)
     begin
-        if ((ap_const_logic_1 = ap_CS_fsm_state5)) then 
-            ap_return <= select_ln47_fu_88_p3;
+        if ((ap_const_logic_1 = ap_CS_fsm_state4)) then 
+            ap_return <= select_ln33_fu_73_p3;
         else 
             ap_return <= ap_return_preg;
         end if; 
     end process;
 
-    empty_fu_47_p1 <= b(1 - 1 downto 0);
     grp_Montgomery_Pipeline_Montgomery_fu_36_ap_start <= grp_Montgomery_Pipeline_Montgomery_fu_36_ap_start_reg;
-    grp_fu_59_p0 <= std_logic_vector(IEEE.numeric_std.resize(unsigned(N),257));
-    grp_fu_59_p1 <= std_logic_vector(IEEE.numeric_std.resize(unsigned(b),257));
-    grp_fu_78_p0 <= grp_Montgomery_Pipeline_Montgomery_fu_36_m_V_out(256 - 1 downto 0);
-    icmp_ln1031_fu_69_p2 <= "1" when (unsigned(grp_Montgomery_Pipeline_Montgomery_fu_36_m_V_out) < unsigned(zext_ln1495_reg_117)) else "0";
-    select_ln47_fu_88_p3 <= 
-        grp_fu_78_p2 when (xor_ln1031_fu_83_p2(0) = '1') else 
-        trunc_ln186_reg_143;
-    trunc_ln186_fu_74_p1 <= grp_Montgomery_Pipeline_Montgomery_fu_36_m_V_out(256 - 1 downto 0);
-    xor_ln1031_fu_83_p2 <= (icmp_ln1031_reg_138 xor ap_const_lv1_1);
-    zext_ln1495_fu_51_p1 <= std_logic_vector(IEEE.numeric_std.resize(unsigned(N),257));
+    grp_fu_63_p0 <= grp_Montgomery_Pipeline_Montgomery_fu_36_m_V_out(256 - 1 downto 0);
+    icmp_ln1031_fu_53_p2 <= "1" when (unsigned(grp_Montgomery_Pipeline_Montgomery_fu_36_m_V_out) < unsigned(zext_ln22_fu_47_p1)) else "0";
+    select_ln33_fu_73_p3 <= 
+        grp_fu_63_p2 when (xor_ln1031_fu_68_p2(0) = '1') else 
+        trunc_ln186_reg_108;
+    trunc_ln186_fu_59_p1 <= grp_Montgomery_Pipeline_Montgomery_fu_36_m_V_out(256 - 1 downto 0);
+    xor_ln1031_fu_68_p2 <= (icmp_ln1031_reg_103 xor ap_const_lv1_1);
+    zext_ln22_fu_47_p1 <= std_logic_vector(IEEE.numeric_std.resize(unsigned(N),257));
 end behav;

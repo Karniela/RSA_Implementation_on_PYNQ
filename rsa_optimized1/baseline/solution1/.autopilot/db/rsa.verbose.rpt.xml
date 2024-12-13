@@ -1,7 +1,7 @@
 <profile>
 
 <section name = "Vitis HLS Report for 'rsa'" level="0">
-<item name = "Date">Tue Dec  3 22:41:16 2024
+<item name = "Date">Thu Dec 12 17:19:57 2024
 </item>
 <item name = "Version">2022.2 (Build 3670227 on Oct 13 2022)</item>
 <item name = "Project">baseline</item>
@@ -24,14 +24,14 @@
 <section name = "" level="1">
 <item name = "Summary"><table name="" hasTotal="0">
 <keys size="8">, min, max, min, max, min, max, Type</keys>
-<column name="">263426, 526082, 2.634 ms, 5.261 ms, 263427, 526083, no</column>
+<column name="">214274, 427778, 2.143 ms, 4.278 ms, 214275, 427779, no</column>
 </table>
 </item>
 <item name = "Detail">
 <section name = "" level="1">
 <item name = "Instance"><table name="" hasTotal="0">
 <keys size="9">Instance, Module, min, max, min, max, min, max, Type</keys>
-<column name="grp_mod_exp_fu_67">mod_exp, 263425, 526081, 2.634 ms, 5.261 ms, 263425, 526081, no</column>
+<column name="grp_mod_exp_fu_67">mod_exp, 214273, 427777, 2.143 ms, 4.278 ms, 214273, 427777, no</column>
 </table>
 </item>
 <item name = "Loop"><table name="" hasTotal="0">
@@ -50,12 +50,12 @@
 <column name="DSP">-, -, -, -, -</column>
 <column name="Expression">-, -, -, -, -</column>
 <column name="FIFO">-, -, -, -, -</column>
-<column name="Instance">0, -, 7290, 3769, -</column>
+<column name="Instance">0, -, 18120, 8253, -</column>
 <column name="Memory">-, -, -, -, -</column>
 <column name="Multiplexer">-, -, -, 14, -</column>
 <column name="Register">-, -, 771, -, -</column>
 <specialColumn name="Available">280, 220, 106400, 53200, 0</specialColumn>
-<specialColumn name="Utilization (%)">0, 0, 7, 7, 0</specialColumn>
+<specialColumn name="Utilization (%)">0, 0, 17, 15, 0</specialColumn>
 </table>
 </item>
 <item name = "Detail">
@@ -63,7 +63,7 @@
 <item name = "Instance"><table name="" hasTotal="1">
 <keys size="7">Instance, Module, BRAM_18K, DSP, FF, LUT, URAM</keys>
 <column name="control_s_axi_U">control_s_axi, 0, 0, 1084, 2088, 0</column>
-<column name="grp_mod_exp_fu_67">mod_exp, 0, 0, 6206, 1681, 0</column>
+<column name="grp_mod_exp_fu_67">mod_exp, 0, 0, 17036, 6165, 0</column>
 </table>
 </item>
 <item name = "DSP"><table name="" hasTotal="0">

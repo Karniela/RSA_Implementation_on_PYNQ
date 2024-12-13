@@ -1,5 +1,5 @@
 INFO: [HLS 200-10] Running '/tools/Xilinx/Vitis_HLS/2022.2/bin/unwrapped/lnx64.o/vitis_hls'
-INFO: [HLS 200-10] For user 'cse237c_fa24_s_chen' on host 'waiter' (Linux_x86_64 version 5.15.0-125-generic) on Tue Dec 03 22:40:52 PST 2024
+INFO: [HLS 200-10] For user 'cse237c_fa24_s_chen' on host 'waiter' (Linux_x86_64 version 5.15.0-125-generic) on Thu Dec 12 17:19:32 PST 2024
 INFO: [HLS 200-10] On os Ubuntu 22.04.5 LTS
 INFO: [HLS 200-10] In directory '/home/cse237c_fa24_s_chen/RSA_Implementation_on_PYNQ/rsa_optimized1'
 Sourcing Tcl script '/home/cse237c_fa24_s_chen/RSA_Implementation_on_PYNQ/rsa_optimized1/baseline/solution1/csynth.tcl'
@@ -7,16 +7,16 @@ INFO: [HLS 200-1510] Running: source /home/cse237c_fa24_s_chen/RSA_Implementatio
 INFO: [HLS 200-1510] Running: open_project baseline 
 INFO: [HLS 200-10] Opening project '/home/cse237c_fa24_s_chen/RSA_Implementation_on_PYNQ/rsa_optimized1/baseline'.
 INFO: [HLS 200-1510] Running: set_top rsa 
-INFO: [HLS 200-1510] Running: add_files rsa.cpp 
-INFO: [HLS 200-10] Adding design file 'rsa.cpp' to the project
 INFO: [HLS 200-1510] Running: add_files rsa.h 
 INFO: [HLS 200-10] Adding design file 'rsa.h' to the project
-INFO: [HLS 200-1510] Running: add_files -tb rsa_test.cpp -cflags -Wno-unknown-pragmas -Wno-unknown-pragmas -csimflags -Wno-unknown-pragmas 
-INFO: [HLS 200-10] Adding test bench file 'rsa_test.cpp' to the project
-INFO: [HLS 200-1510] Running: add_files -tb data/golden.txt -cflags -Wno-unknown-pragmas -Wno-unknown-pragmas -csimflags -Wno-unknown-pragmas 
-INFO: [HLS 200-10] Adding test bench file 'data/golden.txt' to the project
-INFO: [HLS 200-1510] Running: add_files -tb data/input.txt -cflags -Wno-unknown-pragmas -Wno-unknown-pragmas -csimflags -Wno-unknown-pragmas 
+INFO: [HLS 200-1510] Running: add_files rsa.cpp 
+INFO: [HLS 200-10] Adding design file 'rsa.cpp' to the project
+INFO: [HLS 200-1510] Running: add_files -tb data/input.txt -cflags -Wno-unknown-pragmas -Wno-unknown-pragmas -Wno-unknown-pragmas -csimflags -Wno-unknown-pragmas 
 INFO: [HLS 200-10] Adding test bench file 'data/input.txt' to the project
+INFO: [HLS 200-1510] Running: add_files -tb data/golden.txt -cflags -Wno-unknown-pragmas -Wno-unknown-pragmas -Wno-unknown-pragmas -csimflags -Wno-unknown-pragmas 
+INFO: [HLS 200-10] Adding test bench file 'data/golden.txt' to the project
+INFO: [HLS 200-1510] Running: add_files -tb rsa_test.cpp -cflags -Wno-unknown-pragmas -Wno-unknown-pragmas -Wno-unknown-pragmas -csimflags -Wno-unknown-pragmas 
+INFO: [HLS 200-10] Adding test bench file 'rsa_test.cpp' to the project
 INFO: [HLS 200-1510] Running: open_solution solution1 -flow_target vivado 
 INFO: [HLS 200-10] Opening solution '/home/cse237c_fa24_s_chen/RSA_Implementation_on_PYNQ/rsa_optimized1/baseline/solution1'.
 INFO: [SYN 201-201] Setting up clock 'default' with a period of 10ns.
@@ -30,20 +30,21 @@ INFO: [HLS 200-1510] Running: config_interface -m_axi_latency 0
 INFO: [HLS 200-1510] Running: source ./baseline/solution1/directives.tcl
 INFO: [HLS 200-1510] Running: set_directive_top -name rsa rsa 
 INFO: [HLS 200-1510] Running: csynth_design 
-Running Dispatch Server on port: 45771
-INFO: [HLS 200-111] Finished File checks and directory preparation: CPU user time: 0.01 seconds. CPU system time: 0 seconds. Elapsed time: 10.02 seconds; current allocated memory: 214.383 MB.
+Running Dispatch Server on port: 33013
+INFO: [HLS 200-111] Finished File checks and directory preparation: CPU user time: 0.01 seconds. CPU system time: 0 seconds. Elapsed time: 10.02 seconds; current allocated memory: 214.359 MB.
 INFO: [HLS 200-10] Analyzing design file 'rsa.cpp' ... 
-INFO: [HLS 200-111] Finished Source Code Analysis and Preprocessing: CPU user time: 10.01 seconds. CPU system time: 1.27 seconds. Elapsed time: 11.28 seconds; current allocated memory: 218.469 MB.
+INFO: [HLS 200-111] Finished Source Code Analysis and Preprocessing: CPU user time: 10.76 seconds. CPU system time: 1.29 seconds. Elapsed time: 12.05 seconds; current allocated memory: 218.492 MB.
 INFO: [HLS 200-777] Using interface defaults for 'Vivado' flow target.
-INFO: [HLS 200-111] Finished Compiling Optimization and Transform: CPU user time: 1.64 seconds. CPU system time: 0.43 seconds. Elapsed time: 2.06 seconds; current allocated memory: 218.809 MB.
-INFO: [HLS 200-111] Finished Checking Pragmas: CPU user time: 0 seconds. CPU system time: 0 seconds. Elapsed time: 0 seconds; current allocated memory: 218.809 MB.
+INFO: [HLS 214-188] Unrolling loop 'MOD_PRODUCT' (rsa.cpp:13:5) in function 'mod_product' partially with a factor of 4 (rsa.cpp:7:0)
+INFO: [HLS 200-111] Finished Compiling Optimization and Transform: CPU user time: 1.82 seconds. CPU system time: 0.43 seconds. Elapsed time: 2.24 seconds; current allocated memory: 218.941 MB.
+INFO: [HLS 200-111] Finished Checking Pragmas: CPU user time: 0 seconds. CPU system time: 0 seconds. Elapsed time: 0 seconds; current allocated memory: 218.941 MB.
 INFO: [HLS 200-10] Starting code transformations ...
-INFO: [HLS 200-111] Finished Standard Transforms: CPU user time: 0.01 seconds. CPU system time: 0.01 seconds. Elapsed time: 0.03 seconds; current allocated memory: 222.070 MB.
+INFO: [HLS 200-111] Finished Standard Transforms: CPU user time: 0.02 seconds. CPU system time: 0 seconds. Elapsed time: 0.03 seconds; current allocated memory: 222.309 MB.
 INFO: [HLS 200-10] Checking synthesizability ...
-INFO: [HLS 200-111] Finished Checking Synthesizability: CPU user time: 0.02 seconds. CPU system time: 0.01 seconds. Elapsed time: 0.02 seconds; current allocated memory: 226.074 MB.
-INFO: [XFORM 203-401] Performing if-conversion on hyperblock to (rsa.cpp:13:5) in function 'mod_product'... converting 5 basic blocks.
-INFO: [HLS 200-111] Finished Loop, function and other optimizations: CPU user time: 0.03 seconds. CPU system time: 0.01 seconds. Elapsed time: 0.04 seconds; current allocated memory: 251.023 MB.
-INFO: [HLS 200-111] Finished Architecture Synthesis: CPU user time: 0.02 seconds. CPU system time: 0 seconds. Elapsed time: 0.03 seconds; current allocated memory: 267.824 MB.
+INFO: [HLS 200-111] Finished Checking Synthesizability: CPU user time: 0.03 seconds. CPU system time: 0 seconds. Elapsed time: 0.03 seconds; current allocated memory: 226.238 MB.
+INFO: [XFORM 203-401] Performing if-conversion on hyperblock to (rsa.cpp:13:5) in function 'mod_product'... converting 17 basic blocks.
+INFO: [HLS 200-111] Finished Loop, function and other optimizations: CPU user time: 0.05 seconds. CPU system time: 0.01 seconds. Elapsed time: 0.06 seconds; current allocated memory: 251.383 MB.
+INFO: [HLS 200-111] Finished Architecture Synthesis: CPU user time: 0.02 seconds. CPU system time: 0.01 seconds. Elapsed time: 0.03 seconds; current allocated memory: 268.141 MB.
 INFO: [HLS 200-10] Starting hardware synthesis ...
 INFO: [HLS 200-10] Synthesizing 'rsa' ...
 INFO: [HLS 200-10] ----------------------------------------------------------------
@@ -51,50 +52,50 @@ INFO: [HLS 200-42] -- Implementing module 'mod_product'
 INFO: [HLS 200-10] ----------------------------------------------------------------
 INFO: [SCHED 204-11] Starting scheduling ...
 INFO: [SCHED 204-11] Finished scheduling.
-INFO: [HLS 200-111] Finished Scheduling: CPU user time: 0.01 seconds. CPU system time: 0.02 seconds. Elapsed time: 0.04 seconds; current allocated memory: 267.824 MB.
+INFO: [HLS 200-111] Finished Scheduling: CPU user time: 0.04 seconds. CPU system time: 0.03 seconds. Elapsed time: 0.06 seconds; current allocated memory: 268.141 MB.
 INFO: [BIND 205-100] Starting micro-architecture generation ...
 INFO: [BIND 205-101] Performing variable lifetime analysis.
 INFO: [BIND 205-101] Exploring resource sharing.
 INFO: [BIND 205-101] Binding ...
 INFO: [BIND 205-100] Finished micro-architecture generation.
-INFO: [HLS 200-111] Finished Binding: CPU user time: 0.03 seconds. CPU system time: 0.01 seconds. Elapsed time: 0.02 seconds; current allocated memory: 267.824 MB.
+INFO: [HLS 200-111] Finished Binding: CPU user time: 0.07 seconds. CPU system time: 0.01 seconds. Elapsed time: 0.07 seconds; current allocated memory: 268.141 MB.
 INFO: [HLS 200-10] ----------------------------------------------------------------
 INFO: [HLS 200-42] -- Implementing module 'mod_exp' 
 INFO: [HLS 200-10] ----------------------------------------------------------------
 INFO: [SCHED 204-11] Starting scheduling ...
 INFO: [SCHED 204-11] Finished scheduling.
-INFO: [HLS 200-111] Finished Scheduling: CPU user time: 0.03 seconds. CPU system time: 0 seconds. Elapsed time: 0.04 seconds; current allocated memory: 267.824 MB.
+INFO: [HLS 200-111] Finished Scheduling: CPU user time: 0.09 seconds. CPU system time: 0 seconds. Elapsed time: 0.09 seconds; current allocated memory: 268.141 MB.
 INFO: [BIND 205-100] Starting micro-architecture generation ...
 INFO: [BIND 205-101] Performing variable lifetime analysis.
 INFO: [BIND 205-101] Exploring resource sharing.
 INFO: [BIND 205-101] Binding ...
 INFO: [BIND 205-100] Finished micro-architecture generation.
-INFO: [HLS 200-111] Finished Binding: CPU user time: 0.02 seconds. CPU system time: 0 seconds. Elapsed time: 0.02 seconds; current allocated memory: 267.824 MB.
+INFO: [HLS 200-111] Finished Binding: CPU user time: 0.03 seconds. CPU system time: 0 seconds. Elapsed time: 0.04 seconds; current allocated memory: 268.141 MB.
 INFO: [HLS 200-10] ----------------------------------------------------------------
 INFO: [HLS 200-42] -- Implementing module 'rsa' 
 INFO: [HLS 200-10] ----------------------------------------------------------------
 INFO: [SCHED 204-11] Starting scheduling ...
 INFO: [SCHED 204-11] Finished scheduling.
-INFO: [HLS 200-111] Finished Scheduling: CPU user time: 0.03 seconds. CPU system time: 0 seconds. Elapsed time: 0.03 seconds; current allocated memory: 267.824 MB.
+INFO: [HLS 200-111] Finished Scheduling: CPU user time: 0.07 seconds. CPU system time: 0 seconds. Elapsed time: 0.07 seconds; current allocated memory: 268.141 MB.
 INFO: [BIND 205-100] Starting micro-architecture generation ...
 INFO: [BIND 205-101] Performing variable lifetime analysis.
 INFO: [BIND 205-101] Exploring resource sharing.
 INFO: [BIND 205-101] Binding ...
 INFO: [BIND 205-100] Finished micro-architecture generation.
-INFO: [HLS 200-111] Finished Binding: CPU user time: 0.01 seconds. CPU system time: 0 seconds. Elapsed time: 0.02 seconds; current allocated memory: 267.824 MB.
+INFO: [HLS 200-111] Finished Binding: CPU user time: 0.03 seconds. CPU system time: 0 seconds. Elapsed time: 0.03 seconds; current allocated memory: 268.141 MB.
 INFO: [HLS 200-10] ----------------------------------------------------------------
 INFO: [HLS 200-10] -- Generating RTL for module 'mod_product' 
 INFO: [HLS 200-10] ----------------------------------------------------------------
-INFO: [RTGEN 206-100] Generating core module 'add_257ns_257ns_257_2_1': 1 instance(s).
-INFO: [RTGEN 206-100] Generating core module 'add_258ns_258ns_258_2_1': 1 instance(s).
-INFO: [RTGEN 206-100] Generating core module 'sub_257ns_257ns_257_2_1': 2 instance(s).
+INFO: [RTGEN 206-100] Generating core module 'add_257ns_257ns_257_2_1': 4 instance(s).
+INFO: [RTGEN 206-100] Generating core module 'add_258ns_258ns_258_2_1': 4 instance(s).
+INFO: [RTGEN 206-100] Generating core module 'sub_257ns_257ns_257_2_1': 8 instance(s).
 INFO: [RTGEN 206-100] Finished creating RTL model for 'mod_product'.
-INFO: [HLS 200-111] Finished Creating RTL model: CPU user time: 0.02 seconds. CPU system time: 0.01 seconds. Elapsed time: 0.03 seconds; current allocated memory: 267.824 MB.
+INFO: [HLS 200-111] Finished Creating RTL model: CPU user time: 0.08 seconds. CPU system time: 0.01 seconds. Elapsed time: 0.08 seconds; current allocated memory: 268.141 MB.
 INFO: [HLS 200-10] ----------------------------------------------------------------
 INFO: [HLS 200-10] -- Generating RTL for module 'mod_exp' 
 INFO: [HLS 200-10] ----------------------------------------------------------------
 INFO: [RTGEN 206-100] Finished creating RTL model for 'mod_exp'.
-INFO: [HLS 200-111] Finished Creating RTL model: CPU user time: 0.06 seconds. CPU system time: 0.01 seconds. Elapsed time: 0.07 seconds; current allocated memory: 267.824 MB.
+INFO: [HLS 200-111] Finished Creating RTL model: CPU user time: 0.2 seconds. CPU system time: 0 seconds. Elapsed time: 0.21 seconds; current allocated memory: 268.359 MB.
 INFO: [HLS 200-10] ----------------------------------------------------------------
 INFO: [HLS 200-10] -- Generating RTL for module 'rsa' 
 INFO: [HLS 200-10] ----------------------------------------------------------------
@@ -106,15 +107,15 @@ INFO: [RTGEN 206-500] Setting interface mode on port 'rsa/x' to 's_axilite & ap_
 INFO: [RTGEN 206-500] Setting interface mode on function 'rsa' to 's_axilite & ap_ctrl_hs'.
 INFO: [RTGEN 206-100] Bundling port 'd', 'N', 'y', 'x' to AXI-Lite port control.
 INFO: [RTGEN 206-100] Finished creating RTL model for 'rsa'.
-INFO: [HLS 200-111] Finished Creating RTL model: CPU user time: 0.04 seconds. CPU system time: 0 seconds. Elapsed time: 0.04 seconds; current allocated memory: 267.824 MB.
+INFO: [HLS 200-111] Finished Creating RTL model: CPU user time: 0.09 seconds. CPU system time: 0 seconds. Elapsed time: 0.09 seconds; current allocated memory: 269.289 MB.
 INFO: [RTMG 210-283] Generating pipelined adder/subtractor : 'rsa_add_258ns_258ns_258_2_1_Adder_0'
 INFO: [RTMG 210-283] Generating pipelined adder/subtractor : 'rsa_add_257ns_257ns_257_2_1_Adder_1'
 INFO: [RTMG 210-283] Generating pipelined adder/subtractor : 'rsa_sub_257ns_257ns_257_2_1_Adder_2'
-INFO: [HLS 200-111] Finished Generating all RTL models: CPU user time: 0.12 seconds. CPU system time: 0.03 seconds. Elapsed time: 0.13 seconds; current allocated memory: 270.531 MB.
-INFO: [HLS 200-111] Finished Updating report files: CPU user time: 0.28 seconds. CPU system time: 0.01 seconds. Elapsed time: 0.29 seconds; current allocated memory: 279.188 MB.
+INFO: [HLS 200-111] Finished Generating all RTL models: CPU user time: 0.2 seconds. CPU system time: 0.02 seconds. Elapsed time: 0.21 seconds; current allocated memory: 272.812 MB.
+INFO: [HLS 200-111] Finished Updating report files: CPU user time: 0.29 seconds. CPU system time: 0.02 seconds. Elapsed time: 0.31 seconds; current allocated memory: 282.027 MB.
 INFO: [VHDL 208-304] Generating VHDL RTL for rsa.
 INFO: [VLOG 209-307] Generating Verilog RTL for rsa.
 INFO: [HLS 200-790] **** Loop Constraint Status: All loop constraints were satisfied.
 INFO: [HLS 200-789] **** Estimated Fmax: 145.31 MHz
-INFO: [HLS 200-111] Finished Command csynth_design CPU user time: 12.38 seconds. CPU system time: 1.82 seconds. Elapsed time: 14.22 seconds; current allocated memory: 64.914 MB.
-INFO: [HLS 200-112] Total CPU user time: 13.06 seconds. Total CPU system time: 2.02 seconds. Total elapsed time: 25 seconds; peak allocated memory: 279.297 MB.
+INFO: [HLS 200-111] Finished Command csynth_design CPU user time: 13.9 seconds. CPU system time: 1.83 seconds. Elapsed time: 15.74 seconds; current allocated memory: 67.770 MB.
+INFO: [HLS 200-112] Total CPU user time: 14.59 seconds. Total CPU system time: 2.06 seconds. Total elapsed time: 26.54 seconds; peak allocated memory: 282.129 MB.

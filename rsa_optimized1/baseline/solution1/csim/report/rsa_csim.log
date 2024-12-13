@@ -1,6 +1,7 @@
 INFO: [SIM 2] *************** CSIM start ***************
 INFO: [SIM 4] CSIM will launch GCC as the compiler.
-make: 'csim.exe' is up to date.
+   Compiling ../../../../rsa.cpp in debug mode
+   Generating csim.exe
 The 256-bit N in decimal is: 28948022309329048855892746252171981402981537383894273816512899164258300594241
 The 256-bit d in decimal is: 6046941810194465398739211379712748911334952487638508948887620598790839189513
 The 256-bit y in decimal is: 2582565740724142281090915945573515447553847947752899340204292994638446944617

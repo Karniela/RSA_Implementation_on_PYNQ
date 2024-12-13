@@ -30148,19 +30148,17 @@ data_t mod_exp(data_t base, data_t exp, data_t mod) {
     data_t b = base % mod;
 
     VITIS_LOOP_12_1: for (int i = 0; i < 256; i++) {
-#pragma HLS PIPELINE
+#pragma HLS PIPELINE OFF
 
  if (exp & 1) {
-#pragma HLS bind_op variable=result op=mul impl=fabric
- result = (result * b);
 
+            result = (result * b) % mod;
         }
         exp = exp >> 1;
         if (exp == 0)
             break;
-#pragma HLS bind_op variable=b op=mul impl=fabric
- b = (b * b);
 
+        b = (b * b) % mod;
     }
 
     return result;
@@ -30170,11 +30168,11 @@ data_t mod_exp(data_t base, data_t exp, data_t mod) {
 __attribute__((sdx_kernel("rsa", 0))) void rsa(data_t d, data_t N, data_t y, data_t &x) {
 #line 18 "/home/cse237c_fa24_s_chen/RSA_Implementation_on_PYNQ/rsa_baseline/baseline/solution1/csynth.tcl"
 #pragma HLSDIRECTIVE TOP name=rsa
-# 32 "rsa.cpp"
+# 30 "rsa.cpp"
 
 #line 6 "/home/cse237c_fa24_s_chen/RSA_Implementation_on_PYNQ/rsa_baseline/baseline/solution1/directives.tcl"
 #pragma HLSDIRECTIVE TOP name=rsa
-# 32 "rsa.cpp"
+# 30 "rsa.cpp"
 
 #pragma HLS INTERFACE mode=s_axilite port=return
 #pragma HLS INTERFACE mode=s_axilite port=d
@@ -30184,6 +30182,6 @@ __attribute__((sdx_kernel("rsa", 0))) void rsa(data_t d, data_t N, data_t y, dat
 
 
 
-
+#pragma HLS PIPELINE OFF
  x = mod_exp(y, d, N);
 }

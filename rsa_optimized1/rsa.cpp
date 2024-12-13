@@ -12,8 +12,8 @@ data_t mod_product(data_t a, data_t b, data_t N) {
     MOD_PRODUCT:
     for (int i = 0; i < BITWIDTH; i++) {
         #pragma HLS PIPELINE OFF
-        // #pragma HLS PIPELINE II=3
-		// #pragma HLS UNROLL FACTOR=8
+        // #pragma HLS PIPELINE II=2
+		#pragma HLS UNROLL FACTOR=4
         if (a & 1) {
             if (m + t >= N) {
                 m = m + t - N;
@@ -40,7 +40,7 @@ void mod_exp(data_t y, data_t d, data_t N, data_t &result) {
 
     MOD_EXP:
     for (int i = 0; i < BITWIDTH; i++) {
-		// #pragma HLS UNROLL FACTOR=8
+		// #pragma HLS UNROLL FACTOR=2
         #pragma HLS PIPELINE OFF
         // #pragma HLS PIPELINE II=1
         if (d & 1) {

@@ -20,27 +20,13 @@ data_t Montgomery(data_t N, data_t a, data_t b){
 	data_t d1, d2;
 	Montgomery:
 	for(int i = 0; i < BITWIDTH; i++){
-		#pragma HLS PIPELINE II=1
-		// if(a & 1){
-		// 	m = m + b;
-		// }
-		// if(m & 1){
-		// 	m = m + N; // -> overflow ?
-		// }
-		// if(((a & 1) && ((b & 1) ^ (m & 1)))){
-		// 	m = m + b + N;
-		// }
-		// else if((!(a & 1) && (m & 1))){
-		// 	m = m + N;
-		// }
-		// else if(((a & 1))){
-		// 	m = m + b;
-		// }
-		// d1 = (a & 1) ? b : data_t(0);
-		// d2 = (((m & 1) && !(((a & 1)) && ((b & 1)))) || ((a & 1) && (b & 1) && (!(m & 1)))) ? N : data_t(0);
-
-		// m = m + d1 + d2; 
-		m = ((a & 1) && ((b & 1) ^ (m & 1))) ? ap_uint<BITWIDTH+2>(m + b + N) : (!(a & 1) && (m & 1)) ? ap_uint<BITWIDTH+2>(m + N) : ((a & 1)) ? ap_uint<BITWIDTH+2>(m + b) : ap_uint<BITWIDTH+2>(m);
+		#pragma HLS PIPELINE II=4
+		if(a & 1){
+			m = m + b;
+		}
+		if(m & 1){
+			m = m + N; // -> overflow ?
+		}
 		m = m >> 1;
 		a = a >> 1;
 	}
@@ -57,7 +43,7 @@ data_t mod_product(data_t b, data_t N) {
     ap_uint<BITWIDTH+1> t = b;
 	Mod_Product:
     for(int i = 0; i < BITWIDTH; i++) {
-		#pragma HLS PIPELINE II=1
+		#pragma HLS PIPELINE OFF
 
         if(t + t > N){
         	t = t + t - N;

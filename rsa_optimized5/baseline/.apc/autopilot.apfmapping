@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<autopilotfilemapping:AutoPilotFileMapping xmlns:autopilotfilemapping="www.autoesl.com/autopilotfilemapping">
+  <source>
+    <originFiles name="rsa.h" path="/home/cse237c_fa24_s_chen/RSA_Implementation_on_PYNQ/rsa_optimized4/rsa.h"/>
+    <originFiles name="rsa.cpp" path="/home/cse237c_fa24_s_chen/RSA_Implementation_on_PYNQ/rsa_optimized4/rsa.cpp"/>
+  </source>
+  <testbench>
+    <originFiles name="input.txt" path="/home/cse237c_fa24_s_chen/RSA_Implementation_on_PYNQ/rsa_optimized4/data/input.txt"/>
+    <originFiles name="golden.txt" path="/home/cse237c_fa24_s_chen/RSA_Implementation_on_PYNQ/rsa_optimized4/data/golden.txt"/>
+    <originFiles name="rsa_test.cpp" path="/home/cse237c_fa24_s_chen/RSA_Implementation_on_PYNQ/rsa_optimized4/rsa_test.cpp"/>
+  </testbench>
+</autopilotfilemapping:AutoPilotFileMapping>

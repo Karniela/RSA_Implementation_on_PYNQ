@@ -7,7 +7,7 @@
 
 `timescale 1 ns / 1 ps 
 
-(* CORE_GENERATION_INFO="rsa_rsa,hls_ip_2022_2,{HLS_INPUT_TYPE=cxx,HLS_INPUT_FLOAT=0,HLS_INPUT_FIXED=0,HLS_INPUT_PART=xc7z020-clg400-1,HLS_INPUT_CLOCK=10.000000,HLS_INPUT_ARCH=others,HLS_SYN_CLOCK=6.584172,HLS_SYN_LAT=102148,HLS_SYN_TPT=none,HLS_SYN_MEM=0,HLS_SYN_DSP=0,HLS_SYN_FF=9171,HLS_SYN_LUT=4558,HLS_VERSION=2022_2}" *)
+(* CORE_GENERATION_INFO="rsa_rsa,hls_ip_2022_2,{HLS_INPUT_TYPE=cxx,HLS_INPUT_FLOAT=0,HLS_INPUT_FIXED=0,HLS_INPUT_PART=xc7z020-clg400-1,HLS_INPUT_CLOCK=10.000000,HLS_INPUT_ARCH=others,HLS_SYN_CLOCK=6.584172,HLS_SYN_LAT=396803,HLS_SYN_TPT=none,HLS_SYN_MEM=0,HLS_SYN_DSP=0,HLS_SYN_FF=8592,HLS_SYN_LUT=4152,HLS_VERSION=2022_2}" *)
 
 module rsa (
         ap_clk,
@@ -78,7 +78,7 @@ wire   [255:0] y;
 reg    x_ap_vld;
 reg   [255:0] reg_135;
 wire    ap_CS_fsm_state3;
-wire   [0:0] icmp_ln88_fu_164_p2;
+wire   [0:0] icmp_ln74_fu_164_p2;
 wire   [0:0] trunc_ln1497_fu_176_p1;
 wire    ap_CS_fsm_state4;
 wire    grp_Montgomery_fu_115_ap_done;
@@ -197,7 +197,7 @@ always @ (posedge ap_clk) begin
     if (ap_rst_n_inv == 1'b1) begin
         grp_Montgomery_fu_115_ap_start_reg <= 1'b0;
     end else begin
-        if ((((1'b0 == ap_block_state4_on_subcall_done) & (1'b1 == ap_CS_fsm_state4)) | ((trunc_ln1497_fu_176_p1 == 1'd1) & (icmp_ln88_fu_164_p2 == 1'd0) & (1'b1 == ap_CS_fsm_state3)))) begin
+        if ((((1'b0 == ap_block_state4_on_subcall_done) & (1'b1 == ap_CS_fsm_state4)) | ((trunc_ln1497_fu_176_p1 == 1'd1) & (icmp_ln74_fu_164_p2 == 1'd0) & (1'b1 == ap_CS_fsm_state3)))) begin
             grp_Montgomery_fu_115_ap_start_reg <= 1'b1;
         end else if ((grp_Montgomery_fu_115_ap_ready == 1'b1)) begin
             grp_Montgomery_fu_115_ap_start_reg <= 1'b0;
@@ -263,19 +263,19 @@ always @ (posedge ap_clk) begin
 end
 
 always @ (posedge ap_clk) begin
-    if (((trunc_ln1497_fu_176_p1 == 1'd1) & (icmp_ln88_fu_164_p2 == 1'd0) & (1'b1 == ap_CS_fsm_state3))) begin
+    if (((trunc_ln1497_fu_176_p1 == 1'd1) & (icmp_ln74_fu_164_p2 == 1'd0) & (1'b1 == ap_CS_fsm_state3))) begin
         m_V_load_1_reg_264 <= m_V_fu_78;
     end
 end
 
 always @ (posedge ap_clk) begin
-    if ((((1'b0 == ap_block_state4_on_subcall_done) & (1'b1 == ap_CS_fsm_state4)) | ((trunc_ln1497_fu_176_p1 == 1'd1) & (icmp_ln88_fu_164_p2 == 1'd0) & (1'b1 == ap_CS_fsm_state3)))) begin
+    if ((((1'b0 == ap_block_state4_on_subcall_done) & (1'b1 == ap_CS_fsm_state4)) | ((trunc_ln1497_fu_176_p1 == 1'd1) & (icmp_ln74_fu_164_p2 == 1'd0) & (1'b1 == ap_CS_fsm_state3)))) begin
         reg_135 <= t_V_1_fu_66;
     end
 end
 
 always @ (posedge ap_clk) begin
-    if (((icmp_ln88_fu_164_p2 == 1'd0) & (1'b1 == ap_CS_fsm_state3))) begin
+    if (((icmp_ln74_fu_164_p2 == 1'd0) & (1'b1 == ap_CS_fsm_state3))) begin
         trunc_ln1497_reg_260 <= trunc_ln1497_fu_176_p1;
     end
 end
@@ -315,7 +315,7 @@ always @ (*) begin
 end
 
 always @ (*) begin
-    if (((icmp_ln88_fu_164_p2 == 1'd1) & (1'b1 == ap_CS_fsm_state3))) begin
+    if (((icmp_ln74_fu_164_p2 == 1'd1) & (1'b1 == ap_CS_fsm_state3))) begin
         ap_done = 1'b1;
     end else begin
         ap_done = 1'b0;
@@ -331,7 +331,7 @@ always @ (*) begin
 end
 
 always @ (*) begin
-    if (((icmp_ln88_fu_164_p2 == 1'd1) & (1'b1 == ap_CS_fsm_state3))) begin
+    if (((icmp_ln74_fu_164_p2 == 1'd1) & (1'b1 == ap_CS_fsm_state3))) begin
         ap_ready = 1'b1;
     end else begin
         ap_ready = 1'b0;
@@ -349,7 +349,7 @@ always @ (*) begin
 end
 
 always @ (*) begin
-    if (((icmp_ln88_fu_164_p2 == 1'd1) & (1'b1 == ap_CS_fsm_state3))) begin
+    if (((icmp_ln74_fu_164_p2 == 1'd1) & (1'b1 == ap_CS_fsm_state3))) begin
         x_ap_vld = 1'b1;
     end else begin
         x_ap_vld = 1'b0;
@@ -373,7 +373,7 @@ always @ (*) begin
             end
         end
         ap_ST_fsm_state3 : begin
-            if (((icmp_ln88_fu_164_p2 == 1'd1) & (1'b1 == ap_CS_fsm_state3))) begin
+            if (((icmp_ln74_fu_164_p2 == 1'd1) & (1'b1 == ap_CS_fsm_state3))) begin
                 ap_NS_fsm = ap_ST_fsm_state1;
             end else begin
                 ap_NS_fsm = ap_ST_fsm_state4;
@@ -423,7 +423,7 @@ assign grp_mod_product_fu_107_ap_start = grp_mod_product_fu_107_ap_start_reg;
 
 assign i_2_fu_170_p2 = (i_fu_74 + 9'd1);
 
-assign icmp_ln88_fu_164_p2 = ((i_fu_74 == 9'd256) ? 1'b1 : 1'b0);
+assign icmp_ln74_fu_164_p2 = ((i_fu_74 == 9'd256) ? 1'b1 : 1'b0);
 
 assign r_V_fu_189_p4 = {{d_V_fu_70[255:1]}};
 

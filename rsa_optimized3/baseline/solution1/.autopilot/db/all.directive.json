@@ -6,7 +6,7 @@
           "label": "",
           "functionLabel": "",
           "id": "1",
-          "sourceFile": "\/home\/cse237c_fa24_s_chen\/RSA_Implementation_on_PYNQ\/rsa_optimized3\/baseline\/solution1\/directives.tcl",
+          "sourceFile": "\/home\/cse237c_fa24_s_chen\/RSA_Implementation_on_PYNQ\/rsa_optimized_Mont2\/baseline\/solution1\/directives.tcl",
           "sourceLine": "6",
           "pragma": {
             "name": "TOP",
@@ -21,7 +21,7 @@
           "label": "",
           "functionLabel": "",
           "id": "2",
-          "sourceFile": "\/home\/cse237c_fa24_s_chen\/RSA_Implementation_on_PYNQ\/rsa_optimized3\/baseline\/solution1\/csynth.tcl",
+          "sourceFile": "\/home\/cse237c_fa24_s_chen\/RSA_Implementation_on_PYNQ\/rsa_optimized_Mont2\/baseline\/solution1\/csynth.tcl",
           "sourceLine": "18",
           "pragma": {
             "name": "TOP",

@@ -1,7 +1,7 @@
 <profile>
 
 <section name = "Vitis HLS Report for 'mod_exp'" level="0">
-<item name = "Date">Tue Dec  3 22:41:16 2024
+<item name = "Date">Thu Dec 12 17:19:57 2024
 </item>
 <item name = "Version">2022.2 (Build 3670227 on Oct 13 2022)</item>
 <item name = "Project">baseline</item>
@@ -24,19 +24,19 @@
 <section name = "" level="1">
 <item name = "Summary"><table name="" hasTotal="0">
 <keys size="8">, min, max, min, max, min, max, Type</keys>
-<column name="">263425, 526081, 2.634 ms, 5.261 ms, 263425, 526081, no</column>
+<column name="">214273, 427777, 2.143 ms, 4.278 ms, 214273, 427777, no</column>
 </table>
 </item>
 <item name = "Detail">
 <section name = "" level="1">
 <item name = "Instance"><table name="" hasTotal="0">
 <keys size="9">Instance, Module, min, max, min, max, min, max, Type</keys>
-<column name="grp_mod_product_fu_66">mod_product, 1026, 1026, 10.260 us, 10.260 us, 1026, 1026, no</column>
+<column name="grp_mod_product_fu_66">mod_product, 834, 834, 8.340 us, 8.340 us, 834, 834, no</column>
 </table>
 </item>
 <item name = "Loop"><table name="" hasTotal="0">
 <keys size="8">Loop Name, min, max, Latency, achieved, target, Count, Pipelined</keys>
-<column name="- MOD_EXP">263424, 526080, 1029 ~ 2055, -, -, 256, no</column>
+<column name="- MOD_EXP">214272, 427776, 837 ~ 1671, -, -, 256, no</column>
 </table>
 </item>
 </section>

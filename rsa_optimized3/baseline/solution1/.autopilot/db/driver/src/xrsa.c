@@ -74,46 +74,6 @@ void XRsa_DisableAutoRestart(XRsa *InstancePtr) {
     XRsa_WriteReg(InstancePtr->Control_BaseAddress, XRSA_CONTROL_ADDR_AP_CTRL, 0);
 }
 
-void XRsa_Set_p(XRsa *InstancePtr, XRsa_P Data) {
-    Xil_AssertVoid(InstancePtr != NULL);
-    Xil_AssertVoid(InstancePtr->IsReady == XIL_COMPONENT_IS_READY);
-
-    XRsa_WriteReg(InstancePtr->Control_BaseAddress, XRSA_CONTROL_ADDR_P_DATA + 0, Data.word_0);
-    XRsa_WriteReg(InstancePtr->Control_BaseAddress, XRSA_CONTROL_ADDR_P_DATA + 4, Data.word_1);
-    XRsa_WriteReg(InstancePtr->Control_BaseAddress, XRSA_CONTROL_ADDR_P_DATA + 8, Data.word_2);
-    XRsa_WriteReg(InstancePtr->Control_BaseAddress, XRSA_CONTROL_ADDR_P_DATA + 12, Data.word_3);
-}
-
-XRsa_P XRsa_Get_p(XRsa *InstancePtr) {
-    XRsa_P Data;
-
-    Data.word_0 = XRsa_ReadReg(InstancePtr->Control_BaseAddress, XRSA_CONTROL_ADDR_P_DATA + 0);
-    Data.word_1 = XRsa_ReadReg(InstancePtr->Control_BaseAddress, XRSA_CONTROL_ADDR_P_DATA + 4);
-    Data.word_2 = XRsa_ReadReg(InstancePtr->Control_BaseAddress, XRSA_CONTROL_ADDR_P_DATA + 8);
-    Data.word_3 = XRsa_ReadReg(InstancePtr->Control_BaseAddress, XRSA_CONTROL_ADDR_P_DATA + 12);
-    return Data;
-}
-
-void XRsa_Set_q(XRsa *InstancePtr, XRsa_Q Data) {
-    Xil_AssertVoid(InstancePtr != NULL);
-    Xil_AssertVoid(InstancePtr->IsReady == XIL_COMPONENT_IS_READY);
-
-    XRsa_WriteReg(InstancePtr->Control_BaseAddress, XRSA_CONTROL_ADDR_Q_DATA + 0, Data.word_0);
-    XRsa_WriteReg(InstancePtr->Control_BaseAddress, XRSA_CONTROL_ADDR_Q_DATA + 4, Data.word_1);
-    XRsa_WriteReg(InstancePtr->Control_BaseAddress, XRSA_CONTROL_ADDR_Q_DATA + 8, Data.word_2);
-    XRsa_WriteReg(InstancePtr->Control_BaseAddress, XRSA_CONTROL_ADDR_Q_DATA + 12, Data.word_3);
-}
-
-XRsa_Q XRsa_Get_q(XRsa *InstancePtr) {
-    XRsa_Q Data;
-
-    Data.word_0 = XRsa_ReadReg(InstancePtr->Control_BaseAddress, XRSA_CONTROL_ADDR_Q_DATA + 0);
-    Data.word_1 = XRsa_ReadReg(InstancePtr->Control_BaseAddress, XRSA_CONTROL_ADDR_Q_DATA + 4);
-    Data.word_2 = XRsa_ReadReg(InstancePtr->Control_BaseAddress, XRSA_CONTROL_ADDR_Q_DATA + 8);
-    Data.word_3 = XRsa_ReadReg(InstancePtr->Control_BaseAddress, XRSA_CONTROL_ADDR_Q_DATA + 12);
-    return Data;
-}
-
 void XRsa_Set_d(XRsa *InstancePtr, XRsa_D Data) {
     Xil_AssertVoid(InstancePtr != NULL);
     Xil_AssertVoid(InstancePtr->IsReady == XIL_COMPONENT_IS_READY);

@@ -38,17 +38,16 @@ def mod_exp(base, exp, mod):
     Perform modular exponentiation: (base^exp) % mod
     """
     result = 1
-    # base = base % mod  # Ensure base is within mod
-    b = barrett_reduction(base, mod)
+    b = base % mod  # Ensure base is within mod
     
     for i in range(128):
         #pragma HLS PIPELINE OFF
         if (exp & 1):
             # result = mod_product(b, result, mod);
-            result = barrett_reduction(b * result, mod)
+            result = b * result % mod
         
         # b = (b * b) % mod;
-        b = barrett_reduction(b * b, mod)
+        b = b * b % mod
         exp = exp >> 1
     
     return result
@@ -85,32 +84,19 @@ def crt_rsa(p, q, N, y, d):
       - Decrypted plaintext
     """
     # Compute CRT parameters
-    # dp = d % (p - 1) # dp is now bitwidth / 2 bits
-    dp = barrett_reduction(d, p-1)
-    # dq = d % (q - 1) # dq is now bitwidth / 2 bits
-    dq = barrett_reduction(d, q-1)
-    # print(f'dp = {dp}\ndq = {dq}')
-    q_inv = mod_inverse(q, p)
-    # print(f'q_inv = {q_inv}')
-    
+    dp = d % (p - 1) # dp is now bitwidth / 2 bits
+    dq = d % (q - 1) # dq is now bitwidth / 2 bits
     # Modular exponentiation for m_p and m_q
     mp = mod_exp(y, dp, p)
-    # print(f'mp = {mp}')
     mq = mod_exp(y, dq, q)
-    # print(f'mq = {mq}')
-    
-    # CRT combination
-    # h = (q_inv * (mp - mq)) % p
-    # if h < 0:
-    #     h += p  # Ensure h is non-negative
-    
+    q_inv = mod_inverse(q, p)
+
     mm = mp - mq if mp > mq else mq - mp
-    h = barrett_reduction(mm * q_inv, p)
+    h = mm * q_inv % p
     if (mp < mq):
         h = p - h
-    
-    
     m = (mq + h * q) 
+
     return m
 
 
@@ -120,10 +106,15 @@ if __name__ == "__main__":
     # Example parameters
     p = 170141183460469231731687303715884116147  # Prime p
     q = 170141183460469231731687303715884114527  # Prime q
+    e = 65537
+    d = pow(e, -1, (p-1) * (q-1))
     N = p * q  # Modulus
-    y = 15992842325075000729298110246954337332725622601628670928350614326331907696315  # Ciphertext
-    d = 5978919236142606547650399213717440902551390268385239648859999103680819781761  # Private exponent
+    x = random.randint(1, (p-1) * (q-1) - 1)
+    y = pow(x, e, N) 
+    x2 = pow(y, d, N)
     
     # Decrypt using CRT-based RSA
     m = crt_rsa(p, q, N, y, d)
+    print(f'Original message: {x}')
+    print(f'golden: {x2}')
     print(f"Decrypted plaintext: {m}")

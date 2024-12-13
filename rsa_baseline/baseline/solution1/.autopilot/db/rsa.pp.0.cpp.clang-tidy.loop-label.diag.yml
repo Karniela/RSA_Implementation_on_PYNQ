@@ -1310,14 +1310,4 @@ Diagnostics:
         Offset:          1689821
         Length:          0
         ReplacementText: 'VITIS_LOOP_12_1: '
-  - DiagnosticName:  clang-diagnostic-error
-    Message:         'Invalid Directive: for current device, mul + fabric is invalid combination for bind_op'
-    FileOffset:      16
-    FilePath:        rsa.cpp
-    Replacements:    
-  - DiagnosticName:  clang-diagnostic-error
-    Message:         'Invalid Directive: for current device, mul + fabric is invalid combination for bind_op'
-    FileOffset:      23
-    FilePath:        rsa.cpp
-    Replacements:    
 ...

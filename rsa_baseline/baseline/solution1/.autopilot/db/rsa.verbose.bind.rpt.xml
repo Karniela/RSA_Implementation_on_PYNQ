@@ -1,7 +1,7 @@
 <profile>
 
 <section name = "Vitis HLS Report for 'rsa'" level="0">
-<item name = "Date">Tue Dec  3 20:54:57 2024
+<item name = "Date">Thu Dec 12 17:33:48 2024
 </item>
 <item name = "Version">2022.2 (Build 3670227 on Oct 13 2022)</item>
 <item name = "Project">baseline</item>
@@ -15,7 +15,7 @@
 <section name = "" level="1">
 <item name = "Summary"><table name="" hasTotal="0">
 <keys size="4">Clock, Target, Estimated, Uncertainty</keys>
-<column name="ap_clk">10.00 ns, 29.749 ns, 2.70 ns</column>
+<column name="ap_clk">10.00 ns, 6.978 ns, 2.70 ns</column>
 </table>
 </item>
 </section>
@@ -24,14 +24,14 @@
 <section name = "" level="1">
 <item name = "Summary"><table name="" hasTotal="0">
 <keys size="8">, min, max, min, max, min, max, Type</keys>
-<column name="">266, 522, 7.913 us, 15.529 us, 267, 523, no</column>
+<column name="">784, 267535, 7.840 us, 2.675 ms, 785, 267536, no</column>
 </table>
 </item>
 <item name = "Detail">
 <section name = "" level="1">
 <item name = "Instance"><table name="" hasTotal="0">
 <keys size="9">Instance, Module, min, max, min, max, min, max, Type</keys>
-<column name="grp_mod_exp_fu_67">mod_exp, 265, 521, 7.883 us, 15.499 us, 265, 521, no</column>
+<column name="grp_mod_exp_fu_67">mod_exp, 783, 267534, 7.830 us, 2.675 ms, 783, 267534, no</column>
 </table>
 </item>
 <item name = "Loop"><table name="" hasTotal="0">

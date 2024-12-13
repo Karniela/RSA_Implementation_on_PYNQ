@@ -51,10 +51,11 @@ with open("./data/golden.txt", "w") as f:
     f.close()
 
 with open("./data/input.txt", "w") as f1:
-    f1.write(f'{p}\n')
-    f1.write(f'{q}\n')
-    f1.write(f'{n}\n')
-    f1.write(f'{d}\n')
+    f1.write(f'{n}')
+    f1.write("\n")
+    f1.write(f'{d}')
+    f1.write("\n")
     for i in range(file_length):
-        f1.write(f'{y[i]}\n')
+        f1.write(f'{y[i]}')
+        f1.write("\n")
     f1.close()    

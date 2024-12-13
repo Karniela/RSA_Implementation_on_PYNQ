@@ -70,13 +70,13 @@ set NewPortList {[
  	{ "name": "ap_rst_n", "direction": "in", "datatype": "sc_logic", "bitwidth":1, "type": "reset", "bundle":{"name": "ap_rst_n", "role": "default" }}  ]}
 
 set RtlHierarchyInfo {[
-	{"ID" : "0", "Level" : "0", "Path" : "`AUTOTB_DUT_INST", "Parent" : "", "Child" : ["1", "6"],
+	{"ID" : "0", "Level" : "0", "Path" : "`AUTOTB_DUT_INST", "Parent" : "", "Child" : ["1", "7"],
 		"CDFG" : "rsa",
 		"Protocol" : "ap_ctrl_hs",
 		"ControlExist" : "1", "ap_start" : "1", "ap_ready" : "1", "ap_done" : "1", "ap_continue" : "0", "ap_idle" : "1", "real_start" : "0",
 		"Pipeline" : "None", "UnalignedPipeline" : "0", "RewindPipeline" : "0", "ProcessNetwork" : "0",
 		"II" : "0",
-		"VariableLatency" : "1", "ExactLatency" : "-1", "EstimateLatencyMin" : "266", "EstimateLatencyMax" : "522",
+		"VariableLatency" : "1", "ExactLatency" : "-1", "EstimateLatencyMin" : "784", "EstimateLatencyMax" : "267535",
 		"Combinational" : "0",
 		"Datapath" : "0",
 		"ClockEnable" : "0",
@@ -89,13 +89,13 @@ set RtlHierarchyInfo {[
 			{"Name" : "N", "Type" : "None", "Direction" : "I"},
 			{"Name" : "y", "Type" : "None", "Direction" : "I"},
 			{"Name" : "x", "Type" : "Vld", "Direction" : "O"}]},
-	{"ID" : "1", "Level" : "1", "Path" : "`AUTOTB_DUT_INST.grp_mod_exp_fu_67", "Parent" : "0", "Child" : ["2", "5"],
+	{"ID" : "1", "Level" : "1", "Path" : "`AUTOTB_DUT_INST.grp_mod_exp_fu_67", "Parent" : "0", "Child" : ["2", "3", "4", "5", "6"],
 		"CDFG" : "mod_exp",
 		"Protocol" : "ap_ctrl_hs",
 		"ControlExist" : "1", "ap_start" : "1", "ap_ready" : "1", "ap_done" : "1", "ap_continue" : "0", "ap_idle" : "1", "real_start" : "0",
 		"Pipeline" : "None", "UnalignedPipeline" : "0", "RewindPipeline" : "0", "ProcessNetwork" : "0",
 		"II" : "0",
-		"VariableLatency" : "1", "ExactLatency" : "-1", "EstimateLatencyMin" : "265", "EstimateLatencyMax" : "521",
+		"VariableLatency" : "1", "ExactLatency" : "-1", "EstimateLatencyMin" : "783", "EstimateLatencyMax" : "267534",
 		"Combinational" : "0",
 		"Datapath" : "0",
 		"ClockEnable" : "0",
@@ -106,33 +106,16 @@ set RtlHierarchyInfo {[
 		"Port" : [
 			{"Name" : "base_r", "Type" : "None", "Direction" : "I"},
 			{"Name" : "exp", "Type" : "None", "Direction" : "I"},
-			{"Name" : "mod_r", "Type" : "None", "Direction" : "I"}]},
-	{"ID" : "2", "Level" : "2", "Path" : "`AUTOTB_DUT_INST.grp_mod_exp_fu_67.grp_mod_exp_Pipeline_VITIS_LOOP_12_1_fu_38", "Parent" : "1", "Child" : ["3", "4"],
-		"CDFG" : "mod_exp_Pipeline_VITIS_LOOP_12_1",
-		"Protocol" : "ap_ctrl_hs",
-		"ControlExist" : "1", "ap_start" : "1", "ap_ready" : "1", "ap_done" : "1", "ap_continue" : "0", "ap_idle" : "1", "real_start" : "0",
-		"Pipeline" : "None", "UnalignedPipeline" : "0", "RewindPipeline" : "0", "ProcessNetwork" : "0",
-		"II" : "0",
-		"VariableLatency" : "1", "ExactLatency" : "-1", "EstimateLatencyMin" : "4", "EstimateLatencyMax" : "260",
-		"Combinational" : "0",
-		"Datapath" : "0",
-		"ClockEnable" : "0",
-		"HasSubDataflow" : "0",
-		"InDataflowNetwork" : "0",
-		"HasNonBlockingOperation" : "0",
-		"IsBlackBox" : "0",
-		"Port" : [
-			{"Name" : "exp", "Type" : "None", "Direction" : "I"},
-			{"Name" : "ret_V", "Type" : "None", "Direction" : "I"},
-			{"Name" : "agg_result_0_out", "Type" : "Vld", "Direction" : "O"},
-			{"Name" : "result_V_1_out", "Type" : "Vld", "Direction" : "O"}],
+			{"Name" : "mod_r", "Type" : "None", "Direction" : "I"}],
 		"Loop" : [
-			{"Name" : "VITIS_LOOP_12_1", "PipelineType" : "pipeline",
-				"LoopDec" : {"FSMBitwidth" : "4", "FirstState" : "ap_ST_fsm_pp0_stage0", "FirstStateIter" : "ap_enable_reg_pp0_iter0", "FirstStateBlock" : "ap_block_pp0_stage0_subdone", "LastState" : "ap_ST_fsm_pp0_stage0", "LastStateIter" : "ap_enable_reg_pp0_iter1", "LastStateBlock" : "ap_block_pp0_stage0_subdone", "PreState" : ["ap_ST_fsm_state1"], "QuitState" : "ap_ST_fsm_pp0_stage0", "QuitStateIter" : "ap_enable_reg_pp0_iter1", "QuitStateBlock" : "ap_block_pp0_stage0_subdone", "PostState" : ["ap_ST_fsm_state4", "ap_ST_fsm_state5"]}}]},
-	{"ID" : "3", "Level" : "3", "Path" : "`AUTOTB_DUT_INST.grp_mod_exp_fu_67.grp_mod_exp_Pipeline_VITIS_LOOP_12_1_fu_38.mul_256s_256s_256_1_1_U1", "Parent" : "2"},
-	{"ID" : "4", "Level" : "3", "Path" : "`AUTOTB_DUT_INST.grp_mod_exp_fu_67.grp_mod_exp_Pipeline_VITIS_LOOP_12_1_fu_38.mul_256s_256s_256_1_1_U2", "Parent" : "2"},
-	{"ID" : "5", "Level" : "2", "Path" : "`AUTOTB_DUT_INST.grp_mod_exp_fu_67.urem_256ns_256ns_256_260_seq_1_U8", "Parent" : "1"},
-	{"ID" : "6", "Level" : "1", "Path" : "`AUTOTB_DUT_INST.control_s_axi_U", "Parent" : "0"}]}
+			{"Name" : "VITIS_LOOP_12_1", "PipelineType" : "no",
+				"LoopDec" : {"FSMBitwidth" : "1303", "FirstState" : "ap_ST_fsm_state261", "LastState" : ["ap_ST_fsm_state1302"], "QuitState" : ["ap_ST_fsm_state261", "ap_ST_fsm_state782"], "PreState" : ["ap_ST_fsm_state260"], "PostState" : ["ap_ST_fsm_state1303"], "OneDepthLoop" : "0", "OneStateBlock": ""}}]},
+	{"ID" : "2", "Level" : "2", "Path" : "`AUTOTB_DUT_INST.grp_mod_exp_fu_67.urem_256ns_256ns_256_260_seq_1_U1", "Parent" : "1"},
+	{"ID" : "3", "Level" : "2", "Path" : "`AUTOTB_DUT_INST.grp_mod_exp_fu_67.mul_256ns_256ns_512_5_1_U2", "Parent" : "1"},
+	{"ID" : "4", "Level" : "2", "Path" : "`AUTOTB_DUT_INST.grp_mod_exp_fu_67.urem_512ns_256ns_256_516_seq_1_U3", "Parent" : "1"},
+	{"ID" : "5", "Level" : "2", "Path" : "`AUTOTB_DUT_INST.grp_mod_exp_fu_67.mul_256ns_256ns_512_5_1_U4", "Parent" : "1"},
+	{"ID" : "6", "Level" : "2", "Path" : "`AUTOTB_DUT_INST.grp_mod_exp_fu_67.urem_512ns_256ns_256_516_seq_1_U5", "Parent" : "1"},
+	{"ID" : "7", "Level" : "1", "Path" : "`AUTOTB_DUT_INST.control_s_axi_U", "Parent" : "0"}]}
 
 
 set ArgLastReadFirstWriteLatency {
@@ -143,19 +126,14 @@ set ArgLastReadFirstWriteLatency {
 		x {Type O LastRead -1 FirstWrite 1}}
 	mod_exp {
 		base_r {Type I LastRead 0 FirstWrite -1}
-		exp {Type I LastRead 259 FirstWrite -1}
-		mod_r {Type I LastRead 0 FirstWrite -1}}
-	mod_exp_Pipeline_VITIS_LOOP_12_1 {
 		exp {Type I LastRead 0 FirstWrite -1}
-		ret_V {Type I LastRead 0 FirstWrite -1}
-		agg_result_0_out {Type O LastRead -1 FirstWrite 2}
-		result_V_1_out {Type O LastRead -1 FirstWrite 3}}}
+		mod_r {Type I LastRead 0 FirstWrite -1}}}
 
 set hasDtUnsupportedChannel 0
 
 set PerformanceInfo {[
-	{"Name" : "Latency", "Min" : "266", "Max" : "522"}
-	, {"Name" : "Interval", "Min" : "267", "Max" : "523"}
+	{"Name" : "Latency", "Min" : "784", "Max" : "267535"}
+	, {"Name" : "Interval", "Min" : "785", "Max" : "267536"}
 ]}
 
 set PipelineEnableSignalInfo {[

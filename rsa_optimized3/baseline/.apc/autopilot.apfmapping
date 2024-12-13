@@ -1,12 +1,12 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <autopilotfilemapping:AutoPilotFileMapping xmlns:autopilotfilemapping="www.autoesl.com/autopilotfilemapping">
   <source>
-    <originFiles name="rsa.cpp" path="/home/cse237c_fa24_s_chen/RSA_Implementation_on_PYNQ/rsa_optimized3/rsa.cpp"/>
-    <originFiles name="rsa.h" path="/home/cse237c_fa24_s_chen/RSA_Implementation_on_PYNQ/rsa_optimized3/rsa.h"/>
+    <originFiles name="rsa.h" path="/home/cse237c_fa24_s_chen/RSA_Implementation_on_PYNQ/rsa_optimized_Mont2/rsa.h"/>
+    <originFiles name="rsa.cpp" path="/home/cse237c_fa24_s_chen/RSA_Implementation_on_PYNQ/rsa_optimized_Mont2/rsa.cpp"/>
   </source>
   <testbench>
-    <originFiles name="rsa_test.cpp" path="/home/cse237c_fa24_s_chen/RSA_Implementation_on_PYNQ/rsa_optimized3/rsa_test.cpp"/>
-    <originFiles name="golden.txt" path="/home/cse237c_fa24_s_chen/RSA_Implementation_on_PYNQ/rsa_optimized3/data/golden.txt"/>
-    <originFiles name="input.txt" path="/home/cse237c_fa24_s_chen/RSA_Implementation_on_PYNQ/rsa_optimized3/data/input.txt"/>
+    <originFiles name="input.txt" path="/home/cse237c_fa24_s_chen/RSA_Implementation_on_PYNQ/rsa_optimized_Mont2/data/input.txt"/>
+    <originFiles name="golden.txt" path="/home/cse237c_fa24_s_chen/RSA_Implementation_on_PYNQ/rsa_optimized_Mont2/data/golden.txt"/>
+    <originFiles name="rsa_test.cpp" path="/home/cse237c_fa24_s_chen/RSA_Implementation_on_PYNQ/rsa_optimized_Mont2/rsa_test.cpp"/>
   </testbench>
 </autopilotfilemapping:AutoPilotFileMapping>

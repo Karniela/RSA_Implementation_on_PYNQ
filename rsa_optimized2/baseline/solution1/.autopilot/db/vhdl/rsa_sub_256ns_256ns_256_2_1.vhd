@@ -8,7 +8,7 @@ library IEEE;
 use IEEE.std_logic_1164.all;
 use IEEE.NUMERIC_STD.all;
 
-entity rsa_sub_256ns_256ns_256_2_1_Adder_3 is
+entity rsa_sub_256ns_256ns_256_2_1_Adder_2 is
 port (
     clk   : IN STD_LOGIC;
     reset : IN STD_LOGIC;
@@ -18,8 +18,8 @@ port (
     s     : OUT STD_LOGIC_VECTOR(255 downto 0));
 end entity;
 
-architecture behav of rsa_sub_256ns_256ns_256_2_1_Adder_3 is
-  component rsa_sub_256ns_256ns_256_2_1_Adder_3_comb_adder is 
+architecture behav of rsa_sub_256ns_256ns_256_2_1_Adder_2 is
+  component rsa_sub_256ns_256ns_256_2_1_Adder_2_comb_adder is 
     generic(N : natural := 32);
     port (
       a    : IN  STD_LOGIC_VECTOR (N-1 downto 0);
@@ -56,7 +56,7 @@ bin_s0 <= not std_logic_vector(resize(unsigned(b), 256));
 -- This AddSub module have totally 2 stages. For each stage the adder's width are:
 -- 128 128
 
-u1 : rsa_sub_256ns_256ns_256_2_1_Adder_3_comb_adder
+u1 : rsa_sub_256ns_256ns_256_2_1_Adder_2_comb_adder
   generic map
     ( N => 128 )
   port map
@@ -92,7 +92,7 @@ process (clk) begin
   end if;
 end process;
 
-u2 : rsa_sub_256ns_256ns_256_2_1_Adder_3_comb_adder
+u2 : rsa_sub_256ns_256ns_256_2_1_Adder_2_comb_adder
   generic map
     ( N => 128 )
   port map
@@ -113,7 +113,7 @@ library IEEE;
 use IEEE.std_logic_1164.all;
 use IEEE.NUMERIC_STD.all;
 
-entity rsa_sub_256ns_256ns_256_2_1_Adder_3_comb_adder is
+entity rsa_sub_256ns_256ns_256_2_1_Adder_2_comb_adder is
   generic(N : natural := 32);
   port (
       a    : IN  STD_LOGIC_VECTOR (N-1 downto 0);
@@ -123,7 +123,7 @@ entity rsa_sub_256ns_256ns_256_2_1_Adder_3_comb_adder is
       cout : OUT STD_LOGIC_VECTOR (0 downto 0));
 end;
 
-architecture behav of rsa_sub_256ns_256ns_256_2_1_Adder_3_comb_adder is
+architecture behav of rsa_sub_256ns_256ns_256_2_1_Adder_2_comb_adder is
     signal tmp : STD_LOGIC_VECTOR (N downto 0);
 begin
 
@@ -153,7 +153,7 @@ entity rsa_sub_256ns_256ns_256_2_1 is
 end entity;
 
 architecture arch of rsa_sub_256ns_256ns_256_2_1 is
-    component rsa_sub_256ns_256ns_256_2_1_Adder_3 is
+    component rsa_sub_256ns_256ns_256_2_1_Adder_2 is
         port (
             clk : IN STD_LOGIC;
             reset : IN STD_LOGIC;
@@ -166,7 +166,7 @@ architecture arch of rsa_sub_256ns_256ns_256_2_1 is
 
 
 begin
-    rsa_sub_256ns_256ns_256_2_1_Adder_3_U :  component rsa_sub_256ns_256ns_256_2_1_Adder_3
+    rsa_sub_256ns_256ns_256_2_1_Adder_2_U :  component rsa_sub_256ns_256ns_256_2_1_Adder_2
     port map (
         clk => clk,
         reset => reset,

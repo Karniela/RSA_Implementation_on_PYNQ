@@ -44,8 +44,8 @@ set SCTraceOption all
 set TargetInfo xc7z020:-clg400:-1
 set SourceFiles {sc {} c ../../rsa.cpp}
 set SourceFlags {sc {} c {{}}}
-set DirectiveFile /home/cse237c_fa24_s_chen/RSA_Implementation_on_PYNQ/rsa_optimized3/baseline/solution1/solution1.directive
-set TBFiles {verilog {../../data/input.txt ../../data/golden.txt ../../rsa_test.cpp} bc {../../data/input.txt ../../data/golden.txt ../../rsa_test.cpp} vhdl {../../data/input.txt ../../data/golden.txt ../../rsa_test.cpp} sc {../../data/input.txt ../../data/golden.txt ../../rsa_test.cpp} cas {../../data/input.txt ../../data/golden.txt ../../rsa_test.cpp} c {}}
+set DirectiveFile /home/cse237c_fa24_s_chen/RSA_Implementation_on_PYNQ/rsa_optimized_Mont2/baseline/solution1/solution1.directive
+set TBFiles {verilog {../../rsa_test.cpp ../../data/golden.txt ../../data/input.txt} bc {../../rsa_test.cpp ../../data/golden.txt ../../data/input.txt} vhdl {../../rsa_test.cpp ../../data/golden.txt ../../data/input.txt} sc {../../rsa_test.cpp ../../data/golden.txt ../../data/input.txt} cas {../../rsa_test.cpp ../../data/golden.txt ../../data/input.txt} c {}}
 set SpecLanguage C
 set TVInFiles {bc {} c {} sc {} cas {} vhdl {} verilog {}}
 set TVOutFiles {bc {} c {} sc {} cas {} vhdl {} verilog {}}

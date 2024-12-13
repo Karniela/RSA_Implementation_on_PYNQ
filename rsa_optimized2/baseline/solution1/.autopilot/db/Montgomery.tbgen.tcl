@@ -49,13 +49,13 @@ set NewPortList {[
  	{ "name": "ap_return", "direction": "out", "datatype": "sc_lv", "bitwidth":256, "type": "signal", "bundle":{"name": "ap_return", "role": "default" }}  ]}
 
 set RtlHierarchyInfo {[
-	{"ID" : "0", "Level" : "0", "Path" : "`AUTOTB_DUT_INST", "Parent" : "", "Child" : ["1", "5", "6"],
+	{"ID" : "0", "Level" : "0", "Path" : "`AUTOTB_DUT_INST", "Parent" : "", "Child" : ["1", "5"],
 		"CDFG" : "Montgomery",
 		"Protocol" : "ap_ctrl_hs",
 		"ControlExist" : "1", "ap_start" : "1", "ap_ready" : "1", "ap_done" : "1", "ap_continue" : "0", "ap_idle" : "1", "real_start" : "0",
 		"Pipeline" : "None", "UnalignedPipeline" : "0", "RewindPipeline" : "0", "ProcessNetwork" : "0",
 		"II" : "0",
-		"VariableLatency" : "1", "ExactLatency" : "-1", "EstimateLatencyMin" : "263", "EstimateLatencyMax" : "263",
+		"VariableLatency" : "1", "ExactLatency" : "-1", "EstimateLatencyMin" : "1030", "EstimateLatencyMax" : "1030",
 		"Combinational" : "0",
 		"Datapath" : "0",
 		"ClockEnable" : "0",
@@ -73,7 +73,7 @@ set RtlHierarchyInfo {[
 		"ControlExist" : "1", "ap_start" : "1", "ap_ready" : "1", "ap_done" : "1", "ap_continue" : "0", "ap_idle" : "1", "real_start" : "0",
 		"Pipeline" : "None", "UnalignedPipeline" : "0", "RewindPipeline" : "0", "ProcessNetwork" : "0",
 		"II" : "0",
-		"VariableLatency" : "1", "ExactLatency" : "-1", "EstimateLatencyMin" : "258", "EstimateLatencyMax" : "258",
+		"VariableLatency" : "1", "ExactLatency" : "-1", "EstimateLatencyMin" : "1026", "EstimateLatencyMax" : "1026",
 		"Combinational" : "0",
 		"Datapath" : "0",
 		"ClockEnable" : "0",
@@ -83,39 +83,34 @@ set RtlHierarchyInfo {[
 		"IsBlackBox" : "0",
 		"Port" : [
 			{"Name" : "a", "Type" : "None", "Direction" : "I"},
-			{"Name" : "b_cast", "Type" : "None", "Direction" : "I"},
+			{"Name" : "zext_ln186", "Type" : "None", "Direction" : "I"},
 			{"Name" : "zext_ln1495", "Type" : "None", "Direction" : "I"},
-			{"Name" : "zext_ln1495_1", "Type" : "None", "Direction" : "I"},
-			{"Name" : "add_ln186", "Type" : "None", "Direction" : "I"},
 			{"Name" : "m_V_out", "Type" : "Vld", "Direction" : "O"}],
 		"Loop" : [
 			{"Name" : "Montgomery", "PipelineType" : "UPC",
-				"LoopDec" : {"FSMBitwidth" : "1", "FirstState" : "ap_ST_fsm_pp0_stage0", "FirstStateIter" : "ap_enable_reg_pp0_iter1", "FirstStateBlock" : "ap_block_pp0_stage0_subdone", "LastState" : "ap_ST_fsm_pp0_stage0", "LastStateIter" : "ap_enable_reg_pp0_iter2", "LastStateBlock" : "ap_block_pp0_stage0_subdone", "QuitState" : "ap_ST_fsm_pp0_stage0", "QuitStateIter" : "ap_enable_reg_pp0_iter1", "QuitStateBlock" : "ap_block_pp0_stage0_subdone", "OneDepthLoop" : "0", "has_ap_ctrl" : "1", "has_continue" : "0"}}]},
+				"LoopDec" : {"FSMBitwidth" : "4", "FirstState" : "ap_ST_fsm_pp0_stage1", "FirstStateIter" : "ap_enable_reg_pp0_iter0", "FirstStateBlock" : "ap_block_pp0_stage1_subdone", "LastState" : "ap_ST_fsm_pp0_stage0", "LastStateIter" : "ap_enable_reg_pp0_iter1", "LastStateBlock" : "ap_block_pp0_stage0_subdone", "QuitState" : "ap_ST_fsm_pp0_stage1", "QuitStateIter" : "ap_enable_reg_pp0_iter0", "QuitStateBlock" : "ap_block_pp0_stage1_subdone", "OneDepthLoop" : "0", "has_ap_ctrl" : "1", "has_continue" : "0"}}]},
 	{"ID" : "2", "Level" : "2", "Path" : "`AUTOTB_DUT_INST.grp_Montgomery_Pipeline_Montgomery_fu_36.add_258ns_258ns_258_2_1_U5", "Parent" : "1"},
 	{"ID" : "3", "Level" : "2", "Path" : "`AUTOTB_DUT_INST.grp_Montgomery_Pipeline_Montgomery_fu_36.add_258ns_258ns_258_2_1_U6", "Parent" : "1"},
 	{"ID" : "4", "Level" : "2", "Path" : "`AUTOTB_DUT_INST.grp_Montgomery_Pipeline_Montgomery_fu_36.flow_control_loop_pipe_sequential_init_U", "Parent" : "1"},
-	{"ID" : "5", "Level" : "1", "Path" : "`AUTOTB_DUT_INST.add_257ns_257ns_257_2_1_U14", "Parent" : "0"},
-	{"ID" : "6", "Level" : "1", "Path" : "`AUTOTB_DUT_INST.sub_256ns_256ns_256_2_1_U15", "Parent" : "0"}]}
+	{"ID" : "5", "Level" : "1", "Path" : "`AUTOTB_DUT_INST.sub_256ns_256ns_256_2_1_U12", "Parent" : "0"}]}
 
 
 set ArgLastReadFirstWriteLatency {
 	Montgomery {
 		N {Type I LastRead 0 FirstWrite -1}
-		a {Type I LastRead 1 FirstWrite -1}
+		a {Type I LastRead 0 FirstWrite -1}
 		b {Type I LastRead 0 FirstWrite -1}}
 	Montgomery_Pipeline_Montgomery {
 		a {Type I LastRead 0 FirstWrite -1}
-		b_cast {Type I LastRead 0 FirstWrite -1}
+		zext_ln186 {Type I LastRead 0 FirstWrite -1}
 		zext_ln1495 {Type I LastRead 0 FirstWrite -1}
-		zext_ln1495_1 {Type I LastRead 0 FirstWrite -1}
-		add_ln186 {Type I LastRead 0 FirstWrite -1}
 		m_V_out {Type O LastRead -1 FirstWrite 1}}}
 
 set hasDtUnsupportedChannel 0
 
 set PerformanceInfo {[
-	{"Name" : "Latency", "Min" : "263", "Max" : "263"}
-	, {"Name" : "Interval", "Min" : "263", "Max" : "263"}
+	{"Name" : "Latency", "Min" : "1030", "Max" : "1030"}
+	, {"Name" : "Interval", "Min" : "1030", "Max" : "1030"}
 ]}
 
 set PipelineEnableSignalInfo {[

@@ -1,15 +1,15 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<cdfg:DBCdfg xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:cdfg="http://www.autoesl.com/DBCdfg" timeStamp="1733294476644">
-  <ports id="1" name="d" type="PortType" originalName="d" coreId="4146434256" bitwidth="256">
+<cdfg:DBCdfg xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:cdfg="http://www.autoesl.com/DBCdfg" timeStamp="1734052797871">
+  <ports id="1" name="d" type="PortType" originalName="d" coreId="4013576736" bitwidth="256">
     <dataOutputObjs>read</dataOutputObjs>
   </ports>
-  <ports id="2" name="N" type="PortType" originalName="N" coreId="4294967295" bitwidth="256">
+  <ports id="2" name="N" type="PortType" originalName="N" coreId="1212371803" bitwidth="256">
     <dataOutputObjs>read</dataOutputObjs>
   </ports>
-  <ports id="3" name="y" type="PortType" originalName="y" coreId="4146434368" bitwidth="256">
+  <ports id="3" name="y" type="PortType" originalName="y" coreId="4013592912" bitwidth="256">
     <dataOutputObjs>read</dataOutputObjs>
   </ports>
-  <ports id="4" name="x" type="PortType" originalName="x.V" coreId="1212371803" bitwidth="256" direction="DirOut">
+  <ports id="4" name="x" type="PortType" originalName="x.V" coreId="0" bitwidth="256" direction="DirOut">
     <dataInputObjs>write</dataInputObjs>
   </ports>
   <edges id="28" source_obj="//@ports.2" sink_obj="//@blocks.0/@node_objs.0"/>
@@ -36,7 +36,7 @@
       <dataInputObjs>d</dataInputObjs>
       <dataOutputObjs>call</dataOutputObjs>
     </node_objs>
-    <node_objs xsi:type="cdfg:CdfgNode" id="22" name="result_V" lineNumber="67" originalName="result.V" fileName="rsa.cpp" fileDirectory=".." rtlName="grp_mod_exp_fu_67" coreId="4146428992" contextFuncName="rsa" bitwidth="256" opcode="call" nodeLatency="1" m_display="0" m_delay="1.58" m_topoIndex="4" m_clusterGroupNumber="-1">
+    <node_objs xsi:type="cdfg:CdfgNode" id="22" name="result_V" lineNumber="67" originalName="result.V" fileName="rsa.cpp" fileDirectory=".." rtlName="grp_mod_exp_fu_67" coreId="840972921" contextFuncName="rsa" bitwidth="256" opcode="call" nodeLatency="1" m_display="0" m_delay="1.58" m_topoIndex="4" m_clusterGroupNumber="-1">
       <inlineStackInfo fileName="rsa.cpp" linenumber="67" fileDirectory="/home/cse237c_fa24_s_chen/RSA_Implementation_on_PYNQ/rsa_optimized1" functionName="rsa"/>
       <dataInputObjs>read</dataInputObjs>
       <dataInputObjs>read</dataInputObjs>
@@ -49,7 +49,7 @@
       <dataInputObjs>call</dataInputObjs>
       <dataOutputObjs>x</dataOutputObjs>
     </node_objs>
-    <node_objs xsi:type="cdfg:CdfgNode" id="24" name="_ln69" lineNumber="69" fileName="rsa.cpp" fileDirectory=".." coreId="0" contextFuncName="rsa" opcode="ret" nodeLabel="1.0" m_display="0" m_topoIndex="6" m_clusterGroupNumber="-1">
+    <node_objs xsi:type="cdfg:CdfgNode" id="24" name="_ln69" lineNumber="69" fileName="rsa.cpp" fileDirectory=".." coreId="543515506" contextFuncName="rsa" opcode="ret" nodeLabel="1.0" m_display="0" m_topoIndex="6" m_clusterGroupNumber="-1">
       <inlineStackInfo fileName="rsa.cpp" linenumber="69" fileDirectory="/home/cse237c_fa24_s_chen/RSA_Implementation_on_PYNQ/rsa_optimized1" functionName="rsa"/>
     </node_objs>
     <fileValidLineNumbers fileName="rsa.cpp">
@@ -136,7 +136,7 @@
     </transitions>
   </fsm>
   <CFGRegionsRoot>
-    <cfgRegions mId="1" mTag="rsa" mII="-1" mDepth="-1" mMinTripCount="-1" mMaxTripCount="-1" mMinLatency="263426" mMaxLatency="526082">
+    <cfgRegions mId="1" mTag="rsa" mII="-1" mDepth="-1" mMinTripCount="-1" mMaxTripCount="-1" mMinLatency="214274" mMaxLatency="427778">
       <basicBlocks>25</basicBlocks>
       <mDfPipe/>
     </cfgRegions>

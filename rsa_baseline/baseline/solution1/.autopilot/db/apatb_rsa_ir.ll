@@ -7,7 +7,7 @@ target triple = "fpga64-xilinx-none"
 %"struct.ap_int_base<256, false>" = type { %"struct.ssdm_int<256, false>" }
 %"struct.ssdm_int<256, false>" = type { i256 }
 
-; Function Attrs: noinline
+; Function Attrs: inaccessiblemem_or_argmemonly noinline
 define void @apatb_rsa_ir(%"struct.ap_uint<256>"* nocapture readonly %d, %"struct.ap_uint<256>"* nocapture readonly %N, %"struct.ap_uint<256>"* nocapture readonly %y, %"struct.ap_uint<256>"* noalias nocapture nonnull dereferenceable(32) %x) local_unnamed_addr #0 {
 entry:
   %x_copy = alloca i256, align 512
@@ -83,7 +83,7 @@ entry:
 
 declare void @rsa_hw_stub(%"struct.ap_uint<256>"*, %"struct.ap_uint<256>"*, %"struct.ap_uint<256>"*, %"struct.ap_uint<256>"*)
 
-attributes #0 = { noinline "fpga.wrapper.func"="wrapper" }
+attributes #0 = { inaccessiblemem_or_argmemonly noinline "fpga.wrapper.func"="wrapper" }
 attributes #1 = { argmemonly noinline norecurse "fpga.wrapper.func"="copyin" }
 attributes #2 = { argmemonly noinline norecurse "fpga.wrapper.func"="copyout" }
 attributes #3 = { argmemonly noinline norecurse "fpga.wrapper.func"="onebyonecpy_hls" }

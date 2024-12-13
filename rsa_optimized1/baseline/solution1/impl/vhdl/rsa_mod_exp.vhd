@@ -61,8 +61,8 @@ attribute shreg_extract : string;
     signal grp_mod_product_fu_66_ap_done : STD_LOGIC;
     signal trunc_ln1497_reg_204 : STD_LOGIC_VECTOR (0 downto 0);
     signal ap_block_state3_on_subcall_done : BOOLEAN;
-    signal i_4_fu_120_p2 : STD_LOGIC_VECTOR (8 downto 0);
-    signal i_4_reg_199 : STD_LOGIC_VECTOR (8 downto 0);
+    signal i_5_fu_120_p2 : STD_LOGIC_VECTOR (8 downto 0);
+    signal i_5_reg_199 : STD_LOGIC_VECTOR (8 downto 0);
     signal m_V_load_1_reg_208 : STD_LOGIC_VECTOR (255 downto 0);
     signal grp_mod_product_fu_66_ap_start : STD_LOGIC;
     signal grp_mod_product_fu_66_ap_idle : STD_LOGIC;
@@ -153,7 +153,7 @@ begin
             if (((ap_start = ap_const_logic_1) and (ap_const_logic_1 = ap_CS_fsm_state1))) then 
                 i_fu_36 <= ap_const_lv9_0;
             elsif (((ap_const_boolean_0 = ap_block_state3_on_subcall_done) and (ap_const_logic_1 = ap_CS_fsm_state3))) then 
-                i_fu_36 <= i_4_reg_199;
+                i_fu_36 <= i_5_reg_199;
             end if; 
         end if;
     end process;
@@ -194,7 +194,7 @@ begin
     begin
         if (ap_clk'event and ap_clk = '1') then
             if ((ap_const_logic_1 = ap_CS_fsm_state2)) then
-                i_4_reg_199 <= i_4_fu_120_p2;
+                i_5_reg_199 <= i_5_fu_120_p2;
             end if;
         end if;
     end process;
@@ -339,7 +339,7 @@ begin
     end process;
 
     grp_mod_product_fu_66_ap_start <= grp_mod_product_fu_66_ap_start_reg;
-    i_4_fu_120_p2 <= std_logic_vector(unsigned(i_fu_36) + unsigned(ap_const_lv9_1));
+    i_5_fu_120_p2 <= std_logic_vector(unsigned(i_fu_36) + unsigned(ap_const_lv9_1));
     icmp_ln42_fu_114_p2 <= "1" when (i_fu_36 = ap_const_lv9_100) else "0";
     r_V_fu_139_p4 <= shr_i4_fu_40(255 downto 1);
     trunc_ln1497_fu_126_p1 <= shr_i4_fu_40(1 - 1 downto 0);

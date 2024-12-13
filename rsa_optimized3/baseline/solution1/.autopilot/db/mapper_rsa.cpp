@@ -238,11 +238,9 @@ class AESL_RUNTIME_BC {
 };
 using hls::sim::Byte;
 struct __cosim_s32__ { char data[32]; };
-struct __cosim_s16__ { char data[16]; };
-struct __cosim_s17__ { char data[17]; };
-extern "C" void rsa(__cosim_s32__*, __cosim_s32__*, __cosim_s16__*, __cosim_s16__*, __cosim_s32__*, __cosim_s32__*, __cosim_s32__*, volatile void *);
-extern "C" void apatb_rsa_hw(__cosim_s32__* __xlx_apatb_param_mu_p, __cosim_s32__* __xlx_apatb_param_mu_q, __cosim_s16__* __xlx_apatb_param_p, __cosim_s16__* __xlx_apatb_param_q, __cosim_s32__* __xlx_apatb_param_d, __cosim_s32__* __xlx_apatb_param_N, __cosim_s32__* __xlx_apatb_param_y, volatile void * __xlx_apatb_param_x) {
+extern "C" void rsa(__cosim_s32__*, __cosim_s32__*, __cosim_s32__*, volatile void *);
+extern "C" void apatb_rsa_hw(__cosim_s32__* __xlx_apatb_param_d, __cosim_s32__* __xlx_apatb_param_N, __cosim_s32__* __xlx_apatb_param_y, volatile void * __xlx_apatb_param_x) {
 using hls::sim::createStream;
   // DUT call
-  rsa(__xlx_apatb_param_mu_p, __xlx_apatb_param_mu_q, __xlx_apatb_param_p, __xlx_apatb_param_q, __xlx_apatb_param_d, __xlx_apatb_param_N, __xlx_apatb_param_y, __xlx_apatb_param_x);
+  rsa(__xlx_apatb_param_d, __xlx_apatb_param_N, __xlx_apatb_param_y, __xlx_apatb_param_x);
 }

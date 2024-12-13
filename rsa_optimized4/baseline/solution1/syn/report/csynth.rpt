@@ -1,0 +1,279 @@
+
+
+================================================================
+== Synthesis Summary Report of 'rsa'
+================================================================
++ General Information: 
+    * Date:           Thu Dec 12 16:35:25 2024
+    * Version:        2022.2 (Build 3670227 on Oct 13 2022)
+    * Project:        baseline
+    * Solution:       solution1 (Vivado IP Flow Target)
+    * Product family: zynq
+    * Target device:  xc7z020-clg400-1
+    
+
++ Performance & Resource Estimates: 
+    
+    PS: '+' for module; 'o' for loop; '*' for dataflow
+    +----------------------------------------+------+------+---------+-----------+----------+---------+------+----------+------+----+-------------+-------------+-----+
+    |                 Modules                | Issue|      | Latency |  Latency  | Iteration|         | Trip |          |      |    |             |             |     |
+    |                 & Loops                | Type | Slack| (cycles)|    (ns)   |  Latency | Interval| Count| Pipelined| BRAM | DSP|      FF     |     LUT     | URAM|
+    +----------------------------------------+------+------+---------+-----------+----------+---------+------+----------+------+----+-------------+-------------+-----+
+    |+ rsa                                   |     -|  0.02|    66965|  6.696e+05|         -|    66966|     -|        no|     -|   -|  19823 (18%)|  18779 (35%)|    -|
+    | + mod_inverse                          |     -|  0.02|    33793|  3.379e+05|         -|    33793|     -|        no|     -|   -|    2869 (2%)|    2558 (4%)|    -|
+    |  o MOD_INVERSE                         |     -|  7.30|    33792|  3.379e+05|       264|        -|   128|        no|     -|   -|            -|            -|    -|
+    |   + multi_stage_mul_x0                 |     -|  0.33|      131|  1.310e+03|         -|      131|     -|        no|     -|   -|    398 (~0%)|    370 (~0%)|    -|
+    |    o VITIS_LOOP_60_1                   |     -|  7.30|      129|  1.290e+03|         2|        1|   129|       yes|     -|   -|            -|            -|    -|
+    |     + multi_stage_mul_x0_add_m         |     -|  1.92|        0|      0.000|         -|        1|     -|       yes|     -|   -|            -|    265 (~0%)|    -|
+    |     + multi_stage_mul_x0_update_m_t_a  |     -|  7.30|        0|      0.000|         -|        1|     -|       yes|     -|   -|            -|            -|    -|
+    | + mod_exp                              |     -|  0.02|    66183|  6.618e+05|         -|    66183|     -|        no|     -|   -|    3922 (3%)|    4232 (7%)|    -|
+    |  o MOD_EXP                             |     -|  7.30|    65922|  6.592e+05|       515|        -|   128|        no|     -|   -|            -|            -|    -|
+    |   o MOD_PRODUCT                        |     -|  7.30|      256|  2.560e+03|         2|        -|   128|        no|     -|   -|            -|            -|    -|
+    |   o MOD_PRODUCT                        |     -|  7.30|      256|  2.560e+03|         2|        -|   128|        no|     -|   -|            -|            -|    -|
+    | + mod_exp                              |     -|  0.02|    66183|  6.618e+05|         -|    66183|     -|        no|     -|   -|    3922 (3%)|    4232 (7%)|    -|
+    |  o MOD_EXP                             |     -|  7.30|    65922|  6.592e+05|       515|        -|   128|        no|     -|   -|            -|            -|    -|
+    |   o MOD_PRODUCT                        |     -|  7.30|      256|  2.560e+03|         2|        -|   128|        no|     -|   -|            -|            -|    -|
+    |   o MOD_PRODUCT                        |     -|  7.30|      256|  2.560e+03|         2|        -|   128|        no|     -|   -|            -|            -|    -|
+    | + multi_stage_mul_h                    |     -|  0.75|      131|  1.310e+03|         -|      131|     -|        no|     -|   -|    1871 (1%)|    515 (~0%)|    -|
+    |  o VITIS_LOOP_34_1                     |     -|  7.30|      129|  1.290e+03|         2|        1|   129|       yes|     -|   -|            -|            -|    -|
+    |   + multi_stage_mul_h_add_m            |     -|  2.30|        1|     10.000|         -|        1|     -|       yes|     -|   -|    580 (~0%)|    388 (~0%)|    -|
+    |   + multi_stage_mul_h_update_m_t_a     |     -|  7.30|        0|      0.000|         -|        1|     -|       yes|     -|   -|            -|            -|    -|
+    | o MOD_PRODUCT                          |     -|  7.30|      384|  3.840e+03|         3|        -|   128|        no|     -|   -|            -|            -|    -|
+    +----------------------------------------+------+------+---------+-----------+----------+---------+------+----------+------+----+-------------+-------------+-----+
+
+
+================================================================
+== HW Interfaces
+================================================================
+* S_AXILITE Interfaces
++---------------+------------+---------------+--------+----------+
+| Interface     | Data Width | Address Width | Offset | Register |
++---------------+------------+---------------+--------+----------+
+| s_axi_control | 32         | 8             | 16     | 0        |
++---------------+------------+---------------+--------+----------+
+
+* S_AXILITE Registers
++---------------+----------+--------+-------+--------+----------------------------------+----------------------------------------------------------------------+
+| Interface     | Register | Offset | Width | Access | Description                      | Bit Fields                                                           |
++---------------+----------+--------+-------+--------+----------------------------------+----------------------------------------------------------------------+
+| s_axi_control | CTRL     | 0x00   | 32    | RW     | Control signals                  | 0=AP_START 1=AP_DONE 2=AP_IDLE 3=AP_READY 7=AUTO_RESTART 9=INTERRUPT |
+| s_axi_control | GIER     | 0x04   | 32    | RW     | Global Interrupt Enable Register | 0=Enable                                                             |
+| s_axi_control | IP_IER   | 0x08   | 32    | RW     | IP Interrupt Enable Register     | 0=CHAN0_INT_EN 1=CHAN1_INT_EN                                        |
+| s_axi_control | IP_ISR   | 0x0c   | 32    | RW     | IP Interrupt Status Register     | 0=CHAN0_INT_ST 1=CHAN1_INT_ST                                        |
+| s_axi_control | p_1      | 0x10   | 32    | W      | Data signal of p                 |                                                                      |
+| s_axi_control | p_2      | 0x14   | 32    | W      | Data signal of p                 |                                                                      |
+| s_axi_control | p_3      | 0x18   | 32    | W      | Data signal of p                 |                                                                      |
+| s_axi_control | p_4      | 0x1c   | 32    | W      | Data signal of p                 |                                                                      |
+| s_axi_control | q_1      | 0x24   | 32    | W      | Data signal of q                 |                                                                      |
+| s_axi_control | q_2      | 0x28   | 32    | W      | Data signal of q                 |                                                                      |
+| s_axi_control | q_3      | 0x2c   | 32    | W      | Data signal of q                 |                                                                      |
+| s_axi_control | q_4      | 0x30   | 32    | W      | Data signal of q                 |                                                                      |
+| s_axi_control | d_1      | 0x38   | 32    | W      | Data signal of d                 |                                                                      |
+| s_axi_control | d_2      | 0x3c   | 32    | W      | Data signal of d                 |                                                                      |
+| s_axi_control | d_3      | 0x40   | 32    | W      | Data signal of d                 |                                                                      |
+| s_axi_control | d_4      | 0x44   | 32    | W      | Data signal of d                 |                                                                      |
+| s_axi_control | d_5      | 0x48   | 32    | W      | Data signal of d                 |                                                                      |
+| s_axi_control | d_6      | 0x4c   | 32    | W      | Data signal of d                 |                                                                      |
+| s_axi_control | d_7      | 0x50   | 32    | W      | Data signal of d                 |                                                                      |
+| s_axi_control | d_8      | 0x54   | 32    | W      | Data signal of d                 |                                                                      |
+| s_axi_control | N_1      | 0x5c   | 32    | W      | Data signal of N                 |                                                                      |
+| s_axi_control | N_2      | 0x60   | 32    | W      | Data signal of N                 |                                                                      |
+| s_axi_control | N_3      | 0x64   | 32    | W      | Data signal of N                 |                                                                      |
+| s_axi_control | N_4      | 0x68   | 32    | W      | Data signal of N                 |                                                                      |
+| s_axi_control | N_5      | 0x6c   | 32    | W      | Data signal of N                 |                                                                      |
+| s_axi_control | N_6      | 0x70   | 32    | W      | Data signal of N                 |                                                                      |
+| s_axi_control | N_7      | 0x74   | 32    | W      | Data signal of N                 |                                                                      |
+| s_axi_control | N_8      | 0x78   | 32    | W      | Data signal of N                 |                                                                      |
+| s_axi_control | y_1      | 0x80   | 32    | W      | Data signal of y                 |                                                                      |
+| s_axi_control | y_2      | 0x84   | 32    | W      | Data signal of y                 |                                                                      |
+| s_axi_control | y_3      | 0x88   | 32    | W      | Data signal of y                 |                                                                      |
+| s_axi_control | y_4      | 0x8c   | 32    | W      | Data signal of y                 |                                                                      |
+| s_axi_control | y_5      | 0x90   | 32    | W      | Data signal of y                 |                                                                      |
+| s_axi_control | y_6      | 0x94   | 32    | W      | Data signal of y                 |                                                                      |
+| s_axi_control | y_7      | 0x98   | 32    | W      | Data signal of y                 |                                                                      |
+| s_axi_control | y_8      | 0x9c   | 32    | W      | Data signal of y                 |                                                                      |
+| s_axi_control | x_1      | 0xa4   | 32    | R      | Data signal of x                 |                                                                      |
+| s_axi_control | x_2      | 0xa8   | 32    | R      | Data signal of x                 |                                                                      |
+| s_axi_control | x_3      | 0xac   | 32    | R      | Data signal of x                 |                                                                      |
+| s_axi_control | x_4      | 0xb0   | 32    | R      | Data signal of x                 |                                                                      |
+| s_axi_control | x_5      | 0xb4   | 32    | R      | Data signal of x                 |                                                                      |
+| s_axi_control | x_6      | 0xb8   | 32    | R      | Data signal of x                 |                                                                      |
+| s_axi_control | x_7      | 0xbc   | 32    | R      | Data signal of x                 |                                                                      |
+| s_axi_control | x_8      | 0xc0   | 32    | R      | Data signal of x                 |                                                                      |
+| s_axi_control | x_ctrl   | 0xc4   | 32    | R      | Control signal of x              | 0=x_ap_vld                                                           |
++---------------+----------+--------+-------+--------+----------------------------------+----------------------------------------------------------------------+
+
+* TOP LEVEL CONTROL
++-----------+------------+-----------+
+| Interface | Type       | Ports     |
++-----------+------------+-----------+
+| ap_clk    | clock      | ap_clk    |
+| ap_rst_n  | reset      | ap_rst_n  |
+| interrupt | interrupt  | interrupt |
+| ap_ctrl   | ap_ctrl_hs |           |
++-----------+------------+-----------+
+
+
+================================================================
+== SW I/O Information
+================================================================
+* Top Function Arguments
++----------+-----------+---------------+
+| Argument | Direction | Datatype      |
++----------+-----------+---------------+
+| p        | in        | ap_uint<128>  |
+| q        | in        | ap_uint<128>  |
+| d        | in        | ap_uint<256>  |
+| N        | in        | ap_uint<256>  |
+| y        | in        | ap_uint<256>  |
+| x        | out       | ap_uint<256>& |
++----------+-----------+---------------+
+
+* SW-to-HW Mapping
++----------+---------------+----------+----------------------------------+
+| Argument | HW Interface  | HW Type  | HW Info                          |
++----------+---------------+----------+----------------------------------+
+| p        | s_axi_control | register | name=p_1 offset=0x10 range=32    |
+| p        | s_axi_control | register | name=p_2 offset=0x14 range=32    |
+| p        | s_axi_control | register | name=p_3 offset=0x18 range=32    |
+| p        | s_axi_control | register | name=p_4 offset=0x1c range=32    |
+| q        | s_axi_control | register | name=q_1 offset=0x24 range=32    |
+| q        | s_axi_control | register | name=q_2 offset=0x28 range=32    |
+| q        | s_axi_control | register | name=q_3 offset=0x2c range=32    |
+| q        | s_axi_control | register | name=q_4 offset=0x30 range=32    |
+| d        | s_axi_control | register | name=d_1 offset=0x38 range=32    |
+| d        | s_axi_control | register | name=d_2 offset=0x3c range=32    |
+| d        | s_axi_control | register | name=d_3 offset=0x40 range=32    |
+| d        | s_axi_control | register | name=d_4 offset=0x44 range=32    |
+| d        | s_axi_control | register | name=d_5 offset=0x48 range=32    |
+| d        | s_axi_control | register | name=d_6 offset=0x4c range=32    |
+| d        | s_axi_control | register | name=d_7 offset=0x50 range=32    |
+| d        | s_axi_control | register | name=d_8 offset=0x54 range=32    |
+| N        | s_axi_control | register | name=N_1 offset=0x5c range=32    |
+| N        | s_axi_control | register | name=N_2 offset=0x60 range=32    |
+| N        | s_axi_control | register | name=N_3 offset=0x64 range=32    |
+| N        | s_axi_control | register | name=N_4 offset=0x68 range=32    |
+| N        | s_axi_control | register | name=N_5 offset=0x6c range=32    |
+| N        | s_axi_control | register | name=N_6 offset=0x70 range=32    |
+| N        | s_axi_control | register | name=N_7 offset=0x74 range=32    |
+| N        | s_axi_control | register | name=N_8 offset=0x78 range=32    |
+| y        | s_axi_control | register | name=y_1 offset=0x80 range=32    |
+| y        | s_axi_control | register | name=y_2 offset=0x84 range=32    |
+| y        | s_axi_control | register | name=y_3 offset=0x88 range=32    |
+| y        | s_axi_control | register | name=y_4 offset=0x8c range=32    |
+| y        | s_axi_control | register | name=y_5 offset=0x90 range=32    |
+| y        | s_axi_control | register | name=y_6 offset=0x94 range=32    |
+| y        | s_axi_control | register | name=y_7 offset=0x98 range=32    |
+| y        | s_axi_control | register | name=y_8 offset=0x9c range=32    |
+| x        | s_axi_control | register | name=x_1 offset=0xa4 range=32    |
+| x        | s_axi_control | register | name=x_2 offset=0xa8 range=32    |
+| x        | s_axi_control | register | name=x_3 offset=0xac range=32    |
+| x        | s_axi_control | register | name=x_4 offset=0xb0 range=32    |
+| x        | s_axi_control | register | name=x_5 offset=0xb4 range=32    |
+| x        | s_axi_control | register | name=x_6 offset=0xb8 range=32    |
+| x        | s_axi_control | register | name=x_7 offset=0xbc range=32    |
+| x        | s_axi_control | register | name=x_8 offset=0xc0 range=32    |
+| x        | s_axi_control | register | name=x_ctrl offset=0xc4 range=32 |
++----------+---------------+----------+----------------------------------+
+
+
+================================================================
+== M_AXI Burst Information
+================================================================
+ Note: All burst requests might be further partitioned into multiple requests during RTL generation based on max_read_burst_length or max_write_burst_length settings.
+
+  No burst in design
+
+================================================================
+== Bind Op Report
+================================================================
++---------------------------------+-----+--------+-------------+-----+--------+---------+
+| Name                            | DSP | Pragma | Variable    | Op  | Impl   | Latency |
++---------------------------------+-----+--------+-------------+-----+--------+---------+
+| + rsa                           | 0   |        |             |     |        |         |
+|   ret_V_fu_166_p2               | -   |        | ret_V       | add | fabric | 0       |
+|   ret_V_1_fu_176_p2             | -   |        | ret_V_1     | add | fabric | 0       |
+|   sub_ln186_fu_222_p2           | -   |        | sub_ln186   | sub | fabric | 0       |
+|   sub_ln186_1_fu_228_p2         | -   |        | sub_ln186_1 | sub | fabric | 0       |
+|   i_2_fu_266_p2                 | -   |        | i_2         | add | fabric | 0       |
+|   ret_V_2_fu_283_p2             | -   |        | ret_V_2     | add | fabric | 0       |
+|   m_V_fu_289_p2                 | -   |        | m_V         | add | fabric | 0       |
+|   m_V_1_fu_368_p2               | -   |        | m_V_1       | sub | fabric | 0       |
+|   t_V_fu_314_p2                 | -   |        | t_V         | sub | fabric | 0       |
+|   h_V_1_fu_344_p2               | -   |        | h_V_1       | sub | fabric | 0       |
+|   add_256ns_256ns_256_2_1_U32   | -   |        | add_ln186   | add | fabric | 1       |
+|  + mod_inverse                  | 0   |        |             |     |        |         |
+|    i_6_fu_125_p2                | -   |        | i_6         | add | fabric | 0       |
+|    x0_V_2_fu_203_p2             | -   |        | x0_V_2      | sub | fabric | 0       |
+|    add_ln142_fu_185_p2          | -   |        | add_ln142   | add | fabric | 0       |
+|   + multi_stage_mul_x0          | 0   |        |             |     |        |         |
+|     i_3_fu_112_p2               | -   |        | i_3         | add | fabric | 0       |
+|    + multi_stage_mul_x0_add_m   | 0   |        |             |     |        |         |
+|      ap_return                  | -   |        | add_ln46    | add | fabric | 0       |
+|  + mod_exp (grp_mod_exp_fu_139) | 0   |        |             |     |        |         |
+|    i_10_fu_231_p2               | -   |        | i_10        | add | fabric | 0       |
+|    i_8_fu_251_p2                | -   |        | i_8         | add | fabric | 0       |
+|    ret_V_fu_269_p2              | -   |        | ret_V       | add | fabric | 0       |
+|    m_V_fu_275_p2                | -   |        | m_V         | add | fabric | 0       |
+|    m_V_7_fu_343_p2              | -   |        | m_V_7       | sub | fabric | 0       |
+|    t_V_fu_300_p2                | -   |        | t_V         | sub | fabric | 0       |
+|    i_9_fu_372_p2                | -   |        | i_9         | add | fabric | 0       |
+|    ret_V_10_fu_390_p2           | -   |        | ret_V_10    | add | fabric | 0       |
+|    m_V_11_fu_396_p2             | -   |        | m_V_11      | add | fabric | 0       |
+|    m_V_12_fu_490_p2             | -   |        | m_V_12      | sub | fabric | 0       |
+|    t_V_17_fu_421_p2             | -   |        | t_V_17      | sub | fabric | 0       |
+|  + mod_exp (grp_mod_exp_fu_146) | 0   |        |             |     |        |         |
+|    i_10_fu_231_p2               | -   |        | i_10        | add | fabric | 0       |
+|    i_8_fu_251_p2                | -   |        | i_8         | add | fabric | 0       |
+|    ret_V_fu_269_p2              | -   |        | ret_V       | add | fabric | 0       |
+|    m_V_fu_275_p2                | -   |        | m_V         | add | fabric | 0       |
+|    m_V_7_fu_343_p2              | -   |        | m_V_7       | sub | fabric | 0       |
+|    t_V_fu_300_p2                | -   |        | t_V         | sub | fabric | 0       |
+|    i_9_fu_372_p2                | -   |        | i_9         | add | fabric | 0       |
+|    ret_V_10_fu_390_p2           | -   |        | ret_V_10    | add | fabric | 0       |
+|    m_V_11_fu_396_p2             | -   |        | m_V_11      | add | fabric | 0       |
+|    m_V_12_fu_490_p2             | -   |        | m_V_12      | sub | fabric | 0       |
+|    t_V_17_fu_421_p2             | -   |        | t_V_17      | sub | fabric | 0       |
+|  + multi_stage_mul_h            | 0   |        |             |     |        |         |
+|    i_4_fu_116_p2                | -   |        | i_4         | add | fabric | 0       |
+|   + multi_stage_mul_h_add_m     | 0   |        |             |     |        |         |
+|     add_256ns_256ns_256_2_1_U20 | -   |        | add_ln186   | add | fabric | 1       |
++---------------------------------+-----+--------+-------------+-----+--------+---------+
+
+
+================================================================
+== Bind Storage Report
+================================================================
+  No bind storage info in design
+
+================================================================
+== Pragma Report
+================================================================
+* Valid Pragma Syntax
++-----------+-----------------------+-----------------------------------------------+
+| Type      | Options               | Location                                      |
++-----------+-----------------------+-----------------------------------------------+
+| inline    | OFF                   | rsa.cpp:15 in multi_stage_mul_h_add_m         |
+| inline    | OFF                   | rsa.cpp:22 in multi_stage_mul_h_update_m_t_a  |
+| inline    | OFF                   | rsa.cpp:29 in multi_stage_mul_h               |
+| pipeline  | II=1                  | rsa.cpp:35 in multi_stage_mul_h               |
+| inline    | OFF                   | rsa.cpp:43 in multi_stage_mul_x0_add_m        |
+| inline    | OFF                   | rsa.cpp:49 in multi_stage_mul_x0_update_m_t_a |
+| inline    | OFF                   | rsa.cpp:55 in multi_stage_mul_x0              |
+| pipeline  | II=1                  | rsa.cpp:61 in multi_stage_mul_x0              |
+| pipeline  | off                   | rsa.cpp:74 in mod_product                     |
+| inline    | OFF                   | rsa.cpp:98 in mod_exp                         |
+| pipeline  | OFF                   | rsa.cpp:103 in mod_exp                        |
+| inline    | OFF                   | rsa.cpp:116 in mod_inverse                    |
+| pipeline  | OFF                   | rsa.cpp:127 in mod_inverse                    |
+| interface | s_axilite port=return | rsa.cpp:149 in rsa, return                    |
+| interface | s_axilite port=p      | rsa.cpp:150 in rsa, p                         |
+| interface | s_axilite port=q      | rsa.cpp:151 in rsa, q                         |
+| interface | s_axilite port=N      | rsa.cpp:152 in rsa, N                         |
+| interface | s_axilite port=y      | rsa.cpp:153 in rsa, y                         |
+| interface | s_axilite port=d      | rsa.cpp:154 in rsa, d                         |
+| interface | s_axilite port=x      | rsa.cpp:155 in rsa, x                         |
+| pipeline  | OFF                   | rsa.cpp:158 in rsa                            |
++-----------+-----------------------+-----------------------------------------------+
+
+

@@ -731,9 +731,3 @@
     ^~~
     VITIS_LOOP_12_1: 
 /home/cse237c_fa24_s_chen/RSA_Implementation_on_PYNQ/rsa_baseline/baseline/solution1/.autopilot/db/rsa.pp.0.cpp:30150:5: note: FIX-IT applied suggested code changes
-/home/cse237c_fa24_s_chen/RSA_Implementation_on_PYNQ/rsa_baseline/baseline/solution1/.autopilot/db/rsa.pp.0.cpp:30154:9: error: Invalid Directive: for current device, mul + fabric is invalid combination for bind_op [clang-diagnostic-error]
-#pragma HLS bind_op variable=result op=mul impl=fabric
-        ^
-/home/cse237c_fa24_s_chen/RSA_Implementation_on_PYNQ/rsa_baseline/baseline/solution1/.autopilot/db/rsa.pp.0.cpp:30161:9: error: Invalid Directive: for current device, mul + fabric is invalid combination for bind_op [clang-diagnostic-error]
-#pragma HLS bind_op variable=b op=mul impl=fabric
-        ^

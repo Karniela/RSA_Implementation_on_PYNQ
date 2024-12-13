@@ -1,7 +1,7 @@
 <profile>
 
 <section name = "Vitis HLS Report for 'rsa'" level="0">
-<item name = "Date">Tue Dec  3 22:25:43 2024
+<item name = "Date">Thu Dec 12 16:52:59 2024
 </item>
 <item name = "Version">2022.2 (Build 3670227 on Oct 13 2022)</item>
 <item name = "Project">baseline</item>
@@ -24,7 +24,7 @@
 <section name = "" level="1">
 <item name = "Summary"><table name="" hasTotal="0">
 <keys size="8">, min, max, min, max, min, max, Type</keys>
-<column name="">68356, 135684, 0.684 ms, 1.357 ms, 68357, 135685, no</column>
+<column name="">264963, 528643, 2.650 ms, 5.286 ms, 264964, 528644, no</column>
 </table>
 </item>
 <item name = "Detail">
@@ -35,7 +35,7 @@
 </item>
 <item name = "Loop"><table name="" hasTotal="0">
 <keys size="8">Loop Name, min, max, Latency, achieved, target, Count, Pipelined</keys>
-<column name="- RSA_TOP">68096, 135424, 266 ~ 529, -, -, 256, no</column>
+<column name="- RSA_TOP">264448, 528128, 1033 ~ 2063, -, -, 256, no</column>
 </table>
 </item>
 </section>
